@@ -1,1 +1,3 @@
-# Frugal-AI-KnowledgeBase
+# Frugal AI
+
+Frugal AI
