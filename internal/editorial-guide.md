@@ -107,17 +107,19 @@ Avoid carrying over: broad product documentation structure before the knowledge 
 
 The Frugal AI knowledge base landing page should:
 
-- open with one grounded definition and one concrete first path;
+- open with one grounded definition for partner institutions and ministries;
 - route first-time readers into time-boxed next steps;
-- separate builder, evaluator, maintainer, and contributor needs;
-- show the first stack as a compact layer map;
+- explain why sovereign AI, open technologies, data ownership, compliance, guardrails, and local capacity matter;
+- separate stakeholder, builder, pilot, and maintainer needs;
+- name guardrails before moving into technical detail;
+- show the first stack as a compact layer map lower on the page;
 - state what the first path proves;
 - state what is out of scope;
 - mark future paths as future work until supporting pages exist.
 
 It should not:
 
-- open with policy language before the practical path is visible;
+- open with technical stack detail before the institutional purpose is clear;
 - show long shell scripts or custom code snippets;
 - imply production readiness before operations and governance pages exist;
 - expose a large catalogue of future topics as if the pages already exist.
@@ -224,13 +226,16 @@ For time estimates, label them as estimates unless they have been measured in th
 Use this order:
 
 1. Grounded definition
-2. First practical path
+2. Partner and ministry context
 3. Time-boxed entry cards
-4. Reader-path table
-5. Stack or workflow map
-6. Proof points
-7. Scope boundaries
-8. Future paths
+4. Why this matters
+5. Reader-path table
+6. Guardrails before scale
+7. First local path
+8. Proof points
+9. Principles and source grounding
+10. Scope boundaries
+11. Future paths
 
 Landing pages should not include shell commands, custom code, or long setup instructions. Link to the relevant quickstart or guide instead.
 
