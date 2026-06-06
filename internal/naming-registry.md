@@ -65,7 +65,7 @@ Do not include memory in the DGX Spark title unless future pages distinguish mul
 | Runtime | Ollama | Ollama, the local model runtime |
 | Framework | Open WebUI | Open WebUI, the browser chat interface |
 | Model | Qwen3.5-9B | Qwen3.5-9B, the first-path local model |
-| Model | Qwen3.6-35B-A3B | Qwen3.6-35B-A3B, a future Mixture of Experts evaluation model |
+| Model | Qwen3.6-35B-A3B | Qwen3.6-35B-A3B, a future MoE evaluation model |
 | Model | Gemma 4 12B | Gemma 4 12B, a future dense multimodal evaluation model |
 
 ## Navigation Labels
