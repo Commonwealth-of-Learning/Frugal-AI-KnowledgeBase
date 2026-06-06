@@ -31,3 +31,4 @@
 ## Reference
 
 * [Glossary](reference/glossary.md)
+* [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md)
