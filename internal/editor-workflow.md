@@ -95,6 +95,8 @@ Do not paste a template directly into `docs/`. Instead:
 4. Keep only commands that are needed for the documented task.
 5. Add verification before troubleshooting.
 
+Template sections are optional. If a section has no useful content, no verified source, or only a statement that the information could not be found, leave the section out. Do not publish empty headings, placeholder rows, or "not available" filler.
+
 ### 5. Draft With the Frugal AI Voice
 
 Draft rules:
@@ -213,6 +215,7 @@ Run this checklist:
 - The site is called "Frugal AI knowledge base".
 - Direct second person has been removed unless needed for safety.
 - Claims about performance, memory, or compatibility are labelled.
+- Empty or unverified template sections have been removed.
 - The page distinguishes development, pilot, and production scope.
 - Teacher-in-the-loop or human review is named where learner-facing AI is involved.
 - Links point to existing files.

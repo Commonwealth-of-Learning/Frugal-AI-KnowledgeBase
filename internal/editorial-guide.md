@@ -165,6 +165,8 @@ Treat affordability as one part of sovereignty. Avoid reducing Frugal AI to cost
 
 State limits. If a setup is for development, say so. If performance is estimated, label it as an estimate. If a claim needs local validation, say what to test.
 
+Leave out empty or unverifiable sections. If a template section has no verified content, remove the section instead of writing that the information is unavailable, cannot be found, or has not been verified.
+
 Keep people in the loop. When AI affects learners, assessment, content, or institutional decisions, name the human review point.
 
 Use examples from education. Prefer scenarios such as local chat, course search, teacher support, OER adaptation, administrative helpdesk, and Moodle support.

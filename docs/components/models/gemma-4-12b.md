@@ -15,6 +15,7 @@ This model is not used by the current [Offline chat service](../../getting-start
 | --- | --- |
 | Model ID | `google/gemma-4-12B` |
 | Instruction-tuned variant | `google/gemma-4-12B-it` |
+| Unsloth model | `unsloth/gemma-4-12b`, labelled Gemma 4 12B Unified |
 | Ollama tag | `gemma4:12b` |
 | Source | [Hugging Face model page](https://huggingface.co/google/gemma-4-12B) |
 | Architecture | Dense, unified, encoder-free multimodal transformer |
@@ -34,7 +35,8 @@ This model is not used by the current [Offline chat service](../../getting-start
 | Sliding window | 1024 tokens | Source-listed by Hugging Face |
 | Vocabulary size | 262K | Source-listed by Hugging Face |
 | Ollama size | 7.6 GB | Source-listed by Ollama |
-| Unsloth hardware guidance | Not listed for 12B | Unsloth lists E2B, E4B, 26B-A4B, and 31B variants |
+| Unsloth label | Gemma 4 12B Unified | Source-listed by Unsloth model card |
+| Unsloth dense-model row | 11.95B parameters, 48 layers, 1024-token sliding window, 256K context, 262K vocabulary, text/image/audio support | Source-listed by Unsloth model card |
 | Memory use in Frugal AI path | Not measured | Needs local validation |
 
 Do not treat source benchmark tables as local performance claims. Measure speed, memory use, and quality on the target machine before using this model in a guide.
@@ -52,9 +54,9 @@ Reference notes:
 
 - Unsloth lists Google's Gemma 4 default sampling settings as `temperature = 1.0`, `top_p = 0.95`, and `top_k = 64`.
 - Unsloth recommends starting local inference at 32K context for responsiveness, then increasing after measurement.
+- Unsloth labels this checkpoint as Gemma 4 12B Unified. The "Unified" label refers to the encoder-free multimodal architecture.
 - The Gemma 4 end-of-sentence token is listed as `<turn|>`.
-- For multimodal prompts, Unsloth recommends placing media before text. Visual token budgets range from 70 or 140 for fast captioning to 1120 for OCR, document parsing, handwriting, and small text.
-- Unsloth's hardware table does not list Gemma 4 12B. Do not reuse its E2B, E4B, 26B-A4B, or 31B memory figures for this 12B card.
+- For multimodal prompts, Unsloth recommends placing image and video content before text, and audio content after text. Visual token budgets range from 70 or 140 for fast captioning to 1120 for OCR, document parsing, handwriting, and small text.
 
 ## Why this model fits a future path
 
@@ -94,7 +96,7 @@ Reference notes:
 - Ollama currently lists `gemma4:12b` with text and image input. Upstream materials describe broader audio and video-style capabilities, but runtime support may differ.
 - Multimodal inputs can increase memory and latency beyond the base model size.
 - Thinking mode and function calling need application-layer support and testing before use in agentic workflows.
-- Unsloth's Gemma 4 reference settings are family-level defaults for local GGUF-style inference, not measured Frugal AI guide settings for the 12B checkpoint.
+- Unsloth's Gemma 4 reference settings are source-listed defaults, not measured Frugal AI guide settings for the 12B Unified checkpoint.
 - Coding output still requires review, testing, and security checks before use in production systems.
 
 ## Used by
@@ -108,4 +110,5 @@ No public Frugal AI guide uses this model yet. Candidate future paths include lo
 - [Google Developers Blog: Gemma 4 12B developer guide](https://developers.googleblog.com/gemma-4-12b-the-developer-guide/)
 - [Google launch post: Introducing Gemma 4 12B](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/)
 - [Ollama: gemma4](https://registry.ollama.com/library/gemma4)
+- [Unsloth Hugging Face: gemma-4-12b](https://huggingface.co/unsloth/gemma-4-12b)
 - [Unsloth: Gemma 4 local guide](https://unsloth.ai/docs/models/gemma-4)
