@@ -1,65 +1,90 @@
-# Runbook: [Name]
+---
+description: [Operations scope for the service.]
+icon: [gitbook-icon-name]
+---
 
-> **Scope:** [what this runbook covers — a device environment, an application, a service]
-> **Prerequisites:** [links to stack and/or guide that must be complete first]
+# [Service] operations
 
-[One-line description of what this runbook helps you operate.]
+[State what this runbook operates and when it should be used.]
 
-## Overview
-[What is running, what services are involved, what the steady state looks like.]
+This is a [development/pilot/production] runbook. It is not [out-of-scope operating model].
 
-## Initial Setup
-[One-time steps to get the environment ready. Link to stack/guide for component-level setup.]
+## Scope
 
-## Day-to-Day Operations
+| Area | Covered |
+| --- | --- |
+| Service | [Service name] |
+| Environment | [Environment profile] |
+| Data | [What data is handled] |
+| Owner | [Role or team responsible] |
 
-### Start
-[Commands to start services in the correct order.]
+## Start, stop, and restart
 
-### Stop
-[Commands to stop services cleanly.]
+| Task | Command or action |
+| --- | --- |
+| Start [service] | `[one command]` |
+| Stop [service] | `[one command]` |
+| Restart [service] | `[one command]` |
+| Check status | `[one command]` |
 
-### Restart
-[Commands to restart — when and why.]
+## Health checks
 
-### Check Status
-[Commands to verify everything is running.]
-
-## Health Check
-[Quick checklist to confirm the system is healthy.]
-
-| Check | Command | Expected |
-|-------|---------|----------|
-| [Service 1] | [command] | [expected output] |
-| [Service 2] | [command] | [expected output] |
-
-## Troubleshooting
-
-### [Common problem 1]
-**Symptom:** [what the user sees]
-**Cause:** [why it happens]
-**Fix:** [exact commands]
-
-### [Common problem 2]
-**Symptom:** [what the user sees]
-**Cause:** [why it happens]
-**Fix:** [exact commands]
-
-## Recovery
-
-### [Recovery scenario 1]
-[Steps to recover from a specific failure — data loss, corrupted state, etc.]
-
-### [Recovery scenario 2]
-[Steps to recover from another failure mode.]
+| Check | Command or action | Expected result |
+| --- | --- | --- |
+| [Check 1] | `[one command]` | [Expected result] |
+| [Check 2] | [Action] | [Expected result] |
 
 ## Maintenance
 
 ### Updates
-[How to update each component — runtime, models, frameworks.]
+
+[Explain update responsibility and cadence. Link to component or upstream release notes when needed.]
+
+```bash
+[one command]
+```
+
+Expected result: [expected output or state].
 
 ### Cleanup
-[How to reclaim disk space, prune old data, rotate logs.]
+
+[Explain what can be safely removed and what must be retained.]
 
 ### Backup
-[What to back up, where, how often.]
+
+| Item | Location | Frequency | Sensitivity |
+| --- | --- | --- | --- |
+| [Data item] | [Location] | [Frequency] | [Sensitivity] |
+
+## Recovery
+
+### [Recovery scenario]
+
+1. [Action]
+2. [Action]
+3. Verify with `[one command]`.
+
+Expected result: [expected state].
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| [Common problem 1] | [Likely cause] | [Smallest safe fix] |
+| [Common problem 2] | [Likely cause] | [Smallest safe fix] |
+
+## Escalation notes
+
+Escalate when:
+
+- [Condition 1]
+- [Condition 2]
+- [Condition 3]
+
+Record:
+
+- what changed;
+- command output or error message;
+- data affected;
+- recovery attempt;
+- owner for follow-up.

@@ -1,35 +1,66 @@
-# Stack: [Name]
+---
+description: [How a Frugal AI stack fits together.]
+icon: [gitbook-icon-name]
+---
 
-> **Hardware:** [link to hardware profile]
-> **Runtime:** [link to runtime component]
-> **Model:** [link to model card]
-> **Environment:** [link to environment]
+# [Stack name]
 
-## Prerequisites
-- [hardware/software requirements]
+[Describe the stack in one short paragraph. State the service it supports and the operating scope.]
 
-## Setup
+## Outcome
 
-### 1. Install runtime
-[exact commands]
+This stack supports [specific guide or service].
 
-### 2. Pull model
-[exact commands]
+## Layers
 
-### 3. Configure
-[environment variables, memory settings, context length]
+| Layer | Page | Decision |
+| --- | --- | --- |
+| Hardware | [Hardware](../components/hardware/[file].md) | [Why this hardware] |
+| Environment | [Environment](../components/environments/[file].md) | [Development/pilot/production assumption] |
+| Runtime | [Runtime](../components/runtimes/[file].md) | [Why this runtime] |
+| Model | [Model](../components/models/[file].md) | [Why this model] |
+| Interface | [Interface](../components/frameworks/[file].md) | [Why this interface] |
+| Operations | [Runbook](../operations/[file].md) | [How it is maintained] |
 
-### 4. Verify
-[test command + expected output]
+## Operating assumptions
 
-Expected results:
-- Tokens/sec: [number]
-- Memory usage: [number]
-- Status: ready
+| Assumption | Value | Confidence |
+| --- | --- | --- |
+| Users | [value] | [planned/tested] |
+| Data location | [value] | [planned/tested] |
+| Connectivity | [value] | [planned/tested] |
+| Memory budget | [value] | [measured/estimated] |
+| Support owner | [role/team] | [planned/assigned] |
 
-## Variant: [other device]
-> [what differs — install method, memory settings, quant choice]
+## Frugal fit
 
-## Troubleshooting
-- [Common issue 1]: [fix]
-- [Common issue 2]: [fix]
+| Principle | How the stack applies it |
+| --- | --- |
+| Local control | [How data and operation stay local] |
+| Open components | [Which layers are inspectable or replaceable] |
+| Resource discipline | [How model and hardware are matched] |
+| Capacity building | [What the local team learns to operate] |
+| Human oversight | [Where review or approval happens] |
+
+## Verification
+
+| Check | Command or action | Expected result |
+| --- | --- | --- |
+| [Check 1] | `[one command]` | [Expected result] |
+| [Check 2] | [Action] | [Expected result] |
+
+## Variants
+
+| Variant | What changes | When to use |
+| --- | --- | --- |
+| [Variant 1] | [Layer changes] | [Scenario] |
+
+## Limits
+
+- [Limit 1]
+- [Limit 2]
+- [Limit 3]
+
+## Next step
+
+[Link to the guide or runbook that uses this stack.]

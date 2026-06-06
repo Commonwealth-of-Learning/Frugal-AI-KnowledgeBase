@@ -1,32 +1,68 @@
+---
+description: [Hardware role in the Frugal AI knowledge base.]
+icon: [gitbook-icon-name]
+---
+
 # [Device Name]
 
-## Specs
-- **Memory:** [e.g., 24 GB unified]
-- **Memory type:** [Unified / Discrete VRAM]
-- **Compute:** [e.g., Apple M4 (10-core GPU) / NVIDIA GB10]
-- **Storage:** [e.g., 512 GB SSD]
-- **OS:** [e.g., macOS 15+]
+[Describe the device in one short paragraph. State whether this is a development, pilot, or production profile.]
 
-## Memory Budget
-| Use | Allocation |
-|-----|-----------|
-| OS + system | [e.g., 6 GB] |
-| Runtime + app overhead | [e.g., 2 GB] |
-| **Available for model** | [e.g., 16 GB] |
+## When to use it
+
+Use this profile when:
+
+- [Suitable scenario 1]
+- [Suitable scenario 2]
+- [Suitable scenario 3]
+
+## Specifications
+
+| Field | Value |
+| --- | --- |
+| Memory | [e.g., 24 GB unified] |
+| Compute | [e.g., Apple M4, NVIDIA GB10] |
+| Storage | [e.g., 512 GB SSD] |
+| Operating system | [e.g., macOS 15+] |
+| Network assumption | [e.g., local/offline capable] |
+
+## Memory budget
+
+| Use | Expected allocation | Confidence |
+| --- | --- | --- |
+| Operating system and background services | [value] | [measured/source-listed/estimated] |
+| Runtime and application overhead | [value] | [measured/source-listed/estimated] |
+| Available for model and context | [value] | [measured/source-listed/estimated] |
+
+State the measurement method when values are measured. Label planning values as estimates.
 
 ## What fits
-| Model size | Quant | Context | Fits? |
-|-----------|-------|---------|-------|
-| 7–9B | Q4_K_M | 8K | [e.g., 🟢 ~6 GB] |
-| 7–9B | Q4_K_M | 32K | [e.g., 🟢 ~8 GB] |
-| 7–9B | Q4_K_M | 128K | [e.g., 🟡 ~15 GB tight] |
-| 14B | Q4_K_M | 8K | [e.g., 🟡 ~10 GB] |
-| 70B+ | Q4_K_M | any | [e.g., 🔴 won't fit] |
 
-## Compatible runtimes
-| Runtime | Status | Notes |
-|---------|--------|-------|
-| [e.g., Ollama] | [Tested/Untested] | [e.g., Metal acceleration, native macOS] |
+| Model class | Quantisation | Context | Fit | Confidence |
+| --- | --- | --- | --- | --- |
+| [e.g., 7B-9B] | [e.g., Q4] | [e.g., 8K] | [Comfortable/tight/not suitable] | [measured/source-listed/estimated] |
+| [e.g., 14B] | [e.g., Q4] | [e.g., 8K] | [Comfortable/tight/not suitable] | [measured/source-listed/estimated] |
 
-## Setup notes
-[Device-specific OS settings, prerequisites, known quirks]
+## Frugal fit
+
+| Factor | Fit |
+| --- | --- |
+| Cost discipline | [How this profile supports cost control] |
+| Local control | [How data and operation stay local] |
+| Operational load | [Skills and maintenance required] |
+| Replaceability | [What can be swapped later] |
+
+## Compatibility
+
+| Runtime or framework | Status | Notes |
+| --- | --- | --- |
+| [Runtime](../runtimes/[file].md) | [Tested/Untested/Expected] | [Integration notes] |
+
+## Limits
+
+- [Limit 1]
+- [Limit 2]
+- [Limit 3]
+
+## Used by
+
+- [Guide or stack page](../../getting-started/[file].md)

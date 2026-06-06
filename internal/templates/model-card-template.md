@@ -1,41 +1,72 @@
-# Model Card: [Model Name]
+---
+description: [Model role in the Frugal AI knowledge base.]
+icon: [gitbook-icon-name]
+---
+
+# [Model Name]
+
+[Describe the model in one short paragraph. State why it is included in the current path.]
 
 ## Identity
-- **Model ID:** [e.g., Qwen/Qwen3.5-9B]
-- **Base model:** [parent model ID, or "None" for base models]
-- **Source:** [Hugging Face or official page URL]
-- **Modality:** [Text / Multimodal]
-- **Languages:** [e.g., en, zh, multilingual (201)]
-- **License:** [name + link]
 
-## Frugal Rating
-- **Rating:** [🟢 Light / 🟡 Moderate / 🔴 Heavy]
-- **Memory footprint:** [e.g., ~6 GB at Q4_K_M, 8K context]
-- **Fits on:** [e.g., Mac Mini 24 GB, Mac 64 GB]
+| Field | Value |
+| --- | --- |
+| Model ID | `[official/model-id]` |
+| Runtime tag | `[runtime-tag]` |
+| Source | [Official source](URL) |
+| Modality | [Text/multimodal/etc.] |
+| Languages | [Source-listed languages] |
+| Model licence | [Licence name and link] |
+| Local guide context | [Context used by the guide] |
 
-## Specs
-- **Parameters:** [e.g., 9B]
-- **Architecture:** [e.g., Dense Transformer, MoE, Vision Encoder + LLM]
-- **Context window:** [e.g., 262K]
-- **Recommended quant:** [e.g., Q4_K_M]
-- **Tool calling:** [Yes (native) / Yes (via prompt) / No]
+## Source confidence
 
-## Inference Performance
-| Device | Quant | Context | Memory | Tokens/sec | TTFT |
-|--------|-------|---------|--------|------------|------|
-| Mac Mini 24 GB | Q4_K_M | 8K | [e.g., ~6 GB] | [e.g., ~35] | [e.g., ~0.8s] |
-| Mac 64 GB | Q6_K | 32K | [e.g., ~12 GB] | [e.g., ~50] | [e.g., ~0.5s] |
-| DGX Spark 128 GB | FP16 | 262K | [e.g., ~24 GB] | [e.g., ~120] | [e.g., ~0.2s] |
+| Claim | Value | Confidence |
+| --- | --- | --- |
+| Parameter count | [value] | [source-listed/estimated] |
+| Download size | [value] | [source-listed/measured] |
+| Context window | [value] | [source-listed/tested locally] |
+| Memory use in guide context | [value] | [measured/estimated] |
 
-## Good For
-- [Specific use case 1]
-- [Specific use case 2]
-- [Specific use case 3]
+Do not publish benchmark values unless they were measured in the documented environment or clearly labelled as source-listed.
 
-## Not Good For
-- [Specific anti-use-case 1]
-- [Specific anti-use-case 2]
+## Why this model fits the path
 
-## Limitations
-- [Specific known weakness 1]
-- [Specific known weakness 2]
+- [Fit reason 1]
+- [Fit reason 2]
+- [Fit reason 3]
+
+## Frugal fit
+
+| Factor | Fit |
+| --- | --- |
+| Local operation | [How it runs locally] |
+| Resource use | [How it fits the hardware profile] |
+| Replaceability | [How it can be swapped later] |
+| Governance | [Licence, data, or review considerations] |
+
+## Good for
+
+- [Use case 1]
+- [Use case 2]
+- [Use case 3]
+
+## Not suitable for
+
+- [Anti-use case 1]
+- [Anti-use case 2]
+
+## Limits
+
+- [Known limit 1]
+- [Known limit 2]
+- [Known limit 3]
+
+## Used by
+
+- [Guide](../../getting-started/[file].md)
+
+## Links
+
+- [Official model page](URL)
+- [Runtime library page](URL)

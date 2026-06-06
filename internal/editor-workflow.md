@@ -244,17 +244,23 @@ Use this decision rule:
 | Draft supports the current public path | Add or keep it in `docs/SUMMARY.md` |
 | Draft introduces a new path | Add supporting components, safeguards, and operations first |
 
-## Suggested Template Updates
+## Template Set
 
-The next internal cleanup should update `internal/templates/` so future drafts match the developed docs:
+The templates in `internal/templates/` now reflect this workflow:
 
-- Add landing page and concept templates.
-- Revise guide template to include fit and limits, component map, verification, troubleshooting, and next step.
-- Remove quick install commands from component templates unless they are one-command references.
-- Replace performance benchmark placeholders with "measured/source-listed/estimated" labels.
-- Add a "not suitable for" or "limits" section to every component template.
-- Replace direct second person examples with institutional or operator-focused phrasing.
-- Add a GitBook rendering note for tables and cards.
+| Template | Use |
+| --- | --- |
+| `landing-page-template.md` | Public entry page for the Frugal AI knowledge base |
+| `concept-page-template.md` | Principles, definitions, and decision framing |
+| `guide-template.md` | One practical build or setup task |
+| `stack-template.md` | Layer map and operating assumptions for a path |
+| `hardware-profile-template.md` | Hardware fit, memory budget, and limits |
+| `runtime-card-template.md` | Runtime fit, settings, compatibility, and limits |
+| `model-card-template.md` | Model identity, source confidence, fit, and limits |
+| `framework-card-template.md` | Interface or framework fit, requirements, and limits |
+| `runbook-template.md` | Operation, health checks, maintenance, recovery, and escalation |
+
+When a template and the editorial guide disagree, follow the editorial guide and update the template.
 
 ## Editor Roles
 
