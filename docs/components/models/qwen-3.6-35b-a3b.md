@@ -28,7 +28,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 
 ## Not suitable for
 
-- The current offline chat guide without a separate measured setup path.
+- The current local AI chat service guide without a separate measured setup path.
 - Low-memory deployments where the 24 GB Ollama package leaves little room for context, runtime, and interface overhead.
 - Production serving without concurrency, latency, security, and recovery testing.
 - Sensitive learner or institutional data without local governance and human review.

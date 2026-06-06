@@ -28,7 +28,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 
 ## Not suitable for
 
-- The current offline chat guide without a separate measured setup path.
+- The current local AI chat service guide without a separate measured setup path.
 - Production serving without concurrency, latency, security, and lifecycle testing.
 - Sensitive learner or institutional data without local governance and human review.
 - Low-memory deployments that cannot absorb context growth or multimodal input overhead.
