@@ -39,7 +39,7 @@ Use Ollama for:
 - Enough memory for the selected model and context window.
 - Disk space for downloaded model files.
 
-For the offline chat path, install it with:
+For the local AI chat service path, install it with:
 
 ```bash
 brew install ollama

@@ -5,7 +5,7 @@ icon: brain
 
 # Gemma 4 12B
 
-Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a candidate model for future Frugal AI paths that need stronger coding, reasoning, agentic, and multimodal capability than the first offline chat path.
+Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a candidate model for future Frugal AI paths that need stronger coding, reasoning, agentic, and multimodal capability than the first local AI chat service path.
 
 ## At a glance
 
