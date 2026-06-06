@@ -15,12 +15,12 @@
 ## Components
 
 * [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
-* [Environment: Development](components/environments/development.md)
+* [Environment: Development environment](components/environments/development.md)
 * [Runtime: Ollama](components/runtimes/ollama.md)
 * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
 * [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)
 * [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
-* [Interface: Open WebUI](components/frameworks/open-webui.md)
+* [Framework: Open WebUI](components/frameworks/open-webui.md)
 
 ## Operations
 

@@ -13,7 +13,7 @@ The first path builds a local AI chat service that runs on the documented develo
 This first path is intentionally small. Broader RAG, agentic, pilot, and production deployments remain in the deeper `reference/` library until they are ready for their own guides.
 {% endhint %}
 
-## Start here
+## First-time here
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Map the build, prerequisites, and supporting pages.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Set up the local runtime, model, and chat interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>10 min - Review the hardware, environment, runtime, model, interface, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Start, stop, back up, update, and troubleshoot the local service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
 
