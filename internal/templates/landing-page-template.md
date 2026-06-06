@@ -3,7 +3,7 @@ description: [Grounded one-sentence description of the Frugal AI knowledge base.
 icon: [gitbook-icon-name]
 ---
 
-# Welcome to Frugal AI Knowledge Base
+# Welcome to Frugal AI knowledge base
 
 [One grounded definition of Frugal AI and the value of the Frugal AI knowledge base.]
 

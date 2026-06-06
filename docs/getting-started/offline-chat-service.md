@@ -57,14 +57,18 @@ Ollama currently lists `qwen3.5:9b` at about 6.6 GB with a 256K context window. 
 
 ## 3. Create a development model profile
 
-Create a local model profile with a smaller context window:
+Create a local model profile with a smaller context window.
 
-```bash
-cat <<'EOF' > /tmp/Modelfile-qwen3.5-dev
+Create `/tmp/Modelfile-qwen3.5-dev` with this content:
+
+```text
 FROM qwen3.5:9b
 PARAMETER num_ctx 8192
-EOF
+```
 
+Create the profile:
+
+```bash
 ollama create qwen3.5-dev -f /tmp/Modelfile-qwen3.5-dev
 ```
 
@@ -133,9 +137,21 @@ The memory and speed values in this guide are expected development values, not a
 
 ## Stop and restart
 
+Stop the browser interface:
+
 ```bash
 docker stop open-webui
+```
+
+Start it again:
+
+```bash
 docker start open-webui
+```
+
+Restart it after a configuration change:
+
+```bash
 docker restart open-webui
 ```
 

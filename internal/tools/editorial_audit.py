@@ -99,7 +99,6 @@ PUBLIC_CHECKS = (
     ),
     PatternCheck(re.compile(r"\bMac Mini\b"), 'use "Mac mini"'),
     PatternCheck(re.compile(r"\b24(?:Gb|GB)\b"), 'use "24 GB" for memory spelling'),
-    PatternCheck(re.compile(r"\bGitBook\b"), 'use "Frugal AI knowledge base" for the public site name'),
     PatternCheck(
         re.compile(r"\b(?:you|your|yours)\b", re.IGNORECASE),
         "avoid direct second person in public docs",
@@ -122,6 +121,11 @@ TEMPLATE_CHECKS = (
     ),
     PatternCheck(re.compile(r"\bMac Mini\b"), 'use "Mac mini"'),
     PatternCheck(re.compile(r"\b24(?:Gb|GB)\b"), 'use "24 GB" for memory spelling'),
+    PatternCheck(re.compile(r"\bFrugal AI Knowledge Base\b"), 'use "Frugal AI knowledge base" for the site name'),
+    PatternCheck(
+        re.compile(r"\b(?:GitBook(?!-icon-name)|documentation site|docs site|these docs|this docs)\b", re.IGNORECASE),
+        'use "Frugal AI knowledge base" for the site name',
+    ),
     PatternCheck(
         re.compile(r"\b(?:you|your|yours)\b", re.IGNORECASE),
         "avoid direct second person in templates",
@@ -155,6 +159,7 @@ def main() -> int:
         if text is None:
             continue
         warnings.extend(scan_patterns(path, text, PUBLIC_CHECKS))
+        warnings.extend(check_public_site_names(path, text))
         warnings.extend(scan_public_placeholders(path, text))
         warnings.extend(check_first_screen_abbreviations(path, text))
         if is_linked_component_page(path):
@@ -251,6 +256,26 @@ def scan_patterns(path: Path, text: str, checks: tuple[PatternCheck, ...]) -> li
             if check.regex.search(line):
                 warnings.append(Warning(path, line_number, check.message))
     return warnings
+
+
+def check_public_site_names(path: Path, text: str) -> list[Warning]:
+    warnings: list[Warning] = []
+    patterns = (
+        re.compile(r"\bFrugal AI Knowledge Base\b"),
+        re.compile(r"\b(?:GitBook(?!-icon-name)|documentation site|docs site|these docs|this docs)\b", re.IGNORECASE),
+    )
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if is_allowed_landing_title(path, line):
+            continue
+        if any(pattern.search(line) for pattern in patterns):
+            warnings.append(Warning(path, line_number, 'use "Frugal AI knowledge base" for the public site name'))
+
+    return warnings
+
+
+def is_allowed_landing_title(path: Path, line: str) -> bool:
+    return path.resolve() == (DOCS_DIR / "README.md").resolve() and line.strip() == "# Welcome to Frugal AI Knowledge Base"
 
 
 def scan_public_placeholders(path: Path, text: str) -> list[Warning]:

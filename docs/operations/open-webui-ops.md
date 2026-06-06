@@ -44,18 +44,33 @@ Pull the latest image:
 docker pull ghcr.io/open-webui/open-webui:main
 ```
 
-Recreate the container while keeping the named data volume:
+Stop the current container:
 
 ```bash
 docker stop open-webui
-docker rm open-webui
+```
 
+Remove the stopped container. The named `open-webui` volume keeps the data:
+
+```bash
+docker rm open-webui
+```
+
+Recreate the container:
+
+```bash
 docker run -d -p 3000:8080 \
   --add-host=host.docker.internal:host-gateway \
   -v open-webui:/app/backend/data \
   --name open-webui \
   --restart always \
   ghcr.io/open-webui/open-webui:main
+```
+
+Confirm it is running:
+
+```bash
+docker ps --filter name=open-webui
 ```
 
 ## Back up chat data
