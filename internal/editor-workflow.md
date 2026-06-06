@@ -68,10 +68,11 @@ Use that sentence to keep the page focused. Remove sections that do not support 
 Use source material in this order:
 
 1. Existing public pages in `docs/`
-2. Internal templates and planning notes in `internal/`
-3. Official project documentation
-4. COL Frugal AI sources
-5. External reference docs for structure only
+2. Naming decisions in `internal/naming-registry.md`
+3. Internal templates and planning notes in `internal/`
+4. Official project documentation
+5. COL Frugal AI sources
+6. External reference docs for structure only
 
 For facts that can change, verify against primary sources before publishing:
 
@@ -97,7 +98,23 @@ Do not paste a template directly into `docs/`. Instead:
 
 Template sections are optional. If a section has no useful content, no verified source, or only a statement that the information could not be found, leave the section out. Do not publish empty headings, placeholder rows, or "not available" filler.
 
-### 5. Draft With the Frugal AI Voice
+### 5. Apply the Naming Gate
+
+Before drafting, choose approved names from `internal/naming-registry.md`.
+
+Check:
+
+- site name: `Frugal AI knowledge base`;
+- first guide name: `Local AI chat service`;
+- operations page name: `Local AI chat service operations`;
+- hardware name: `Mac mini 24 GB`;
+- runtime name: `Ollama`;
+- interface name: `Open WebUI`;
+- model names exactly as listed in the registry.
+
+Use service-level names for guides and operations pages. Use product names inside component pages and technical details.
+
+### 6. Draft With the Frugal AI Voice
 
 Draft rules:
 
@@ -122,7 +139,7 @@ Avoid:
 You can keep your prompts and chat history on your machine.
 ```
 
-### 6. Apply the Technical Writing Gate
+### 7. Apply the Technical Writing Gate
 
 Before review, check technical content:
 
@@ -142,7 +159,7 @@ For procedures, prefer this sequence:
 3. State expected output or verification.
 4. Mention the common exception only if it is likely.
 
-### 7. Review Page Structure
+### 8. Review Page Structure
 
 Check the page against its type.
 
@@ -188,7 +205,7 @@ Runbooks:
 - troubleshooting;
 - escalation notes.
 
-### 8. Review Navigation
+### 9. Review Navigation
 
 Before linking a page from `docs/SUMMARY.md`, confirm:
 
@@ -207,7 +224,7 @@ Model: Qwen3.5-9B
 Interface: Open WebUI
 ```
 
-### 9. Final Editorial Pass
+### 10. Final Editorial Pass
 
 Run this checklist:
 
@@ -221,6 +238,19 @@ Run this checklist:
 - Links point to existing files.
 - GitBook tables and cards are syntactically valid.
 - No internal files, planning notes, or templates are linked.
+- Naming and readability audit passes.
+
+Run the local editorial audit before publication:
+
+```bash
+python3 internal/tools/editorial_audit.py
+```
+
+Expected result:
+
+```text
+No editorial audit warnings.
+```
 
 Useful local checks:
 
@@ -236,7 +266,7 @@ rg -n "\byou\b|\byour\b" docs
 rg -n "^\\|" docs/README.md
 ```
 
-### 10. Publish Decision
+### 11. Publish Decision
 
 Use this decision rule:
 
