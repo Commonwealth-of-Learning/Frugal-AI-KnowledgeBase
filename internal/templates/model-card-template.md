@@ -30,6 +30,23 @@ icon: [gitbook-icon-name]
 
 Do not publish benchmark values unless they were measured in the documented environment or clearly labelled as source-listed.
 
+## Reference settings
+
+Use this section to separate source-listed model defaults, runtime-specific defaults, and Frugal AI guide defaults. Keep it short. Do not paste launch commands or long shell scripts.
+
+| Profile | Context | Temperature | Top-p | Top-k | Min-p | Penalty | Thinking mode | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Frugal AI guide setting | [guide context] | [set/unspecified] | [set/unspecified] | [set/unspecified] | [set/unspecified] | [set/unspecified] | [enabled/disabled/unspecified] | [Guide/runtime] |
+| Source reference setting | [source context] | [value] | [value] | [value] | [value or not listed] | [value or not listed] | [enabled/disabled/optional] | [Official model page/runtime guide] |
+
+Add runtime notes only when they change operation:
+
+- State whether settings are for Ollama, llama.cpp, Unsloth GGUF, MLX, vLLM, or another runtime.
+- Label family-level settings when the source does not list the exact checkpoint.
+- Record whether thinking mode is on by default, optional, or unsupported in the documented runtime.
+- Record context as a measured guide value when the guide uses less than the source-listed maximum.
+- For multimodal models, record input ordering, visual token budget, audio/video limits, and backend support only when source-listed.
+
 ## Why this model fits the path
 
 - [Fit reason 1]
