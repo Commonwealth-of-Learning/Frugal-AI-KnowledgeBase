@@ -3,7 +3,7 @@ title: Redesign Frugal AI GitBook Docs
 type: feat
 status: active
 date: 2026-06-05
-origin: docs/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md
+origin: internal/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md
 ---
 
 # Redesign Frugal AI GitBook Docs
@@ -20,7 +20,7 @@ The implementation should keep `reference/` intact as source material and make `
 
 The repository already contains useful Frugal AI material under `reference/`, but the GitBook-facing `docs/` tree still describes a generic SaaS platform with placeholder pages and broken links. This creates a mismatch between the project identity and the published documentation surface.
 
-The origin requirements define the first useful outcome as a minimal offline chat service path, backed by selected component cards and a consistent editorial style. The plan must preserve that scope and avoid turning the work into a full migration of `reference/` (see origin: `docs/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md`).
+The origin requirements define the first useful outcome as a minimal offline chat service path, backed by selected component cards and a consistent editorial style. The plan must preserve that scope and avoid turning the work into a full migration of `reference/` (see origin: `internal/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md`).
 
 ---
 
@@ -462,7 +462,7 @@ The reader path should move from outcome to supporting detail. Component cards s
 - Review the final docs against the origin requirements and acceptance examples.
 
 **Patterns to follow:**
-- `docs/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md` as acceptance source.
+- `internal/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md` as acceptance source.
 
 **Test scenarios:**
 - Covers AE1. Integration: sidebar has a compact Frugal AI path, not a full `reference/` mirror.
@@ -512,7 +512,7 @@ The reader path should move from outcome to supporting detail. Component cards s
 
 ## Sources & References
 
-- **Origin document:** [docs/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md](../brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md)
+- **Origin document:** [internal/brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md](../brainstorms/2026-06-05-frugal-ai-knowledge-base-redesign-requirements.md)
 - Source library: `reference/index.md`
 - Source guide: `reference/guides/01-offline-chat-service.md`
 - Source stack: `reference/stacks/dev-ollama-qwen3.5.md`
