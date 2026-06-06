@@ -63,7 +63,7 @@ Do not include memory in the DGX Spark title unless future pages distinguish mul
 | --- | --- | --- |
 | Environment | Development environment | Development environment for local testing |
 | Runtime | Ollama | Ollama, the local model runtime |
-| Interface | Open WebUI | Open WebUI, the browser chat interface |
+| Framework | Open WebUI | Open WebUI, the browser chat interface |
 | Model | Qwen3.5-9B | Qwen3.5-9B, the first-path local model |
 | Model | Qwen3.6-35B-A3B | Qwen3.6-35B-A3B, a future MoE evaluation model |
 | Model | Gemma 4 12B | Gemma 4 12B, a future dense multimodal evaluation model |
@@ -73,12 +73,12 @@ Do not include memory in the DGX Spark title unless future pages distinguish mul
 Use role prefixes for component pages in `docs/SUMMARY.md`:
 
 - `Hardware: Mac mini 24 GB`
-- `Environment: Development`
+- `Environment: Development environment`
 - `Runtime: Ollama`
 - `Model: Qwen3.5-9B`
 - `Model: Qwen3.6-35B-A3B`
 - `Model: Gemma 4 12B`
-- `Interface: Open WebUI`
+- `Framework: Open WebUI`
 
 Use reader-facing service names for guide and operations pages:
 
@@ -94,7 +94,7 @@ Use reader-facing service names for guide and operations pages:
 | Hardware card | `Hardware: Mac mini 24 GB` | `Mac mini 24 GB` |
 | Runtime card | `Runtime: Ollama` | `Ollama` |
 | Model card | `Model: Qwen3.5-9B` | `Qwen3.5-9B` |
-| Interface card | `Interface: Open WebUI` | `Open WebUI` |
+| Framework card | `Framework: Open WebUI` | `Open WebUI` |
 
 ## Reader-Friendly Explanations
 

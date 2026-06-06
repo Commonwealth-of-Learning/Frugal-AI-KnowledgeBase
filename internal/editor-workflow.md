@@ -109,7 +109,7 @@ Check:
 - operations page name: `Local AI chat service operations`;
 - hardware name: `Mac mini 24 GB`;
 - runtime name: `Ollama`;
-- interface name: `Open WebUI`;
+- framework name: `Open WebUI`;
 - model names exactly as listed in the registry.
 
 Use service-level names for guides and operations pages. Use product names inside component pages and technical details.
@@ -209,7 +209,7 @@ Runbooks:
 
 Before linking a page from `docs/SUMMARY.md`, confirm:
 
-- the page supports the current offline chat path or a direct reader need;
+- the page supports the current local AI chat service path or a direct reader need;
 - the title is short enough for the GitBook sidebar;
 - the section does not create one-child nesting;
 - legacy stubs remain unlinked unless they preserve existing URLs;
@@ -219,9 +219,12 @@ Use role labels in sidebar component titles when the page name alone is ambiguou
 
 ```text
 Hardware: Mac mini 24 GB
+Environment: Development environment
 Runtime: Ollama
 Model: Qwen3.5-9B
-Interface: Open WebUI
+Model: Qwen3.6-35B-A3B
+Model: Gemma 4 12B
+Framework: Open WebUI
 ```
 
 ### 10. Final Editorial Pass
@@ -250,7 +253,7 @@ Run this checklist:
 - Links point to existing files.
 - GitBook tables and cards are syntactically valid.
 - No internal files, planning notes, or templates are linked.
-- Naming and readability audit passes.
+- Local editorial audit passes.
 
 Useful local checks:
 

@@ -15,7 +15,7 @@ This first path is intentionally small. Broader RAG, agentic, pilot, and product
 
 ## First-time here
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Map the build, prerequisites, and supporting pages.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Set up the local runtime, model, and chat interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>10 min - Review the hardware, environment, runtime, model, interface, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Start, stop, back up, update, and troubleshoot the local service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Map the build, prerequisites, and supporting pages.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Set up the local runtime, model, and chat interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>10 min - Review the hardware, environment, runtime, model, framework, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Start, stop, back up, update, and troubleshoot the local service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
 
 ## Choose a path
 
@@ -42,14 +42,14 @@ Mac mini 24 GB
 | Environment | [Development](components/environments/development.md) |
 | Runtime | [Ollama](components/runtimes/ollama.md) |
 | Model | [Qwen3.5-9B](components/models/qwen-3.5-9b.md) |
-| Interface | [Open WebUI](components/frameworks/open-webui.md) |
+| Framework | [Open WebUI](components/frameworks/open-webui.md) |
 
 ## What this path proves
 
 | Proof point | Why it matters |
 | --- | --- |
 | A useful AI service can run locally. | Prompts and chat history can stay on the machine. |
-| Open components can form a complete stack. | Runtime, model, and interface layers remain inspectable and replaceable. |
+| Open components can form a complete stack. | Runtime, model, and framework layers remain inspectable and replaceable. |
 | Modest hardware can support a first build. | The guide labels planning values and keeps memory use visible. |
 | Operations are part of the build. | Start, stop, update, backup, and recovery steps are documented from the beginning. |
 

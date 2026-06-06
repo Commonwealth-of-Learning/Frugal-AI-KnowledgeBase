@@ -7,7 +7,7 @@ icon: seedling
 
 Frugal AI helps an institution run useful AI services without giving up control of its data, costs, or day-to-day operations.
 
-It starts with a clear education task, then chooses the smallest reliable model, runtime, and infrastructure needed to support that task. In the Frugal AI knowledge base, the first example is a local offline chat service that a small team can run, inspect, and maintain.
+It starts with a clear education task, then chooses the smallest reliable model, runtime, and infrastructure needed to support that task. In the Frugal AI knowledge base, the first example is a local AI chat service that a small team can run, inspect, and maintain.
 
 Frugal AI is not cheap AI. It is local-first, open where practical, and designed to build institutional capacity over time.
 
@@ -128,13 +128,13 @@ Frugal AI is not a shortcut around institutional responsibility.
 
 ## How the first path applies this
 
-The [offline chat service](../getting-started/offline-chat-service.md) is the smallest useful version of the pattern in the Frugal AI knowledge base.
+The [Local AI chat service](../getting-started/offline-chat-service.md) is the smallest useful version of the pattern in the Frugal AI knowledge base.
 
 | Principle | How the current path applies it | What it does not prove yet |
 | --- | --- | --- |
 | Local control | A local machine runs the runtime, model, and chat interface. | It is not a hardened multi-user institutional deployment. |
 | Open components | Ollama, Open WebUI, and an open-weight model keep the stack inspectable and replaceable. | Licences and governance still need review before formal deployment. |
-| Matched resources | The model is selected for a 24 GB Mac Mini development environment. | It does not establish performance for classrooms, campuses, or ministries. |
+| Matched resources | The model is selected for the Mac mini with 24 GB unified memory development environment. | It does not establish performance for classrooms, campuses, or ministries. |
 | Operational capacity | The operations page explains routine start, stop, health checks, and recovery. | It does not replace a full service desk, monitoring, or incident plan. |
 | Human oversight | The service is suitable for experimentation and reviewed use. | It is not an automated assessment, tutoring, or decision system. |
 | Modular growth | The same pattern can later support RAG, LMS support, or helpdesk workflows. | Those paths need their own data governance and quality controls. |
