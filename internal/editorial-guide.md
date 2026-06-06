@@ -6,6 +6,8 @@ This guide translates the tone and writing style of Commonwealth of Learning Fru
 
 For the repeatable page review process, use `internal/editor-workflow.md`.
 
+For approved public names, sidebar labels, hardware names, service names, and reader-friendly term explanations, use `internal/naming-registry.md`.
+
 ## Source Inputs
 
 - [COL Frugal page](https://www.col.org/frugal/)
@@ -133,6 +135,16 @@ The voice should be:
 - Evidence-aware: separate tested facts, estimates, assumptions, and future possibilities.
 - Teacher-centred: position AI as support for educators and institutions, not a replacement for professional judgement.
 
+## Audience Model
+
+Write for two audiences at once.
+
+Education stakeholders need to understand purpose, risk, cost, governance, institutional fit, and the role of human oversight without reading commands.
+
+Developers and maintainers need exact component names, model IDs, runtime tags, settings, commands, verification steps, and source links.
+
+The first screen of a public page should answer the stakeholder question: what is this, why does it matter, and what are the limits? Developer details should remain available lower on the page.
+
 ## Core Message
 
 Frugal AI is not cheap AI. It is a local-first, open, and capacity-building approach to AI infrastructure for education. Its purpose is to help institutions control data, costs, reliability, and expertise while still giving learners and educators useful AI services.
@@ -172,6 +184,16 @@ Keep people in the loop. When AI affects learners, assessment, content, or insti
 Use examples from education. Prefer scenarios such as local chat, course search, teacher support, OER adaptation, administrative helpdesk, and Moodle support.
 
 Use the site name consistently. In public-facing copy, call the site the "Frugal AI knowledge base". Avoid substituting "GitBook", "docs", "documentation site", or "this knowledge base" when referring to the published reader experience. Use "GitBook" only when discussing the publishing platform or GitBook-specific syntax.
+
+Use the naming registry before drafting or revising public pages. Service names, hardware names, model names, runtime names, interface names, and sidebar labels should match `internal/naming-registry.md`.
+
+Prefer service-level names over tool-level names when naming guides and runbooks. Use `Local AI chat service` for the current first build guide and `Local AI chat service operations` for the operations page.
+
+Use exact product names where precision matters: `Ollama`, `Open WebUI`, `Qwen3.5-9B`, `Qwen3.6-35B-A3B`, and `Gemma 4 12B`.
+
+Explain unfamiliar technical terms on first use. Expand `Mixture of Experts` before using `MoE`, and explain `runtime`, `interface`, `context window`, and `open-weight model` when they first appear on a page for general readers.
+
+Use `Mac mini 24 GB` for the current hardware card and `Mac mini with 24 GB unified memory` on first mention. Use `GB`, not `Gb`, for memory.
 
 ## Technical Writing Style
 
