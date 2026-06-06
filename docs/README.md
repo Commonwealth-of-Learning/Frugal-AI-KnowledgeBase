@@ -3,7 +3,7 @@ description: Build a local, low-cost AI service with open components and clear o
 icon: hand-wave
 ---
 
-# Frugal AI
+# Welcome to Frugal AI Knowledge Base
 
 Frugal AI helps institutions run useful AI services locally, with clear control over data, cost, and operations.
 
@@ -13,14 +13,14 @@ The Frugal AI knowledge base starts with one practical path: a private offline c
 This first path is intentionally small. Broader RAG, agentic, pilot, and production deployments remain in the deeper `reference/` library until they are ready for their own guides.
 {% endhint %}
 
-## First time here?
+## Start here
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Map the build, prerequisites, and supporting pages.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Offline chat service</strong></td><td>30-45 min - Set up the local runtime, model, and chat interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>10 min - Review the hardware, environment, runtime, model, interface, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Open WebUI operations</strong></td><td>10 min - Start, stop, back up, update, and troubleshoot the local service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
 
 ## Choose a path
 
 | Reader need | Start with | Why |
-| --- | --- |
+| --- | --- | --- |
 | Build a local service | [Quickstart](getting-started/quickstart.md) | Fast orientation before running commands. |
 | Evaluate the Frugal AI fit | [Frugal AI principles](concepts/frugal-ai-principles.md) | Sovereignty, cost, resilience, and capacity framing. |
 | Understand the architecture | [How the stack fits together](concepts/how-the-stack-fits-together.md) | A layer-by-layer map of the first stack. |
