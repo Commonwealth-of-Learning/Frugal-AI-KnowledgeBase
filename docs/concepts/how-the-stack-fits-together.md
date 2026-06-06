@@ -55,7 +55,7 @@ Future guide paths should reuse the same pattern:
 
 - RAG path: add document ingestion, embeddings, vector storage, and source governance.
 - Agent path: add tool calling, workflow control, and stronger safety checks.
-- Pilot path: add multi-user access, backup policy, monitoring, and support ownership.
+- Pilot path: add the [Pilot environment](../components/environments/pilot.md), multi-user access, backup policy, monitoring, and support ownership.
 - Production path: add serving infrastructure, security review, incident response, and lifecycle management.
 
 Do not add a component to the Frugal AI knowledge base just because it exists in `reference/`. Add it when a guide needs it.

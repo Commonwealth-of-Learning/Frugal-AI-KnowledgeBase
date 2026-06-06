@@ -21,6 +21,7 @@ Use the current docs as the stronger examples:
 - Concept: `docs/concepts/frugal-ai-principles.md`
 - Stack explanation: `docs/concepts/how-the-stack-fits-together.md`
 - Component card: `docs/components/runtimes/ollama.md`
+- Environment profile: `docs/components/environments/development.md`
 - Model card: `docs/components/models/qwen-3.5-9b.md`
 - Runbook: `docs/operations/open-webui-ops.md`
 
@@ -222,6 +223,7 @@ Use role labels in sidebar component titles when the page name alone is ambiguou
 ```text
 Hardware: Mac mini 24 GB
 Environment: Development environment
+Environment: Pilot environment
 Runtime: Ollama
 Model: Qwen3.5-9B
 Model: Qwen3.6-35B-A3B
@@ -293,6 +295,7 @@ The templates in `internal/templates/` now reflect this workflow:
 | `guide-template.md` | One practical build or setup task |
 | `stack-template.md` | Layer map and operating assumptions for a path |
 | `hardware-profile-template.md` | Hardware fit, memory budget, and limits |
+| `environment-profile-template.md` | Development, pilot, or production assumptions and governance |
 | `runtime-card-template.md` | Runtime fit, settings, compatibility, and limits |
 | `model-card-template.md` | Model identity, source confidence, fit, and limits |
 | `framework-card-template.md` | Interface or framework fit, requirements, and limits |

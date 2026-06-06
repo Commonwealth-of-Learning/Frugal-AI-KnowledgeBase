@@ -17,6 +17,7 @@
 * [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
 * [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)
 * [Environment: Development environment](components/environments/development.md)
+* [Environment: Pilot environment](components/environments/pilot.md)
 * [Runtime: Ollama](components/runtimes/ollama.md)
 * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
 * [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)

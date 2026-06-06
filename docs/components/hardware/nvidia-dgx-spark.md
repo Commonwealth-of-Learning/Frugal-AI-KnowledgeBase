@@ -11,7 +11,7 @@ NVIDIA DGX Spark is a compact Grace Blackwell desktop system for larger local AI
 
 | Question | Answer |
 | --- | --- |
-| Current role | Development and pilot hardware for future Frugal AI paths. |
+| Current role | Development and [pilot environment](../environments/pilot.md) hardware for future Frugal AI paths. |
 | Best fit | Larger local models, multimodal evaluation, fine-tuning experiments, and pilot services that need more memory headroom. |
 | CPU or chip | NVIDIA Grace Blackwell architecture with integrated GPU and CPU; source-listed CPU is a 20-core Arm processor. |
 | Memory | 128 GB unified system memory. |
@@ -22,7 +22,7 @@ NVIDIA DGX Spark is a compact Grace Blackwell desktop system for larger local AI
 Use this profile for:
 
 - Development work that needs larger models than the current Mac mini path can comfortably support.
-- Pilot environments where a local system should serve a small controlled user group.
+- [Pilot environments](../environments/pilot.md) where a local system should serve a small controlled user group.
 - Multimodal, coding, retrieval, or agentic evaluation that needs more memory headroom.
 - Local experimentation with fine-tuning or model adaptation before a managed deployment decision.
 
@@ -72,7 +72,7 @@ NVIDIA states that DGX Spark supports AI models up to 200 billion parameters, or
 | Runtime or framework | Status | Notes |
 | --- | --- | --- |
 | [Ollama](../runtimes/ollama.md) | Candidate | Requires DGX Spark software validation before documenting a runnable guide. |
-| [Open WebUI](../frameworks/open-webui.md) | Candidate | Useful for pilot chat interfaces after account, access, backup, and monitoring decisions are made. |
+| [Open WebUI](../frameworks/open-webui.md) | Candidate | Useful for [pilot environment](../environments/pilot.md) chat interfaces after account, access, backup, and monitoring decisions are made. |
 
 ## Limits
 
@@ -84,7 +84,7 @@ NVIDIA states that DGX Spark supports AI models up to 200 billion parameters, or
 ## Current and future use
 
 - The Mac mini remains the documented first development path.
-- NVIDIA DGX Spark is the candidate hardware profile for future development and pilot paths.
+- NVIDIA DGX Spark is the candidate hardware profile for future development and [pilot environment](../environments/pilot.md) paths.
 - Future DGX Spark guides should document the runtime, model, concurrency, monitoring, backup, and recovery assumptions before being linked as a runnable path.
 
 ## Source confidence

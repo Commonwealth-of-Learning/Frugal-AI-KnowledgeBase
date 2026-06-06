@@ -81,6 +81,6 @@ Future paths should be added only when the supporting components, safeguards, an
 | Future path | Additional work required |
 | --- | --- |
 | RAG with local course materials | Document ingestion, retrieval checks, source governance, and privacy review. |
-| Pilot deployment | Account management, backups, monitoring, support ownership, and acceptable-use rules. |
+| [Pilot environment](components/environments/pilot.md) | Account management, backups, monitoring, support ownership, and acceptable-use rules. |
 | Teacher-in-the-loop workflows | Review points, quality criteria, feedback loops, and educator guidance. |
 | Production readiness | Security review, incident response, lifecycle management, and service ownership. |

@@ -62,6 +62,7 @@ Do not include memory in the DGX Spark title unless future pages distinguish mul
 | Component type | Approved name | First-use explanation |
 | --- | --- | --- |
 | Environment | Development environment | Development environment for local testing |
+| Environment | Pilot environment | Pilot environment for controlled shared use before production |
 | Runtime | Ollama | Ollama, the local model runtime |
 | Framework | Open WebUI | Open WebUI, the browser chat interface |
 | Model | Qwen3.5-9B | Qwen3.5-9B, the first-path local model |
@@ -75,6 +76,7 @@ Use role prefixes for component pages in `docs/SUMMARY.md`:
 - `Hardware: Mac mini 24 GB`
 - `Hardware: NVIDIA DGX Spark`
 - `Environment: Development environment`
+- `Environment: Pilot environment`
 - `Runtime: Ollama`
 - `Model: Qwen3.5-9B`
 - `Model: Qwen3.6-35B-A3B`
@@ -94,6 +96,8 @@ Use reader-facing service names for guide and operations pages:
 | Operations | `Local AI chat service operations` | `Local AI chat service operations` |
 | Hardware card | `Hardware: Mac mini 24 GB` | `Mac mini 24 GB` |
 | Hardware card | `Hardware: NVIDIA DGX Spark` | `NVIDIA DGX Spark` |
+| Environment card | `Environment: Development environment` | `Development environment` |
+| Environment card | `Environment: Pilot environment` | `Pilot environment` |
 | Runtime card | `Runtime: Ollama` | `Ollama` |
 | Model card | `Model: Qwen3.5-9B` | `Qwen3.5-9B` |
 | Framework card | `Framework: Open WebUI` | `Open WebUI` |

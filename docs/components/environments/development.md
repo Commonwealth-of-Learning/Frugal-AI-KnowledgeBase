@@ -13,6 +13,7 @@ The development environment is a local, single-user setup for learning, testing,
 | --- | --- |
 | Current role | Defines the assumptions for the local development path. |
 | Best fit | Learning, testing, and small demonstrations before pilot decisions. |
+| Next environment | [Pilot environment](pilot.md) for controlled shared use. |
 | Main caution | Development defaults should not be treated as production settings. |
 
 ## When to use it
@@ -45,6 +46,8 @@ Before this becomes a shared pilot, decide:
 - How model and prompt changes are logged.
 - What human review is required for education use.
 
-## Used by this guide
+## Related pages
 
 Start with [Quickstart](../../getting-started/quickstart.md), then follow [Local AI chat service](../../getting-started/offline-chat-service.md).
+
+For controlled shared use, see [Pilot environment](pilot.md).
