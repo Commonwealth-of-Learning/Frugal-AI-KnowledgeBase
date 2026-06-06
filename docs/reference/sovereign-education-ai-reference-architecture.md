@@ -150,6 +150,51 @@ A pilot plan should specify:
 - governance roles, steering committee, reporting schedule, and scale-up criteria;
 - timeline from setup through month 6 and month 12 review.
 
+## Glossary of key terms
+
+The annex uses these terms when describing a sovereign education-AI pilot.
+
+| Term | Meaning |
+| --- | --- |
+| Sovereign AI | An approach where a nation retains strategic and technical control over AI infrastructure, including data ownership, hosting environments, model weights, and alignment policies, reducing long-term vendor lock-in. |
+| Frugal AI | Deployment of highly optimised open-source AI models on lower-specification, consumer-grade, or edge hardware to support predictable costs and technical sustainability in resource-constrained settings. |
+| Teacher-in-the-Loop | A pedagogical and operational framework where automated systems remain assistive tools and educators review, modify, or approve AI-generated content before it reaches learners. |
+| Retrieval-Augmented Generation | A technical architecture that improves model outputs by retrieving content from an authoritative, pre-vetted knowledge base before generating a response. |
+| Privacy airlock | A data-processing layer that intercepts outbound requests and scans, redacts, or masks personally identifiable information before data moves to an external network or cloud endpoint. |
+| Cloud bursting | An operational design where routine tasks are handled locally and highly complex reasoning or processing tasks are routed to external cloud infrastructure within a secure sovereignty envelope. |
+| Edge device or node | Localised hardware, such as a school server, desktop computer, or micro-hub, that can run model inference and host applications without requiring an active internet connection. |
+| Store-and-forward synchronisation | A network communication method where data or logs are collected locally during offline periods and transmitted to a central hub when a network connection becomes available. |
+
+For a broader list of terms, see the [Glossary](glossary.md).
+
+## Self-assessment checklist for ministries
+
+This diagnostic checklist helps technical teams assess baseline readiness and architectural fit before a localised, sovereign education-AI pilot.
+
+### Data sovereignty and infrastructure lifecycle
+
+- [ ] **Data jurisdiction:** Student and teacher interaction logs are legally bound to remain within national geographic boundaries or contractually protected sovereign cloud instances.
+- [ ] **Connectivity profile:** Power and network reliability in the target region have been mapped to determine whether school edge nodes, district hubs, or both are required.
+- [ ] **Hardware assessment:** Consumer-grade or existing institutional hardware can run small, optimised open-source models locally.
+
+### Knowledge layer and content integrity
+
+- [ ] **Vetted source access:** National syllabi, textbooks, and teacher guides are available in clean digital text formats for a retrieval knowledge base.
+- [ ] **Version control:** A designated authority updates, patches, and approves source knowledge repositories when the national curriculum changes.
+- [ ] **Open licensing default:** Procurement and generation guidelines define how publicly funded outputs use open licences where appropriate.
+
+### Pedagogical oversight and risk management
+
+- [ ] **Workflow enforcement:** The software architecture prevents high-risk learner-facing generated content from being distributed until an authorised teacher approves it.
+- [ ] **User interface design:** Teacher interfaces use structured, task-specific forms where possible instead of relying only on open-ended prompt fields.
+- [ ] **Auditability:** The system saves distinct versions of raw AI output and final teacher-edited output so model accuracy and human modification rates can be reviewed.
+
+### Operational capacity and policy
+
+- [ ] **Technical partnership:** A public university, research centre, or internal agency can support local model configuration and deployment.
+- [ ] **Data privacy alignment:** The pilot structure complies with national data protection rules for data minimisation and log management.
+- [ ] **Budget predictability:** The compute architecture keeps monthly operational costs predictable and reduces exposure to commercial subscription volatility.
+
 ## How this connects to the Frugal AI knowledge base
 
 The current Frugal AI knowledge base starts with a small development path: a local AI chat service on documented hardware. The COL annex describes a broader ministry-level reference architecture.
