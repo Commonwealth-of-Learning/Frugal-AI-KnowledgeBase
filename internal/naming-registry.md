@@ -52,7 +52,7 @@ Use `GB`, not `Gb`, for memory.
 
 | Use | Approved name | First mention |
 | --- | --- | --- |
-| Current first path hardware | Mac mini 24 GB | Mac mini with 24 GB unified memory |
+| Current first path hardware | Mac mini 24 GB | Mac mini with 24 GB unified memory and an Apple M4 or newer chip |
 | Future higher-capability hardware | NVIDIA DGX Spark | NVIDIA DGX Spark |
 
 Do not include memory in the DGX Spark title unless future pages distinguish multiple DGX Spark memory configurations.
@@ -73,6 +73,7 @@ Do not include memory in the DGX Spark title unless future pages distinguish mul
 Use role prefixes for component pages in `docs/SUMMARY.md`:
 
 - `Hardware: Mac mini 24 GB`
+- `Hardware: NVIDIA DGX Spark`
 - `Environment: Development environment`
 - `Runtime: Ollama`
 - `Model: Qwen3.5-9B`
@@ -92,6 +93,7 @@ Use reader-facing service names for guide and operations pages:
 | Guide | `Local AI chat service` | `Local AI chat service` |
 | Operations | `Local AI chat service operations` | `Local AI chat service operations` |
 | Hardware card | `Hardware: Mac mini 24 GB` | `Mac mini 24 GB` |
+| Hardware card | `Hardware: NVIDIA DGX Spark` | `NVIDIA DGX Spark` |
 | Runtime card | `Runtime: Ollama` | `Ollama` |
 | Model card | `Model: Qwen3.5-9B` | `Qwen3.5-9B` |
 | Framework card | `Framework: Open WebUI` | `Open WebUI` |

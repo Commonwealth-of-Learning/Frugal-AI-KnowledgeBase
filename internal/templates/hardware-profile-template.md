@@ -14,6 +14,8 @@ icon: [gitbook-icon-name]
 | Current role | [How this hardware is used in the Frugal AI knowledge base] |
 | Best fit | [Plain-language workload fit] |
 | Memory | [Use GB, not Gb] |
+| CPU or chip | [Specify the CPU, chip, or architecture. For Mac mini profiles, use Apple M4 or newer.] |
+| Environment fit | [Development, pilot, or production] |
 | Main caution | [Most important hardware limit] |
 
 ## When to use it
@@ -28,8 +30,10 @@ Use this profile when:
 
 | Field | Value |
 | --- | --- |
+| Environment fit | [Development, pilot, or production] |
+| CPU or chip | [e.g., Apple M4 or newer, NVIDIA Grace Blackwell] |
 | Memory | [e.g., 24 GB unified] |
-| Compute | [e.g., Apple M4, NVIDIA GB10] |
+| GPU or accelerator | [e.g., Apple integrated GPU, NVIDIA Blackwell] |
 | Storage | [e.g., 512 GB SSD] |
 | Operating system | [e.g., macOS 15+] |
 | Network assumption | [e.g., local/offline capable] |
