@@ -18,6 +18,7 @@
 * [Environment: Development](components/environments/development.md)
 * [Runtime: Ollama](components/runtimes/ollama.md)
 * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
+* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
 * [Interface: Open WebUI](components/frameworks/open-webui.md)
 
 ## Operations
