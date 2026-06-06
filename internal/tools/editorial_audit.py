@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 
-ROOT = Path.cwd()
+ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = ROOT / "docs"
 SUMMARY_PATH = DOCS_DIR / "SUMMARY.md"
 TEMPLATES_DIR = ROOT / "internal" / "templates"
@@ -36,7 +36,7 @@ TEMPLATES_REQUIRING_AT_A_GLANCE = (
     "framework-card-template.md",
 )
 
-PLACEHOLDER_NAMES = (
+PLACEHOLDER_CUE_WORDS = (
     "value",
     "model name",
     "guide title",
@@ -47,6 +47,15 @@ PLACEHOLDER_NAMES = (
     "source",
     "component",
     "service name",
+    "fit",
+    "out-of-scope",
+    "requirement",
+    "setting",
+    "claim",
+    "limit",
+    "example",
+    "title",
+    "path",
 )
 
 
@@ -99,10 +108,6 @@ PUBLIC_CHECKS = (
         re.compile(r"\b(?:not found|cannot be found|could not be found|not available)\b", re.IGNORECASE),
         "omit empty or unverifiable filler instead of publishing it",
     ),
-    PatternCheck(
-        re.compile(r"\[(?:" + "|".join(re.escape(name) for name in PLACEHOLDER_NAMES) + r")\]", re.IGNORECASE),
-        "replace bracketed placeholder before publication",
-    ),
     PatternCheck(re.compile(r"\b(?:TODO|TBD)\b", re.IGNORECASE), "replace TODO/TBD placeholder before publication"),
 )
 
@@ -150,6 +155,7 @@ def main() -> int:
         if text is None:
             continue
         warnings.extend(scan_patterns(path, text, PUBLIC_CHECKS))
+        warnings.extend(scan_public_placeholders(path, text))
         warnings.extend(check_first_screen_abbreviations(path, text))
         if is_linked_component_page(path):
             warnings.extend(require_at_a_glance(path, text, "linked component page"))
@@ -245,6 +251,53 @@ def scan_patterns(path: Path, text: str, checks: tuple[PatternCheck, ...]) -> li
             if check.regex.search(line):
                 warnings.append(Warning(path, line_number, check.message))
     return warnings
+
+
+def scan_public_placeholders(path: Path, text: str) -> list[Warning]:
+    warnings: list[Warning] = []
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        for placeholder in bracketed_placeholder_candidates(line):
+            warnings.append(
+                Warning(path, line_number, f"replace bracketed placeholder before publication: [{placeholder}]")
+            )
+
+    return warnings
+
+
+def bracketed_placeholder_candidates(line: str) -> list[str]:
+    candidates: list[str] = []
+
+    for match in re.finditer(r"\[([^\[\]\n]+)\]", line):
+        if is_markdown_link_or_image(line, match):
+            continue
+
+        content = match.group(1).strip()
+        if is_placeholder_content(content):
+            candidates.append(content)
+
+    return candidates
+
+
+def is_markdown_link_or_image(line: str, match: re.Match[str]) -> bool:
+    if match.start() > 0 and line[match.start() - 1] == "!":
+        return True
+
+    next_char_index = match.end()
+    return next_char_index < len(line) and line[next_char_index] in "(]"
+
+
+def is_placeholder_content(content: str) -> bool:
+    normalized = re.sub(r"[\s_]+", " ", content.strip().lower())
+    normalized = re.sub(r"\s*-\s*", "-", normalized)
+
+    return any(has_placeholder_cue(normalized, cue) for cue in PLACEHOLDER_CUE_WORDS)
+
+
+def has_placeholder_cue(normalized_content: str, cue: str) -> bool:
+    normalized_cue = re.sub(r"\s*-\s*", "-", cue.lower())
+    pattern = r"(?<![a-z0-9])" + re.escape(normalized_cue) + r"(?![a-z0-9])"
+    return re.search(pattern, normalized_content) is not None
 
 
 def is_linked_component_page(path: Path) -> bool:
