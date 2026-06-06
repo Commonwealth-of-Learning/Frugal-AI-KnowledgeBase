@@ -222,8 +222,8 @@ Use role labels in sidebar component titles when the page name alone is ambiguou
 
 ```text
 Hardware: Mac mini 24 GB
-Environment: Development environment
-Environment: Pilot environment
+Environment: Development
+Environment: Pilot
 Runtime: Ollama
 Model: Qwen3.5-9B
 Model: Qwen3.6-35B-A3B
