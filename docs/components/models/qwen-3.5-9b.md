@@ -5,39 +5,44 @@ icon: brain
 
 # Qwen3.5-9B
 
-Qwen3.5-9B is the model used in the first offline chat path. It is a dense 9B multimodal model in the Qwen3.5 family and provides a practical baseline for local chat on the 24 GB Mac Mini path.
+Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac Mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
 
-The Frugal AI knowledge base uses a smaller local context than the source-listed maximum. Treat this card as an operational profile, not a local benchmark claim.
+## At a glance
 
-## Identity
-
-| Field | Value |
+| Question | Answer |
 | --- | --- |
-| Model ID | `Qwen/Qwen3.5-9B` |
-| Ollama tag | `qwen3.5:9b` |
-| Source | [Hugging Face model page](https://huggingface.co/Qwen/Qwen3.5-9B) |
-| Architecture | Dense hybrid Gated DeltaNet and Gated Attention model with a vision encoder |
-| MoE status | Dense checkpoint. The Qwen3.5 family includes sparse MoE models, but this 9B card and config list FFN layers rather than routed-expert fields. |
-| Modality, upstream | Text, image, and video-style visual inputs with text output |
-| Modality, Ollama tag | Text and image, source-listed |
-| Model licence | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| Local guide context | 8K, chosen for a comfortable development setup |
+| Current role | Used by the first offline chat service. |
+| Best fit | A first private local chat service for development, orientation, and testing. |
+| Local fit | Fits the documented 24 GB Mac Mini path with the guide's 8K context setting. |
+| Model type | Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain. |
+| Inputs | Text and image in Ollama; upstream sources also describe video-style visual inputs. |
+| Main caution | The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency. |
 
-## Source confidence
+## Good for
 
-| Claim | Value | Confidence |
-| --- | --- | --- |
-| Parameter count | 9B | Source-listed by Hugging Face |
-| Layers | 32 | Source-listed by Hugging Face |
-| Hidden dimension | 4096 | Source-listed by Hugging Face |
-| Token embedding | 248,320, padded | Source-listed by Hugging Face |
-| Upstream context window | 262,144 tokens native, extensible up to 1,010,000 tokens | Source-listed by Hugging Face |
-| Ollama context window | 256K tokens | Source-listed by Ollama |
-| Ollama size | 6.6 GB | Source-listed by Ollama |
-| Unsloth 9B memory bands | 5.5 GB, 6.5 GB, 9 GB, 13 GB, and 19 GB for 3-bit, 4-bit, 6-bit, 8-bit, and BF16 | Source-listed by Unsloth for Qwen3.5 GGUF-style use |
-| Memory use in first path | Comfortable at 8K context on the documented 24 GB Mac Mini path | Guide setting, not a full 256K measurement |
+- First-path local chat: a compact baseline for running the offline chat service.
+- General assistance: explanation, summarisation, drafting, and local knowledge-base support.
+- Light coding assistance: code explanation, small edits, debugging support, and test-writing prompts, with human review.
+- Basic multimodal work: image-based questions, document screenshots, and visual reasoning where the runtime supports them.
+- Long-context experiments after memory and latency are measured beyond the guide's 8K setting.
 
-Do not treat source benchmark tables as local performance claims. Measure speed, memory use, quality, and failure modes on the target machine before increasing context length or using the model for production work.
+## Not suitable for
+
+- Production serving without concurrency, latency, security, and recovery testing.
+- Full 256K or 1M-token local contexts on the 24 GB path without separate measurement.
+- Sensitive learner or institutional data without local governance and human review.
+- Autonomous agentic actions with real side effects unless permissions, audit logs, rollback, and human approval are designed into the workflow.
+- Audio or speech workflows; this card covers the text and visual model path.
+
+## Frugal fit
+
+| Factor | Fit |
+| --- | --- |
+| Local operation | Runs without a cloud API key once downloaded. |
+| Resource use | Ollama lists `qwen3.5:9b` at 6.6 GB, but context and visual inputs can add memory pressure. |
+| Hardware | Fits the 24 GB Mac Mini development path with an 8K context. |
+| Replaceability | Can be swapped later if a guide needs a different model profile. |
+| Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
 ## Reference settings
 
@@ -58,51 +63,39 @@ Reference notes:
 - Unsloth states that Qwen3.5 Small models, including 9B, have reasoning disabled by default in its GGUF flow.
 - Unsloth currently states that its Qwen3.5 GGUFs do not work in Ollama because of separate vision projection files. This does not remove the Ollama `qwen3.5:9b` registry tag used by the first path, but it does mean Unsloth GGUF settings need a llama.cpp-compatible backend until separately tested.
 
-## Why this model fits the first path
+## Technical details
 
-- It has a ready-to-run Ollama tag with a small source-listed local size.
-- It gives the first path a local multimodal baseline without requiring a cloud API key after download.
-- Its dense 9B profile is easier to reason about operationally than a MoE model with separate total and active parameter counts.
-- It supports long-context use upstream, while the public guide keeps context smaller to manage memory.
-- It is capable enough for general chat, explanation, document-style tasks, and light coding assistance in a development setting.
-
-## Frugal fit
-
-| Factor | Fit |
+| Field | Value |
 | --- | --- |
-| Local operation | Runs without a cloud API key once downloaded. |
-| Resource use | Ollama lists `qwen3.5:9b` at 6.6 GB, but context and visual inputs can add memory pressure. |
-| Hardware | Fits the 24 GB Mac Mini development path with an 8K context. |
-| Replaceability | Can be swapped later if a guide needs a different model profile. |
-| Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
+| Model ID | `Qwen/Qwen3.5-9B` |
+| Ollama tag | `qwen3.5:9b` |
+| Source | [Hugging Face model page](https://huggingface.co/Qwen/Qwen3.5-9B) |
+| Architecture | Dense hybrid Gated DeltaNet and Gated Attention model with a vision encoder |
+| MoE status | Dense checkpoint. The Qwen3.5 family includes sparse MoE models, but this 9B card and config list FFN layers rather than routed-expert fields. |
+| Model licence | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| Local guide context | 8K, chosen for a comfortable development setup |
 
-## Good for
+## Source confidence
 
-- First-path local chat: a compact baseline for running the offline chat service.
-- General assistance: explanation, summarisation, drafting, and local knowledge-base support.
-- Coding assistance: lightweight code explanation, small edits, debugging support, and test-writing prompts, with human review.
-- Agentic prototypes: local tool-use experiments where the application layer controls permissions, state, and side effects.
-- Multimodal understanding: image-based questions, document screenshots, visual reasoning, and video-frame style inputs where the runtime supports them.
-- Long-context experiments: staged tests beyond the 8K guide setting after memory and latency are measured.
-- Multilingual tasks: broad language coverage where local validation confirms quality for the target language.
+| Claim | Value | Confidence |
+| --- | --- | --- |
+| Parameter count | 9B | Source-listed by Hugging Face |
+| Layers | 32 | Source-listed by Hugging Face |
+| Hidden dimension | 4096 | Source-listed by Hugging Face |
+| Token embedding | 248,320, padded | Source-listed by Hugging Face |
+| Upstream context window | 262,144 tokens native, extensible up to 1,010,000 tokens | Source-listed by Hugging Face |
+| Ollama context window | 256K tokens | Source-listed by Ollama |
+| Ollama size | 6.6 GB | Source-listed by Ollama |
+| Unsloth 9B memory bands | 5.5 GB, 6.5 GB, 9 GB, 13 GB, and 19 GB for 3-bit, 4-bit, 6-bit, 8-bit, and BF16 | Source-listed by Unsloth for Qwen3.5 GGUF-style use |
 
-## Not suitable for
-
-- Production serving without concurrency, latency, security, and recovery testing.
-- Full 256K or 1M-token local contexts on the 24 GB path without separate measurement.
-- Sensitive learner or institutional data without local governance and human review.
-- Tasks requiring guaranteed code correctness, security review, or formal assessment decisions without expert validation.
-- Autonomous agentic actions with real side effects unless permissions, audit logs, rollback, and human approval are designed into the workflow.
-- Audio or speech workflows; this card covers the text and visual model path.
+Do not treat source benchmark tables as local performance claims. Measure speed, memory use, quality, and failure modes on the target machine before increasing context length or using this model for production work.
 
 ## Limits
 
-- Qwen3.5-9B is treated here as a dense checkpoint. Family-level Qwen3.5 MoE statements should not be read as this card's MoE status.
+- Source-listed context limits are not the same as the Frugal AI guide setting.
 - Ollama currently lists `qwen3.5:9b` with text and image input. Other runtime variants may expose different modality support.
 - Unsloth's Qwen3.5 GGUF guidance is runtime-specific and should not be copied into the Ollama path without testing.
-- Larger context windows can consume much more memory than the 8K guide setting.
 - Thinking mode and long answers can increase latency and token use.
-- Agentic behaviour depends on the surrounding application, tool permissions, logs, and recovery process.
 - Coding output still requires review, testing, and security checks before use in production systems.
 
 ## Used by
