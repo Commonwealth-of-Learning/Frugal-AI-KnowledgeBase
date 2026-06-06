@@ -5,7 +5,7 @@ icon: brain
 
 # Qwen3.5-9B
 
-Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
+Qwen3.5-9B is the model used in the first local AI chat service path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
 
 ## At a glance
 

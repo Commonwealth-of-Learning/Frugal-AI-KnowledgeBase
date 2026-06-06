@@ -26,8 +26,8 @@ Expected time: about 30 minutes if Docker and Ollama are already installed.
 
 - Docker Desktop is installed and running.
 - Ollama is installed.
-- You have 20 GB free disk space.
-- You can open a terminal and a browser on the same machine.
+- 20 GB of free disk space is available.
+- A terminal and browser are available on the same machine.
 
 ## 1. Start Ollama
 
