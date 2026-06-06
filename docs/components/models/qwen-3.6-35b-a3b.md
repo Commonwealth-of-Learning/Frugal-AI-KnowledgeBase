@@ -13,7 +13,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 | --- | --- |
 | Current role | Candidate model for future Frugal AI paths. |
 | Best fit | Agentic coding, tool use, repository-level reasoning, and multimodal evaluation. |
-| Local fit | Better suited to a measured higher-memory path than the current 24 GB Mac Mini first path. |
+| Local fit | Better suited to a measured higher-memory path than the current 24 GB Mac mini first path. |
 | Model type | MoE model: 35B total parameters with about 3B active per token. The full package still affects memory use. |
 | Inputs | Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels. |
 | Main caution | Ollama lists the Q4_K_M package at 24 GB, before context, runtime, interface, and visual-input overhead. |
@@ -93,7 +93,7 @@ Do not treat source benchmark tables as local performance claims. Measure speed,
 ## Limits
 
 - The active 3B parameter count does not remove the memory cost of the larger model package, KV cache, vision encoder, or long context.
-- Ollama lists a 24 GB Q4_K_M package, which is already close to the full memory of the current 24 GB Mac Mini path before runtime overhead.
+- Ollama lists a 24 GB Q4_K_M package, which is already close to the full memory of the current 24 GB Mac mini path before runtime overhead.
 - Qwen's maximum-context serving examples target larger serving setups such as SGLang or vLLM with tensor parallelism. Local Ollama behaviour needs separate testing.
 - Video support and frame sampling are runtime-specific.
 - Thinking mode can increase token use and latency. Preserve-thinking behaviour should be evaluated before use in agentic workflows.

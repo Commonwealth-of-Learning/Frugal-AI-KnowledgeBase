@@ -7,4 +7,4 @@ icon: compass
 
 The generic project walkthrough has been replaced by the Frugal AI offline chat guide.
 
-Continue with [Offline chat service](offline-chat-service.md).
+Continue with [Local AI chat service](offline-chat-service.md).

@@ -5,7 +5,7 @@ icon: brain
 
 # Qwen3.5-9B
 
-Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac Mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
+Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
 
 ## At a glance
 
@@ -13,7 +13,7 @@ Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal
 | --- | --- |
 | Current role | Used by the first offline chat service. |
 | Best fit | A first private local chat service for development, orientation, and testing. |
-| Local fit | Fits the documented 24 GB Mac Mini path with the guide's 8K context setting. |
+| Local fit | Fits the documented 24 GB Mac mini path with the guide's 8K context setting. |
 | Model type | Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain. |
 | Inputs | Text and image in Ollama; upstream sources also describe video-style visual inputs. |
 | Main caution | The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency. |
@@ -40,7 +40,7 @@ Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal
 | --- | --- |
 | Local operation | Runs without a cloud API key once downloaded. |
 | Resource use | Ollama lists `qwen3.5:9b` at 6.6 GB, but context and visual inputs can add memory pressure. |
-| Hardware | Fits the 24 GB Mac Mini development path with an 8K context. |
+| Hardware | Fits the 24 GB Mac mini development path with an 8K context. |
 | Replaceability | Can be swapped later if a guide needs a different model profile. |
 | Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
@@ -100,7 +100,7 @@ Do not treat source benchmark tables as local performance claims. Measure speed,
 
 ## Used by
 
-Follow [Offline chat service](../../getting-started/offline-chat-service.md) to create the local `qwen3.5-dev` profile.
+Follow [Local AI chat service](../../getting-started/offline-chat-service.md) to create the local `qwen3.5-dev` profile.
 
 ## Links
 
