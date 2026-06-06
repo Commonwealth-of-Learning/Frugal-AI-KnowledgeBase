@@ -7,6 +7,15 @@ icon: [gitbook-icon-name]
 
 [Describe the device in one short paragraph. State whether this is a development, pilot, or production profile.]
 
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | [How this hardware is used in the Frugal AI knowledge base] |
+| Best fit | [Plain-language workload fit] |
+| Memory | [Use GB, not Gb] |
+| Main caution | [Most important hardware limit] |
+
 ## When to use it
 
 Use this profile when:

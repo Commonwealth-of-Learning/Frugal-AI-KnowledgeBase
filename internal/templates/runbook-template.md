@@ -3,9 +3,11 @@ description: [Operations scope for the service.]
 icon: [gitbook-icon-name]
 ---
 
-# [Service] operations
+# [Service name] operations
 
 [State what this runbook operates and when it should be used.]
+
+Use the service name from `internal/naming-registry.md`; do not use an implementation tool as the public runbook title when the page operates a broader service.
 
 This is a [development/pilot/production] runbook. It is not [out-of-scope operating model].
 

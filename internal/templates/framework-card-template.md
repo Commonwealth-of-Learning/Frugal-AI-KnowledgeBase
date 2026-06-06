@@ -7,6 +7,15 @@ icon: [gitbook-icon-name]
 
 [Describe what the framework provides and which user experience it enables.]
 
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | [How this interface or framework is used] |
+| Best fit | [Plain-language user workflow] |
+| Requires | [Main dependency] |
+| Main caution | [Most important interface or framework limit] |
+
 ## When to use it
 
 Use this framework when:

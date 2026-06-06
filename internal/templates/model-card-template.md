@@ -7,7 +7,7 @@ icon: [gitbook-icon-name]
 
 [Describe the model in one short paragraph. State whether it is used in a current guide or is a candidate for evaluation.]
 
-Build from the top down: reader decision first, technical details later. Leave out any section that would contain only placeholders, unverified claims, or a statement that the information is unavailable.
+Build from the top down: reader decision first, technical details later. Use `internal/naming-registry.md` for approved model, runtime, hardware, and service names. Leave out any section that would contain only placeholders, unverified claims, or a statement that the information is unavailable.
 
 ## At a glance
 

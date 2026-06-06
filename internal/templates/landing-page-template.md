@@ -15,12 +15,7 @@ icon: [gitbook-icon-name]
 
 ## Start here
 
-Use GitBook cards or a short list. Each entry should include estimated time, outcome, and link.
-
-- [Quickstart](getting-started/quickstart.md): [time] - [orientation outcome]
-- [Guide](getting-started/[file].md): [time] - [build outcome]
-- [Stack explanation](concepts/[file].md): [time] - [architecture outcome]
-- [Runbook](operations/[file].md): [time] - [operations outcome]
+Use [Local AI chat service](../getting-started/offline-chat-service.md) for the first build path.
 
 ## Choose a path
 

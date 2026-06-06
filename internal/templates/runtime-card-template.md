@@ -7,6 +7,15 @@ icon: [gitbook-icon-name]
 
 [Describe what the runtime does and why it is used in the path.]
 
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | [How this runtime is used] |
+| Best fit | [Plain-language fit] |
+| Runs | [Local machine/server/device] |
+| Main caution | [Most important runtime limit] |
+
 ## When to use it
 
 Use this runtime when:

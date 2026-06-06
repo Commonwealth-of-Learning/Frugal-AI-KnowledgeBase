@@ -7,6 +7,8 @@ icon: [gitbook-icon-name]
 
 [State the practical outcome in one short paragraph. Name the service, local environment, and main components.]
 
+Choose the guide title from `internal/naming-registry.md` when the guide belongs to an approved public path.
+
 {% hint style="info" %}
 Estimated time: [time]. This is a [development/pilot/production] path.
 {% endhint %}
