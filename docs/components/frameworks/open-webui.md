@@ -1,0 +1,49 @@
+---
+description: Browser chat interface for local models.
+icon: comments
+---
+
+# Open WebUI
+
+Open WebUI provides the browser chat interface for the offline chat service. It connects to a local model runtime such as Ollama and gives users a familiar chat experience.
+
+## When to use it
+
+Use Open WebUI when you need:
+
+- A local ChatGPT-like interface.
+- Conversation history on the local machine.
+- A fast way to demonstrate a local model.
+- A simple first application layer on top of Ollama.
+
+## Requirements
+
+- A running model runtime, such as [Ollama](../runtimes/ollama.md).
+- Docker Desktop for the path in this guide.
+- About 1-2 GB of extra memory for the application, depending on use.
+
+## Frugal fit
+
+| Factor | Fit |
+| --- | --- |
+| Local operation | Runs locally in Docker. |
+| Data control | Chat data stays in the local Open WebUI volume. |
+| Replaceability | Can later be replaced by another app layer or a custom interface. |
+| Operational load | Simple enough for a first local path, but still needs backup and update steps. |
+
+## Limits
+
+- This page covers a single-machine development setup.
+- Multi-user pilots need clearer account, backup, and support rules.
+- Document upload in a chat interface is not the same as a governed RAG system.
+
+## Used by this guide
+
+Follow [Offline chat service](../../getting-started/offline-chat-service.md) to run Open WebUI and connect it to Ollama.
+
+Use [Open WebUI operations](../../operations/open-webui-ops.md) after setup.
+
+## Links
+
+- [Open WebUI](https://openwebui.com)
+- [Open WebUI GitHub](https://github.com/open-webui/open-webui)

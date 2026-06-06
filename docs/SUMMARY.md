@@ -2,26 +2,28 @@
 
 * [Welcome](README.md)
 
-## Getting Started
+## Start here
 
-* [Getting started](getting-started/getting-started.md)
 * [Quickstart](getting-started/quickstart.md)
-* [Your first project](getting-started/your-first-project.md)
+* [Offline chat service](getting-started/offline-chat-service.md)
 
-## Core concepts
+## Concepts
 
-* [Core concepts](core-concepts/core-concepts.md)
-* [Workspaces and projects](core-concepts/workspaces-and-projects.md)
-* [Permissions](core-concepts/permissions.md)
+* [Frugal AI principles](concepts/frugal-ai-principles.md)
+* [How the stack fits together](concepts/how-the-stack-fits-together.md)
 
-## Guides
+## Components
 
-* [Guides](guides/guides.md)
-* [Custom domains](guides/custom-domains.md)
-* [Automations](guides/automations.md)
+* [Mac Mini 24 GB](components/hardware/mac-mini-24gb.md)
+* [Development environment](components/environments/development.md)
+* [Ollama](components/runtimes/ollama.md)
+* [Qwen3.5-9B](components/models/qwen-3.5-9b.md)
+* [Open WebUI](components/frameworks/open-webui.md)
+
+## Operations
+
+* [Open WebUI operations](operations/open-webui-ops.md)
 
 ## Reference
 
-* [Reference](reference/reference.md)
-* [Configuration](reference/configuration.md)
 * [Glossary](reference/glossary.md)

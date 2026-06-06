@@ -1,89 +1,55 @@
 ---
-description: Go from sign-up to your first deploy in under five minutes.
+description: See the first Frugal AI path and prepare your local machine.
 icon: bolt
 ---
 
 # Quickstart
 
-This quickstart gets you to your first deploy as fast as possible. We'll skip most of the configuration — you can refine things later once you have something running.
+This quickstart shows the smallest useful Frugal AI path in this knowledge base: a private offline chat service on a local Mac.
+
+You will run an open-weight model with Ollama, connect Open WebUI, and verify that chat works without a cloud API key.
 
 {% hint style="success" %}
-**Estimated time: 5 minutes.** All you need is an account and a project to deploy.
+Expected time: about 45 minutes on a Mac Mini or Apple Silicon Mac with 24 GB memory.
 {% endhint %}
 
-## Steps
+## What you will build
 
-{% stepper %}
-{% step %}
-#### Create your workspace
+| Layer | Component | Purpose |
+| --- | --- | --- |
+| Hardware | [Mac Mini 24 GB](../components/hardware/mac-mini-24gb.md) | Local machine with enough memory for a light model and chat interface. |
+| Environment | [Development environment](../components/environments/development.md) | Single-user setup for learning and testing. |
+| Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model locally and exposes an API. |
+| Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Light multimodal model for local chat and document-style tasks. |
+| Framework | [Open WebUI](../components/frameworks/open-webui.md) | Browser-based chat interface. |
+| Operations | [Open WebUI operations](../operations/open-webui-ops.md) | Start, stop, update, back up, and troubleshoot the service. |
 
-Sign in and create a new workspace. The workspace name appears in URLs and email notifications, so pick something recognisable.
+## Before you start
 
-```
-yourcompany
-```
-{% endstep %}
+You need:
 
-{% step %}
-#### Connect a source
+- Apple Silicon Mac with 24 GB memory or more.
+- macOS 15 or later.
+- 20 GB free disk space.
+- Terminal access.
+- Docker Desktop.
+- Homebrew, recommended for installing command-line tools.
 
-Link a repository from your version control provider, or upload a project directly.
-
-{% tabs %}
-{% tab title="Repository" %}
-Click **Connect repository**, authenticate with your provider, and select the repository to import. The platform will detect your framework automatically.
-{% endtab %}
-
-{% tab title="Upload" %}
-Drag and drop a project folder, or use the CLI:
+If you are preparing a fresh Mac, install the basics first:
 
 ```bash
-platform deploy ./my-project
+brew install curl jq git ollama
+brew install --cask docker
 ```
-{% endtab %}
 
-{% tab title="Template" %}
-Browse the template gallery and click **Use template**. A new project will be created from the template in your workspace.
-{% endtab %}
-{% endtabs %}
-{% endstep %}
+Open Docker Desktop once after installing it so it can finish its first-run setup.
 
-{% step %}
-#### Configure your build
+## Build path
 
-Most projects work with the auto-detected settings. If yours doesn't, override them in **Project settings → Build**.
+1. Read [How the stack fits together](../concepts/how-the-stack-fits-together.md) if you want the architecture first.
+2. Follow [Offline chat service](offline-chat-service.md) to run the model and chat interface.
+3. Use [Open WebUI operations](../operations/open-webui-ops.md) when you need to restart, update, or back up the service.
 
-```yaml
-build:
-  command: npm run build
-  output: dist/
-  node: 20
-```
-{% endstep %}
+## What is not covered yet
 
-{% step %}
-#### Deploy
-
-Hit **Deploy**. Your project will build and go live at a generated subdomain. You can promote it to production or add a custom domain at any time.
-
-{% hint style="info" %}
-First builds typically take 1–3 minutes. Subsequent builds are faster because dependencies are cached.
-{% endhint %}
-{% endstep %}
-{% endstepper %}
-
-## What's next?
-
-You've shipped something — now make it yours.
-
-{% content-ref url="../guides/custom-domains.md" %}
-[custom-domains.md](../guides/custom-domains.md)
-{% endcontent-ref %}
-
-{% content-ref url="../core-concepts/permissions.md" %}
-[permissions.md](../core-concepts/permissions.md)
-{% endcontent-ref %}
-
-{% content-ref url="../guides/automations.md" %}
-[automations.md](../guides/automations.md)
-{% endcontent-ref %}
+This first path does not cover RAG, Dify, multi-agent workflows, DGX Spark, or production serving. Those need their own guide paths because they add new components, risks, and operations work.

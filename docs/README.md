@@ -1,30 +1,38 @@
 ---
-description: >-
-  Everything you need to build, deploy, and manage your projects on the
-  platform.
+description: Build a local, low-cost AI service with open components and clear operational limits.
 icon: hand-wave
 ---
 
-# Welcome
+# Frugal AI
 
-Welcome to the platform. These docs cover everything from your first project to advanced workflows — pick a starting point below or ask the Assistant to jump straight to what you need.
+Frugal AI treats AI as local institutional infrastructure, not a remote service dependency. It prioritises offline operation, open components, data sovereignty, and practical capacity building.
 
-<button type="button" class="button primary" data-action="ask" data-icon="gitbook-assistant">Ask a question…</button>
+This GitBook is a small working path through the knowledge base. It shows how to run a private offline chat service on a Mac Mini using Ollama, Qwen3.5-9B, and Open WebUI.
 
-<button type="button" class="button secondary" data-action="ask" data-query="How do I deploy my first project" data-icon="rocket-launch">Deploy your first project</button><button type="button" class="button secondary" data-action="ask" data-query="How do I set up a custom domain" data-icon="globe">Set up a custom domain</button><button type="button" class="button secondary" data-action="ask" data-query="How do I invite my team" data-icon="user-group">Invite your team</button>
-
-***
-
-{% hint style="success" icon="sparkles" %}
-**New: scheduled deploys and team-level audit logs.** Schedule deploys for any future date and review every action taken in your workspace.
-
-<a href="https://gitbook.com/docs/changelog" class="button secondary">See what's new</a>
+{% hint style="info" %}
+This first path is intentionally small. Broader RAG, agentic, pilot, and production deployments remain in the deeper `reference/` library until they are ready for their own guides.
 {% endhint %}
 
-## Where to start
+## Start here
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-rocket-launch" style="color:$primary;">:rocket-launch:</i></h4></td><td><h4>Getting started</h4></td><td>Set up your account and ship your first project in minutes.</td><td><a href="/broken/pages/PbYb0GukRhiS4qCHdRal">Broken link</a></td></tr><tr><td><h4><i class="fa-book" style="color:$primary;">:book:</i></h4></td><td><h4>Core concepts</h4></td><td>Understand workspaces, projects, and how permissions work.</td><td><a href="/broken/pages/EFXeLTHVDQLFgK0Iy51O">Broken link</a></td></tr><tr><td><h4><i class="fa-graduation-cap" style="color:$primary;">:graduation-cap:</i></h4></td><td><h4>Guides</h4></td><td>Walkthroughs for common tasks like custom domains and automations.</td><td><a href="/broken/pages/oUUNprjFZmH3rqDBvb9h">Broken link</a></td></tr><tr><td><h4><i class="fa-book-open" style="color:$primary;">:book-open:</i></h4></td><td><h4>Reference</h4></td><td>Detailed configuration options, limits, and terminology.</td><td><a href="/broken/pages/AYVJmAXbSHYSDodrPBYA">Broken link</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>See what you will build, what you need, and where each part fits.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Offline chat service</strong></td><td>Build a private ChatGPT-like service that runs on your local machine.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>Understand the hardware, runtime, model, framework, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr></tbody></table>
 
-## Popular tasks
+## What this path gives you
 
-<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-type="content-ref"></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>For builders</h4></td><td><a href="getting-started/quickstart.md">quickstart.md</a></td><td><a href="getting-started/your-first-project.md">your-first-project.md</a></td><td><a href="guides/custom-domains.md">custom-domains.md</a></td></tr><tr><td><h4>For admins</h4></td><td><a href="core-concepts/permissions.md">permissions.md</a></td><td><a href="reference/configuration.md">configuration.md</a></td><td><a href="core-concepts/workspaces-and-projects.md">workspaces-and-projects.md</a></td></tr><tr><td><h4>For developers</h4></td><td><a href="guides/automations.md">automations.md</a></td><td><a href="reference/glossary.md">glossary.md</a></td><td><a href="reference/configuration.md">configuration.md</a></td></tr></tbody></table>
+| Outcome | Why it matters |
+| --- | --- |
+| Local chat service | Prompts and chat history stay on your machine. |
+| Open-weight model | You can inspect, replace, and operate the model without a cloud API key. |
+| Clear memory budget | The guide explains what fits on a 24 GB Mac Mini and where estimates are used. |
+| Operations runbook | You can start, stop, update, back up, and troubleshoot the service after setup. |
+
+## Frugal AI principles
+
+The practical docs follow four principles:
+
+1. Keep data local by default.
+2. Prefer open, inspectable components.
+3. Match model size to available hardware.
+4. Build local skills and operational confidence before scaling.
+
+Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full framing.

@@ -1,146 +1,104 @@
 ---
-description: Definitions of terms you'll encounter in the docs and dashboard.
+description: Plain-language terms used in the Frugal AI docs.
 icon: bookmark
 ---
 
 # Glossary
 
-Plain-language definitions of terms used across the platform. Click any entry to expand it.
-
-***
-
-## A — F
+Plain-language definitions for the first Frugal AI path.
 
 <details>
 
-<summary><strong>API key</strong></summary>
+<summary><strong>Context window</strong></summary>
 
-A secret token that authenticates requests to the platform's API. Keys are scoped to a workspace and inherit the permissions of whoever created them. See [permissions.md](../core-concepts/permissions.md "mention").
+The amount of text a model can consider at one time. Larger context windows can handle longer conversations or documents, but they also use more memory.
 
 </details>
 
 <details>
 
-<summary><strong>Automation</strong></summary>
+<summary><strong>Data sovereignty</strong></summary>
 
-A piece of code that runs in response to a trigger — for example, a deploy completing or a comment being posted. See [automations.md](../guides/automations.md "mention").
-
-</details>
-
-<details>
-
-<summary><strong>Build</strong></summary>
-
-The process of turning your source code into deployable output. Each build produces an artefact, which is then promoted to a deploy.
+The ability for an institution or country to control where its data is stored, processed, accessed, and governed.
 
 </details>
 
 <details>
 
-<summary><strong>Custom domain</strong></summary>
+<summary><strong>Frugal AI</strong></summary>
 
-Your own domain (like `docs.yourcompany.com`) attached to a project, in place of the auto-generated subdomain. See [custom-domains.md](../guides/custom-domains.md "mention").
-
-</details>
-
-<details>
-
-<summary><strong>Deploy</strong></summary>
-
-A live version of your project, served from a URL. Each successful build can be promoted to a deploy. The current production deploy is the one served at your primary URL.
+An approach to AI that prioritises local control, cost discipline, open components, offline capability, and long-term institutional capacity.
 
 </details>
 
 <details>
 
-<summary><strong>Environment</strong></summary>
+<summary><strong>Local inference</strong></summary>
 
-The set of variables, secrets, and configuration that applies when your project runs. Most projects have at least two environments: production and preview.
-
-</details>
-
-***
-
-## G — P
-
-<details>
-
-<summary><strong>Guest</strong></summary>
-
-A workspace role that can view published deploys but nothing else. Guests don't count towards your member limit. See [permissions.md](../core-concepts/permissions.md "mention").
+Running an AI model on a local machine instead of sending prompts to a remote cloud API.
 
 </details>
 
 <details>
 
-<summary><strong>Member</strong></summary>
+<summary><strong>Model card</strong></summary>
 
-Anyone with access to a workspace. Each member has a role that determines what they can do. Different from a guest, which is a special role that doesn't count towards your member limit.
-
-</details>
-
-<details>
-
-<summary><strong>Preview deploy</strong></summary>
-
-A deploy created automatically for a branch or pull request, served at a unique URL. Used to test changes before they reach production.
+A short reference page that explains what a model is, what it fits, what it needs, and what its limits are.
 
 </details>
 
 <details>
 
-<summary><strong>Project</strong></summary>
+<summary><strong>Offline-first</strong></summary>
 
-A deployable unit. Each project has its own source, builds, deploys, environment, and domains. Projects are isolated from each other within a workspace. See [workspaces-and-projects.md](../core-concepts/workspaces-and-projects.md "mention").
-
-</details>
-
-***
-
-## R — Z
-
-<details>
-
-<summary><strong>Role</strong></summary>
-
-A workspace-level designation that determines what a member can do. Roles are: Guest, Viewer, Reviewer, Editor, and Admin. See [permissions.md](../core-concepts/permissions.md "mention").
+Designed to keep working without a continuous internet connection. Some setup steps, such as downloading a model, may still need internet access.
 
 </details>
 
 <details>
 
-<summary><strong>Source</strong></summary>
+<summary><strong>Ollama</strong></summary>
 
-The repository or upload that produces your project's builds. A project has exactly one source.
-
-</details>
-
-<details>
-
-<summary><strong>SSO</strong></summary>
-
-Single sign-on. Lets your team authenticate with your identity provider (Okta, Azure AD, etc.) instead of platform-specific credentials. Available on Business and Enterprise plans.
+The local runtime used in this path to download, run, and serve the model.
 
 </details>
 
 <details>
 
-<summary><strong>Trigger</strong></summary>
+<summary><strong>Open WebUI</strong></summary>
 
-The event that starts an automation — for example, `deploy.succeeded` or `webhook.received`. See [automations.md](../guides/automations.md "mention").
+The browser chat interface used in this path. It connects to Ollama and stores its data locally.
 
 </details>
 
 <details>
 
-<summary><strong>Workspace</strong></summary>
+<summary><strong>Quantisation</strong></summary>
 
-The top-level container for a team's work. Owns billing, members, and projects. See [workspaces-and-projects.md](../core-concepts/workspaces-and-projects.md "mention").
+A way to reduce model size and memory use by storing weights with fewer bits. Smaller quantised models fit on modest hardware, but quality can vary.
 
 </details>
 
-***
+<details>
 
-{% hint style="info" %}
-A term missing? [Suggest it in the community](https://community.example.com/) — we update this glossary regularly.
-{% endhint %}
+<summary><strong>Runbook</strong></summary>
+
+An operations page that explains how to start, stop, check, update, back up, restore, and troubleshoot a service.
+
+</details>
+
+<details>
+
+<summary><strong>Runtime</strong></summary>
+
+The software that loads the model, runs inference, and exposes an interface for applications.
+
+</details>
+
+<details>
+
+<summary><strong>Stack</strong></summary>
+
+A tested combination of hardware, environment, runtime, model, framework, and operations practices.
+
+</details>
