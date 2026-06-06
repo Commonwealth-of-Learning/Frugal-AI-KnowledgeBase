@@ -5,7 +5,7 @@ icon: sitemap
 
 # How the stack fits together
 
-The Frugal AI docs use a small repeatable structure:
+The Frugal AI knowledge base uses a small repeatable structure:
 
 ```text
 components -> stack -> guide -> operations
@@ -58,4 +58,4 @@ Future guide paths should reuse the same pattern:
 - Pilot path: add multi-user access, backup policy, monitoring, and support ownership.
 - Production path: add serving infrastructure, security review, incident response, and lifecycle management.
 
-Do not add a component to the public GitBook just because it exists in `reference/`. Add it when a guide needs it.
+Do not add a component to the Frugal AI knowledge base just because it exists in `reference/`. Add it when a guide needs it.

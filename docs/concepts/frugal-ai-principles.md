@@ -7,7 +7,7 @@ icon: seedling
 
 Frugal AI helps an institution run useful AI services without giving up control of its data, costs, or day-to-day operations.
 
-It starts with a clear education task, then chooses the smallest reliable model, runtime, and infrastructure needed to support that task. In this knowledge base, the first example is a local offline chat service that a small team can run, inspect, and maintain.
+It starts with a clear education task, then chooses the smallest reliable model, runtime, and infrastructure needed to support that task. In the Frugal AI knowledge base, the first example is a local offline chat service that a small team can run, inspect, and maintain.
 
 Frugal AI is not cheap AI. It is local-first, open where practical, and designed to build institutional capacity over time.
 
@@ -128,7 +128,7 @@ Frugal AI is not a shortcut around institutional responsibility.
 
 ## How the first path applies this
 
-The [offline chat service](../getting-started/offline-chat-service.md) is the smallest useful version of the pattern in this knowledge base.
+The [offline chat service](../getting-started/offline-chat-service.md) is the smallest useful version of the pattern in the Frugal AI knowledge base.
 
 | Principle | How the current path applies it | What it does not prove yet |
 | --- | --- | --- |

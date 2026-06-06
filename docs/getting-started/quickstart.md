@@ -5,7 +5,7 @@ icon: bolt
 
 # Quickstart
 
-This quickstart shows the smallest useful Frugal AI path in this knowledge base: a private offline chat service on a local Mac.
+This quickstart shows the smallest useful Frugal AI path in the Frugal AI knowledge base: a private offline chat service on a local Mac.
 
 You will run an open-weight model with Ollama, connect Open WebUI, and verify that chat works without a cloud API key.
 

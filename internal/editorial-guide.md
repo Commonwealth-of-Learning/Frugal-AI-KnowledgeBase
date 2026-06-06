@@ -10,6 +10,10 @@ This guide translates the tone and writing style of Commonwealth of Learning Fru
 - [Frugal AI: A Blueprint for Digital Sovereignty in Commonwealth Education](https://www.col.org/news/frugal-ai-a-blueprint-for-digital-sovereignty-in-commonwealth-education/), 28 November 2025
 - [Frugal AI: A Roadmap to Sovereign GenAI for Education](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/), 13 February 2026
 - [COL Connections, April 2026, Vol. 31 No. 1](https://oasis.col.org/server/api/core/bitstreams/51a0562e-d4d1-4cd6-9011-18963b498475/content), especially the Frugal AI focus and tech trends sections
+- [NVIDIA DGX Spark build page](https://build.nvidia.com/spark)
+- [Dify Docs introduction](https://docs.dify.ai/en/use-dify/getting-started/introduction)
+- [Claude Platform docs home](https://platform.claude.com/docs/en/home)
+- [Docker Docs home](https://docs.docker.com/)
 
 ## Source Tone And Style
 
@@ -53,6 +57,67 @@ Use this for: quickstart introductions, summaries, callouts, and scannable guida
 
 Avoid carrying over: hype words, urgency without evidence, or claims that overpromise speed, scale, or impact.
 
+## Documentation Site Patterns
+
+### NVIDIA DGX Spark
+
+Tone: developer-facing, action-oriented, and workflow-led. The page starts from a concrete local AI outcome, then routes readers into time-boxed playbooks.
+
+Style: short headlines, compact descriptions, visible time estimates, and playbook cards. It uses "First Time Here?" as a routing device before exposing a larger catalogue.
+
+Use this for: landing-page entry cards, quickstart labels, and future guide indexes where each path has a clear task, time estimate, and outcome.
+
+Avoid carrying over: large catalogues before the Frugal AI knowledge base has enough complete paths to support them.
+
+### Dify Docs
+
+Tone: concise, product-definition first, and low-friction. The introduction uses a short definition followed by a small set of routing choices.
+
+Style: minimal prose, clear section labels, and simple next-step cards such as quick start, concepts, self-hosting, and tutorials.
+
+Use this for: a short landing-page definition, clean routing cards, and first-page navigation that keeps the reader moving.
+
+Avoid carrying over: broad platform categories that do not exist yet in the Frugal AI knowledge base.
+
+### Claude Platform Docs
+
+Tone: build-oriented and lifecycle-aware. The home page routes readers by build surface and then by stages such as getting started, building, evaluating, shipping, and operating.
+
+Style: short framing copy, direct calls into core workflows, and progressive disclosure from quickstart to production concerns.
+
+Use this for: organising Frugal AI content around a lifecycle: orient, build, evaluate, operate, then scale.
+
+Avoid carrying over: code-forward landing-page patterns. The Frugal AI knowledge base landing page should route to procedural guides rather than present code immediately.
+
+### Docker Docs
+
+Tone: task-led and question-led. The home page starts with common reader questions and broad entry points such as getting started, guides, manuals, and reference.
+
+Style: simple question prompts, featured topics, and clear content types.
+
+Use this for: reader-path tables and "start from the task" framing.
+
+Avoid carrying over: broad product documentation structure before the knowledge base has multiple mature product areas.
+
+### Combined Landing-Page Pattern
+
+The Frugal AI knowledge base landing page should:
+
+- open with one grounded definition and one concrete first path;
+- route first-time readers into time-boxed next steps;
+- separate builder, evaluator, maintainer, and contributor needs;
+- show the first stack as a compact layer map;
+- state what the first path proves;
+- state what is out of scope;
+- mark future paths as future work until supporting pages exist.
+
+It should not:
+
+- open with policy language before the practical path is visible;
+- show long shell scripts or custom code snippets;
+- imply production readiness before operations and governance pages exist;
+- expose a large catalogue of future topics as if the pages already exist.
+
 ## Unified Knowledge Base Voice
 
 Write as a practical institutional field guide. The knowledge base should be direct enough for builders, sober enough for education leaders, and clear enough for readers who are evaluating risk, cost, and capacity.
@@ -88,6 +153,8 @@ Use short paragraphs. One idea per paragraph is usually enough.
 
 Prefer concrete nouns and verbs. Say "run the model locally", "check the service", or "keep data on the institution's server" instead of abstract phrases such as "enable transformational capability".
 
+Avoid direct second person in public docs. Prefer "the institution", "the local team", "the operator", "the guide", or imperative steps with no subject. Use direct second person only when removing it would make a safety warning or procedural instruction unclear.
+
 Use British and Commonwealth spelling where natural: "optimised", "localised", "specialised", "centre", "licence" as a noun, and "licensing" as a verb.
 
 Use "cloud dependency" carefully. Do not imply that all cloud use is wrong. Say what risk is being managed: cost volatility, bandwidth reliance, data jurisdiction, vendor lock-in, or governance complexity.
@@ -100,7 +167,46 @@ Keep people in the loop. When AI affects learners, assessment, content, or insti
 
 Use examples from education. Prefer scenarios such as local chat, course search, teacher support, OER adaptation, administrative helpdesk, and Moodle support.
 
+Use the site name consistently. In public-facing copy, call the site the "Frugal AI knowledge base". Avoid substituting "GitBook", "docs", "documentation site", or "this knowledge base" when referring to the published reader experience. Use "GitBook" only when discussing the publishing platform or GitBook-specific syntax.
+
+## Technical Writing Style
+
+Use progressive disclosure. Landing pages and concept pages should route and frame. Guides and runbooks should carry procedural detail. Component pages should explain fit, limits, and verification.
+
+Keep code out of landing pages unless the code is the product's main entry point. For the Frugal AI knowledge base, the landing page should point to the quickstart and guide instead of embedding commands.
+
+Avoid customised code samples unless the page is specifically about code. Prefer standard commands, documented tool options, configuration tables, or short excerpts that can be verified locally.
+
+Avoid long shell scripts. A shell block should normally contain one command. Two or three commands are acceptable only when they form one clear step. Longer setup flows should be split into numbered steps with explanations and verification after each step.
+
+Do not use heredocs, generated scripts, or multi-command pipelines in public docs unless there is no simpler documented path. If a long script is unavoidable, move it into a maintained file and link to it from the guide.
+
+For commands, include the expected result or a verification command. A command without a check leaves the operator guessing.
+
+Prefer stable values over environment-specific values. Avoid local usernames, machine names, private paths, tokens, or values copied from a single development workstation.
+
+For configuration, show the smallest meaningful excerpt. Explain the field being changed and the reason for the value.
+
+For errors, write from symptom to cause to fix. Keep troubleshooting entries short and testable.
+
+For time estimates, label them as estimates unless they have been measured in the documented environment.
+
 ## Page Patterns
+
+### Landing Pages
+
+Use this order:
+
+1. Grounded definition
+2. First practical path
+3. Time-boxed entry cards
+4. Reader-path table
+5. Stack or workflow map
+6. Proof points
+7. Scope boundaries
+8. Future paths
+
+Landing pages should not include shell commands, custom code, or long setup instructions. Link to the relevant quickstart or guide instead.
 
 ### Guides
 
@@ -199,6 +305,9 @@ Before publishing a knowledge base page, check that it:
 - Names human oversight where learner-facing or policy-sensitive AI is involved.
 - Uses consistent terms: Frugal AI, local-first, open-weight, teacher-in-the-loop, data sovereignty.
 - Uses British/Commonwealth spelling.
+- Avoids direct second person except where needed for safety or clarity.
+- Avoids customised code samples unless the page is specifically about code.
+- Avoids long shell scripts and multi-command setup blocks.
 - Avoids hype, deficit framing, and vendor-hostile language.
 - Keeps headings clear enough for both human readers and LLM retrieval.
 - Links to the next practical page rather than ending in abstract framing.
