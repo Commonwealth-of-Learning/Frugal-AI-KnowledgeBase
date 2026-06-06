@@ -15,7 +15,10 @@ icon: [gitbook-icon-name]
 
 ## Start here
 
-Use [Local AI chat service](../getting-started/offline-chat-service.md) for the first build path.
+| Need | Start with | Why |
+| --- | --- | --- |
+| Understand the first path | [Quickstart](getting-started/quickstart.md) | Fast orientation before running commands. |
+| Build the service | [Local AI chat service](getting-started/offline-chat-service.md) | Build the first private local chat service. |
 
 ## Choose a path
 
