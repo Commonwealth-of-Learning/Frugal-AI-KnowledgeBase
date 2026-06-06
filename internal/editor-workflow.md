@@ -218,13 +218,25 @@ Before linking a page from `docs/SUMMARY.md`, confirm:
 Use role labels in sidebar component titles when the page name alone is ambiguous:
 
 ```text
-Hardware: Mac Mini 24 GB
+Hardware: Mac mini 24 GB
 Runtime: Ollama
 Model: Qwen3.5-9B
 Interface: Open WebUI
 ```
 
 ### 10. Final Editorial Pass
+
+Run the local editorial audit before publication:
+
+```bash
+python3 internal/tools/editorial_audit.py
+```
+
+Expected result:
+
+```text
+No editorial audit warnings.
+```
 
 Run this checklist:
 
@@ -239,18 +251,6 @@ Run this checklist:
 - GitBook tables and cards are syntactically valid.
 - No internal files, planning notes, or templates are linked.
 - Naming and readability audit passes.
-
-Run the local editorial audit before publication:
-
-```bash
-python3 internal/tools/editorial_audit.py
-```
-
-Expected result:
-
-```text
-No editorial audit warnings.
-```
 
 Useful local checks:
 
