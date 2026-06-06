@@ -7,4 +7,4 @@ icon: globe
 
 The old web-hosting template is not part of the Frugal AI showcase.
 
-For the current build path, use [Offline chat service](../getting-started/offline-chat-service.md).
+For the current build path, use [Local AI chat service](../getting-started/offline-chat-service.md).
