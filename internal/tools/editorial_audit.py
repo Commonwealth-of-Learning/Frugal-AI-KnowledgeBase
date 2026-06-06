@@ -73,6 +73,12 @@ class PatternCheck:
     message: str
 
 
+@dataclass(frozen=True)
+class SourceLine:
+    number: int
+    text: str
+
+
 PUBLIC_CHECKS = (
     PatternCheck(
         re.compile(r"\boffline chat service\b", re.IGNORECASE),
@@ -257,50 +263,79 @@ def require_at_a_glance(path: Path, text: str, label: str) -> list[Warning]:
 
 
 def check_first_screen_abbreviations(path: Path, text: str) -> list[Warning]:
-    first_block = first_visible_block(text)
-    if "Mixture of Experts" in first_block:
-        return []
-    match = re.search(r"\bMoE\b", first_block)
-    if not match:
-        return []
-    line_number = first_block[: match.start()].count("\n") + 1 + frontmatter_line_offset(text)
-    return [
-        Warning(
-            path,
-            line_number,
-            'expand "MoE" as "Mixture of Experts" before using the abbreviation on the first screen',
-        )
-    ]
+    expansion_seen = False
+    for source_line in first_screen_lines(text):
+        events = []
+        events.extend((match.start(), "expansion") for match in re.finditer(r"Mixture of Experts", source_line.text))
+        events.extend((match.start(), "abbreviation") for match in re.finditer(r"\bMoE\b", source_line.text))
+
+        for _position, event_type in sorted(events):
+            if event_type == "expansion":
+                expansion_seen = True
+            elif not expansion_seen:
+                return [
+                    Warning(
+                        path,
+                        source_line.number,
+                        'expand "MoE" as "Mixture of Experts" before using the abbreviation on the first screen',
+                    )
+                ]
+
+    return []
 
 
-def first_visible_block(text: str) -> str:
-    body = strip_frontmatter(text)
-    lines: list[str] = []
-    for line in body.splitlines():
+def first_screen_lines(text: str) -> list[SourceLine]:
+    lines = text.splitlines()
+    first_screen: list[SourceLine] = []
+    body_start = 0
+
+    if lines and lines[0].strip() == "---":
+        for index in range(1, len(lines)):
+            if lines[index].strip() == "---":
+                first_screen.extend(frontmatter_description_lines(lines[1:index], start_line=2))
+                body_start = index + 1
+                break
+
+    for index in range(body_start, len(lines)):
+        line = lines[index]
         if line.startswith("## "):
             break
-        lines.append(line)
-    return "\n".join(lines)
+        first_screen.append(SourceLine(index + 1, line))
+
+    return first_screen
 
 
-def strip_frontmatter(text: str) -> str:
-    lines = text.splitlines()
-    if not lines or lines[0].strip() != "---":
-        return text
-    for index in range(1, len(lines)):
-        if lines[index].strip() == "---":
-            return "\n".join(lines[index + 1 :])
-    return text
+def frontmatter_description_lines(lines: list[str], start_line: int) -> list[SourceLine]:
+    description_lines: list[SourceLine] = []
+    in_description_block = False
+
+    for offset, line in enumerate(lines):
+        line_number = start_line + offset
+        stripped = line.strip()
+
+        if in_description_block:
+            if line.startswith((" ", "\t")) and stripped:
+                description_lines.append(SourceLine(line_number, stripped))
+                continue
+            in_description_block = False
+
+        match = re.match(r"^description:\s*(.*)$", line)
+        if not match:
+            continue
+
+        value = match.group(1).strip()
+        if value in {"|", ">", "|-", ">-", "|+", ">+"}:
+            in_description_block = True
+        elif value:
+            description_lines.append(SourceLine(line_number, strip_matching_quotes(value)))
+
+    return description_lines
 
 
-def frontmatter_line_offset(text: str) -> int:
-    lines = text.splitlines()
-    if not lines or lines[0].strip() != "---":
-        return 0
-    for index in range(1, len(lines)):
-        if lines[index].strip() == "---":
-            return index + 1
-    return 0
+def strip_matching_quotes(value: str) -> str:
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+        return value[1:-1]
+    return value
 
 
 def check_templates() -> list[Warning]:

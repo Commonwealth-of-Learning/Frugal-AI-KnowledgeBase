@@ -1,5 +1,5 @@
 ---
-description: Multimodal MoE model for agentic coding, tool use, and long-context evaluation.
+description: Multimodal Mixture of Experts model for agentic coding, tool use, and long-context evaluation.
 icon: brain
 ---
 
