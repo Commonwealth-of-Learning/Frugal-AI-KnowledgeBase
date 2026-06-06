@@ -149,6 +149,8 @@ Before review, check technical content:
 - No local usernames, private paths, tokens, or machine-specific values.
 - Every command has a purpose and a verification step.
 - Custom code is avoided unless the page is explicitly about code.
+- Deployment guides use one runtime/interface pattern at a time. Alternative hardware or pilot patterns are labelled as candidate until measured locally.
+- Container instructions identify the image tag, provider URL, persistent data location, and verification step.
 - Wide tables are avoided when GitBook rendering is fragile.
 - Markdown tables have matching header and separator columns.
 

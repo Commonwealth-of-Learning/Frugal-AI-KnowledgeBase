@@ -20,6 +20,12 @@ This is a [development/pilot/production] runbook. It is not [out-of-scope operat
 | Data | [What data is handled] |
 | Owner | [Role or team responsible] |
 
+## Deployment profiles
+
+| Profile | Hardware | Runtime location | Interface location | Status |
+| --- | --- | --- | --- | --- |
+| [Profile name] | [Hardware profile] | [Host/container/remote] | [Host/container/remote] | [Current/candidate/deprecated] |
+
 ## Start, stop, and restart
 
 | Task | Command or action |
@@ -40,7 +46,7 @@ This is a [development/pilot/production] runbook. It is not [out-of-scope operat
 
 ### Updates
 
-[Explain update responsibility and cadence. Link to component or upstream release notes when needed.]
+[Explain update responsibility and cadence. For shared or pilot deployments, pin versions, review release notes, and back up before recreating containers.]
 
 ```bash
 [one command]
@@ -57,6 +63,8 @@ Expected result: [expected output or state].
 | Item | Location | Frequency | Sensitivity |
 | --- | --- | --- | --- |
 | [Data item] | [Location] | [Frequency] | [Sensitivity] |
+
+State whether the backup covers the full service volume or only one database file.
 
 ## Recovery
 

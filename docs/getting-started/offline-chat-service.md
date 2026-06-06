@@ -80,12 +80,15 @@ ollama run qwen3.5-dev "Explain Frugal AI in two short sentences."
 
 ## 4. Start Open WebUI
 
-Run Open WebUI in Docker:
+This path runs Ollama on the host machine and Open WebUI in Docker. Open WebUI connects to the host Ollama API at `http://host.docker.internal:11434` and stores chat data in the `open-webui` Docker volume.
+
+Run Open WebUI:
 
 ```bash
 docker run -d -p 3000:8080 \
   --add-host=host.docker.internal:host-gateway \
   -v open-webui:/app/backend/data \
+  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
   --name open-webui \
   --restart always \
   ghcr.io/open-webui/open-webui:main
@@ -103,13 +106,15 @@ In Open WebUI:
 2. Choose `qwen3.5-dev`.
 3. Send a short test message.
 
+If the model has not been pulled yet, Open WebUI can pull it through the model selector or through Admin Settings > Connections > Ollama.
+
 If the model does not appear, check that Ollama is running:
 
 ```bash
 ollama ps
 ```
 
-Open WebUI should connect to Ollama at `http://host.docker.internal:11434` when running in Docker Desktop.
+Open WebUI should show the host Ollama connection at `http://host.docker.internal:11434`.
 
 ## Verify
 
@@ -117,6 +122,7 @@ Open WebUI should connect to Ollama at `http://host.docker.internal:11434` when 
 | --- | --- |
 | Open WebUI loads | `http://localhost:3000` opens in the browser. |
 | Model appears | `qwen3.5-dev` is available in the model selector. |
+| Ollama connection is configured | Admin Settings > Connections > Ollama shows `http://host.docker.internal:11434`. |
 | Chat works | A short prompt returns a response. |
 | Multi-turn chat works | The model can answer a follow-up in the same conversation. |
 | Memory remains comfortable | Expected total stack use is about 8 GB, depending on Docker and context use. |

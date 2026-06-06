@@ -46,6 +46,17 @@ This guide is not for:
 | Interface | [Interface](../components/frameworks/[file].md) | [User-facing layer] |
 | Operations | [Runbook](../operations/[file].md) | [Maintenance and recovery] |
 
+## Deployment pattern
+
+| Decision | Value |
+| --- | --- |
+| Runtime location | [Host runtime / container runtime / remote runtime] |
+| Interface location | [Host / Docker / remote service] |
+| Provider URL | [Runtime API URL, if relevant] |
+| Persistent data | [Volume, folder, or database] |
+
+Keep one deployment pattern per guide. Put alternative hardware or pilot patterns in a component card or runbook unless they are fully tested as their own guide.
+
 ## 1. [Step name]
 
 [Explain the action and why it is needed.]
@@ -82,6 +93,7 @@ Expected result: [what should be visible after the command].
 | --- | --- | --- |
 | [Check 1] | `[command]` | [Expected result] |
 | [Check 2] | [Action] | [Expected result] |
+| Provider connection | [Action] | [Runtime URL or model list is visible] |
 
 ## Troubleshooting
 

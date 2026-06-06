@@ -14,6 +14,8 @@ icon: [gitbook-icon-name]
 | Current role | [How this interface or framework is used] |
 | Best fit | [Plain-language user workflow] |
 | Requires | [Main dependency] |
+| Provider connection | [Runtime API, provider URL, or service dependency] |
+| Data location | [Where application state is stored] |
 | Main caution | [Most important interface or framework limit] |
 
 ## When to use it
@@ -39,6 +41,15 @@ Use this framework when:
 | [Capability 1] | [Practical value] |
 | [Capability 2] | [Practical value] |
 | [Capability 3] | [Practical value] |
+
+## Deployment patterns
+
+| Pattern | Best fit | Runtime connection | Persistence |
+| --- | --- | --- | --- |
+| [Pattern 1] | [Use case] | [How it connects to the runtime] | [Volume, database, or folder] |
+| [Pattern 2] | [Use case] | [How it connects to the runtime] | [Volume, database, or folder] |
+
+Label untested hardware or pilot patterns as candidate patterns until measured locally.
 
 ## Frugal fit
 
