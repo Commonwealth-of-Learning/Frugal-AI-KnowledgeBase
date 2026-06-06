@@ -38,6 +38,7 @@ This guide is not for:
 
 | Component | Page | Role |
 | --- | --- | --- |
+| Service | Local AI chat service | [Service outcome] |
 | Hardware | [Hardware profile](../components/hardware/[file].md) | [Role in the path] |
 | Environment | [Environment](../components/environments/[file].md) | [Operating assumptions] |
 | Runtime | [Runtime](../components/runtimes/[file].md) | [How the model runs] |
