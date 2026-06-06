@@ -1,5 +1,5 @@
 ---
-description: Dense multimodal model used by the first offline chat service.
+description: Dense multimodal model used by the first local AI chat service.
 icon: brain
 ---
 
@@ -11,7 +11,7 @@ Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal
 
 | Question | Answer |
 | --- | --- |
-| Current role | Used by the first offline chat service. |
+| Current role | Used by the first local AI chat service. |
 | Best fit | A first private local chat service for development, orientation, and testing. |
 | Local fit | Fits the documented 24 GB Mac mini path with the guide's 8K context setting. |
 | Model type | Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain. |
@@ -20,7 +20,7 @@ Qwen3.5-9B is the model used in the first offline chat path. It gives the Frugal
 
 ## Good for
 
-- First-path local chat: a compact baseline for running the offline chat service.
+- First-path local chat: a compact baseline for running the local AI chat service.
 - General assistance: explanation, summarisation, drafting, and local knowledge-base support.
 - Light coding assistance: code explanation, small edits, debugging support, and test-writing prompts, with human review.
 - Basic multimodal work: image-based questions, document screenshots, and visual reasoning where the runtime supports them.
