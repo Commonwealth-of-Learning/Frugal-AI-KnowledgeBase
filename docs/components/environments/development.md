@@ -7,6 +7,14 @@ icon: flask
 
 The development environment is a local, single-user setup for learning, testing, and demonstration. It is not a shared pilot service or production deployment.
 
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | Defines the assumptions for the local development path. |
+| Best fit | Learning, testing, and small demonstrations before pilot decisions. |
+| Main caution | Development defaults should not be treated as production settings. |
+
 ## When to use it
 
 Use this environment when:
@@ -39,4 +47,4 @@ Before this becomes a shared pilot, decide:
 
 ## Used by this guide
 
-Start with [Quickstart](../../getting-started/quickstart.md), then follow [Offline chat service](../../getting-started/offline-chat-service.md).
+Start with [Quickstart](../../getting-started/quickstart.md), then follow [Local AI chat service](../../getting-started/offline-chat-service.md).

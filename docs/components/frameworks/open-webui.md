@@ -5,11 +5,19 @@ icon: comments
 
 # Open WebUI
 
-Open WebUI provides the browser chat interface for the offline chat service. It connects to a local model runtime such as Ollama and gives users a familiar chat experience.
+Open WebUI provides the browser chat interface for the local AI chat service. It connects to a local model runtime such as Ollama and gives users a familiar chat experience.
+
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | Provides the browser chat interface for the local AI chat service. |
+| Best fit | A familiar chat interface for local testing and demonstrations. |
+| Main caution | It is an interface, not the full governance or production operations layer. |
 
 ## When to use it
 
-Use Open WebUI when you need:
+Use Open WebUI for:
 
 - A local ChatGPT-like interface.
 - Conversation history on the local machine.
@@ -39,9 +47,9 @@ Use Open WebUI when you need:
 
 ## Used by this guide
 
-Follow [Offline chat service](../../getting-started/offline-chat-service.md) to run Open WebUI and connect it to Ollama.
+Follow [Local AI chat service](../../getting-started/offline-chat-service.md) to run Open WebUI and connect it to Ollama.
 
-Use [Open WebUI operations](../../operations/open-webui-ops.md) after setup.
+Use [Local AI chat service operations](../../operations/open-webui-ops.md) after setup.
 
 ## Links
 

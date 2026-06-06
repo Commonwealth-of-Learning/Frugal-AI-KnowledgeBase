@@ -3,13 +3,21 @@ description: Local development hardware for the first Frugal AI path.
 icon: desktop
 ---
 
-# Mac Mini 24 GB
+# Mac mini 24 GB
 
-The Mac Mini with 24 GB unified memory is the default hardware for the first Frugal AI path. It is small, quiet, relatively low cost, and capable of running a light local model with a browser chat interface.
+The current first path uses a Mac mini with 24 GB unified memory as the documented development machine. It is small, quiet, relatively low cost, and capable of running a light local model with a browser chat interface.
+
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | Development hardware for the first local AI chat service path. |
+| Best fit | Small local models, short guide contexts, and single-user testing. |
+| Main caution | Larger models and long contexts can exceed available memory. |
 
 ## When to use it
 
-Use this profile when you want:
+Use this profile for:
 
 - A single-user development machine.
 - Offline-capable local inference.
@@ -24,7 +32,7 @@ Use this profile when you want:
 | Runtime and app overhead | About 2 GB |
 | Available for model and context | About 16 GB |
 
-These are expected planning values. Check your own machine with Activity Monitor and `ollama ps`.
+These are expected planning values. Check the machine with Activity Monitor and `ollama ps`.
 
 ## What fits comfortably
 
@@ -44,7 +52,7 @@ These are expected planning values. Check your own machine with Activity Monitor
 
 ## Used by this guide
 
-The [Offline chat service](../../getting-started/offline-chat-service.md) uses this hardware with:
+The [Local AI chat service](../../getting-started/offline-chat-service.md) uses this hardware with:
 
 - [Ollama](../runtimes/ollama.md)
 - [Qwen3.5-9B](../models/qwen-3.5-9b.md)

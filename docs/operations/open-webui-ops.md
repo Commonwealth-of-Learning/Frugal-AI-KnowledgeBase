@@ -1,11 +1,11 @@
 ---
-description: Operate, update, back up, and troubleshoot the local chat service.
+description: Operate, update, back up, and troubleshoot the local AI chat service.
 icon: wrench
 ---
 
-# Open WebUI operations
+# Local AI chat service operations
 
-Use this page after completing [Offline chat service](../getting-started/offline-chat-service.md). It covers day-to-day operation for the local development path.
+This runbook covers routine operation for the local AI chat service built with Open WebUI, Ollama, and the local model profile.
 
 This is a single-machine runbook. It is not a production operations plan.
 
@@ -72,7 +72,7 @@ Copy the local database from the container:
 docker cp open-webui:/app/backend/data/webui.db ~/open-webui-backups/webui-$(date +%Y%m%d).db
 ```
 
-Keep backups somewhere appropriate for your data policy. If users enter sensitive information, treat the backup as sensitive too.
+Keep backups somewhere appropriate for the data policy. If users enter sensitive information, treat the backup as sensitive too.
 
 ## Restore chat data
 

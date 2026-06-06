@@ -5,7 +5,7 @@
 ## Start here
 
 * [Quickstart](getting-started/quickstart.md)
-* [Offline chat service](getting-started/offline-chat-service.md)
+* [Local AI chat service](getting-started/offline-chat-service.md)
 
 ## Concepts
 
@@ -14,7 +14,7 @@
 
 ## Components
 
-* [Hardware: Mac Mini 24 GB](components/hardware/mac-mini-24gb.md)
+* [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
 * [Environment: Development](components/environments/development.md)
 * [Runtime: Ollama](components/runtimes/ollama.md)
 * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
@@ -24,7 +24,7 @@
 
 ## Operations
 
-* [Open WebUI operations](operations/open-webui-ops.md)
+* [Local AI chat service operations](operations/open-webui-ops.md)
 
 ## Reference
 

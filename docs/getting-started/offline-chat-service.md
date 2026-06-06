@@ -1,11 +1,11 @@
 ---
-description: Build a private local chat service with Ollama, Qwen3.5-9B, and Open WebUI.
+description: Build a private local AI chat service with Ollama, Qwen3.5-9B, and Open WebUI.
 icon: comments
 ---
 
-# Offline chat service
+# Local AI chat service
 
-Build a private ChatGPT-like service that runs on your local machine. No cloud API key is required, and prompts stay on the local device.
+This guide builds a private local AI chat service with Ollama, Qwen3.5-9B, and Open WebUI. It is a development path for learning how the first Frugal AI stack works before pilot or production decisions are made.
 
 {% hint style="info" %}
 Expected time: about 30 minutes if Docker and Ollama are already installed.
@@ -15,12 +15,12 @@ Expected time: about 30 minutes if Docker and Ollama are already installed.
 
 | Component | Page | Role |
 | --- | --- | --- |
-| Hardware | [Mac Mini 24 GB](../components/hardware/mac-mini-24gb.md) | Defines the memory budget for the path. |
+| Hardware | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | Defines the memory budget for the path. |
 | Environment | [Development environment](../components/environments/development.md) | Sets expectations for a single-user local setup. |
 | Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model and provides the local API. |
 | Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Provides the chat capability. |
 | Framework | [Open WebUI](../components/frameworks/open-webui.md) | Provides the browser chat interface. |
-| Operations | [Open WebUI operations](../operations/open-webui-ops.md) | Keeps the service healthy after setup. |
+| Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | Keeps the service healthy after setup. |
 
 ## Prerequisites
 
@@ -89,7 +89,7 @@ docker run -d -p 3000:8080 \
 
 Open [http://localhost:3000](http://localhost:3000).
 
-On first launch, create the local admin account. This account is for your local Open WebUI instance.
+On first launch, create the local admin account. This account is for the local Open WebUI instance.
 
 ## 5. Select the model
 
@@ -118,7 +118,7 @@ Open WebUI should connect to Ollama at `http://host.docker.internal:11434` when 
 | Memory remains comfortable | Expected total stack use is about 8 GB, depending on Docker and context use. |
 
 {% hint style="warning" %}
-The memory and speed values in this guide are expected development values, not a formal benchmark. Check your own machine with `ollama ps` and Activity Monitor.
+The memory and speed values in this guide are expected development values, not a formal benchmark. Check the machine with `ollama ps` and Activity Monitor.
 {% endhint %}
 
 ## Troubleshooting
@@ -147,4 +147,4 @@ ollama stop qwen3.5-dev
 
 ## Next step
 
-Use [Open WebUI operations](../operations/open-webui-ops.md) for updates, backup, restore, and routine health checks.
+Use [Local AI chat service operations](../operations/open-webui-ops.md) for updates, backup, restore, and routine health checks.

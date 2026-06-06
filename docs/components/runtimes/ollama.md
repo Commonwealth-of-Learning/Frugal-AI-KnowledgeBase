@@ -7,9 +7,17 @@ icon: terminal
 
 Ollama is the local runtime used in the first Frugal AI path. It downloads models, runs them locally, and exposes an API that tools such as Open WebUI can connect to.
 
+## At a glance
+
+| Question | Answer |
+| --- | --- |
+| Current role | Runs the local model for the first Frugal AI path. |
+| Best fit | Local model testing and development on a single machine. |
+| Main caution | Model size and context length still need to fit available memory. |
+
 ## When to use it
 
-Use Ollama when you need:
+Use Ollama for:
 
 - A simple local model runtime.
 - Offline-capable development and demonstrations.
@@ -45,7 +53,7 @@ brew install ollama
 
 ## Used by this guide
 
-The [Offline chat service](../../getting-started/offline-chat-service.md) uses Ollama with [Qwen3.5-9B](../models/qwen-3.5-9b.md).
+The [Local AI chat service](../../getting-started/offline-chat-service.md) uses Ollama with [Qwen3.5-9B](../models/qwen-3.5-9b.md).
 
 ## Links
 

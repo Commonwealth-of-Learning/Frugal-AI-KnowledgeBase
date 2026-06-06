@@ -1,32 +1,32 @@
 ---
-description: See the first Frugal AI path and prepare your local machine.
+description: See the first Frugal AI path and prepare the local machine.
 icon: bolt
 ---
 
 # Quickstart
 
-This quickstart shows the smallest useful Frugal AI path in the Frugal AI knowledge base: a private offline chat service on a local Mac.
+The first path builds a local AI chat service that runs on the documented development machine.
 
-You will run an open-weight model with Ollama, connect Open WebUI, and verify that chat works without a cloud API key.
+The path runs an open-weight model with Ollama, connects Open WebUI, and verifies that chat works without a cloud API key.
 
 {% hint style="success" %}
-Expected time: about 45 minutes on a Mac Mini or Apple Silicon Mac with 24 GB memory.
+Expected time: about 45 minutes on a Mac mini or Apple Silicon Mac with 24 GB memory.
 {% endhint %}
 
-## What you will build
+## Build outcome
 
 | Layer | Component | Purpose |
 | --- | --- | --- |
-| Hardware | [Mac Mini 24 GB](../components/hardware/mac-mini-24gb.md) | Local machine with enough memory for a light model and chat interface. |
+| Hardware | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | Local machine with enough memory for a light model and chat interface. |
 | Environment | [Development environment](../components/environments/development.md) | Single-user setup for learning and testing. |
 | Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model locally and exposes an API. |
 | Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Light multimodal model for local chat and document-style tasks. |
 | Framework | [Open WebUI](../components/frameworks/open-webui.md) | Browser-based chat interface. |
-| Operations | [Open WebUI operations](../operations/open-webui-ops.md) | Start, stop, update, back up, and troubleshoot the service. |
+| Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | Start, stop, update, back up, and troubleshoot the service. |
 
-## Before you start
+## Prerequisites
 
-You need:
+Needed:
 
 - Apple Silicon Mac with 24 GB memory or more.
 - macOS 15 or later.
@@ -35,7 +35,7 @@ You need:
 - Docker Desktop.
 - Homebrew, recommended for installing command-line tools.
 
-If you are preparing a fresh Mac, install the basics first:
+For a fresh Mac, install the basics first:
 
 ```bash
 brew install curl jq git ollama
@@ -46,9 +46,9 @@ Open Docker Desktop once after installing it so it can finish its first-run setu
 
 ## Build path
 
-1. Read [How the stack fits together](../concepts/how-the-stack-fits-together.md) if you want the architecture first.
-2. Follow [Offline chat service](offline-chat-service.md) to run the model and chat interface.
-3. Use [Open WebUI operations](../operations/open-webui-ops.md) when you need to restart, update, or back up the service.
+1. Read [How the stack fits together](../concepts/how-the-stack-fits-together.md) for the architecture first.
+2. Follow [Local AI chat service](offline-chat-service.md) to run the model and chat interface.
+3. Use [Local AI chat service operations](../operations/open-webui-ops.md) for restart, update, or backup tasks.
 
 ## What is not covered yet
 
