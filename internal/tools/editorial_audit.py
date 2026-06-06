@@ -255,9 +255,10 @@ def scan_patterns(path: Path, text: str, checks: tuple[PatternCheck, ...]) -> li
 
 def scan_public_placeholders(path: Path, text: str) -> list[Warning]:
     warnings: list[Warning] = []
+    reference_labels = collect_reference_labels(text)
 
     for line_number, line in enumerate(text.splitlines(), start=1):
-        for placeholder in bracketed_placeholder_candidates(line):
+        for placeholder in bracketed_placeholder_candidates(line, reference_labels):
             warnings.append(
                 Warning(path, line_number, f"replace bracketed placeholder before publication: [{placeholder}]")
             )
@@ -265,11 +266,23 @@ def scan_public_placeholders(path: Path, text: str) -> list[Warning]:
     return warnings
 
 
-def bracketed_placeholder_candidates(line: str) -> list[str]:
+def collect_reference_labels(text: str) -> set[str]:
+    labels: set[str] = set()
+
+    for line in text.splitlines():
+        match = re.match(r"^[ \t]{0,3}\[([^\[\]\n]+)\]:", line)
+        if match:
+            labels.add(normalize_reference_label(match.group(1)))
+
+    return labels
+
+
+def bracketed_placeholder_candidates(line: str, reference_labels: set[str] | None = None) -> list[str]:
     candidates: list[str] = []
+    reference_labels = reference_labels or set()
 
     for match in re.finditer(r"\[([^\[\]\n]+)\]", line):
-        if is_markdown_link_or_image(line, match):
+        if is_markdown_link_or_image(line, match, reference_labels):
             continue
 
         content = match.group(1).strip()
@@ -279,12 +292,29 @@ def bracketed_placeholder_candidates(line: str) -> list[str]:
     return candidates
 
 
-def is_markdown_link_or_image(line: str, match: re.Match[str]) -> bool:
+def is_markdown_link_or_image(line: str, match: re.Match[str], reference_labels: set[str]) -> bool:
     if match.start() > 0 and line[match.start() - 1] == "!":
         return True
 
     next_char_index = match.end()
-    return next_char_index < len(line) and line[next_char_index] in "(]"
+    if next_char_index < len(line) and line[next_char_index] in "([":
+        return True
+
+    if next_char_index < len(line) and line[next_char_index] == ":" and is_reference_definition(line, match):
+        return True
+
+    if match.start() > 0 and line[match.start() - 1] == "]":
+        return True
+
+    return normalize_reference_label(match.group(1)) in reference_labels
+
+
+def is_reference_definition(line: str, match: re.Match[str]) -> bool:
+    return re.match(r"^[ \t]{0,3}\[[^\[\]\n]+\]:", line[: match.end() + 1]) is not None
+
+
+def normalize_reference_label(label: str) -> str:
+    return re.sub(r"\s+", " ", label.strip().lower())
 
 
 def is_placeholder_content(content: str) -> bool:
