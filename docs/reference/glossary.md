@@ -9,14 +9,6 @@ Plain-language definitions for Frugal AI concepts, components, and governance te
 
 <details>
 
-<summary><strong>Airlock</strong></summary>
-
-A control layer that detects and removes personal identifiers from data before AI model processing. It reduces privacy exposure by limiting what the model receives.
-
-</details>
-
-<details>
-
 <summary><strong>Cloud burst</strong></summary>
 
 Temporary use of cloud computing resources for tasks that exceed local processing capacity. In a sovereign AI design, cloud burst needs governance controls for data minimisation, audit logging, jurisdiction, deletion, and fallback to local processing.
@@ -59,7 +51,7 @@ A computing device located at the point of use, such as a school, instead of in 
 
 <summary><strong>Frugal AI</strong></summary>
 
-AI systems and practices designed for resource-constrained education contexts. Frugal AI optimises for local control, lower cost, lower energy use, poor or intermittent connectivity, open components, and long-term institutional capacity.
+Frugal AI treats AI as durable institutional infrastructure rather than an externally sourced service. It optimises for local control, predictable cost, lower energy use, intermittent connectivity, open components, and long-term institutional capacity.
 
 </details>
 
@@ -121,6 +113,14 @@ The browser chat interface used in this path. It connects to Ollama and stores i
 
 <details>
 
+<summary><strong>Privacy airlock</strong></summary>
+
+A control layer that detects, redacts, or masks personal data before it is processed by a model or sent to an external service. It is the enforcement point of the sovereignty envelope, sometimes called simply the airlock.
+
+</details>
+
+<details>
+
 <summary><strong>Quasi-identifier</strong></summary>
 
 A combination of attributes that may re-identify a person in a small population. Examples include school, grade, and a rare characteristic when used together.
@@ -172,6 +172,14 @@ Content areas defined nationally or institutionally as requiring heightened care
 <summary><strong>SLM</strong></summary>
 
 Small Language Model: an AI model with fewer parameters than larger frontier models. SLMs are more suitable for modest hardware and edge deployment, but usually have reduced capability compared with larger models.
+
+</details>
+
+<details>
+
+<summary><strong>Sovereign AI</strong></summary>
+
+National strategic and technical control over AI infrastructure, including data ownership, hosting, model access, and alignment policy.
 
 </details>
 

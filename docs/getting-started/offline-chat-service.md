@@ -85,7 +85,7 @@ This path runs Ollama on the host machine and Open WebUI in Docker. Open WebUI c
 Run Open WebUI:
 
 ```bash
-docker run -d -p 3000:8080 \
+docker run -d -p 127.0.0.1:3000:8080 \
   --add-host=host.docker.internal:host-gateway \
   -v open-webui:/app/backend/data \
   -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
@@ -93,6 +93,8 @@ docker run -d -p 3000:8080 \
   --restart always \
   ghcr.io/open-webui/open-webui:main
 ```
+
+The `127.0.0.1` prefix binds the interface to localhost, so it is reachable only from this machine. Exposing it on a network is a pilot decision that needs authentication and TLS.
 
 Open [http://localhost:3000](http://localhost:3000).
 
@@ -125,6 +127,7 @@ Open WebUI should show the host Ollama connection at `http://host.docker.interna
 | Ollama connection is configured | Admin Settings > Connections > Ollama shows `http://host.docker.internal:11434`. |
 | Chat works | A short prompt returns a response. |
 | Multi-turn chat works | The model can answer a follow-up in the same conversation. |
+| Works offline | After the model is pulled, disconnecting networking and sending a prompt still returns a response. |
 | Memory remains comfortable | Expected total stack use is about 8 GB, depending on Docker and context use. |
 
 {% hint style="warning" %}

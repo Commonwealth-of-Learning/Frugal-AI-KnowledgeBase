@@ -302,18 +302,7 @@ User draft request
 
 ## 10. Glossary of Key Terms
 
-| Term | Meaning |
-| --- | --- |
-| Sovereign AI | National strategic and technical control over AI infrastructure, including data ownership, hosting, model access, and alignment policy. |
-| Frugal AI | Use of optimised open-source or open-weight AI models on modest local or edge hardware to support predictable costs and sustainability. |
-| Teacher-in-the-Loop | A pedagogical and operational design where educators review, modify, or approve AI-generated content before it reaches learners. |
-| Retrieval-Augmented Generation | A technique that grounds model outputs in retrieved content from an authoritative knowledge base. |
-| Privacy airlock | A control layer that scans, redacts, or masks personal data before data is processed by AI models or external services. |
-| Cloud bursting | Temporary routing of complex tasks to external cloud infrastructure within a secure sovereignty envelope. |
-| Edge device or node | Local hardware, such as a school server or desktop, that can run inference or host applications near the point of use. |
-| Store-and-forward synchronisation | A method where data or logs are stored locally during offline periods and transmitted when connectivity returns. |
-
-For a broader list of terms, see the [Glossary](glossary.md).
+The terms used in this annex — Sovereign AI, Frugal AI, Teacher-in-the-Loop, Retrieval-Augmented Generation, privacy airlock, cloud burst, edge device, and store-and-forward synchronisation — are defined in the knowledge base's canonical [Glossary](glossary.md), which is the single source for these definitions.
 
 ## Appendix A: Self-Assessment Checklist for Ministries
 

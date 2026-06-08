@@ -7,7 +7,7 @@ icon: seedling
 
 Frugal AI is a practical way to deploy AI within real institutional limits. It favours local control, open components, modest hardware, and operational skills over dependency on remote services.
 
-The Commonwealth of Learning frames Frugal AI as inclusive, responsible, capacity-building AI for education. In the Frugal AI knowledge base, that means starting with a small service that an institution can run, inspect, and improve locally.
+The Commonwealth of Learning frames Frugal AI as inclusive, responsible, capacity-building AI for education. In the Frugal AI knowledge base, that means starting with a small service that an institution can run, inspect, and improve locally. It continues a long COL tradition of frugal educational technology, from Aptus, open-source hardware that brings learning to communities without grid power or the internet.
 
 ## Principles
 
@@ -29,7 +29,7 @@ Some useful tools may not be fully open source. When that happens, the page shou
 
 ### Match the model to the machine
 
-A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window.
+A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window. See [Cost and sustainability](cost-and-sustainability.md) for the cost and energy case.
 
 ### Degrade to a minimal slice
 
@@ -38,6 +38,10 @@ A Frugal AI system should run at its smallest useful size: infrastructure, infer
 ### Build local capacity
 
 The goal is not only to install software. The goal is to help a local team understand how the service runs, how to recover it, and when it is not suitable.
+
+### Reach learners in their languages
+
+Open models increasingly support many languages, which matters for inclusive, equitable education across the Commonwealth. Where AI reaches learners, treat language coverage and accessibility as design choices, and review quality in low-resource languages rather than assuming it.
 
 ### Keep teachers and institutions in control
 

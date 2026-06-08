@@ -69,7 +69,7 @@ docker rm open-webui
 Recreate the container:
 
 ```bash
-docker run -d -p 3000:8080 \
+docker run -d -p 127.0.0.1:3000:8080 \
   --add-host=host.docker.internal:host-gateway \
   -v open-webui:/app/backend/data \
   -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
@@ -92,7 +92,7 @@ Create a backup from the Docker volume. This captures chats, users, settings, up
 docker run --rm -v open-webui:/data -v $(pwd):/backup alpine tar czf /backup/openwebui-$(date +%Y%m%d).tar.gz /data
 ```
 
-Keep backups somewhere appropriate for the data policy. If users enter sensitive information, treat the backup as sensitive too.
+Keep backups somewhere appropriate for the data policy. If users enter sensitive information, treat the backup as sensitive too. Keep backups in-country or within the institution's control, and do not copy them to a personal cloud drive.
 
 ## Restore chat data
 

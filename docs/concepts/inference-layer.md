@@ -30,6 +30,17 @@ vLLM and SGLang are built to serve many requests at once on GPU hardware. vLLM h
 
 Serving engines need GPU servers, which carry cost, export, and availability constraints in many Commonwealth contexts. The frugal default is a local runtime on modest hardware. A serving engine is a deliberate step taken for a pilot with real concurrency, not the starting point. The model is matched to the machine, and so is the engine.
 
+## Shared model cautions
+
+Every model in this knowledge base shares the same cautions, whatever its card says:
+
+- Not for production serving without concurrency, latency, security, and recovery testing.
+- Not for sensitive learner or institutional data without local governance and human review.
+- Not for autonomous agentic actions with real side effects unless permissions, audit logging, rollback, and human approval are designed in.
+- Not for tasks needing guaranteed correctness, security, or formal assessment decisions without expert validation.
+
+Each model card lists only its model-specific cautions in addition to these.
+
 ## How this connects
 
 Because every engine here speaks the OpenAI API, moving a model from a local runtime in development to a serving engine in a pilot is a change at the [gateway](gateway-layer.md), not in the application. The [development](../components/environments/development.md) and [pilot](../components/environments/pilot.md) environments describe the assumptions for each tier.

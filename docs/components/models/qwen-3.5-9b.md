@@ -18,6 +18,7 @@ Qwen3.5-9B is the model used in the first local AI chat service path. It gives t
 | Local fit | Fits the documented 24 GB Mac mini path with the guide's 8K context setting. |
 | Model type | Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain. |
 | Inputs | Text and image in Ollama; upstream sources also describe video-style visual inputs. |
+| Languages | Source-listed multilingual support across many languages; Qwen lists up to 201. |
 | Main caution | The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency. |
 
 ## Good for
@@ -30,11 +31,10 @@ Qwen3.5-9B is the model used in the first local AI chat service path. It gives t
 
 ## Not suitable for
 
-- Production serving without concurrency, latency, security, and recovery testing.
 - Full 256K or 1M-token local contexts on the 24 GB path without separate measurement.
-- Sensitive learner or institutional data without local governance and human review.
-- Autonomous agentic actions with real side effects unless permissions, audit logs, rollback, and human approval are designed into the workflow.
 - Audio or speech workflows; this card covers the text and visual model path.
+
+The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, and autonomous actions.
 
 ## Frugal fit
 

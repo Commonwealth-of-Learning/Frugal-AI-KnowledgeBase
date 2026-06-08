@@ -18,6 +18,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 | Local fit | Promising 12B-class candidate, but a Frugal AI guide still needs measured memory, speed, and quality results. |
 | Model type | Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts. |
 | Inputs | Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs. |
+| Languages | Google lists 35+ languages out of the box and pre-training across 140+. |
 | Main caution | Runtime support differs. Audio, video, thinking mode, and function calling need backend-specific testing. |
 
 ## Good for
@@ -31,10 +32,9 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 ## Not suitable for
 
 - The current local AI chat service guide without a separate measured setup path.
-- Production serving without concurrency, latency, security, and lifecycle testing.
-- Sensitive learner or institutional data without local governance and human review.
 - Low-memory deployments that cannot absorb context growth or multimodal input overhead.
-- Tasks requiring guaranteed code correctness, security review, or formal assessment decisions without expert validation.
+
+The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, and tasks needing guaranteed correctness.
 
 ## Frugal fit
 

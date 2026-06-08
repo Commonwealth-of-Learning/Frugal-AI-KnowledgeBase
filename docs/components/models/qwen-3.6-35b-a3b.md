@@ -18,6 +18,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 | Local fit | Better suited to a measured higher-memory path than the current 24 GB Mac mini first path. |
 | Model type | MoE model: 35B total parameters with about 3B active per token (Ollama labels the same model 36B). The full package still affects memory use. |
 | Inputs | Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels. |
+| Languages | Source-listed multilingual support across many languages; Qwen lists up to 201. |
 | Main caution | Ollama lists the Q4_K_M package at 24 GB, before context, runtime, interface, and visual-input overhead. |
 
 ## Good for
@@ -32,10 +33,8 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 
 - The current local AI chat service guide without a separate measured setup path.
 - Low-memory deployments where the 24 GB Ollama package leaves little room for context, runtime, and interface overhead.
-- Production serving without concurrency, latency, security, and recovery testing.
-- Sensitive learner or institutional data without local governance and human review.
-- Autonomous agentic actions with real side effects unless permissions, audit logs, rollback, and human approval are designed into the workflow.
-- Tasks requiring guaranteed code correctness, security review, or formal assessment decisions without expert validation.
+
+The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, autonomous actions, and tasks needing guaranteed correctness.
 
 ## Frugal fit
 
