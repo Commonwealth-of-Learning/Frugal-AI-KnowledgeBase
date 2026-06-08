@@ -13,7 +13,7 @@ The Frugal AI knowledge base treats every build as a slice through this stack. T
 
 | Layer | Role | Examples |
 | --- | --- | --- |
-| Application | What a person actually uses. | Local chat, course search, teacher support, coding assistance, and agents. |
+| [Application](application-layer.md) | What a person actually uses; agents are a subtype. | Local chat, course search, teacher support, coding assistance, and agents. |
 | [Gateway](gateway-layer.md) (sovereignty envelope) | The governed boundary every model request passes through. | Local and cloud routing, redaction, policy filters, audit logging, and guardrails. |
 | [Orchestration](orchestration-layer.md) | What turns a model into a useful workflow. | The reasoning loop, tools, memory, retrieval, and context assembly. |
 | [Inference](inference-layer.md) | What runs the model and serves predictions. | Local runtimes for development; serving engines for shared or higher-throughput use. |

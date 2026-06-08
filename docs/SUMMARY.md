@@ -8,6 +8,7 @@
 * [Local AI chat service](getting-started/offline-chat-service.md)
 * [Teacher assistant](getting-started/teacher-assistant.md)
 * [AI gateway](getting-started/ai-gateway.md)
+* [Coding agent](getting-started/coding-agent.md)
 
 ## Concepts
 
@@ -40,7 +41,9 @@
 
 ## Application
 
+* [Application layer](concepts/application-layer.md)
 * [Framework: Open WebUI](components/frameworks/open-webui.md)
+* [Application: OpenCode](components/applications/opencode.md)
 
 ## Environments
 

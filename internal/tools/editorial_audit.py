@@ -20,6 +20,7 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
     "* [Teacher assistant](getting-started/teacher-assistant.md)",
     "* [AI gateway](getting-started/ai-gateway.md)",
+    "* [Coding agent](getting-started/coding-agent.md)",
     "* [Local AI chat service operations](operations/open-webui-ops.md)",
     "* [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)",
     "* [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)",
@@ -33,9 +34,10 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
     "* [Framework: Open WebUI](components/frameworks/open-webui.md)",
     "* [Gateway: LiteLLM](components/gateways/litellm.md)",
+    "* [Application: OpenCode](components/applications/opencode.md)",
 )
 
-COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways"}
+COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications"}
 
 TEMPLATES_REQUIRING_AT_A_GLANCE = (
     "model-card-template.md",
