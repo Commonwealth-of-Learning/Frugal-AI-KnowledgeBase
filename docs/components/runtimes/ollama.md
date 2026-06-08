@@ -13,11 +13,9 @@ On Apple Silicon, Ollama now uses the MLX engine for faster local inference. For
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Runs the local model for the first Frugal AI path. |
-| Best fit | Local model testing and development on a single machine. |
-| Main caution | Model size and context length still need to fit available memory. |
+- **Current role** — Runs the local model for the first Frugal AI path.
+- **Best fit** — Local model testing and development on a single machine.
+- **Main caution** — Model size and context length still need to fit available memory.
 
 ## When to use it
 

@@ -11,13 +11,11 @@ Open WebUI provides the browser chat interface for the local AI chat service. It
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Provides the browser chat interface for the local AI chat service. |
-| Best fit | A familiar chat interface for local testing and demonstrations. |
-| Provider connection | Connects to the Ollama API, normally on port `11434`. |
-| Data location | Chat data, settings, uploads, and users live in the Open WebUI data volume. |
-| Main caution | It is an interface, not the full governance or production operations layer. |
+- **Current role** — Provides the browser chat interface for the local AI chat service.
+- **Best fit** — A familiar chat interface for local testing and demonstrations.
+- **Provider connection** — Connects to the Ollama API, normally on port `11434`.
+- **Data location** — Chat data, settings, uploads, and users live in the Open WebUI data volume.
+- **Main caution** — It is an interface, not the full governance or production operations layer.
 
 ## When to use it
 

@@ -9,12 +9,10 @@ icon: [gitbook-icon-name]
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | [How this environment is used in the Frugal AI knowledge base] |
-| Best fit | [Plain-language workload and audience fit] |
-| Hardware fit | [Hardware profile or measured equivalent] |
-| Main caution | [Most important environment limit] |
+- **Current role** — [How this environment is used in the Frugal AI knowledge base]
+- **Best fit** — [Plain-language workload and audience fit]
+- **Hardware fit** — [Hardware profile or measured equivalent]
+- **Main caution** — [Most important environment limit]
 
 ## When to use it
 

@@ -11,13 +11,11 @@ The current first path uses a Mac mini with 24 GB unified memory and an Apple M4
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Development hardware for the first local AI chat service path. |
-| Best fit | Small local models, short guide contexts, and single-user testing. |
-| CPU or chip | Apple M4 or newer. Current source-listed Mac mini options include M4 and M4 Pro. |
-| Memory | 24 GB unified memory. |
-| Main caution | Larger models and long contexts can exceed available memory. |
+- **Current role** — Development hardware for the first local AI chat service path.
+- **Best fit** — Small local models, short guide contexts, and single-user testing.
+- **CPU or chip** — Apple M4 or newer. Current source-listed Mac mini options include M4 and M4 Pro.
+- **Memory** — 24 GB unified memory.
+- **Main caution** — Larger models and long contexts can exceed available memory.
 
 ## When to use it
 

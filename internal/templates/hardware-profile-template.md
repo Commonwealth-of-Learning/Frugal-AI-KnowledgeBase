@@ -9,14 +9,12 @@ icon: [gitbook-icon-name]
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | [How this hardware is used in the Frugal AI knowledge base] |
-| Best fit | [Plain-language workload fit] |
-| Memory | [Use GB, not Gb] |
-| CPU or chip | [Specify the CPU, chip, or architecture. For Mac mini profiles, use Apple M4 or newer.] |
-| Environment fit | [Development, pilot, or production] |
-| Main caution | [Most important hardware limit] |
+- **Current role** — [How this hardware is used in the Frugal AI knowledge base]
+- **Best fit** — [Plain-language workload fit]
+- **Memory** — [Use GB, not Gb]
+- **CPU or chip** — [Specify the CPU, chip, or architecture. For Mac mini profiles, use Apple M4 or newer.]
+- **Environment fit** — [Development, pilot, or production]
+- **Main caution** — [Most important hardware limit]
 
 ## When to use it
 

@@ -13,12 +13,10 @@ Level: intermediate. This is a development path. It runs on the same machine as 
 
 ## Fit and limits
 
-| Question | Answer |
-| --- | --- |
-| Good for | A single governed endpoint, personal-data redaction, audit logging, and optional controlled cloud burst. |
-| Not for | Production multi-team access control, budgets, or single sign-on; those are pilot-scale and out of scope here. |
-| Governance | The gateway is the sovereignty envelope: redaction and approved destinations are enforced at this boundary. |
-| Caution | Cloud burst sends content outside the machine. Keep it off unless a task needs it, and redact before egress. |
+- **Good for** — A single governed endpoint, personal-data redaction, audit logging, and optional controlled cloud burst.
+- **Not for** — Production multi-team access control, budgets, or single sign-on; those are pilot-scale and out of scope here.
+- **Governance** — The gateway is the sovereignty envelope: redaction and approved destinations are enforced at this boundary.
+- **Caution** — Cloud burst sends content outside the machine. Keep it off unless a task needs it, and redact before egress.
 
 ## Prerequisites
 

@@ -11,12 +11,10 @@ A pilot environment is a controlled shared setup for testing Frugal AI with a sm
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Defines assumptions for controlled shared use before production. |
-| Best fit | Small educator or staff pilot with named owners, limited users, and agreed data rules. |
-| Hardware fit | NVIDIA DGX Spark or a measured equivalent for the selected workload. |
-| Main caution | A pilot is not production; scope, access, and recovery rules must be explicit. |
+- **Current role** — Defines assumptions for controlled shared use before production.
+- **Best fit** — Small educator or staff pilot with named owners, limited users, and agreed data rules.
+- **Hardware fit** — NVIDIA DGX Spark or a measured equivalent for the selected workload.
+- **Main caution** — A pilot is not production; scope, access, and recovery rules must be explicit.
 
 ## When to use it
 

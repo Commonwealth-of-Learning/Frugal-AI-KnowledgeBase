@@ -17,12 +17,10 @@ A coding agent plays two parts in the knowledge base. It is an **example applica
 
 ## Fit and limits
 
-| Question | Answer |
-| --- | --- |
-| Good for | Developer coding tasks where an agent that reads, edits, and runs code saves time, under human review. |
-| Not for | Learner-facing use, or running with unrestricted file and command access. |
-| Governance | Two surfaces: the agent's local actions, and its model calls through the gateway. |
-| Caution | Coding quality on a small local model is limited; stronger models need more memory or controlled cloud burst. |
+- **Good for** — Developer coding tasks where an agent that reads, edits, and runs code saves time, under human review.
+- **Not for** — Learner-facing use, or running with unrestricted file and command access.
+- **Governance** — Two surfaces: the agent's local actions, and its model calls through the gateway.
+- **Caution** — Coding quality on a small local model is limited; stronger models need more memory or controlled cloud burst.
 
 ## Prerequisites
 

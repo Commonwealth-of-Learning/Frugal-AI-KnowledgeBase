@@ -155,6 +155,7 @@ Before review, check technical content:
 - Container instructions identify the image tag, provider URL, persistent data location, and verification step.
 - Wide tables are avoided when GitBook rendering is fragile.
 - Markdown tables have matching header and separator columns.
+- "At a glance" and "Fit and limits" are compact bold-label lists, not Question/Answer tables; heavy reference metadata is collapsed into `<details>`.
 
 For procedures, prefer this sequence:
 

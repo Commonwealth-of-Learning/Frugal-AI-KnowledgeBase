@@ -11,13 +11,11 @@ LM Studio is a graphical local runtime for open-weight models on Mac and Windows
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Alternative local runtime for development. |
-| Best fit | A graphical, single-user setup on a Mac or Windows machine. |
-| Local fit | Runs on the development machine; on Apple Silicon it can use the MLX engine for faster inference. |
-| Interface | OpenAI-compatible local server, so the gateway and applications do not change. |
-| Main caution | A single-user development tool, not a serving engine for shared use. |
+- **Current role** — Alternative local runtime for development.
+- **Best fit** — A graphical, single-user setup on a Mac or Windows machine.
+- **Local fit** — Runs on the development machine; on Apple Silicon it can use the MLX engine for faster inference.
+- **Interface** — OpenAI-compatible local server, so the gateway and applications do not change.
+- **Main caution** — A single-user development tool, not a serving engine for shared use.
 
 ## When to use it
 

@@ -17,12 +17,10 @@ A math tutor explains; an animator shows. Producing a correct Manim scene means 
 
 ## Fit and limits
 
-| Question | Answer |
-| --- | --- |
-| Good for | Generating and rendering short Manim animations for a mathematics concept, reviewed before use. |
-| Not for | Unattended generation, learner-facing release without review, or reliable output from a small local model. |
-| Governance | Two surfaces: the agent's local actions (write and render) and its model calls through the gateway. |
-| Caution | Manim's render stack (LaTeX, ffmpeg) is heavy, and animation code often needs human correction. |
+- **Good for** — Generating and rendering short Manim animations for a mathematics concept, reviewed before use.
+- **Not for** — Unattended generation, learner-facing release without review, or reliable output from a small local model.
+- **Governance** — Two surfaces: the agent's local actions (write and render) and its model calls through the gateway.
+- **Caution** — Manim's render stack (LaTeX, ffmpeg) is heavy, and animation code often needs human correction.
 
 ## Prerequisites
 

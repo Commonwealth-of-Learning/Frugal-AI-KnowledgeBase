@@ -11,16 +11,14 @@ Build from the top down: reader decision first, technical details later. Use `in
 
 ## At a glance
 
-Use this table to answer the practical questions first. Keep only rows with verified, useful content.
+Use this list to answer the practical questions first. Keep only items with verified, useful content.
 
-| Question | Answer |
-| --- | --- |
-| Current role | [Used in the first path / candidate for a future path] |
-| Best fit | [Plain-language task or scenario] |
-| Local fit | [Fits the documented hardware / needs a measured setup path] |
-| Model type | [Dense or MoE, with active parameter count if relevant] |
-| Inputs | [Text, image, audio, video, or runtime-specific subset] |
-| Main caution | [Most important operational limit] |
+- **Current role** — [Used in the first path / candidate for a future path]
+- **Best fit** — [Plain-language task or scenario]
+- **Local fit** — [Fits the documented hardware / needs a measured setup path]
+- **Model type** — [Dense or MoE, with active parameter count if relevant]
+- **Inputs** — [Text, image, audio, video, or runtime-specific subset]
+- **Main caution** — [Most important operational limit]
 
 ## Good for
 
@@ -44,7 +42,7 @@ Use this table to answer the practical questions first. Keep only rows with veri
 
 ## Reference settings
 
-Use this section to separate source-listed model defaults, runtime-specific defaults, and Frugal AI guide defaults. Keep it short. Do not paste launch commands or long shell scripts. Leave this section out when settings are not verified or not useful for the page job.
+Use this section to separate source-listed model defaults, runtime-specific defaults, and Frugal AI guide defaults. Keep it short. Do not paste launch commands or long shell scripts. Leave this section out when settings are not verified or not useful for the page job. Collapse this section, and Source confidence, into a `<details>` block so the readable content leads, as the model cards do.
 
 | Profile | Context | Temperature | Top-p | Top-k | Min-p | Penalty | Thinking mode | Source |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

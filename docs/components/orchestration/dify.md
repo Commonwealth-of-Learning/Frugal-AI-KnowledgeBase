@@ -11,13 +11,11 @@ Dify is an open-source orchestration platform for building RAG and multi-step AI
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Orchestration platform for the curriculum knowledge assistant. |
-| Best fit | RAG over approved documents, and multi-step workflows, on local models. |
-| Local fit | Self-hosted with Docker Compose; runs several containers, so it needs more memory than the chat service. |
-| Interface | Connects to local models through Ollama; reached on the host at port 80. |
-| Main caution | A multi-container platform; retrieval quality depends on the documents, chunking, and the embedding model. |
+- **Current role** — Orchestration platform for the curriculum knowledge assistant.
+- **Best fit** — RAG over approved documents, and multi-step workflows, on local models.
+- **Local fit** — Self-hosted with Docker Compose; runs several containers, so it needs more memory than the chat service.
+- **Interface** — Connects to local models through Ollama; reached on the host at port 80.
+- **Main caution** — A multi-container platform; retrieval quality depends on the documents, chunking, and the embedding model.
 
 ## When to use it
 

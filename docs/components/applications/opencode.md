@@ -11,13 +11,11 @@ OpenCode is an open-source, terminal-first coding agent. In the Frugal AI knowle
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | First coding-agent application in the knowledge base. |
-| Best fit | Developer and maintainer coding tasks on the local stack, under review. |
-| Local fit | Runs on the development machine; coding quality depends on the model and its memory. |
-| Interface | Routes model calls to any OpenAI-compatible endpoint, such as the gateway. |
-| Main caution | An agent with file and shell access; gate its actions and route egress through the gateway. |
+- **Current role** — First coding-agent application in the knowledge base.
+- **Best fit** — Developer and maintainer coding tasks on the local stack, under review.
+- **Local fit** — Runs on the development machine; coding quality depends on the model and its memory.
+- **Interface** — Routes model calls to any OpenAI-compatible endpoint, such as the gateway.
+- **Main caution** — An agent with file and shell access; gate its actions and route egress through the gateway.
 
 ## When to use it
 

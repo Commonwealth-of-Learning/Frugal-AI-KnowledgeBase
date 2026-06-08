@@ -215,6 +215,8 @@ Prefer stable values over environment-specific values. Avoid local usernames, ma
 
 Use the upstream default ports in commands, and note that they are defaults. Register every host port a guide exposes in the Port Allocations table in `internal/naming-registry.md`, and do not document non-default port schemes inline; link to the tool's documentation instead. The editorial audit flags an unregistered or duplicated host port.
 
+Prefer a compact key-value list over a two-column table for short reference blocks. Write "At a glance" and "Fit and limits" as a bold-label list (`- **Label** — value`), not a `Question | Answer` table. Collapse heavy reference metadata, such as model reference-settings and source-confidence tables, into expandable `<details>` blocks so the readable content leads.
+
 For configuration, show the smallest meaningful excerpt. Explain the field being changed and the reason for the value.
 
 For errors, write from symptom to cause to fix. Keep troubleshooting entries short and testable.

@@ -11,15 +11,13 @@ Qwen3.5-9B is the model used in the first local AI chat service path. It gives t
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Used by the first local AI chat service. |
-| Best fit | A first private local chat service for development, orientation, and testing. |
-| Local fit | Fits the documented 24 GB Mac mini path with the guide's 8K context setting. |
-| Model type | Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain. |
-| Inputs | Text and image in Ollama; upstream sources also describe video-style visual inputs. |
-| Languages | Source-listed multilingual support across many languages; Qwen lists up to 201. |
-| Main caution | The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency. |
+- **Current role** — Used by the first local AI chat service.
+- **Best fit** — A first private local chat service for development, orientation, and testing.
+- **Local fit** — Fits the documented 24 GB Mac mini path with the guide's 8K context setting.
+- **Model type** — Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain.
+- **Inputs** — Text and image in Ollama; upstream sources also describe video-style visual inputs.
+- **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
+- **Main caution** — The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency.
 
 ## Good for
 
@@ -46,7 +44,9 @@ The [Inference layer](../../concepts/inference-layer.md) lists the cautions shar
 | Replaceability | Can be swapped later if a guide needs a different model profile. |
 | Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
-## Reference settings
+<details>
+
+<summary><strong>Reference settings</strong></summary>
 
 These settings separate the Frugal AI guide baseline from Unsloth's Qwen3.5 reference profiles. The current first path uses Ollama and an 8K local guide context; Unsloth settings should be treated as llama.cpp-compatible GGUF reference settings until tested in the documented path.
 
@@ -65,6 +65,8 @@ Reference notes:
 - Unsloth states that Qwen3.5 Small models, including 9B, have reasoning disabled by default in its GGUF flow.
 - Unsloth currently states that its Qwen3.5 GGUFs do not work in Ollama because of separate vision projection files. This does not remove the Ollama `qwen3.5:9b` registry tag used by the first path, but it does mean Unsloth GGUF settings need a llama.cpp-compatible backend until separately tested.
 
+</details>
+
 ## Technical details
 
 | Field | Value |
@@ -77,7 +79,9 @@ Reference notes:
 | Model licence | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | Local guide context | 8K, chosen for a comfortable development setup |
 
-## Source confidence
+<details>
+
+<summary><strong>Source confidence</strong></summary>
 
 | Claim | Value | Confidence |
 | --- | --- | --- |
@@ -91,6 +95,8 @@ Reference notes:
 | Unsloth 9B memory bands | 5.5 GB, 6.5 GB, 9 GB, 13 GB, and 19 GB for 3-bit, 4-bit, 6-bit, 8-bit, and BF16 | Source-listed by Unsloth for Qwen3.5 GGUF-style use |
 
 Do not treat source benchmark tables as local performance claims. Measure speed, memory use, quality, and failure modes on the target machine before increasing context length or using this model for production work.
+
+</details>
 
 ## Limits
 

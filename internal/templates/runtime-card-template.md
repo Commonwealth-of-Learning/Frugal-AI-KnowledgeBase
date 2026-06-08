@@ -9,12 +9,10 @@ icon: [gitbook-icon-name]
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | [How this runtime is used] |
-| Best fit | [Plain-language fit] |
-| Runs | [Local machine/server/device] |
-| Main caution | [Most important runtime limit] |
+- **Current role** — [How this runtime is used]
+- **Best fit** — [Plain-language fit]
+- **Runs** — [Local machine/server/device]
+- **Main caution** — [Most important runtime limit]
 
 ## When to use it
 

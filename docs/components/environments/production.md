@@ -15,12 +15,10 @@ This environment is not yet documented in full. This page records the shape of t
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Defines assumptions for a dependable, governed deployment for real users. |
-| Best fit | A service that has passed a pilot and needs reliable, supported operation. |
-| Hardware fit | Sized and measured for the production workload, beyond the pilot's single node where concurrency requires it. |
-| Main caution | Production needs security, monitoring, and recovery commitments a pilot does not. |
+- **Current role** — Defines assumptions for a dependable, governed deployment for real users.
+- **Best fit** — A service that has passed a pilot and needs reliable, supported operation.
+- **Hardware fit** — Sized and measured for the production workload, beyond the pilot's single node where concurrency requires it.
+- **Main caution** — Production needs security, monitoring, and recovery commitments a pilot does not.
 
 ## What production adds beyond a pilot
 

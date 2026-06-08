@@ -19,12 +19,10 @@ The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI too
 
 ## Fit and limits
 
-| Question | Answer |
-| --- | --- |
-| Good for | Grounded answers from approved curriculum documents, with an "it is not covered" fallback. |
-| Not for | Learner-facing release without review, or ingestion of unvetted web content. |
-| Governance | Approved documents only; teacher-only tier; a teacher reviews answers before learner use. |
-| Caution | Dify is a multi-container platform; retrieval quality depends on the documents, chunking, and the embedding model. |
+- **Good for** — Grounded answers from approved curriculum documents, with an "it is not covered" fallback.
+- **Not for** — Learner-facing release without review, or ingestion of unvetted web content.
+- **Governance** — Approved documents only; teacher-only tier; a teacher reviews answers before learner use.
+- **Caution** — Dify is a multi-container platform; retrieval quality depends on the documents, chunking, and the embedding model.
 
 ## Prerequisites
 

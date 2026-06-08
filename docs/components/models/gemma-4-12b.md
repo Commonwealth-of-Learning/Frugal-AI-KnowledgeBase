@@ -11,15 +11,13 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Candidate model for future Frugal AI paths. |
-| Best fit | Local coding support, multimodal course-material review, and teacher-in-the-loop agentic workflows. |
-| Local fit | Promising 12B-class candidate, but a Frugal AI guide still needs measured memory, speed, and quality results. |
-| Model type | Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts. |
-| Inputs | Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs. |
-| Languages | Google lists 35+ languages out of the box and pre-training across 140+. |
-| Main caution | Runtime support differs. Audio, video, thinking mode, and function calling need backend-specific testing. |
+- **Current role** — Candidate model for future Frugal AI paths.
+- **Best fit** — Local coding support, multimodal course-material review, and teacher-in-the-loop agentic workflows.
+- **Local fit** — Promising 12B-class candidate, but a Frugal AI guide still needs measured memory, speed, and quality results.
+- **Model type** — Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts.
+- **Inputs** — Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs.
+- **Languages** — Google lists 35+ languages out of the box and pre-training across 140+.
+- **Main caution** — Runtime support differs. Audio, video, thinking mode, and function calling need backend-specific testing.
 
 ## Good for
 
@@ -45,7 +43,9 @@ The [Inference layer](../../concepts/inference-layer.md) lists the cautions shar
 | Replaceability | Can be evaluated as an alternative to the current local chat model when a guide needs coding or multimodal tasks. |
 | Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
-## Reference settings
+<details>
+
+<summary><strong>Reference settings</strong></summary>
 
 These source-listed settings are starting points for evaluation, not Frugal AI guide defaults.
 
@@ -61,6 +61,8 @@ Reference notes:
 - The Gemma 4 end-of-sentence token is listed as `<turn|>`.
 - For multimodal prompts, Unsloth recommends placing image and video content before text, and audio content after text. Visual token budgets range from 70 or 140 for fast captioning to 1120 for OCR, document parsing, handwriting, and small text.
 
+</details>
+
 ## Technical details
 
 | Field | Value |
@@ -74,7 +76,9 @@ Reference notes:
 | MoE status | Not MoE. Gemma 4 26B A4B is the MoE model in the family. |
 | Model licence | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
-## Source confidence
+<details>
+
+<summary><strong>Source confidence</strong></summary>
 
 | Claim | Value | Confidence |
 | --- | --- | --- |
@@ -88,6 +92,8 @@ Reference notes:
 | Unsloth dense-model row | 11.95B parameters, 48 layers, 1024-token sliding window, 256K context, 262K vocabulary, text/image/audio support | Source-listed by Unsloth model card |
 
 Do not treat source benchmark tables as local performance claims. Measure speed, memory use, and quality on the target machine before using this model in a guide.
+
+</details>
 
 ## Limits
 

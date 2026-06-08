@@ -11,13 +11,11 @@ vLLM is an open-source serving engine for running open-weight models at pilot an
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Candidate serving engine for pilot-scale inference. |
-| Best fit | Many simultaneous users on GPU hardware, behind the gateway. |
-| Local fit | Runs on GPU servers such as DGX Spark, not the 24 GB Mac mini development path. |
-| Interface | OpenAI-compatible endpoint, so the gateway and applications do not change. |
-| Main caution | Needs GPU hardware and capacity planning; a pilot-scale step, not the frugal default. |
+- **Current role** — Candidate serving engine for pilot-scale inference.
+- **Best fit** — Many simultaneous users on GPU hardware, behind the gateway.
+- **Local fit** — Runs on GPU servers such as DGX Spark, not the 24 GB Mac mini development path.
+- **Interface** — OpenAI-compatible endpoint, so the gateway and applications do not change.
+- **Main caution** — Needs GPU hardware and capacity planning; a pilot-scale step, not the frugal default.
 
 ## When to use it
 

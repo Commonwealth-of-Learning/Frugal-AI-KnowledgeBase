@@ -9,14 +9,12 @@ icon: [gitbook-icon-name]
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | [How this interface or framework is used] |
-| Best fit | [Plain-language user workflow] |
-| Requires | [Main dependency] |
-| Provider connection | [Runtime API, provider URL, or service dependency] |
-| Data location | [Where application state is stored] |
-| Main caution | [Most important interface or framework limit] |
+- **Current role** — [How this interface or framework is used]
+- **Best fit** — [Plain-language user workflow]
+- **Requires** — [Main dependency]
+- **Provider connection** — [Runtime API, provider URL, or service dependency]
+- **Data location** — [Where application state is stored]
+- **Main caution** — [Most important interface or framework limit]
 
 ## When to use it
 

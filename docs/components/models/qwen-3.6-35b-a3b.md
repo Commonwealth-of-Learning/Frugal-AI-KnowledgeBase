@@ -11,15 +11,13 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Candidate model for future Frugal AI paths. |
-| Best fit | Agentic coding, tool use, repository-level reasoning, and multimodal evaluation. |
-| Local fit | Better suited to a measured higher-memory path than the current 24 GB Mac mini first path. |
-| Model type | MoE model: 35B total parameters with about 3B active per token (Ollama labels the same model 36B). The full package still affects memory use. |
-| Inputs | Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels. |
-| Languages | Source-listed multilingual support across many languages; Qwen lists up to 201. |
-| Main caution | Ollama lists the Q4_K_M package at 24 GB, before context, runtime, interface, and visual-input overhead. |
+- **Current role** — Candidate model for future Frugal AI paths.
+- **Best fit** — Agentic coding, tool use, repository-level reasoning, and multimodal evaluation.
+- **Local fit** — Better suited to a measured higher-memory path than the current 24 GB Mac mini first path.
+- **Model type** — MoE model: 35B total parameters with about 3B active per token (Ollama labels the same model 36B). The full package still affects memory use.
+- **Inputs** — Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels.
+- **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
+- **Main caution** — Ollama lists the Q4_K_M package at 24 GB, before context, runtime, interface, and visual-input overhead.
 
 ## Good for
 
@@ -46,7 +44,9 @@ The [Inference layer](../../concepts/inference-layer.md) lists the cautions shar
 | Replaceability | Can be evaluated as a higher-capability alternative when a guide needs agentic coding, tools, or multimodal reasoning. |
 | Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
-## Reference settings
+<details>
+
+<summary><strong>Reference settings</strong></summary>
 
 These settings are source-listed starting points for evaluation. They are not Frugal AI guide defaults.
 
@@ -64,6 +64,8 @@ Reference notes:
 - Qwen advises maintaining at least 128K context to preserve thinking capability, but local Frugal AI paths still need memory and latency measurement before using high context.
 - Sampling support varies by inference framework.
 
+</details>
+
 ## Technical details
 
 | Field | Value |
@@ -76,7 +78,9 @@ Reference notes:
 | Experts | 256 total, with 8 routed and 1 shared expert activated |
 | Model licence | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
-## Source confidence
+<details>
+
+<summary><strong>Source confidence</strong></summary>
 
 | Claim | Value | Confidence |
 | --- | --- | --- |
@@ -90,6 +94,8 @@ Reference notes:
 | Ollama size | 24 GB, Q4_K_M quantisation | Source-listed by Ollama |
 
 Do not treat source benchmark tables as local performance claims. Measure speed, memory use, quality, and failure modes on the target machine before using this model in a guide.
+
+</details>
 
 ## Limits
 

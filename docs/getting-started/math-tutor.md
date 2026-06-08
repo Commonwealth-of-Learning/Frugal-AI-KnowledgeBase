@@ -17,12 +17,10 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 
 ## Fit and limits
 
-| Question | Answer |
-| --- | --- |
-| Good for | Exact arithmetic, algebra, and calculus in a tutoring chat, with the model explaining each step. |
-| Not for | Learner-facing use without review, or trusting the model's own mental arithmetic. |
-| Governance | Teacher-only tier: a teacher reviews explanations before any learner use. |
-| Caution | The tool fixes the calculation, not the teaching; a correct result can still be explained poorly. |
+- **Good for** — Exact arithmetic, algebra, and calculus in a tutoring chat, with the model explaining each step.
+- **Not for** — Learner-facing use without review, or trusting the model's own mental arithmetic.
+- **Governance** — Teacher-only tier: a teacher reviews explanations before any learner use.
+- **Caution** — The tool fixes the calculation, not the teaching; a correct result can still be explained poorly.
 
 ## Prerequisites
 

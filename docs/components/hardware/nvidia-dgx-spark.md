@@ -11,13 +11,11 @@ NVIDIA DGX Spark is a compact Grace Blackwell desktop system for larger local AI
 
 ## At a glance
 
-| Question | Answer |
-| --- | --- |
-| Current role | Development and [pilot environment](../environments/pilot.md) hardware for future Frugal AI paths. |
-| Best fit | Larger local models, multimodal evaluation, fine-tuning experiments, and pilot services that need more memory headroom. |
-| CPU or chip | NVIDIA Grace Blackwell architecture with integrated GPU and CPU; source-listed CPU is a 20-core Arm processor. |
-| Memory | 128 GB unified system memory. |
-| Main caution | Suitable pilot use still needs service ownership, access control, backups, monitoring, and workload testing. |
+- **Current role** — Development and [pilot environment](../environments/pilot.md) hardware for future Frugal AI paths.
+- **Best fit** — Larger local models, multimodal evaluation, fine-tuning experiments, and pilot services that need more memory headroom.
+- **CPU or chip** — NVIDIA Grace Blackwell architecture with integrated GPU and CPU; source-listed CPU is a 20-core Arm processor.
+- **Memory** — 128 GB unified system memory.
+- **Main caution** — Suitable pilot use still needs service ownership, access control, backups, monitoring, and workload testing.
 
 ## When to use it
 
