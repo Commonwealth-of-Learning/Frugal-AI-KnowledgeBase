@@ -2,127 +2,50 @@
 
 Internal maintainer reference. This file is not published in the Frugal AI knowledge base.
 
-Use this registry before creating or revising public pages under `docs/` and templates under `internal/templates/`.
+This registry sets naming *principles and patterns*, not a fixed catalogue. Use it as guidance when creating or revising public pages under `docs/` and templates under `internal/templates/`. The current stack appears throughout as a worked example; when the stack changes, update the examples, not the principles.
+
+A small set of these rules is enforced automatically by `internal/tools/editorial_audit.py` and is marked **(audited)** below. Treat audited rules as firm and the rest as sensible defaults that can flex with good reason.
+
+## Principles
+
+- Name each thing one way and reuse that form across prose, navigation, and titles.
+- Write the first screen for education stakeholders — purpose, risk, cost, governance, institutional fit, in plain language. Developer detail (exact tags, settings, commands, links) can follow lower on the page.
+- Prefer the reader-facing service name over the underlying tool name in titles and navigation.
+- Put a detail in a name (memory size, version, capacity) only when it changes whether a documented path works.
+- Use British/Commonwealth spelling, and frame the work as Frugal AI rather than "cheap AI".
 
 ## Audience
 
-The Frugal AI knowledge base serves two audiences:
-
-- education stakeholders who need purpose, risk, cost, governance, and institutional fit in plain language;
-- developers and maintainers who need exact component names, model tags, settings, commands, and source links.
-
-The first screen of a public page should work for stakeholders. Developer details can appear lower on the page.
+The knowledge base serves two audiences: education stakeholders who need plain-language purpose, risk, cost, governance, and institutional fit; and developers and maintainers who need exact component names, model tags, settings, commands, and source links. The first screen should work for stakeholders.
 
 ## Site Name
 
-| Use | Approved form |
-| --- | --- |
-| Published reader experience | Frugal AI knowledge base |
+Refer to the published reader experience as **Frugal AI knowledge base** (lower-case "knowledge base"). The capitalised "Frugal AI Knowledge Base" is allowed only as the landing-page H1 **(audited)**. Reserve `GitBook` for the publishing platform or its syntax; avoid `docs`, `documentation site`, or casual variants when naming the reader experience.
 
-Avoid using `GitBook`, `docs`, `documentation site`, or casual variants when referring to the published reader experience. Use `GitBook` only when discussing the publishing platform or GitBook-specific syntax.
+## Page Types
 
-## Page Type Names
+Common page jobs: route readers (landing), complete one practical task (guide), explain a decision or trade-off (concept), describe one component's fit and limits (component card, including model, hardware, runtime, framework, and environment variants), operate and recover a service (runbook), and define terms or collect source links (reference). Each page should do one of these jobs.
 
-| Page type | Purpose |
-| --- | --- |
-| Landing page | Route readers into the Frugal AI knowledge base |
-| Guide | Complete one practical task |
-| Concept | Explain a decision, principle, or trade-off |
-| Component card | Explain fit, limits, and links for one component |
-| Model card | Explain model identity, practical fit, settings, and limits |
-| Hardware card | Explain local hardware fit, memory budget, and limits |
-| Runbook | Operate, maintain, and recover a service |
-| Reference page | Define terms or collect source links |
+## Naming Patterns
 
-## Service Names
+Use the patterns below; the current-stack values are examples to follow, not the only permitted names.
 
-| Use | Approved name | Avoid |
-| --- | --- | --- |
-| First build guide | Local AI chat service | Offline chat service |
-| Operations page | Local AI chat service operations | Open WebUI operations |
-| Future tool-using workflow | Institutional AI agent pilot | AI agent for the current chat-only path |
+Services — name by what the reader does, not the tool underneath. Use a reader-facing service name for the build guide (current example: `Local AI chat service`, not "Offline chat service" — **audited**) and `<service name> operations` for its operations page (current example: `Local AI chat service operations`, not "Open WebUI operations" — **audited**). Reserve `AI agent` for future paths involving tool use, workflow actions, or orchestration beyond chat (current example: `Institutional AI agent pilot`).
 
-Reserve `AI agent` for future paths that include tool use, workflow actions, agent orchestration, or other agentic behaviour beyond local chat.
+Hardware — include memory only when it is central to whether a path works, and write it as `GB`, not `Gb` (current example: `Mac mini 24 GB`; the "Mac mini" capitalisation and "24 GB" spacing are **audited**). Do not add a spec to a title unless pages need to distinguish configurations.
 
-## Hardware Names
+Components — name each component once and give it a short first-use explanation (current examples: `Ollama`, the local model runtime; `Open WebUI`, the browser chat interface; `Development environment`; `Pilot environment`; and models by their published tag, such as `Qwen3.5-9B`).
 
-Hardware names should include memory only when memory is central to whether a documented path works.
+## Navigation And Titles
 
-Use `GB`, not `Gb`, for memory.
+In `docs/SUMMARY.md`, give component pages a role prefix (`Hardware:`, `Environment:`, `Runtime:`, `Model:`, `Framework:`) and give guide and operations pages their reader-facing service name. Sidebar labels and H1s should correspond, with two common variations: a component H1 may drop the role prefix (sidebar `Hardware: Mac mini 24 GB`, H1 `Mac mini 24 GB`), and an environment H1 reads as a noun phrase (`Development environment`).
 
-| Use | Approved name | First mention |
-| --- | --- | --- |
-| Current first path hardware | Mac mini 24 GB | Mac mini with 24 GB unified memory and an Apple M4 or newer chip |
-| Future higher-capability hardware | NVIDIA DGX Spark | NVIDIA DGX Spark |
-
-Do not include memory in the DGX Spark title unless future pages distinguish multiple DGX Spark memory configurations.
-
-## Component Names
-
-| Component type | Approved name | First-use explanation |
-| --- | --- | --- |
-| Environment | Development environment | Development environment for local testing |
-| Environment | Pilot environment | Pilot environment for controlled shared use before production |
-| Runtime | Ollama | Ollama, the local model runtime |
-| Framework | Open WebUI | Open WebUI, the browser chat interface |
-| Model | Qwen3.5-9B | Qwen3.5-9B, the first-path local model |
-| Model | Qwen3.6-35B-A3B | Qwen3.6-35B-A3B, a future Mixture of Experts evaluation model |
-| Model | Gemma 4 12B | Gemma 4 12B, a future dense multimodal evaluation model |
-
-## Navigation Labels
-
-Use role prefixes for component pages in `docs/SUMMARY.md`:
-
-- `Hardware: Mac mini 24 GB`
-- `Hardware: NVIDIA DGX Spark`
-- `Environment: Development`
-- `Environment: Pilot`
-- `Runtime: Ollama`
-- `Model: Qwen3.5-9B`
-- `Model: Qwen3.6-35B-A3B`
-- `Model: Gemma 4 12B`
-- `Framework: Open WebUI`
-
-Use reader-facing service names for guide and operations pages:
-
-- `Local AI chat service`
-- `Local AI chat service operations`
-
-## Title Patterns
-
-| Page type | Sidebar pattern | H1 pattern |
-| --- | --- | --- |
-| Guide | `Local AI chat service` | `Local AI chat service` |
-| Operations | `Local AI chat service operations` | `Local AI chat service operations` |
-| Hardware card | `Hardware: Mac mini 24 GB` | `Mac mini 24 GB` |
-| Hardware card | `Hardware: NVIDIA DGX Spark` | `NVIDIA DGX Spark` |
-| Environment card | `Environment: Development` | `Development environment` |
-| Environment card | `Environment: Pilot` | `Pilot environment` |
-| Runtime card | `Runtime: Ollama` | `Ollama` |
-| Model card | `Model: Qwen3.5-9B` | `Qwen3.5-9B` |
-| Framework card | `Framework: Open WebUI` | `Open WebUI` |
+The audit also requires a specific set of linked summary entries with exact reader-facing labels. Run `internal/tools/editorial_audit.py` after navigation changes rather than hand-verifying them.
 
 ## Reader-Friendly Explanations
 
-| Term | First-use explanation |
-| --- | --- |
-| runtime | the software that runs the model |
-| interface | the browser or application people use to chat with the model |
-| open-weight model | a model whose weights are available for local use under a specific licence |
-| Mixture of Experts | a model design that activates part of a larger model for each token |
-| MoE | Use only after `Mixture of Experts` has been expanded |
-| context window | the amount of text and other input the model can consider at once |
-| multimodal | able to work with more than one input type, such as text and images |
+Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, and Mixture of Experts. Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.
 
-## Discouraged Terms
+## Preferred Terms
 
-| Avoid | Prefer |
-| --- | --- |
-| cheap AI | Frugal AI |
-| fully cloudless | local-first |
-| Open WebUI operations, as a public service title | Local AI chat service operations |
-| Offline chat service, as the public guide title | Local AI chat service |
-| Mac Mini | Mac mini |
-| Mac mini 24Gb | Mac mini 24 GB |
-| open models, when licence is unclear | open-weight models |
-| replacing teachers | teacher-in-the-loop |
+Prefer the values-aligned framing: Frugal AI over "cheap AI"; local-first over "fully cloudless"; teacher-in-the-loop over "replacing teachers"; and open-weight models over "open models" when a licence point matters. The service titles, the "Mac mini" and "24 GB" forms, the "Frugal AI knowledge base" site name, and avoiding direct second person (`you`, `your`, `yours`) in public pages are all **(audited)**.
