@@ -114,6 +114,14 @@ Start the container:
 docker start open-webui
 ```
 
+## Tools and functions (orchestration)
+
+Tools and functions add the [Orchestration layer](../concepts/orchestration-layer.md) to the local AI chat service, as used by the [Teacher assistant](../getting-started/teacher-assistant.md). Manage them in Workspace, then Tools, and enable them per model in Workspace, then Models.
+
+A tool is Python that runs inside the Open WebUI process. Import or run only tools the institution has written or reviewed, and treat tool code as code to review rather than configuration. Keep tools dependency-free where possible, because saving a tool with requirements pauses the interface while packages install.
+
+The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review assistant outputs and tool usage periodically. Stronger audit logging and control over external requests belong to the gateway layer, in a later increment.
+
 ## DGX Spark candidate pattern
 
 The DGX Spark pattern uses the Open WebUI image with integrated Ollama, GPU access, and two persistent volumes: one for Open WebUI data and one for Ollama models. Use this as a development or pilot starting point after DGX Spark access, Docker permissions, and monitoring are ready.

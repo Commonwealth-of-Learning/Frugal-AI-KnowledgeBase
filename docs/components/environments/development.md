@@ -5,6 +5,8 @@ icon: flask
 
 # Development environment
 
+_Scope: a deployment environment, not a [stack layer](../../concepts/how-the-stack-fits-together.md); it applies across all layers._
+
 The development environment is a local, single-user setup for learning, testing, and demonstration. It is not a shared pilot service or production deployment.
 
 ## At a glance

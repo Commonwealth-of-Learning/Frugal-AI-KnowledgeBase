@@ -5,6 +5,8 @@ icon: comments
 
 # Open WebUI
 
+_Layer: [Application](../../concepts/how-the-stack-fits-together.md) (interface)._
+
 Open WebUI provides the browser chat interface for the local AI chat service. It connects to a local model runtime such as Ollama and gives users a familiar chat experience.
 
 ## At a glance

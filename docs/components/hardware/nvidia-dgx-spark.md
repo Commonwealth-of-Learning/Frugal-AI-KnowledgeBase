@@ -5,6 +5,8 @@ icon: server
 
 # NVIDIA DGX Spark
 
+_Layer: [Infrastructure](../../concepts/how-the-stack-fits-together.md)._
+
 NVIDIA DGX Spark is a compact Grace Blackwell desktop system for larger local AI development and pilot work. In the Frugal AI knowledge base, it is a higher-capability hardware profile for workloads that exceed the 24 GB Mac mini development path.
 
 ## At a glance

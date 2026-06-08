@@ -5,6 +5,8 @@ icon: desktop
 
 # Mac mini 24 GB
 
+_Layer: [Infrastructure](../../concepts/how-the-stack-fits-together.md)._
+
 The current first path uses a Mac mini with 24 GB unified memory and an Apple M4 or newer chip as the documented development machine. It is small, quiet, relatively low cost, and capable of running a light local model with a browser chat interface.
 
 ## At a glance

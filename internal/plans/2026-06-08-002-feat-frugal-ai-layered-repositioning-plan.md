@@ -71,7 +71,7 @@ Add serving engines (vLLM, SGLang) for pilot-scale throughput and alternative lo
 
 ### Increment 4 — Application breadth
 
-Add coding assistance and agent applications on the same lower layers, with agent governance.
+Add coding assistance and agent applications on the same lower layers, with agent governance. Headline example: an OpenCode coding agent (open-source, terminal-first, local via Ollama) as the concrete agent (Application subtype) and a vivid gateway example, since it can route to cloud providers. Decision 2026-06-08: OpenCode was evaluated for Increment 1 and deferred here, because it is a finished coding agent rather than a neutral orchestration substrate for a teacher assistant.
 
 ### Increment 5 — Annex revision
 

@@ -5,6 +5,8 @@ icon: brain
 
 # Qwen3.6-35B-A3B
 
+_Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (model)._
+
 Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a candidate model for future Frugal AI paths that need stronger agentic coding, repository-level reasoning, tool calling, visual understanding, and long-context work than the current first local AI chat service path.
 
 ## At a glance
