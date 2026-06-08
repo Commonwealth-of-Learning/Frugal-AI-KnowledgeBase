@@ -32,6 +32,7 @@ ALLOWED_ROLE_PREFIXES = (
 REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
     "* [Math tutor](getting-started/math-tutor.md)",
+    "* [Curriculum knowledge assistant](getting-started/curriculum-assistant.md)",
     "* [AI gateway](getting-started/ai-gateway.md)",
     "* [Coding agent](getting-started/coding-agent.md)",
     "* [Manim animator](getting-started/manim-animator.md)",

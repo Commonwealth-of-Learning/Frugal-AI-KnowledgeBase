@@ -70,6 +70,7 @@ Every service exposed on a host port is registered here, so that two services ne
 
 | Host port | Service |
 | --- | --- |
+| 80 | Dify dashboard (nginx) |
 | 1234 | LM Studio local server (alternative runtime) |
 | 3000 | Open WebUI, development path |
 | 4000 | LiteLLM gateway |

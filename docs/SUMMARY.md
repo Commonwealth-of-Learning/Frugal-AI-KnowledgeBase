@@ -10,6 +10,7 @@
 ## Build further
 
 * [Math tutor](getting-started/math-tutor.md)
+* [Curriculum knowledge assistant](getting-started/curriculum-assistant.md)
 * [AI gateway](getting-started/ai-gateway.md)
 
 ## Advanced
@@ -27,18 +28,18 @@
 ## Infrastructure
 
 * [Infrastructure layer](concepts/infrastructure-layer.md)
-* [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
-* [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)
+  * [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
+  * [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)
 
 ## Inference
 
 * [Inference layer](concepts/inference-layer.md)
-* [Runtime: Ollama](components/runtimes/ollama.md)
-* [Runtime: LM Studio](components/runtimes/lm-studio.md)
-* [Serving engine: vLLM](components/runtimes/vllm.md)
-* [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
-* [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)
-* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
+  * [Runtime: Ollama](components/runtimes/ollama.md)
+  * [Runtime: LM Studio](components/runtimes/lm-studio.md)
+  * [Serving engine: vLLM](components/runtimes/vllm.md)
+  * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
+  * [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)
+  * [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
 
 ## Orchestration
 
@@ -47,13 +48,13 @@
 ## Gateway
 
 * [Gateway layer](concepts/gateway-layer.md)
-* [Gateway: LiteLLM](components/gateways/litellm.md)
+  * [Gateway: LiteLLM](components/gateways/litellm.md)
 
 ## Application
 
 * [Application layer](concepts/application-layer.md)
-* [Interface: Open WebUI](components/frameworks/open-webui.md)
-* [Agent: OpenCode](components/applications/opencode.md)
+  * [Interface: Open WebUI](components/frameworks/open-webui.md)
+  * [Agent: OpenCode](components/applications/opencode.md)
 
 ## Environments
 
