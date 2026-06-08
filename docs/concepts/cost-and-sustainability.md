@@ -5,7 +5,7 @@ icon: leaf
 
 # Cost and sustainability
 
-Frugal AI is not cheap AI. Cost matters, but as one part of sovereignty: predictable spending, no per-seat dependency, and lower energy use over time.
+In Frugal AI, cost is one part of sovereignty, not the whole point. COL frames it as durable institutional infrastructure that prioritises efficiency, sovereignty, and local ownership, so cost shows up as predictable spending, no per-seat dependency, and lower energy use over time.
 
 ## An illustrative cost comparison
 

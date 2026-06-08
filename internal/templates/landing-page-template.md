@@ -7,7 +7,7 @@ icon: [gitbook-icon-name]
 
 [One grounded definition: a build reference for sovereign, local-first AI in education.]
 
-[One paragraph on what Frugal AI is — local-first, open, capacity-building infrastructure — grounded in the COL tradition, for example Aptus. Frugal AI is not cheap AI.]
+[One paragraph on what Frugal AI is, in COL's framing: durable institutional infrastructure rather than an externally sourced service, prioritising efficiency, sovereignty, and local ownership; local-first, open, and capacity-building — grounded in the COL tradition, for example Aptus.]
 
 {% hint style="info" %}
 [Scope note: the first build is intentionally small and does not imply pilot or production readiness.]

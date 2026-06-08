@@ -2,6 +2,13 @@
 
 * [Welcome](README.md)
 
+## Concepts
+
+* [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
+* [Example applications](concepts/example-applications.md)
+* [Frugal AI principles](concepts/frugal-ai-principles.md)
+* [Cost and sustainability](concepts/cost-and-sustainability.md)
+
 ## Start here
 
 * [Quickstart](getting-started/quickstart.md)
@@ -17,13 +24,6 @@
 
 * [Coding agent](getting-started/coding-agent.md)
 * [Manim animator](getting-started/manim-animator.md)
-
-## Concepts
-
-* [Frugal AI principles](concepts/frugal-ai-principles.md)
-* [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
-* [Cost and sustainability](concepts/cost-and-sustainability.md)
-* [Example applications](concepts/example-applications.md)
 
 ## Infrastructure
 
@@ -44,6 +44,7 @@
 ## Orchestration
 
 * [Orchestration layer](concepts/orchestration-layer.md)
+  * [Platform: Dify](components/orchestration/dify.md)
 
 ## Gateway
 

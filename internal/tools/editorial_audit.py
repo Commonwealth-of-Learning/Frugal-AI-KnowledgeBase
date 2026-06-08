@@ -27,6 +27,7 @@ ALLOWED_ROLE_PREFIXES = (
     "Gateway",
     "Interface",
     "Agent",
+    "Platform",
 )
 
 REQUIRED_SUMMARY_ENTRIES = (
@@ -51,10 +52,11 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
     "* [Interface: Open WebUI](components/frameworks/open-webui.md)",
     "* [Gateway: LiteLLM](components/gateways/litellm.md)",
+    "* [Platform: Dify](components/orchestration/dify.md)",
     "* [Agent: OpenCode](components/applications/opencode.md)",
 )
 
-COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications"}
+COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications", "orchestration"}
 
 TEMPLATES_REQUIRING_AT_A_GLANCE = (
     "model-card-template.md",

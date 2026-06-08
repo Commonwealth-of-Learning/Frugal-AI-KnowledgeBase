@@ -7,7 +7,7 @@ icon: hand-wave
 
 The Frugal AI knowledge base is a build reference for sovereign, local-first AI in education. It shows how to assemble AI services from open, inspectable layers that an institution can run, govern, and own — starting on a single machine and growing only as far as a task needs.
 
-Frugal AI is not cheap AI. It is local-first, open, and capacity-building infrastructure: predictable cost, data kept under local control, resilience without constant connectivity, and skills that stay with the institution. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to teacher-in-the-loop AI.
+Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service, prioritising efficiency, sovereignty, and local ownership. In practice it is local-first, open, and capacity-building infrastructure: predictable cost, data kept under local control, resilience without constant connectivity, and skills that stay with the institution. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to teacher-in-the-loop AI.
 
 {% hint style="info" %}
 The first build is intentionally small: one local chat service on a single machine. It is a development path and does not imply pilot or production readiness.
@@ -63,7 +63,7 @@ The guides are tiered by level, and one education example — a mathematics use 
 | Intermediate | [Math tutor](getting-started/math-tutor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, and a governed boundary with controlled cloud burst. |
 | Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. |
 
-These levels match the Start here, Build further, and Advanced sections in the sidebar. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md). For how the same layers support other applications, such as a curriculum knowledge assistant, see [Example applications](concepts/example-applications.md).
+These levels match the Start here, Build further, and Advanced sections in the sidebar, and the guides in them build the sample applications mapped in [Example applications](concepts/example-applications.md) — which shows how each guide relates to an application, a tier, and the layers. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md).
 
 ## What this path proves
 

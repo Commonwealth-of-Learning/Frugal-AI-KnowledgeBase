@@ -37,7 +37,7 @@ The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI too
 | Layer | This slice uses |
 | --- | --- |
 | Application | A Dify chat application |
-| Orchestration | Dify knowledge base and retrieval (RAG) |
+| Orchestration | [Dify](../components/orchestration/dify.md) knowledge base and retrieval (RAG) |
 | Inference | [Ollama](../components/runtimes/ollama.md) serving an LLM and an embedding model |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md), or more memory |
 

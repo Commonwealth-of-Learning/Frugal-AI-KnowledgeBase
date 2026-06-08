@@ -149,7 +149,7 @@ The first screen of a landing or architecture page states the architecture and t
 
 ## Core Message
 
-Frugal AI is not cheap AI. It is a local-first, open, and capacity-building approach to AI infrastructure for education. Its purpose is to help institutions control data, costs, reliability, and expertise while still giving learners and educators useful AI services.
+In COL's framing, Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service, prioritising efficiency, sovereignty, and local ownership. It is a local-first, open, and capacity-building approach to AI infrastructure for education. Its purpose is to help institutions control data, costs, reliability, and expertise while still giving learners and educators useful AI services.
 
 When writing, connect every technical choice back to at least one of these outcomes:
 
