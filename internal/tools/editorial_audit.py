@@ -18,6 +18,7 @@ TEMPLATES_DIR = ROOT / "internal" / "templates"
 REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
     "* [Teacher assistant](getting-started/teacher-assistant.md)",
+    "* [AI gateway](getting-started/ai-gateway.md)",
     "* [Local AI chat service operations](operations/open-webui-ops.md)",
     "* [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)",
     "* [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)",
@@ -28,9 +29,10 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)",
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
     "* [Framework: Open WebUI](components/frameworks/open-webui.md)",
+    "* [Gateway: LiteLLM](components/gateways/litellm.md)",
 )
 
-COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments"}
+COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways"}
 
 TEMPLATES_REQUIRING_AT_A_GLANCE = (
     "model-card-template.md",
@@ -166,12 +168,57 @@ def main() -> int:
         warnings.extend(check_public_site_names(path, text))
         warnings.extend(scan_public_placeholders(path, text))
         warnings.extend(check_first_screen_abbreviations(path, text))
+        warnings.extend(check_frontmatter(path, text))
         if is_linked_component_page(path):
             warnings.extend(require_at_a_glance(path, text, "linked component page"))
 
     warnings.extend(check_templates())
 
     return print_result(warnings)
+
+
+def check_frontmatter(path: Path, text: str) -> list[Warning]:
+    """Flag YAML frontmatter that will fail to parse at build time.
+
+    The common breakage is an unquoted scalar value containing a colon-space
+    (or a trailing colon), which YAML reads as a nested mapping. This check is
+    intentionally stdlib-only and does not import a YAML library.
+    """
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return []
+
+    closing = None
+    for index in range(1, len(lines)):
+        if lines[index].strip() == "---":
+            closing = index
+            break
+    if closing is None:
+        return [Warning(path, 1, "frontmatter opening --- has no closing ---")]
+
+    warnings: list[Warning] = []
+    for index in range(1, closing):
+        line = lines[index]
+        if not line.strip() or line[0] in (" ", "\t"):
+            continue  # blank line or block-scalar continuation
+        match = re.match(r"^([A-Za-z0-9_.-]+):(?:\s+(.*))?$", line)
+        if not match:
+            continue
+        value = (match.group(2) or "").strip()
+        if value in ("", "|", ">", "|-", ">-", "|+", ">+"):
+            continue  # empty value or block-scalar indicator
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+            continue  # already quoted
+        if ": " in value or value.endswith(":"):
+            warnings.append(
+                Warning(
+                    path,
+                    index + 1,
+                    f'frontmatter value for "{match.group(1)}" contains a colon; '
+                    "quote the value or remove the colon",
+                )
+            )
+    return warnings
 
 
 def read_text(path: Path) -> str | None:

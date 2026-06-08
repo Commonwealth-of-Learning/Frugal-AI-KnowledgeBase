@@ -7,6 +7,7 @@
 * [Quickstart](getting-started/quickstart.md)
 * [Local AI chat service](getting-started/offline-chat-service.md)
 * [Teacher assistant](getting-started/teacher-assistant.md)
+* [AI gateway](getting-started/ai-gateway.md)
 
 ## Concepts
 
@@ -28,6 +29,11 @@
 ## Orchestration
 
 * [Orchestration layer](concepts/orchestration-layer.md)
+
+## Gateway
+
+* [Gateway layer](concepts/gateway-layer.md)
+* [Gateway: LiteLLM](components/gateways/litellm.md)
 
 ## Application
 

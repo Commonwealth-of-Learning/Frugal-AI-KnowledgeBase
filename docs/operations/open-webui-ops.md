@@ -122,6 +122,16 @@ A tool is Python that runs inside the Open WebUI process. Import or run only too
 
 The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review assistant outputs and tool usage periodically. Stronger audit logging and control over external requests belong to the gateway layer, in a later increment.
 
+## Gateway (LiteLLM)
+
+The [AI gateway](../getting-started/ai-gateway.md) runs as a local process on the host and serves an OpenAI-compatible endpoint on port 4000. Open WebUI connects to it at `http://host.docker.internal:4000/v1`.
+
+- Start and stop: run the gateway with its configuration file, and stop the process to take it offline.
+- Keys: keep the gateway master key and any approved-provider keys in the host environment, not in a configuration file under version control.
+- Redaction services: the Presidio analyser and anonymiser run as local containers; confirm both are running before relying on redaction.
+- Audit log: review the gateway log for requests, routes, and masked entities as part of teacher-in-the-loop review.
+- Cloud burst: keep external routing off unless a task needs it, and confirm the redaction guardrail applies to every model before enabling it.
+
 ## DGX Spark candidate pattern
 
 The DGX Spark pattern uses the Open WebUI image with integrated Ollama, GPU access, and two persistent volumes: one for Open WebUI data and one for Ollama models. Use this as a development or pilot starting point after DGX Spark access, Docker permissions, and monitoring are ready.

@@ -40,7 +40,7 @@ The Gateway is the most important layer for education sovereignty. Because every
 
 This is the operational form of the controls described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): personal-data redaction, context minimisation, approved destinations, audit logging, and controlled cloud burst within a defined envelope. Governance is not spread across the system. It has one architectural home, at the boundary where a prompt could cross from local to external processing.
 
-A fully local system still has a Gateway, in its simplest form: a local-only policy with no external egress.
+A fully local system still has a Gateway, in its simplest form: a local-only policy with no external egress. The [Gateway layer](gateway-layer.md) page covers how this becomes a running component that redacts, routes, and logs.
 
 ## Layers are optional: the frugal floor
 

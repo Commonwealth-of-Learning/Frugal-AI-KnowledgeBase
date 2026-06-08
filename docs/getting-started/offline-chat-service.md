@@ -170,3 +170,5 @@ ollama stop qwen3.5-dev
 ## Next step
 
 Use [Local AI chat service operations](../operations/open-webui-ops.md) for updates, backup, restore, and routine health checks.
+
+For a single governed endpoint with personal-data redaction and audit logging, see [AI gateway](ai-gateway.md).
