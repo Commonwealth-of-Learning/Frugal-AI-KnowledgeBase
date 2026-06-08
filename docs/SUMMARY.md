@@ -22,6 +22,7 @@
 * [Frugal AI principles](concepts/frugal-ai-principles.md)
 * [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
 * [Cost and sustainability](concepts/cost-and-sustainability.md)
+* [Example applications](concepts/example-applications.md)
 
 ## Infrastructure
 

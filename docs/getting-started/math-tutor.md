@@ -97,6 +97,10 @@ This slice operates at the teacher-only tier described in the [sovereign educati
 | Saving the tool is slow | Requirements install | The `requirements: sympy` line installs SymPy on save, which pauses the interface briefly. |
 | The tool returns an error | Expression format | Use SymPy syntax, for example `solve(x**2 - 4, x)`, rather than prose. |
 
+## Localise it
+
+A math tutor is most useful when it fits its context. Align the examples to the national curriculum's topics and sequence, write word problems with local names, places, and currency, and prompt in the local language — the model supports many. Adapting the examples locally is part of the Frugal AI approach; see [Frugal AI principles](../concepts/frugal-ai-principles.md).
+
 ## Next step
 
 For genuinely hard problems, route the tutor through the [AI gateway](ai-gateway.md) and burst to a stronger model, redacted first. For animated explanations, a coding agent can generate and render them; see the [Manim animator](manim-animator.md). Use [Local AI chat service operations](../operations/open-webui-ops.md) to manage tools and review use.

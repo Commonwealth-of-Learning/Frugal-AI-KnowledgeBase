@@ -63,7 +63,7 @@ The guides are tiered by level, and one education example — a mathematics use 
 | Intermediate | [Math tutor](getting-started/math-tutor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, and a governed boundary with controlled cloud burst. |
 | Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. |
 
-These levels match the Start here, Build further, and Advanced sections in the sidebar. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md).
+These levels match the Start here, Build further, and Advanced sections in the sidebar. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md). For how the same layers support other applications, such as a curriculum knowledge assistant, see [Example applications](concepts/example-applications.md).
 
 ## What this path proves
 
