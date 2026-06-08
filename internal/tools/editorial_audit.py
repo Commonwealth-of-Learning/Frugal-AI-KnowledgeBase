@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = ROOT / "docs"
 SUMMARY_PATH = DOCS_DIR / "SUMMARY.md"
 TEMPLATES_DIR = ROOT / "internal" / "templates"
+PLANS_DIR = ROOT / "internal" / "plans"
 
 REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
@@ -25,6 +26,8 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Environment: Development](components/environments/development.md)",
     "* [Environment: Pilot](components/environments/pilot.md)",
     "* [Runtime: Ollama](components/runtimes/ollama.md)",
+    "* [Runtime: LM Studio](components/runtimes/lm-studio.md)",
+    "* [Serving engine: vLLM](components/runtimes/vllm.md)",
     "* [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)",
     "* [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)",
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
@@ -173,6 +176,7 @@ def main() -> int:
             warnings.extend(require_at_a_glance(path, text, "linked component page"))
 
     warnings.extend(check_templates())
+    warnings.extend(check_internal_plans())
 
     return print_result(warnings)
 
@@ -218,6 +222,18 @@ def check_frontmatter(path: Path, text: str) -> list[Warning]:
                     "quote the value or remove the colon",
                 )
             )
+    return warnings
+
+
+def check_internal_plans() -> list[Warning]:
+    """Validate frontmatter of internal plan files, which downstream tooling parses."""
+    warnings: list[Warning] = []
+    if not PLANS_DIR.is_dir():
+        return warnings
+    for path in sorted(PLANS_DIR.glob("*.md")):
+        text = read_text(path)
+        if text is not None:
+            warnings.extend(check_frontmatter(path, text))
     return warnings
 
 

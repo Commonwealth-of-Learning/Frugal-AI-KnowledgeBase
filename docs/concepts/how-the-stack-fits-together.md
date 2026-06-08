@@ -14,9 +14,9 @@ The Frugal AI knowledge base treats every build as a slice through this stack. T
 | Layer | Role | Examples |
 | --- | --- | --- |
 | Application | What a person actually uses. | Local chat, course search, teacher support, coding assistance, and agents. |
-| Gateway (sovereignty envelope) | The governed boundary every model request passes through. | Local and cloud routing, redaction, policy filters, audit logging, and guardrails. |
-| Orchestration | What turns a model into a useful workflow. | The reasoning loop, tools, memory, retrieval, and context assembly. |
-| Inference | What runs the model and serves predictions. | Local runtimes for development; serving engines for shared or higher-throughput use. |
+| [Gateway](gateway-layer.md) (sovereignty envelope) | The governed boundary every model request passes through. | Local and cloud routing, redaction, policy filters, audit logging, and guardrails. |
+| [Orchestration](orchestration-layer.md) | What turns a model into a useful workflow. | The reasoning loop, tools, memory, retrieval, and context assembly. |
+| [Inference](inference-layer.md) | What runs the model and serves predictions. | Local runtimes for development; serving engines for shared or higher-throughput use. |
 | Infrastructure | What everything runs on. | Compute, operating system, containers, storage, and networking. |
 
 An agent is not a separate layer. An agent is an Application that uses the Orchestration layer to call tools and take steps, under stricter human oversight.

@@ -9,6 +9,8 @@ _Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (runtime)._
 
 Ollama is the local runtime used in the first Frugal AI path. It downloads models, runs them locally, and exposes an API that tools such as Open WebUI can connect to.
 
+On Apple Silicon, Ollama now uses the MLX engine for faster local inference. For alternatives and the move to serving engines for shared use, see the [Inference layer](../../concepts/inference-layer.md) overview.
+
 ## At a glance
 
 | Question | Answer |

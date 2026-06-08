@@ -1,5 +1,5 @@
 ---
-title: Increment 2 — Gateway: The Sovereignty Envelope as a Running Layer
+title: "Increment 2 — Gateway: The Sovereignty Envelope as a Running Layer"
 type: feat
 status: active
 date: 2026-06-08

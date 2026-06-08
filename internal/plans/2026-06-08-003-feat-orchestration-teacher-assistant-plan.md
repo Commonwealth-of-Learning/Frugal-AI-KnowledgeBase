@@ -1,5 +1,5 @@
 ---
-title: Increment 1 — Orchestration: Tool-Using Teacher Assistant
+title: "Increment 1 — Orchestration: Tool-Using Teacher Assistant"
 type: feat
 status: active
 date: 2026-06-08
