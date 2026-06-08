@@ -233,7 +233,7 @@ Use this order:
 2. The layered stack
 3. Governance home: the gateway
 4. Time-boxed entry cards
-5. The first slice, the frugal floor
+5. The first build, the frugal floor
 6. Reader-path table
 7. Proof points
 8. Guardrails
@@ -276,7 +276,7 @@ Use this order:
 2. What the layer provides
 3. Frugal trade-offs and where governance applies
 4. The components or options in this knowledge base
-5. The first slice, and how the layer connects to the others
+5. The first build, and how the layer connects to the others
 6. Related pages
 
 ### Component Pages

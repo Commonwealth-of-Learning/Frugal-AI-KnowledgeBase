@@ -9,7 +9,7 @@ This page describes the Gateway layer of [The Frugal AI stack](how-the-stack-fit
 
 ## From policy to running layer
 
-In the first chat slice the gateway is only a policy: nothing leaves because nothing is configured to leave. A running gateway makes that boundary enforceable in software. Every application sends requests to one endpoint; the gateway decides where each request goes, what is removed before a model sees it, and what is recorded.
+In the first chat build the gateway is only a policy: nothing leaves because nothing is configured to leave. A running gateway makes that boundary enforceable in software. Every application sends requests to one endpoint; the gateway decides where each request goes, what is removed before a model sees it, and what is recorded.
 
 ## What the gateway does
 
@@ -31,7 +31,7 @@ For a single local model used by one application, the gateway is optional: gover
 
 Run the gateway locally alongside the rest of the stack. Start with one endpoint, redaction, and logging, all local. Add an external destination only when a task needs it, and keep the local model as the default and the fallback.
 
-## First slice: the AI gateway
+## First build: the AI gateway
 
 The [AI gateway](../getting-started/ai-gateway.md) guide puts a local gateway in front of the chat service: a single endpoint, personal-data redaction, audit logging, and optional controlled cloud burst to one approved provider.
 

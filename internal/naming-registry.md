@@ -42,7 +42,7 @@ Naming rules for the layers:
 
 - An agent is an `Application` subtype, not a separate layer. Continue to reserve `AI agent` for tool-using paths.
 - Describe the gateway as the `sovereignty envelope` when explaining governance; it is the operational form of the privacy-airlock and cloud-burst controls in the reference architecture.
-- Layers are optional and substitutable; the smallest slice (`Infrastructure` plus `Inference` plus `Application`, gateway local-only) is the frugal floor, not a degraded build.
+- Layers are optional and substitutable; the smallest build (`Infrastructure` plus `Inference` plus `Application`, gateway local-only) is the frugal floor, not a degraded version.
 
 ## Naming Patterns
 

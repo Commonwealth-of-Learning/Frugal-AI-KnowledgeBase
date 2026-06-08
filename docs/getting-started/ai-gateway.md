@@ -5,7 +5,7 @@ icon: shield-halved
 
 # AI gateway
 
-This guide puts a local AI gateway in front of the [Local AI chat service](offline-chat-service.md). The gateway gives every application one endpoint, redacts personal data before a model sees it, logs requests for audit, and — only if enabled — routes narrowly scoped tasks to an approved external provider. It is the first [Gateway layer](../concepts/gateway-layer.md) slice: the point where the sovereignty envelope becomes enforceable in software.
+This guide puts a local AI gateway in front of the [Local AI chat service](offline-chat-service.md). The gateway gives every application one endpoint, redacts personal data before a model sees it, logs requests for audit, and — only if enabled — routes narrowly scoped tasks to an approved external provider. It is the first [Gateway layer](../concepts/gateway-layer.md) build: the point where the sovereignty envelope becomes enforceable in software.
 
 {% hint style="info" %}
 Level: intermediate. This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
@@ -25,7 +25,7 @@ Level: intermediate. This is a development path. It runs on the same machine as 
 
 ## Component map
 
-| Layer | This slice uses |
+| Layer | This build uses |
 | --- | --- |
 | Application | [Open WebUI](../components/frameworks/open-webui.md), pointed at the gateway |
 | Gateway | [LiteLLM](../components/gateways/litellm.md) with a personal-data redaction guardrail |
@@ -143,7 +143,7 @@ Keep the local model as the fallback so requests use it when the external provid
 
 ## Governance and review
 
-This slice operationalises the sovereignty envelope in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md):
+This build operationalises the sovereignty envelope in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md):
 
 - redaction runs before any model sees a prompt;
 - only configured providers can be reached, and the local model is the default;

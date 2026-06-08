@@ -15,7 +15,7 @@ The first build is intentionally small: one local chat service on a single machi
 
 ## The Frugal AI stack
 
-Every build in the knowledge base is a slice through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers.
+Every build in the knowledge base is a path through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers.
 
 ```text
 Application      chat, coding, agents, search
@@ -31,20 +31,20 @@ Read top to bottom it is the request path; read bottom to top it is the build or
 
 The gateway is the boundary every model request passes through, so it is where sovereignty is enforced: what may leave the institution, what stays local, what is logged, and what is redacted. Concentrating governance at one layer — the sovereignty envelope — keeps compliance, observability, and guardrails in a single inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
 
-## Who is this for?
+## Where to start
 
-Different readers have different entry points.
+Different goals have different starting points.
 
-| Reader | Start with | Wider programme |
+| Goal | Start with | Wider programme |
 | --- | --- | --- |
-| First-time reader | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
-| Education ministry official | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
-| Institution leader, for example a vice-chancellor | [Frugal AI principles](concepts/frugal-ai-principles.md), [Cost and sustainability](concepts/cost-and-sustainability.md), and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
-| Developer onboarding | [The Frugal AI stack](concepts/how-the-stack-fits-together.md), then [Quickstart](getting-started/quickstart.md) and [Local AI chat service](getting-started/offline-chat-service.md) | [Example applications](concepts/example-applications.md) |
+| Understand Frugal AI | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
+| Assess it for a ministry | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
+| Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md), [Cost and sustainability](concepts/cost-and-sustainability.md), and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
+| Build with it | [The Frugal AI stack](concepts/how-the-stack-fits-together.md), then [Quickstart](getting-started/quickstart.md) and [Local AI chat service](getting-started/offline-chat-service.md) | [Example applications](concepts/example-applications.md) |
 
-## The first slice
+## The first build: Local AI chat service
 
-The first complete slice stops at the frugal floor: infrastructure, inference, and an application, with the gateway local-only and no orchestration.
+The first complete build stops at the frugal floor: infrastructure, inference, and an application, with the gateway local-only and no orchestration.
 
 ```text
 Mac mini 24 GB       (Infrastructure)
@@ -110,9 +110,9 @@ This knowledge base is the technical companion to COL's Frugal AI programme. For
 - [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) — the teacher-led, localised-AI commitment.
 - [COL news](https://www.col.org/news/) — ongoing Frugal AI updates.
 
-## Not in the first slice
+## Not in the first build
 
-The first slice is the local chat service; it stops at the frugal floor. Later tiers add the rest:
+The first build is the local chat service; it stops at the frugal floor. Later tiers add the rest:
 
 - Orchestration, tools, and retrieval: the [math tutor](getting-started/math-tutor.md).
 - A running gateway with controlled cloud burst: the [AI gateway](getting-started/ai-gateway.md).

@@ -32,7 +32,7 @@ The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI too
 
 ## Component map
 
-| Layer | This slice uses |
+| Layer | This build uses |
 | --- | --- |
 | Application | A Dify chat application |
 | Orchestration | [Dify](../components/orchestration/dify.md) knowledge base and retrieval (RAG) |
@@ -89,7 +89,7 @@ Attach the knowledge base, then publish and run the app.
 
 ## Governance and review
 
-This slice operates at the teacher-only tier in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher reviews answers before learners see them; and the assistant runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
+This build operates at the teacher-only tier in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher reviews answers before learners see them; and the assistant runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
 
 ## Troubleshooting
 

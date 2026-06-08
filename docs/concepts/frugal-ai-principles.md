@@ -31,7 +31,7 @@ Some useful tools may not be fully open source. When that happens, the page shou
 
 A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window. See [Cost and sustainability](cost-and-sustainability.md) for the cost and energy case.
 
-### Degrade to a minimal slice
+### Degrade to a minimal build
 
 A Frugal AI system should run at its smallest useful size: infrastructure, inference, and an application, with no orchestration and the gateway closed to external traffic. Layers are added only when a task needs them, so the approach still works on a single machine or an offline school device.
 

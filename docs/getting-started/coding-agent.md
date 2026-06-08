@@ -29,7 +29,7 @@ A coding agent plays two parts in the knowledge base. It is an **example applica
 
 ## Component map
 
-| Layer | This slice uses |
+| Layer | This build uses |
 | --- | --- |
 | Application | OpenCode coding agent |
 | Gateway | [LiteLLM](../components/gateways/litellm.md), governing model calls |
@@ -102,7 +102,7 @@ Start in the built-in Plan agent, which analyses the task and proposes changes w
 
 ## Governance and review
 
-This slice shows the two governance surfaces of the [Application layer](../concepts/application-layer.md):
+This build shows the two governance surfaces of the [Application layer](../concepts/application-layer.md):
 
 - Local actions: Plan mode for review, `edit` and `bash` set to ask, and `external_directory` denied to scope the agent to the project. A person approves each change.
 - Model egress: routed through the gateway, so redaction, approved destinations, and audit logging apply, and cloud burst stays inside the envelope.

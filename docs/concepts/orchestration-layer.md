@@ -5,7 +5,7 @@ icon: diagram-project
 
 # Orchestration layer
 
-This page describes the Orchestration layer of [The Frugal AI stack](how-the-stack-fits-together.md). Orchestration is optional: the first chat slice runs without it. It is added when an application needs more than a single model reply.
+This page describes the Orchestration layer of [The Frugal AI stack](how-the-stack-fits-together.md). Orchestration is optional: the first chat build runs without it. It is added when an application needs more than a single model reply.
 
 ## What orchestration does
 
@@ -14,7 +14,7 @@ The model on its own takes text in and returns text out. Orchestration is the la
 - a loop that lets the model take more than one step;
 - tools, which are functions the model can call to act or to fetch information it does not hold;
 - memory, which carries state across turns;
-- retrieval, which grounds answers in approved sources (a later slice);
+- retrieval, which grounds answers in approved sources (a later build);
 - context assembly, which decides what the model sees on each step.
 
 ## Where it sits
@@ -37,9 +37,9 @@ So orchestration is the layer where human oversight and the gateway matter most:
 
 Add orchestration one capability at a time. Start with read-only tools that have no side effects, keep a human in the loop, and prefer a few well-understood tools over a large toolkit. Reach for a heavier orchestration platform only when simple tools are no longer enough. The [curriculum knowledge assistant](../getting-started/curriculum-assistant.md) shows that step: RAG on [Dify](../components/orchestration/dify.md), a heavier platform, when retrieval over a document collection outgrows a single tool.
 
-## First slice: the math tutor
+## First build: the math tutor
 
-The [Math tutor](../getting-started/math-tutor.md) is the first orchestration slice. It uses an Open WebUI tool to compute mathematics exactly, so the model explains the result instead of guessing the arithmetic, with no external egress and teacher review before any output reaches learners.
+The [Math tutor](../getting-started/math-tutor.md) is the first orchestration build. It uses an Open WebUI tool to compute mathematics exactly, so the model explains the result instead of guessing the arithmetic, with no external egress and teacher review before any output reaches learners.
 
 ## Related pages
 

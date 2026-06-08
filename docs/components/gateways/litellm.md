@@ -44,7 +44,7 @@ Use LiteLLM when there is more than one model or application, or any external ro
 
 ## Limits
 
-- Multi-team access control, budgets, and single sign-on are pilot-scale features beyond the first slice.
+- Multi-team access control, budgets, and single sign-on are pilot-scale features beyond the first build.
 - Redaction quality depends on the configured entity types and confidence thresholds.
 - Cloud burst sends content outside the machine and must be redacted and limited to approved providers.
 

@@ -32,9 +32,9 @@ icon: [gitbook-icon-name]
 | [Component A] | [Role] |
 | [Component B] | [Role] |
 
-## First slice
+## First build
 
-[The first worked slice that uses this layer, with a link to its guide.]
+[The first worked build that uses this layer, with a link to its guide.]
 
 ## Related pages
 

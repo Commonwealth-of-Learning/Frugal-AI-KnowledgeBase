@@ -5,15 +5,15 @@ icon: film
 
 # Manim animator
 
-This guide uses the [coding agent](coding-agent.md) to generate and render [Manim](https://www.manim.community/) animations that illustrate a mathematics concept — the animated companion to the [math tutor](math-tutor.md). It is the most advanced slice in the knowledge base: an agent that writes code and runs a renderer, using a stronger model through the gateway for the hard code generation.
+This guide uses the [coding agent](coding-agent.md) to generate and render [Manim](https://www.manim.community/) animations that illustrate a mathematics concept — the animated companion to the [math tutor](math-tutor.md). It is the most advanced build in the knowledge base: an agent that writes code and runs a renderer, using a stronger model through the gateway for the hard code generation.
 
 {% hint style="warning" %}
-Level: advanced. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this slice uses a stronger model through controlled cloud burst.
+Level: advanced. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this build uses a stronger model through controlled cloud burst.
 {% endhint %}
 
 ## Why this is the hard case
 
-A math tutor explains; an animator shows. Producing a correct Manim scene means writing real Python against a specific API and rendering it — the work a coding agent is built for, and the work where a small local model is weakest. This slice is honest about that: it pairs the [coding agent](coding-agent.md) with a stronger model reached through the [gateway](ai-gateway.md), and keeps a person in the loop.
+A math tutor explains; an animator shows. Producing a correct Manim scene means writing real Python against a specific API and rendering it — the work a coding agent is built for, and the work where a small local model is weakest. This build is honest about that: it pairs the [coding agent](coding-agent.md) with a stronger model reached through the [gateway](ai-gateway.md), and keeps a person in the loop.
 
 ## Fit and limits
 
@@ -30,7 +30,7 @@ A math tutor explains; an animator shows. Producing a correct Manim scene means 
 
 ## Component map
 
-| Layer | This slice uses |
+| Layer | This build uses |
 | --- | --- |
 | Application | OpenCode coding agent, producing a Manim scene |
 | Gateway | [LiteLLM](../components/gateways/litellm.md), routing to a stronger model by controlled cloud burst |
@@ -80,7 +80,7 @@ Open the rendered file, check the animation against the concept, and correct or 
 
 ## Governance and review
 
-This slice carries both Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation. The animation is reviewed before it reaches learners.
+This build carries both Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation. The animation is reviewed before it reaches learners.
 
 ## Troubleshooting
 

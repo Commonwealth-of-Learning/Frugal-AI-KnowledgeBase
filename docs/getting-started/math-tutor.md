@@ -5,7 +5,7 @@ icon: square-root-variable
 
 # Math tutor
 
-This guide turns the local AI chat service into a math tutor that gives exact answers by calling a computation tool, instead of relying on the model's own arithmetic. It is the first [Orchestration layer](../concepts/orchestration-layer.md) slice: the same hardware, runtime, and model as the chat service, with one local tool added and a teacher reviewing the output.
+This guide turns the local AI chat service into a math tutor that gives exact answers by calling a computation tool, instead of relying on the model's own arithmetic. It is the first [Orchestration layer](../concepts/orchestration-layer.md) build: the same hardware, runtime, and model as the chat service, with one local tool added and a teacher reviewing the output.
 
 {% hint style="info" %}
 Level: intermediate. Expected time: about 20 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path; a teacher reviews explanations before they reach learners.
@@ -28,7 +28,7 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 
 ## Component map
 
-| Layer | This slice uses |
+| Layer | This build uses |
 | --- | --- |
 | Application | [Open WebUI](../components/frameworks/open-webui.md) |
 | Orchestration | An Open WebUI tool that computes with SymPy |
@@ -85,7 +85,7 @@ Start a chat, select the tool with the plus icon, and ask a question that needs 
 
 ## Governance and review
 
-This slice operates at the teacher-only tier described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): a teacher reviews explanations before learners see them, the tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
+This build operates at the teacher-only tier described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): a teacher reviews explanations before learners see them, the tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
 
 ## Troubleshooting
 

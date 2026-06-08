@@ -7,7 +7,7 @@ icon: layer-group
 
 A Frugal AI system is not a single product. It is a small set of layers an institution can assemble, inspect, and own, with one governed boundary wherever a request could leave local control.
 
-The Frugal AI knowledge base treats every build as a slice through this stack. The layers are substitutable: an institution can swap a runtime, change models, or add orchestration without replacing the whole system. They are also optional, which is what makes the approach frugal. The smallest useful system uses only the lower layers.
+The Frugal AI knowledge base treats every build as a path through this stack. The layers are substitutable: an institution can swap a runtime, change models, or add orchestration without replacing the whole system. They are also optional, which is what makes the approach frugal. The smallest useful system uses only the lower layers.
 
 ## The layers
 
@@ -44,23 +44,23 @@ A fully local system still has a Gateway, in its simplest form: a local-only pol
 
 ## Layers are optional: the frugal floor
 
-A Frugal AI system degrades gracefully. The smallest useful slice is Infrastructure, Inference, and an Application, with the Gateway set to local-only and no separate Orchestration layer. That is not a cut-down version of the architecture. It is the architecture at its frugal floor, suitable for a single machine or an offline school device.
+A Frugal AI system degrades gracefully. The smallest useful build is Infrastructure, Inference, and an Application, with the Gateway set to local-only and no separate Orchestration layer. That is not a cut-down version of the architecture. It is the architecture at its frugal floor, suitable for a single machine or an offline school device.
 
 Each layer is added only when a task needs it, and simplified or removed when connectivity, hardware, or capacity is limited.
 
-## The first slice: Local AI chat service
+## The first build: Local AI chat service
 
-The [Local AI chat service](../getting-started/offline-chat-service.md) is the first complete slice through the stack. It proves the model with the smallest honest implementation.
+The [Local AI chat service](../getting-started/offline-chat-service.md) is the first complete path through the stack. It proves the model with the smallest honest implementation.
 
-| Layer | This slice uses | Notes |
+| Layer | This build uses | Notes |
 | --- | --- | --- |
 | Application | [Open WebUI](../components/frameworks/open-webui.md) | A browser chat interface. |
-| Gateway | Local-only, no external egress | No cloud burst in this slice; the envelope is closed. |
+| Gateway | Local-only, no external egress | No cloud burst in this build; the envelope is closed. |
 | Orchestration | None | Plain chat needs no tools, memory, or retrieval. |
 | Inference | [Ollama](../components/runtimes/ollama.md) running [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | A local runtime and an open-weight model. |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | A single development machine. |
 
-This slice deliberately stops at the frugal floor. It does not add orchestration or external routing, because plain local chat does not need them.
+This build deliberately stops at the frugal floor. It does not add orchestration or external routing, because plain local chat does not need them.
 
 ## What each layer adds as the system grows
 

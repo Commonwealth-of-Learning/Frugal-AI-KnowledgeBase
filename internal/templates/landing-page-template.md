@@ -27,7 +27,7 @@ icon: [gitbook-icon-name]
 
 [Time-boxed entry cards: the architecture, the quickstart, the first build, and operations.]
 
-## The first slice
+## The first build
 
 [The frugal floor as a compact map, with a layer-to-component table.]
 
