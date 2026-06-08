@@ -209,7 +209,18 @@ Runbooks:
 - troubleshooting;
 - escalation notes.
 
-### 9. Review Navigation
+### 9. Operations Check
+
+A service that can be run must have an operational home, so operations do not fall behind features.
+
+When a page introduces a new runnable component, service, or path, decide its operations coverage before publishing:
+
+- If it is operated like the chat service, add or extend a runbook with start and stop, health checks, update, backup, recovery, and troubleshooting.
+- If a full runbook is premature, add the component to the "What is operated" table in `docs/operations/operations-overview.md` with brief notes and a `further work` marker.
+
+Every operable component should appear in the operations overview, either covered by a runbook or recorded as further work. Treat that table as the registry of operational coverage, the way the Port Allocations table is the registry of host ports.
+
+### 10. Review Navigation
 
 Before linking a page from `docs/SUMMARY.md`, confirm:
 
@@ -232,7 +243,7 @@ Interface: Open WebUI
 Agent: OpenCode
 ```
 
-### 10. Final Editorial Pass
+### 11. Final Editorial Pass
 
 Run the local editorial audit before publication:
 
@@ -260,6 +271,7 @@ Run this checklist:
 - No internal files, planning notes, or templates are linked.
 - Local editorial audit passes, including the frontmatter, role-label, layer-section, and port-registry checks.
 - Any new host port is registered in the naming registry's Port Allocations table.
+- A new runnable component is covered by a runbook or listed in the operations overview as further work.
 
 Useful local checks:
 
@@ -275,7 +287,7 @@ rg -n "\byou\b|\byour\b" docs
 rg -n "^\\|" docs/README.md
 ```
 
-### 11. Publish Decision
+### 12. Publish Decision
 
 Use this decision rule:
 
