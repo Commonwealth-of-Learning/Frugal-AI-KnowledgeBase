@@ -31,9 +31,10 @@ ALLOWED_ROLE_PREFIXES = (
 
 REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
-    "* [Teacher assistant](getting-started/teacher-assistant.md)",
+    "* [Math tutor](getting-started/math-tutor.md)",
     "* [AI gateway](getting-started/ai-gateway.md)",
     "* [Coding agent](getting-started/coding-agent.md)",
+    "* [Manim animator](getting-started/manim-animator.md)",
     "* [Local AI chat service operations](operations/open-webui-ops.md)",
     "* [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)",
     "* [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)",

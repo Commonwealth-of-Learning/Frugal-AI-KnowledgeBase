@@ -37,13 +37,13 @@ So orchestration is the layer where human oversight and the gateway matter most:
 
 Add orchestration one capability at a time. Start with read-only tools that have no side effects, keep a human in the loop, and prefer a few well-understood tools over a large toolkit. Reach for a heavier orchestration platform only when simple tools are no longer enough.
 
-## First slice: the teacher assistant
+## First slice: the math tutor
 
-The [Teacher assistant](../getting-started/teacher-assistant.md) is the first orchestration slice. It uses Open WebUI tools and functions to help a teacher draft materials, with a small set of read-only tools, no external egress, and teacher review before any output reaches learners.
+The [Math tutor](../getting-started/math-tutor.md) is the first orchestration slice. It uses an Open WebUI tool to compute mathematics exactly, so the model explains the result instead of guessing the arithmetic, with no external egress and teacher review before any output reaches learners.
 
 ## Related pages
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)
-- [Teacher assistant](../getting-started/teacher-assistant.md)
+- [Math tutor](../getting-started/math-tutor.md)
 - [Frugal AI principles](frugal-ai-principles.md)
 - [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

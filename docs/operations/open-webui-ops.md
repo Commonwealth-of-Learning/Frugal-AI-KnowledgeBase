@@ -116,7 +116,7 @@ docker start open-webui
 
 ## Tools and functions (orchestration)
 
-Tools and functions add the [Orchestration layer](../concepts/orchestration-layer.md) to the local AI chat service, as used by the [Teacher assistant](../getting-started/teacher-assistant.md). Manage them in Workspace, then Tools, and enable them per model in Workspace, then Models.
+Tools and functions add the [Orchestration layer](../concepts/orchestration-layer.md) to the local AI chat service, as used by the [Math tutor](../getting-started/math-tutor.md). Manage them in Workspace, then Tools, and enable them per model in Workspace, then Models.
 
 A tool is Python that runs inside the Open WebUI process. Import or run only tools the institution has written or reviewed, and treat tool code as code to review rather than configuration. Keep tools dependency-free where possible, because saving a tool with requirements pauses the interface while packages install.
 

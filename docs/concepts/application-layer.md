@@ -9,7 +9,7 @@ This page describes the Application layer of [The Frugal AI stack](how-the-stack
 
 ## What applications are
 
-Applications turn the lower layers into something a person uses for a task: a chat service, a search interface, a teacher assistant, or a coding agent. An application uses only the layers it needs. The [local AI chat service](../getting-started/offline-chat-service.md) uses inference alone; the [teacher assistant](../getting-started/teacher-assistant.md) adds orchestration; a coding agent adds more autonomy still.
+Applications turn the lower layers into something a person uses for a task: a chat service, a search interface, a math tutor, or a coding agent. An application uses only the layers it needs. The [local AI chat service](../getting-started/offline-chat-service.md) uses inference alone; the [math tutor](../getting-started/math-tutor.md) adds orchestration; a coding agent adds more autonomy still.
 
 ## Agents are a subtype
 

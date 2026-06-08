@@ -8,7 +8,7 @@ icon: comments
 This guide builds a private local AI chat service with Ollama, Qwen3.5-9B, and Open WebUI. It is a development path for learning how the first Frugal AI stack works before pilot or production decisions are made.
 
 {% hint style="info" %}
-Expected time: about 30 minutes if Docker and Ollama are already installed.
+Level: beginner. Expected time: about 30 minutes if Docker and Ollama are already installed.
 {% endhint %}
 
 ## Component map

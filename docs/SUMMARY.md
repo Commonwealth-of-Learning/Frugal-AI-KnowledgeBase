@@ -6,9 +6,16 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Local AI chat service](getting-started/offline-chat-service.md)
-* [Teacher assistant](getting-started/teacher-assistant.md)
+
+## Build further
+
+* [Math tutor](getting-started/math-tutor.md)
 * [AI gateway](getting-started/ai-gateway.md)
+
+## Advanced
+
 * [Coding agent](getting-started/coding-agent.md)
+* [Manim animator](getting-started/manim-animator.md)
 
 ## Concepts
 

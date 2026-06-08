@@ -8,7 +8,7 @@ icon: robot
 This guide runs OpenCode, an open-source coding agent, on the local stack. It is the first [Application layer](../concepts/application-layer.md) agent: it reads, edits, and runs code, with its actions gated by review and its model calls routed through the [AI gateway](ai-gateway.md). It is developer and maintainer facing.
 
 {% hint style="info" %}
-This is a development path. The agent can change files and run commands, so it runs under review and scoped permissions. It is not a learner-facing application.
+Level: advanced. This is a development path. The agent can change files and run commands, so it runs under review and scoped permissions. It is not a learner-facing application.
 {% endhint %}
 
 ## Fit and limits
@@ -116,4 +116,4 @@ This slice shows the two governance surfaces of the [Application layer](../conce
 
 ## Next step
 
-Use [Local AI chat service operations](../operations/open-webui-ops.md) to run the gateway and review the audit log, and see the [Application layer](../concepts/application-layer.md) for how agents fit the stack.
+Use [Local AI chat service operations](../operations/open-webui-ops.md) to run the gateway and review the audit log, and see the [Application layer](../concepts/application-layer.md) for how agents fit the stack. For a worked advanced example, see the [Manim animator](manim-animator.md).

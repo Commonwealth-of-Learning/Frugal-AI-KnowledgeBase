@@ -8,7 +8,7 @@ icon: shield-halved
 This guide puts a local AI gateway in front of the [Local AI chat service](offline-chat-service.md). The gateway gives every application one endpoint, redacts personal data before a model sees it, logs requests for audit, and — only if enabled — routes narrowly scoped tasks to an approved external provider. It is the first [Gateway layer](../concepts/gateway-layer.md) slice: the point where the sovereignty envelope becomes enforceable in software.
 
 {% hint style="info" %}
-This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
+Level: intermediate. This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
 {% endhint %}
 
 ## Fit and limits
@@ -119,7 +119,7 @@ Restart the gateway. Personal data is now masked before the model, and the origi
 
 ## 5. Controlled cloud burst (optional)
 
-Cloud burst sends a narrowly scoped task to an approved external provider, and only after redaction. Keep the local model as the default and the fallback.
+Cloud burst sends a narrowly scoped task to an approved external provider, and only after redaction. Keep the local model as the default and the fallback. For example, the [math tutor](math-tutor.md) answers routine questions on the local model and bursts a genuinely hard problem to a stronger model, with the prompt redacted first.
 
 Add one approved provider to `litellm-config.yaml`:
 
