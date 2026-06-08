@@ -26,6 +26,24 @@ Refer to the published reader experience as **Frugal AI knowledge base** (lower-
 
 Common page jobs: route readers (landing), complete one practical task (guide), explain a decision or trade-off (concept), describe one component's fit and limits (component card, including model, hardware, runtime, framework, and environment variants), operate and recover a service (runbook), and define terms or collect source links (reference). Each page should do one of these jobs.
 
+## Architecture Layers
+
+The knowledge base is organised around a layered model of a Frugal AI system. Use these layer names consistently in prose, navigation, and component grouping. The full rationale lives in the architecture page, "The Frugal AI stack".
+
+| Layer | Role | Public name |
+| --- | --- | --- |
+| Infrastructure | Compute, operating system, containers, storage, and networking. | `Infrastructure` |
+| Inference | Runs the model and serves predictions; local runtimes through to serving engines. | `Inference` |
+| Orchestration | The loop, tools, memory, retrieval, and context that turn a model into a workflow. | `Orchestration` (reserve `harness` for prose) |
+| Application | What a person uses: chat, search, coding, and agents. | `Application` |
+| Gateway | The governed boundary every request passes through: routing, compliance, observability, and guardrails. | `Gateway`, described as the `sovereignty envelope` |
+
+Naming rules for the layers:
+
+- An agent is an `Application` subtype, not a separate layer. Continue to reserve `AI agent` for tool-using paths.
+- Describe the gateway as the `sovereignty envelope` when explaining governance; it is the operational form of the privacy-airlock and cloud-burst controls in the reference architecture.
+- Layers are optional and substitutable; the smallest slice (`Infrastructure` plus `Inference` plus `Application`, gateway local-only) is the frugal floor, not a degraded build.
+
 ## Naming Patterns
 
 Use the patterns below; the current-stack values are examples to follow, not the only permitted names.

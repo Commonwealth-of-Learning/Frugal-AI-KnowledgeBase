@@ -46,7 +46,7 @@ Open Docker Desktop once after installing it so it can finish its first-run setu
 
 ## Build path
 
-1. Read [How the stack fits together](../concepts/how-the-stack-fits-together.md) for the architecture first.
+1. Read [The Frugal AI stack](../concepts/how-the-stack-fits-together.md) for the architecture first.
 2. Follow [Local AI chat service](offline-chat-service.md) to run the model and chat interface.
 3. Use [Local AI chat service operations](../operations/open-webui-ops.md) for restart, update, or backup tasks.
 

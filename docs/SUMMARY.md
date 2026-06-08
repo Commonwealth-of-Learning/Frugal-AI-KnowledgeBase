@@ -10,7 +10,7 @@
 ## Concepts
 
 * [Frugal AI principles](concepts/frugal-ai-principles.md)
-* [How the stack fits together](concepts/how-the-stack-fits-together.md)
+* [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
 
 ## Components
 

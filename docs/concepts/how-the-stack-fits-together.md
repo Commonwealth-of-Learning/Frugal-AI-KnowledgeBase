@@ -1,61 +1,81 @@
 ---
-description: How guides, components, and operations pages work together.
-icon: sitemap
+description: The layered model behind Frugal AI — infrastructure, inference, orchestration, application, and the gateway as the sovereignty envelope.
+icon: layer-group
 ---
 
-# How the stack fits together
+# The Frugal AI stack
 
-The Frugal AI knowledge base uses a small repeatable structure:
+A Frugal AI system is not a single product. It is a small set of layers an institution can assemble, inspect, and own, with one governed boundary wherever a request could leave local control.
 
-```text
-components -> stack -> guide -> operations
-```
-
-The first stack is a local AI chat service. It is intentionally narrow so the reader can build something real before exploring larger deployment patterns.
+The Frugal AI knowledge base treats every build as a slice through this stack. The layers are substitutable: an institution can swap a runtime, change models, or add orchestration without replacing the whole system. They are also optional, which is what makes the approach frugal. The smallest useful system uses only the lower layers.
 
 ## The layers
 
-| Layer | Page | What it answers |
+| Layer | Role | Examples |
 | --- | --- | --- |
-| Hardware | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | What can this machine run comfortably? |
-| Environment | [Development environment](../components/environments/development.md) | What assumptions does this local setup make? |
-| Runtime | [Ollama](../components/runtimes/ollama.md) | What runs the model and exposes the local API? |
-| Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | What model is loaded, and what are its limits? |
-| Framework | [Open WebUI](../components/frameworks/open-webui.md) | What gives users a browser chat interface? |
-| Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | How does the service owner maintain the service after setup? |
+| Application | What a person actually uses. | Local chat, course search, teacher support, coding assistance, and agents. |
+| Gateway (sovereignty envelope) | The governed boundary every model request passes through. | Local and cloud routing, redaction, policy filters, audit logging, and guardrails. |
+| Orchestration | What turns a model into a useful workflow. | The reasoning loop, tools, memory, retrieval, and context assembly. |
+| Inference | What runs the model and serves predictions. | Local runtimes for development; serving engines for shared or higher-throughput use. |
+| Infrastructure | What everything runs on. | Compute, operating system, containers, storage, and networking. |
 
-## Why components are separate
+An agent is not a separate layer. An agent is an Application that uses the Orchestration layer to call tools and take steps, under stricter human oversight.
 
-The guide should stay focused on what to do next. Component pages answer the supporting questions:
+## Two ways to read the stack
 
-- Why this model?
-- What does the runtime do?
-- What fits on this hardware?
-- What are the limits?
-- What can be swapped later?
-
-This keeps the guide readable while preserving enough technical context for institutional review.
-
-## Current path
+Read top to bottom, the stack is the request path: a person's input enters at the Application layer, passes the Gateway, and reaches a model through Orchestration and Inference. Read bottom to top, it is the build order, which is how the knowledge base teaches it: secure the infrastructure first, then inference, then add orchestration and applications.
 
 ```mermaid
 flowchart TD
-  Q[Quickstart] --> G[Local AI chat service]
-  G --> H[Mac mini 24 GB]
-  G --> E[Development environment]
-  G --> O[Ollama]
-  G --> M[Qwen3.5-9B]
-  G --> W[Open WebUI]
-  G --> R[Local AI chat service operations]
+  A[Application] --> G[Gateway: sovereignty envelope]
+  G --> O[Orchestration]
+  O --> I[Inference]
+  I --> Inf[Infrastructure]
+  G -. controlled cloud burst .-> C[External model API]
 ```
 
-## Future paths
+## The gateway is the sovereignty envelope
 
-Future guide paths should reuse the same pattern:
+The Gateway is the most important layer for education sovereignty. Because every model request passes through it, it is the natural place to enforce what may leave the institution and what must stay local.
 
-- RAG path: add document ingestion, embeddings, vector storage, and source governance.
-- Agent path: add tool calling, workflow control, and stronger safety checks.
-- Pilot path: add the [Pilot environment](../components/environments/pilot.md), multi-user access, backup policy, monitoring, and support ownership.
-- Production path: add serving infrastructure, security review, incident response, and lifecycle management.
+This is the operational form of the controls described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): personal-data redaction, context minimisation, approved destinations, audit logging, and controlled cloud burst within a defined envelope. Governance is not spread across the system. It has one architectural home, at the boundary where a prompt could cross from local to external processing.
 
-Do not add a component to the Frugal AI knowledge base just because it exists in `reference/`. Add it when a guide needs it.
+A fully local system still has a Gateway, in its simplest form: a local-only policy with no external egress.
+
+## Layers are optional: the frugal floor
+
+A Frugal AI system degrades gracefully. The smallest useful slice is Infrastructure, Inference, and an Application, with the Gateway set to local-only and no separate Orchestration layer. That is not a cut-down version of the architecture. It is the architecture at its frugal floor, suitable for a single machine or an offline school device.
+
+Each layer is added only when a task needs it, and simplified or removed when connectivity, hardware, or capacity is limited.
+
+## The first slice: Local AI chat service
+
+The [Local AI chat service](../getting-started/offline-chat-service.md) is the first complete slice through the stack. It proves the model with the smallest honest implementation.
+
+| Layer | This slice uses | Notes |
+| --- | --- | --- |
+| Application | [Open WebUI](../components/frameworks/open-webui.md) | A browser chat interface. |
+| Gateway | Local-only, no external egress | No cloud burst in this slice; the envelope is closed. |
+| Orchestration | None | Plain chat needs no tools, memory, or retrieval. |
+| Inference | [Ollama](../components/runtimes/ollama.md) running [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | A local runtime and an open-weight model. |
+| Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | A single development machine. |
+
+This slice deliberately stops at the frugal floor. It does not add orchestration or external routing, because plain local chat does not need them.
+
+## What each layer adds as the system grows
+
+| Layer | What it adds later |
+| --- | --- |
+| Orchestration | Retrieval over approved course materials, tools, and memory for assistants and agents. |
+| Gateway | A running router that enforces redaction, logging, and controlled cloud burst once external models are used. |
+| Inference | Serving engines for shared pilot use and higher throughput beyond a single machine. |
+| Application | Coding assistance, agents, and other education applications on the same lower layers. |
+
+Each of these is a separate path with its own components, safeguards, and operations pages, added only when those supporting pages exist.
+
+## Related pages
+
+- [Frugal AI principles](frugal-ai-principles.md)
+- [Local AI chat service](../getting-started/offline-chat-service.md)
+- [Local AI chat service operations](../operations/open-webui-ops.md)
+- [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

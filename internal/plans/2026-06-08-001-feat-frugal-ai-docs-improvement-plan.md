@@ -9,6 +9,8 @@ review-source: Editorial and technical review of the published docs/ slice, June
 
 # Frugal AI Docs Improvement Plan
 
+> **Related:** the strategic spine is now `2026-06-08-002-feat-frugal-ai-layered-repositioning-plan.md`. This plan remains the content-quality backlog whose items fold into that plan's increments.
+
 ## Overview
 
 The published Frugal AI knowledge base (`docs/`) is strong, disciplined work. Its source-confidence labelling, its honesty about "what this path does not prove yet", and its refusal to dress a development path up as production are the right instincts and must be preserved. This plan does not propose a rewrite. It records a prioritised set of corrections and enrichments arising from a full review of the linked public slice against the live COL Frugal page and primary model sources.

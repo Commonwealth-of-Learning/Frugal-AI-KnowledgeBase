@@ -139,6 +139,8 @@ The voice should be:
 
 ## Audience Model
 
+> **Repositioning note (2026-06-08, see `internal/plans/2026-06-08-002-feat-frugal-ai-layered-repositioning-plan.md`):** The public surface is moving to a developer/technical-first lead. The first screen of landing and architecture pages now states the architecture and the build path, with stakeholder framing (purpose, risk, cost, governance) carried on dedicated pages and lower sections. The stakeholder-first instruction below is superseded for those pages and will be rewritten once Increment 0 ships; until then, follow the plan's audience decision.
+
 Write for two audiences at once.
 
 Education stakeholders need to understand purpose, risk, cost, governance, institutional fit, and the role of human oversight without reading commands.
