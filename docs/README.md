@@ -1,86 +1,111 @@
 ---
-description: Build a local, low-cost AI service with open components and clear operational limits.
+description: A developer-first reference for building sovereign, local-first AI for education, layer by layer.
 icon: hand-wave
 ---
 
 # Welcome to Frugal AI Knowledge Base
 
-Frugal AI helps institutions run useful AI services locally, with clear control over data, cost, and operations.
+The Frugal AI knowledge base is a build reference for sovereign, local-first AI in education. It shows how to assemble AI services from open, inspectable layers that an institution can run, govern, and own — starting on a single machine and growing only as far as a task needs.
 
-The first path builds a local AI chat service that runs on the documented development machine.
+Frugal AI is not cheap AI. It is local-first, open, and capacity-building infrastructure: predictable cost, data kept under local control, resilience without constant connectivity, and skills that stay with the institution. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to teacher-in-the-loop AI.
 
 {% hint style="info" %}
-This first path is intentionally small. Broader RAG, agentic, pilot, and production deployments remain in the deeper `reference/` library until they are ready for their own guides.
+The first build is intentionally small: one local chat service on a single machine. It is a development path and does not imply pilot or production readiness.
 {% endhint %}
 
-## First-time here
+## The Frugal AI stack
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Map the build, prerequisites, and supporting pages.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Set up the local runtime, model, and chat interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>How the stack fits together</strong></td><td>10 min - Review the hardware, environment, runtime, model, framework, and operations layers.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Start, stop, back up, update, and troubleshoot the local service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
+Every build in the knowledge base is a slice through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers.
+
+```text
+Application      chat, coding, agents, search
+Gateway          sovereignty envelope: routing, compliance, guardrails
+Orchestration    loop, tools, memory, retrieval        (optional)
+Inference        local runtimes -> serving engines
+Infrastructure   compute, OS, containers, storage
+```
+
+Read top to bottom it is the request path; read bottom to top it is the build order. See [The Frugal AI stack](concepts/how-the-stack-fits-together.md) for the full model.
+
+## Governance has one home: the gateway
+
+The gateway is the boundary every model request passes through, so it is where sovereignty is enforced: what may leave the institution, what stays local, what is logged, and what is redacted. Concentrating governance at one layer — the sovereignty envelope — keeps compliance, observability, and guardrails in a single inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
+
+## Start here
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>The Frugal AI stack</strong></td><td>10 min - Understand the layered model and the governance boundary.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Prepare the machine and map the build.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Build the first slice: runtime, model, and interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Run, update, back up, and recover the service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
+
+## The first slice
+
+The first complete slice stops at the frugal floor: infrastructure, inference, and an application, with the gateway local-only and no orchestration.
+
+```text
+Mac mini 24 GB       (Infrastructure)
+  -> Ollama           (Inference: runtime)
+  -> Qwen3.5-9B       (Inference: model)
+  -> Open WebUI       (Application)
+  = Local AI chat service
+```
+
+| Layer | Component |
+| --- | --- |
+| Application | [Open WebUI](components/frameworks/open-webui.md) |
+| Inference | [Ollama](components/runtimes/ollama.md) with [Qwen3.5-9B](components/models/qwen-3.5-9b.md) |
+| Infrastructure | [Mac mini 24 GB](components/hardware/mac-mini-24gb.md) |
 
 ## Choose a path
 
 | Reader need | Start with | Why |
 | --- | --- | --- |
-| Build a local service | [Quickstart](getting-started/quickstart.md) | Fast orientation before running commands. |
-| Evaluate the Frugal AI fit | [Frugal AI principles](concepts/frugal-ai-principles.md) | Sovereignty, cost, resilience, and capacity framing. |
-| Understand the architecture | [How the stack fits together](concepts/how-the-stack-fits-together.md) | A layer-by-layer map of the first stack. |
-| Maintain the service | [Local AI chat service operations](operations/open-webui-ops.md) | Routine start, stop, backup, update, and recovery tasks. |
-
-## The first stack
-
-```text
-Mac mini 24 GB
-  -> Ollama
-  -> Qwen3.5-9B
-  -> Open WebUI
-  -> Local AI chat service
-```
-
-| Layer | Page |
-| --- | --- |
-| Hardware | [Mac mini 24 GB](components/hardware/mac-mini-24gb.md) |
-| Environment | [Development environment](components/environments/development.md) |
-| Runtime | [Ollama](components/runtimes/ollama.md) |
-| Model | [Qwen3.5-9B](components/models/qwen-3.5-9b.md) |
-| Framework | [Open WebUI](components/frameworks/open-webui.md) |
+| Understand the architecture | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) | The layered model and the governance boundary. |
+| Build the first service | [Quickstart](getting-started/quickstart.md) | Orientation and prerequisites before the build. |
+| Evaluate the approach | [Frugal AI principles](concepts/frugal-ai-principles.md) | Sovereignty, cost, resilience, and capacity framing. |
+| Maintain the service | [Local AI chat service operations](operations/open-webui-ops.md) | Routine run, update, backup, and recovery. |
 
 ## What this path proves
 
 | Proof point | Why it matters |
 | --- | --- |
-| A useful AI service can run locally. | Prompts and chat history can stay on the machine. |
-| Open components can form a complete stack. | Runtime, model, and framework layers remain inspectable and replaceable. |
-| Modest hardware can support a first build. | The guide labels planning values and keeps memory use visible. |
-| Operations are part of the build. | Start, stop, update, backup, and recovery steps are documented from the beginning. |
+| A useful AI service runs locally. | Prompts and chat history can stay on the machine. |
+| Open layers form a complete stack. | Runtime, model, and interface remain inspectable and replaceable. |
+| Modest hardware supports a first build. | Memory use stays visible and values are labelled as estimates. |
+| Operations are part of the build. | Start, update, backup, and recovery are documented from the start. |
+
+## Guardrails before scale
+
+| Area | Minimum question |
+| --- | --- |
+| Data | What may be entered, uploaded, retained, or exported? |
+| Access | Who can use the service, and how is access removed? |
+| Human review | Which outputs need educator or institutional review before learners see them? |
+| Compliance | Which national, privacy, security, and procurement rules apply? |
+| Operations | Who owns support, updates, backups, and incident response? |
 
 ## Frugal AI principles
-
-The practical docs follow four principles:
 
 1. Keep data local by default.
 2. Prefer open, inspectable components.
 3. Match model size to available hardware.
-4. Build local skills and operational confidence before scaling.
+4. Concentrate governance at the gateway.
+5. Build local skills before scaling.
 
-Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full framing.
+Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full framing, grounded in the [Commonwealth of Learning Frugal AI](https://www.col.org/frugal) programme.
 
 ## Not in this first path
 
-This first path is not:
-
-- a production deployment;
-- a shared campus service;
-- a RAG system over institutional documents;
-- an automated assessment or decision system;
-- a complete ministry or national reference architecture.
+- A production or shared-campus deployment.
+- Orchestration: retrieval over institutional documents, tools, or memory.
+- A running gateway with cloud burst; the first slice keeps the envelope closed.
+- Coding or agent applications.
+- A full ministry or national reference architecture.
 
 ## Coming next
 
-Future paths should be added only when the supporting components, safeguards, and operations pages are ready.
-
-| Future path | Additional work required |
+| Increment | What it adds |
 | --- | --- |
-| RAG with local course materials | Document ingestion, retrieval checks, source governance, and privacy review. |
-| [Pilot environment](components/environments/pilot.md) | Account management, backups, monitoring, support ownership, and acceptable-use rules. |
-| Teacher-in-the-loop workflows | Review points, quality criteria, feedback loops, and educator guidance. |
-| Production readiness | Security review, incident response, lifecycle management, and service ownership. |
+| Orchestration layer | Retrieval over approved materials, tools, and memory, with named human review. |
+| Gateway as a running layer | A router that enforces redaction, logging, and controlled cloud burst. |
+| Inference breadth | Serving engines for pilot-scale use and alternative local runtimes. |
+| Application breadth | Coding assistance and agents on the same lower layers. |
+
+Future paths are added only when their supporting components, safeguards, and operations pages exist.

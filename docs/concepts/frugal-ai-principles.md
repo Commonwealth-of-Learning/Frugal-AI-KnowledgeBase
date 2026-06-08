@@ -17,6 +17,10 @@ Prompts, uploaded files, and chat history should stay on the local machine unles
 
 Local does not mean risk-free. It still needs access control, backups, and clear rules for sensitive information.
 
+### Concentrate governance at the gateway
+
+When a request could leave the institution, route it through one governed boundary: the sovereignty envelope. Redaction, approved destinations, logging, and guardrails belong at that single layer rather than scattered across the system. A fully local service keeps the envelope closed, with no external traffic.
+
 ### Prefer open, inspectable components
 
 Use open-weight models and open-source runtimes where practical. This helps institutions understand what they are running and reduces dependency on a single vendor.
@@ -26,6 +30,10 @@ Some useful tools may not be fully open source. When that happens, the page shou
 ### Match the model to the machine
 
 A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window.
+
+### Degrade to a minimal slice
+
+A Frugal AI system should run at its smallest useful size: infrastructure, inference, and an application, with no orchestration and the gateway closed to external traffic. Layers are added only when a task needs them, so the approach still works on a single machine or an offline school device.
 
 ### Build local capacity
 
