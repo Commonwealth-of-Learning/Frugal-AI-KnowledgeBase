@@ -13,7 +13,7 @@ Applications turn the lower layers into something a person uses for a task: a ch
 
 ## Agents are a subtype
 
-An agent is an application that can take steps on its own: it plans, calls tools, edits files, or runs commands, rather than only answering. Agents are the most capable application type and the most demanding to govern, because their actions have real effects. Chat services and assistants are applications; an agent is an application that acts.
+An agent is an application that can take steps on its own: it plans, calls tools, edits files, or runs commands, rather than only answering. Agents are the most capable application type and the most demanding to govern, because their actions have real effects. Chat services and assistants are applications; an agent is an application that acts. A coding agent has a second role: a local team uses it to build and maintain the rest of the stack — writing tools, configurations, and components — which is how the institution grows its own capacity.
 
 ## Two governance surfaces
 

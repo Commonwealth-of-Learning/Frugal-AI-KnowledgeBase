@@ -31,7 +31,7 @@ Read top to bottom it is the request path; read bottom to top it is the build or
 
 The gateway is the boundary every model request passes through, so it is where sovereignty is enforced: what may leave the institution, what stays local, what is logged, and what is redacted. Concentrating governance at one layer — the sovereignty envelope — keeps compliance, observability, and guardrails in a single inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
 
-## Start here
+## New here?
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>The Frugal AI stack</strong></td><td>10 min - Understand the layered model and the governance boundary.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Prepare the machine and map the build.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Build the first slice: runtime, model, and interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Run, update, back up, and recover the service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
 
@@ -53,14 +53,17 @@ Mac mini 24 GB       (Infrastructure)
 | Inference | [Ollama](components/runtimes/ollama.md) with [Qwen3.5-9B](components/models/qwen-3.5-9b.md) |
 | Infrastructure | [Mac mini 24 GB](components/hardware/mac-mini-24gb.md) |
 
-## Choose a path
+## Learning path
 
-| Reader need | Start with | Why |
+The guides are tiered by level, and one education example — a mathematics use case — runs through them.
+
+| Level | Start with | What it adds |
 | --- | --- | --- |
-| Understand the architecture | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) | The layered model and the governance boundary. |
-| Build the first service | [Quickstart](getting-started/quickstart.md) | Orientation and prerequisites before the build. |
-| Evaluate the approach | [Frugal AI principles](concepts/frugal-ai-principles.md) | Sovereignty, cost, resilience, and capacity framing. |
-| Maintain the service | [Local AI chat service operations](operations/open-webui-ops.md) | Routine run, update, backup, and recovery. |
+| Beginner | [Local AI chat service](getting-started/offline-chat-service.md), after the [Quickstart](getting-started/quickstart.md) | A private local chat on one machine: the frugal floor. |
+| Intermediate | [Math tutor](getting-started/math-tutor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, and a governed boundary with controlled cloud burst. |
+| Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. |
+
+These levels match the Start here, Build further, and Advanced sections in the sidebar. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md).
 
 ## What this path proves
 
@@ -91,21 +94,23 @@ Mac mini 24 GB       (Infrastructure)
 
 Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full framing, grounded in the [Commonwealth of Learning Frugal AI](https://www.col.org/frugal) programme.
 
-## Not in this first path
+## Not in the first slice
 
-- A production or shared-campus deployment.
-- Orchestration: retrieval over institutional documents, tools, or memory.
-- A running gateway with cloud burst; the first slice keeps the envelope closed.
-- Coding or agent applications.
-- A full ministry or national reference architecture.
+The first slice is the local chat service; it stops at the frugal floor. Later tiers add the rest:
+
+- Orchestration, tools, and retrieval: the [math tutor](getting-started/math-tutor.md).
+- A running gateway with controlled cloud burst: the [AI gateway](getting-started/ai-gateway.md).
+- Coding and agent applications: the [coding agent](getting-started/coding-agent.md) and [Manim animator](getting-started/manim-animator.md).
+
+Still out of scope across the knowledge base: a production or shared-campus deployment, and a full ministry or national reference architecture.
 
 ## Coming next
 
-| Increment | What it adds |
+The layered model is now built end to end across the learning path above. Still ahead:
+
+| Ahead | What it adds |
 | --- | --- |
-| Orchestration layer | Retrieval over approved materials, tools, and memory, with named human review. |
-| Gateway as a running layer | A router that enforces redaction, logging, and controlled cloud burst. |
-| Inference breadth | Serving engines for pilot-scale use and alternative local runtimes. |
-| Application breadth | Coding assistance and agents on the same lower layers. |
+| Pilot and production | Shared multi-user serving, security review, incident response, and lifecycle management. |
+| Reference-architecture refresh | Raising the sovereign education-AI reference architecture to high-level abstraction, now that the layer pages hold the detail. |
 
 Future paths are added only when their supporting components, safeguards, and operations pages exist.

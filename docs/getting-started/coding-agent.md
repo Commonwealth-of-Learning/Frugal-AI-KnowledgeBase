@@ -11,6 +11,10 @@ This guide runs OpenCode, an open-source coding agent, on the local stack. It is
 Level: advanced. This is a development path. The agent can change files and run commands, so it runs under review and scoped permissions. It is not a learner-facing application.
 {% endhint %}
 
+## Two roles
+
+A coding agent plays two parts in the knowledge base. It is an **example application** — the agent subtype of the [Application layer](../concepts/application-layer.md), the most autonomous and the most governed. It is also the **builder's tool**: a local team uses it to extend and maintain the rest of the stack — writing new Open WebUI tools like the [math tutor](math-tutor.md)'s, authoring gateway configurations, scaffolding components, and drafting documentation. That second role is the capacity-building payoff: the institution builds and sustains its own sovereign stack rather than depending on outside help.
+
 ## Fit and limits
 
 | Question | Answer |
