@@ -15,6 +15,7 @@ The development environment is a local, single-user setup for learning, testing,
 | --- | --- |
 | Current role | Defines the assumptions for the local development path. |
 | Best fit | Learning, testing, and small demonstrations before pilot decisions. |
+| Hardware fit | [Mac mini 24 GB](../hardware/mac-mini-24gb.md), or an Apple Silicon Mac with 24 GB. |
 | Next environment | [Pilot environment](pilot.md) for controlled shared use. |
 | Main caution | Development defaults should not be treated as production settings. |
 
@@ -31,6 +32,7 @@ Use this environment when:
 
 | Setting | Default | Rationale |
 | --- | --- | --- |
+| Hardware | [Mac mini 24 GB](../hardware/mac-mini-24gb.md) | A small, low-cost machine that runs a light model and a chat interface. |
 | Runtime | Ollama | Simple local setup with a local API. |
 | Model size | 7B-9B class | Good fit for a 24 GB Mac. |
 | Context | 8K for the first path | Keeps memory use predictable. |

@@ -58,9 +58,11 @@
 
 * [Environment: Development](components/environments/development.md)
 * [Environment: Pilot](components/environments/pilot.md)
+* [Environment: Production](components/environments/production.md)
 
 ## Operations
 
+* [Operations overview](operations/operations-overview.md)
 * [Local AI chat service operations](operations/open-webui-ops.md)
 
 ## Reference

@@ -53,7 +53,7 @@ Use this environment when:
 
 ## What changes before production
 
-Before production, add:
+Before [production](production.md), add:
 
 - security review;
 - service monitoring;
@@ -66,6 +66,7 @@ Before production, add:
 ## Related pages
 
 - [Development environment](development.md)
+- [Production environment](production.md)
 - [NVIDIA DGX Spark](../hardware/nvidia-dgx-spark.md)
 - [Open WebUI](../frameworks/open-webui.md)
 - [Local AI chat service operations](../../operations/open-webui-ops.md)
