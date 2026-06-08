@@ -31,9 +31,16 @@ Read top to bottom it is the request path; read bottom to top it is the build or
 
 The gateway is the boundary every model request passes through, so it is where sovereignty is enforced: what may leave the institution, what stays local, what is logged, and what is redacted. Concentrating governance at one layer — the sovereignty envelope — keeps compliance, observability, and guardrails in a single inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
 
-## New here?
+## Who is this for?
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-sitemap" style="color:$primary;">:sitemap:</i></h4></td><td><strong>The Frugal AI stack</strong></td><td>10 min - Understand the layered model and the governance boundary.</td><td><a href="concepts/how-the-stack-fits-together.md">how-the-stack-fits-together.md</a></td></tr><tr><td><h4><i class="fa-bolt" style="color:$primary;">:bolt:</i></h4></td><td><strong>Quickstart</strong></td><td>10 min - Prepare the machine and map the build.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><h4><i class="fa-comments" style="color:$primary;">:comments:</i></h4></td><td><strong>Local AI chat service</strong></td><td>30-45 min - Build the first slice: runtime, model, and interface.</td><td><a href="getting-started/offline-chat-service.md">offline-chat-service.md</a></td></tr><tr><td><h4><i class="fa-wrench" style="color:$primary;">:wrench:</i></h4></td><td><strong>Local AI chat service operations</strong></td><td>10 min - Run, update, back up, and recover the service.</td><td><a href="operations/open-webui-ops.md">open-webui-ops.md</a></td></tr></tbody></table>
+Different readers have different entry points.
+
+| Reader | Start with | Wider programme |
+| --- | --- | --- |
+| First-time reader | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
+| Education ministry official | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
+| Institution leader, for example a vice-chancellor | [Frugal AI principles](concepts/frugal-ai-principles.md), [Cost and sustainability](concepts/cost-and-sustainability.md), and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
+| Developer onboarding | [The Frugal AI stack](concepts/how-the-stack-fits-together.md), then [Quickstart](getting-started/quickstart.md) and [Local AI chat service](getting-started/offline-chat-service.md) | [Example applications](concepts/example-applications.md) |
 
 ## The first slice
 
@@ -93,6 +100,15 @@ These levels match the Start here, Build further, and Advanced sections in the s
 5. Build local skills before scaling.
 
 Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full framing, grounded in the [Commonwealth of Learning Frugal AI](https://www.col.org/frugal) programme.
+
+## From the Commonwealth of Learning
+
+This knowledge base is the technical companion to COL's Frugal AI programme. For the strategy, policy, and latest news, go to COL directly:
+
+- [Frugal AI programme](https://www.col.org/frugal) — COL's overview, approach, and key resources.
+- [Frugal AI: A Roadmap to Sovereign GenAI for Education](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/).
+- [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) — the teacher-led, localised-AI commitment.
+- [COL news](https://www.col.org/news/) — ongoing Frugal AI updates.
 
 ## Not in the first slice
 
