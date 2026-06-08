@@ -56,13 +56,27 @@ Components — name each component once and give it a short first-use explanatio
 
 ## Navigation And Titles
 
-In `docs/SUMMARY.md`, give component pages a role prefix (`Hardware:`, `Environment:`, `Runtime:`, `Model:`, `Framework:`) and give guide and operations pages their reader-facing service name. Sidebar labels and H1s should correspond, with two common variations: a component H1 may drop the role prefix (sidebar `Hardware: Mac mini 24 GB`, H1 `Mac mini 24 GB`), and an environment H1 reads as a noun phrase (`Development environment`).
+In `docs/SUMMARY.md`, give component pages a role prefix that names the kind within its layer — one of `Hardware:`, `Environment:`, `Runtime:`, `Serving engine:`, `Model:`, `Gateway:`, `Interface:`, or `Agent:` — and give guide and operations pages their reader-facing service name. Each layer section opens with its `... layer` overview page (for example `Inference layer`). Open WebUI is an `Interface:` (the chat interface in the Application layer), not a framework; OpenCode is an `Agent:`. Sidebar labels and H1s should correspond, with two common variations: a component H1 may drop the role prefix (sidebar `Hardware: Mac mini 24 GB`, H1 `Mac mini 24 GB`), and an environment H1 reads as a noun phrase (`Development environment`). The editorial audit enforces this approved set of role prefixes.
 
 The audit also requires a specific set of linked summary entries with exact reader-facing labels. Run `internal/tools/editorial_audit.py` after navigation changes rather than hand-verifying them.
 
 ## Reader-Friendly Explanations
 
 Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, and Mixture of Experts. Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.
+
+## Port Allocations
+
+Every service exposed on a host port is registered here, so that two services never claim the same port as the knowledge base grows. The editorial audit flags a duplicate in this table, and any host port bound in a guide that is missing from it. Ports are the upstream defaults; record a new service here before documenting it.
+
+| Host port | Service |
+| --- | --- |
+| 1234 | LM Studio local server (alternative runtime) |
+| 3000 | Open WebUI, development path |
+| 4000 | LiteLLM gateway |
+| 5001 | Presidio anonymiser |
+| 5002 | Presidio analyzer |
+| 8080 | Open WebUI, integrated image on DGX Spark |
+| 11434 | Ollama API |
 
 ## Preferred Terms
 

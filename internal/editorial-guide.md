@@ -112,7 +112,7 @@ The Frugal AI knowledge base landing page should:
 - explain why sovereign AI, open technologies, data ownership, compliance, guardrails, and local capacity matter;
 - separate stakeholder, builder, pilot, and maintainer needs;
 - name guardrails before moving into technical detail;
-- show the first stack as a compact layer map lower on the page;
+- lead with the layered stack near the top, as a compact layer map;
 - state what the first path proves;
 - state what is out of scope;
 - mark future paths as future work until supporting pages exist.
@@ -139,15 +139,13 @@ The voice should be:
 
 ## Audience Model
 
-> **Repositioning note (2026-06-08, see `internal/plans/2026-06-08-002-feat-frugal-ai-layered-repositioning-plan.md`):** The public surface is moving to a developer/technical-first lead. The first screen of landing and architecture pages now states the architecture and the build path, with stakeholder framing (purpose, risk, cost, governance) carried on dedicated pages and lower sections. The stakeholder-first instruction below is superseded for those pages and will be rewritten once Increment 0 ships; until then, follow the plan's audience decision.
-
-Write for two audiences at once.
+The knowledge base is developer and technical-first. Write for two audiences, but lead with the builder.
 
 Education stakeholders need to understand purpose, risk, cost, governance, institutional fit, and the role of human oversight without reading commands.
 
 Developers and maintainers need exact component names, model IDs, runtime tags, settings, commands, verification steps, and source links.
 
-The first screen of a public page should answer the stakeholder question: what is this, why does it matter, and what are the limits? Developer details should remain available lower on the page.
+The first screen of a landing or architecture page states the architecture and the build path. Stakeholder framing — purpose, risk, cost, governance — follows lower down or on a dedicated page such as Frugal AI principles, Cost and sustainability, or the reference architecture.
 
 ## Core Message
 
@@ -215,6 +213,8 @@ For commands, include the expected result or a verification command. A command w
 
 Prefer stable values over environment-specific values. Avoid local usernames, machine names, private paths, tokens, or values copied from a single development workstation.
 
+Use the upstream default ports in commands, and note that they are defaults. Register every host port a guide exposes in the Port Allocations table in `internal/naming-registry.md`, and do not document non-default port schemes inline; link to the tool's documentation instead. The editorial audit flags an unregistered or duplicated host port.
+
 For configuration, show the smallest meaningful excerpt. Explain the field being changed and the reason for the value.
 
 For errors, write from symptom to cause to fix. Keep troubleshooting entries short and testable.
@@ -228,16 +228,16 @@ For time estimates, label them as estimates unless they have been measured in th
 Use this order:
 
 1. Grounded definition
-2. Partner and ministry context
-3. Time-boxed entry cards
-4. Why this matters
-5. Reader-path table
-6. Guardrails before scale
-7. First local path
-8. Proof points
+2. The layered stack
+3. Governance home: the gateway
+4. Time-boxed entry cards
+5. The first slice, the frugal floor
+6. Reader-path table
+7. Proof points
+8. Guardrails
 9. Principles and source grounding
 10. Scope boundaries
-11. Future paths
+11. Coming next, by increment
 
 Landing pages should not include shell commands, custom code, or long setup instructions. Link to the relevant quickstart or guide instead.
 
@@ -265,6 +265,17 @@ Use this order:
 5. Trade-offs
 6. Example
 7. Links to implementation pages
+
+### Layer overviews
+
+Use this order:
+
+1. What the layer is and where it sits in the stack
+2. What the layer provides
+3. Frugal trade-offs and where governance applies
+4. The components or options in this knowledge base
+5. The first slice, and how the layer connects to the others
+6. Related pages
 
 ### Component Pages
 

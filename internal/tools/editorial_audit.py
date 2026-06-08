@@ -15,6 +15,19 @@ DOCS_DIR = ROOT / "docs"
 SUMMARY_PATH = DOCS_DIR / "SUMMARY.md"
 TEMPLATES_DIR = ROOT / "internal" / "templates"
 PLANS_DIR = ROOT / "internal" / "plans"
+NAMING_REGISTRY_PATH = ROOT / "internal" / "naming-registry.md"
+
+LAYER_SECTIONS = ("Infrastructure", "Inference", "Orchestration", "Gateway", "Application")
+ALLOWED_ROLE_PREFIXES = (
+    "Hardware",
+    "Environment",
+    "Runtime",
+    "Serving engine",
+    "Model",
+    "Gateway",
+    "Interface",
+    "Agent",
+)
 
 REQUIRED_SUMMARY_ENTRIES = (
     "* [Local AI chat service](getting-started/offline-chat-service.md)",
@@ -32,9 +45,9 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)",
     "* [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)",
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
-    "* [Framework: Open WebUI](components/frameworks/open-webui.md)",
+    "* [Interface: Open WebUI](components/frameworks/open-webui.md)",
     "* [Gateway: LiteLLM](components/gateways/litellm.md)",
-    "* [Application: OpenCode](components/applications/opencode.md)",
+    "* [Agent: OpenCode](components/applications/opencode.md)",
 )
 
 COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications"}
@@ -153,6 +166,7 @@ def main() -> int:
         return print_result(warnings)
 
     warnings.extend(check_required_summary_entries(summary_text))
+    warnings.extend(check_summary_structure(summary_text))
 
     linked_docs, link_warnings = discover_linked_docs(summary_text)
     warnings.extend(link_warnings)
@@ -179,6 +193,7 @@ def main() -> int:
 
     warnings.extend(check_templates())
     warnings.extend(check_internal_plans())
+    warnings.extend(check_port_allocations())
 
     return print_result(warnings)
 
@@ -236,6 +251,83 @@ def check_internal_plans() -> list[Warning]:
         text = read_text(path)
         if text is not None:
             warnings.extend(check_frontmatter(path, text))
+    return warnings
+
+
+def check_summary_structure(summary_text: str) -> list[Warning]:
+    """Enforce the layered navigation: expected layer sections and approved role prefixes."""
+    warnings: list[Warning] = []
+    lines = summary_text.splitlines()
+    headers = {line[3:].strip() for line in lines if line.startswith("## ")}
+    for layer in LAYER_SECTIONS:
+        if layer not in headers:
+            warnings.append(Warning(SUMMARY_PATH, 1, f"missing expected layer section: ## {layer}"))
+
+    link_pattern = re.compile(r"^\*\s*\[([^\]]+)\]\(([^)]+)\)")
+    for line_number, line in enumerate(lines, start=1):
+        match = link_pattern.match(line.strip())
+        if not match:
+            continue
+        label, target = match.group(1), match.group(2).strip()
+        if not target.startswith("components/"):
+            continue
+        prefix = label.split(":", 1)[0].strip() if ":" in label else label
+        if prefix not in ALLOWED_ROLE_PREFIXES:
+            warnings.append(
+                Warning(
+                    SUMMARY_PATH,
+                    line_number,
+                    f'component entry "{label}" should start with an approved role prefix: '
+                    + ", ".join(ALLOWED_ROLE_PREFIXES),
+                )
+            )
+    return warnings
+
+
+def check_port_allocations() -> list[Warning]:
+    """Prevent host-port collisions: registry duplicates, and guide bindings missing from the registry."""
+    warnings: list[Warning] = []
+    registered: dict[str, str] = {}
+    registry_text = read_text(NAMING_REGISTRY_PATH)
+    if registry_text is not None:
+        in_section = False
+        for line in registry_text.splitlines():
+            stripped = line.strip()
+            if stripped.startswith("## "):
+                in_section = stripped.lower() == "## port allocations"
+                continue
+            if not in_section:
+                continue
+            match = re.match(r"\|\s*(\d{2,5})\s*\|\s*([^|]+?)\s*\|", line)
+            if match:
+                port, service = match.group(1), match.group(2).strip()
+                if port in registered:
+                    warnings.append(
+                        Warning(
+                            NAMING_REGISTRY_PATH,
+                            1,
+                            f"duplicate host port {port} in Port Allocations: {registered[port]} and {service}",
+                        )
+                    )
+                else:
+                    registered[port] = service
+
+    binding = re.compile(r"-p\s+(?:\d{1,3}(?:\.\d{1,3}){3}:)?(\d{2,5}):\d{2,5}")
+    for path in sorted(DOCS_DIR.rglob("*.md")):
+        text = read_text(path)
+        if text is None:
+            continue
+        for line_number, line in enumerate(text.splitlines(), start=1):
+            for match in binding.finditer(line):
+                host_port = match.group(1)
+                if host_port not in registered:
+                    warnings.append(
+                        Warning(
+                            path,
+                            line_number,
+                            f"host port {host_port} is bound in a guide but is not in the Port Allocations registry (internal/naming-registry.md)",
+                        )
+                    )
     return warnings
 
 

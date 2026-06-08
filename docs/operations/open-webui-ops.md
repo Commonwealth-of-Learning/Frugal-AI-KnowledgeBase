@@ -177,7 +177,7 @@ docker rmi ghcr.io/open-webui/open-webui:main
 | Open WebUI cannot see models | Ollama is stopped or the connection URL is wrong. | Start Ollama and check the Open WebUI connection points to `http://host.docker.internal:11434`. |
 | Model responses are slow | Memory pressure or too-large context. | Close memory-heavy apps and use the `qwen3.5-dev` 8K profile. |
 | Docker says the container name exists | Old container remains after a failed recreate. | Run `docker rm open-webui`, then create it again. |
-| Port 3000 is already in use | Another app is using the port. | Run Open WebUI with another host port, such as `-p 3001:8080`. |
+| Port 3000 is already in use | Another app is using the port. | Run Open WebUI with another free host port by changing the host side of the `-p` flag. |
 | DGX Spark container cannot see the GPU | GPU flag or container runtime is missing. | Recreate the integrated container with `--gpus=all` after Docker GPU access is confirmed. |
 | Model list loads slowly | An unreachable Ollama endpoint is configured. | Remove stale endpoints or lower the model-list timeout in the deployment environment. |
 

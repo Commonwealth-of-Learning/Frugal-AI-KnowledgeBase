@@ -18,6 +18,7 @@
 
 ## Infrastructure
 
+* [Infrastructure layer](concepts/infrastructure-layer.md)
 * [Hardware: Mac mini 24 GB](components/hardware/mac-mini-24gb.md)
 * [Hardware: NVIDIA DGX Spark](components/hardware/nvidia-dgx-spark.md)
 
@@ -43,8 +44,8 @@
 ## Application
 
 * [Application layer](concepts/application-layer.md)
-* [Framework: Open WebUI](components/frameworks/open-webui.md)
-* [Application: OpenCode](components/applications/opencode.md)
+* [Interface: Open WebUI](components/frameworks/open-webui.md)
+* [Agent: OpenCode](components/applications/opencode.md)
 
 ## Environments
 

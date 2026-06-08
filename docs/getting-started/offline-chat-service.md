@@ -19,7 +19,7 @@ Expected time: about 30 minutes if Docker and Ollama are already installed.
 | Environment | [Development environment](../components/environments/development.md) | Sets expectations for a single-user local setup. |
 | Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model and provides the local API. |
 | Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Provides the chat capability. |
-| Framework | [Open WebUI](../components/frameworks/open-webui.md) | Provides the browser chat interface. |
+| Interface | [Open WebUI](../components/frameworks/open-webui.md) | Provides the browser chat interface. |
 | Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | Keeps the service healthy after setup. |
 
 ## Prerequisites
@@ -141,7 +141,7 @@ The memory and speed values in this guide are expected development values, not a
 | Open WebUI cannot connect to Ollama | `curl http://localhost:11434/api/tags` | Start or restart Ollama, then restart Open WebUI. |
 | No model appears | `ollama list` | Confirm `qwen3.5-dev` exists. Re-run the model profile step if needed. |
 | Responses are slow | Activity Monitor memory pressure | Close memory-heavy apps or reduce context size. |
-| Port 3000 is in use | `lsof -i :3000` | Run Open WebUI on another host port, such as `-p 3001:8080`. |
+| Port 3000 is in use | `lsof -i :3000` | Run Open WebUI on another free host port by changing the host side of the `-p` flag. |
 | Container exits | `docker logs open-webui` | Check Docker Desktop is running and recreate the container if needed. |
 
 ## Stop and restart

@@ -1,92 +1,57 @@
 ---
-description: [Grounded one-sentence description for partner institutions and ministries.]
+description: [Developer-first one-sentence description of the knowledge base.]
 icon: [gitbook-icon-name]
 ---
 
 # Welcome to Frugal AI knowledge base
 
-[One grounded definition of Frugal AI for education systems. Focus on local control, responsible governance, and institutional capacity.]
+[One grounded definition: a build reference for sovereign, local-first AI in education.]
 
-[State how the Frugal AI knowledge base helps partner institutions and ministries plan, build, and govern local AI services.]
+[One paragraph on what Frugal AI is — local-first, open, capacity-building infrastructure — grounded in the COL tradition, for example Aptus. Frugal AI is not cheap AI.]
 
 {% hint style="info" %}
-[Scope note. State that the first path is intentionally small and does not imply pilot or production readiness.]
+[Scope note: the first build is intentionally small and does not imply pilot or production readiness.]
 {% endhint %}
 
-## First-time here
+## The Frugal AI stack
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>[Icon]</td><td><strong>[Entry 1]</strong></td><td>[Time estimate] - [Plain-language outcome].</td><td><a href="[path].md">[path].md</a></td></tr><tr><td>[Icon]</td><td><strong>[Entry 2]</strong></td><td>[Time estimate] - [Plain-language outcome].</td><td><a href="[path].md">[path].md</a></td></tr></tbody></table>
+[The layered model as a compact text map: Application, Gateway, Orchestration, Inference, Infrastructure.]
 
-## Why this matters
+[One line: read top to bottom for the request path, bottom to top for the build order. Link to the architecture page.]
 
-[Explain why Frugal AI matters for partner institutions and ministries. Keep this grounded in sovereign AI, open technologies, data ownership, compliance, guardrails, and capacity-building.]
+## Governance has one home: the gateway
 
-| Priority | What it means |
-| --- | --- |
-| Sovereign AI | [How models, data, and operations remain governed locally] |
-| Open technologies | [How open-source software or open-weight models reduce dependency] |
-| Data ownership | [What stays under institutional or national rules] |
-| Compliance | [Which policy, privacy, procurement, or security needs are considered] |
-| Guardrails | [Which human review, access, logging, backup, and acceptable-use rules matter] |
-| Local capacity | [What the local team learns or can maintain] |
+[One paragraph: the gateway is where sovereignty is enforced — what may leave the institution, what stays local, what is logged and redacted.]
+
+## Start here
+
+[Time-boxed entry cards: the architecture, the quickstart, the first build, and operations.]
+
+## The first slice
+
+[The frugal floor as a compact map, with a layer-to-component table.]
 
 ## Choose a path
 
-| Reader need | Start with | Why |
-| --- | --- | --- |
-| [Understand the approach] | [Page](path.md) | [Reason] |
-| [Build a small local service] | [Page](path.md) | [Reason] |
-| [Plan controlled shared use] | [Page](path.md) | [Reason] |
-| [Maintain the service] | [Page](path.md) | [Reason] |
-
-## Guardrails before scale
-
-| Area | Minimum question |
-| --- | --- |
-| Data | [What information may be entered, uploaded, retained, or exported?] |
-| Access | [Who can use the service, and how is access removed?] |
-| Human review | [Which outputs require educator or institutional review before use?] |
-| Compliance | [Which national, institutional, privacy, security, and procurement rules apply?] |
-| Operations | [Who owns support, updates, backups, monitoring, and incident response?] |
-
-## The first local path
-
-```text
-[Hardware]
-  -> [Runtime]
-  -> [Model]
-  -> [Interface]
-  -> [Service outcome]
-```
+[Reader-path table: understand the architecture, build the service, evaluate the approach, maintain it.]
 
 ## What this path proves
 
-| Proof point | Why it matters |
-| --- | --- |
-| [Proof point 1] | [Reader value] |
-| [Proof point 2] | [Reader value] |
-| [Proof point 3] | [Reader value] |
+[Proof-point table.]
+
+## Guardrails before scale
+
+[Minimum-question table: data, access, human review, compliance, operations.]
 
 ## Frugal AI principles
 
-1. Keep data local by default.
-2. Prefer open, inspectable components.
-3. Match model size to available hardware.
-4. Build local skills and operational confidence before scaling.
-
-Link to [Frugal AI principles](concepts/frugal-ai-principles.md).
-
-[Mention the COL Frugal AI source when the page needs explicit grounding.]
+[Short numbered list. Link to the principles page and the COL Frugal AI source.]
 
 ## Not in this first path
 
 - [Out-of-scope item 1]
 - [Out-of-scope item 2]
-- [Out-of-scope item 3]
 
 ## Coming next
 
-| Future path | Additional work required |
-| --- | --- |
-| [Future path 1] | [Required components, safeguards, or operations] |
-| [Future path 2] | [Required components, safeguards, or operations] |
+[Increment table: what each future increment adds, marked as future until its pages exist.]

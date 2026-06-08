@@ -47,6 +47,7 @@ Decide the page type before drafting:
 | Landing page | Route readers into the Frugal AI knowledge base | `docs/README.md` pattern |
 | Guide | Complete one practical task | guide pattern |
 | Concept | Explain a decision or principle | concept pattern |
+| Layer overview | Explain one layer of the stack and its components | layer pattern |
 | Component card | Explain fit, limits, and links for one component | component pattern |
 | Model card | Explain model identity, fit, and limits | model pattern |
 | Runbook | Operate and recover a service | runbook pattern |
@@ -110,7 +111,7 @@ Check:
 - operations page name: `Local AI chat service operations`;
 - hardware name: `Mac mini 24 GB`;
 - runtime name: `Ollama`;
-- framework name: `Open WebUI`;
+- interface name: `Open WebUI` (Application layer, role `Interface:`);
 - model names exactly as listed in the registry.
 
 Use service-level names for guides and operations pages. Use product names inside component pages and technical details.
@@ -223,12 +224,12 @@ Use role labels in sidebar component titles when the page name alone is ambiguou
 ```text
 Hardware: Mac mini 24 GB
 Environment: Development
-Environment: Pilot
 Runtime: Ollama
+Serving engine: vLLM
 Model: Qwen3.5-9B
-Model: Qwen3.6-35B-A3B
-Model: Gemma 4 12B
-Framework: Open WebUI
+Gateway: LiteLLM
+Interface: Open WebUI
+Agent: OpenCode
 ```
 
 ### 10. Final Editorial Pass
@@ -257,7 +258,8 @@ Run this checklist:
 - Links point to existing files.
 - GitBook tables and cards are syntactically valid.
 - No internal files, planning notes, or templates are linked.
-- Local editorial audit passes.
+- Local editorial audit passes, including the frontmatter, role-label, layer-section, and port-registry checks.
+- Any new host port is registered in the naming registry's Port Allocations table.
 
 Useful local checks:
 
@@ -292,14 +294,17 @@ The templates in `internal/templates/` now reflect this workflow:
 | --- | --- |
 | `landing-page-template.md` | Public entry page for the Frugal AI knowledge base |
 | `concept-page-template.md` | Principles, definitions, and decision framing |
+| `layer-overview-template.md` | Explain one layer of the stack and its components |
 | `guide-template.md` | One practical build or setup task |
 | `stack-template.md` | Layer map and operating assumptions for a path |
 | `hardware-profile-template.md` | Hardware fit, memory budget, and limits |
 | `environment-profile-template.md` | Development, pilot, or production assumptions and governance |
 | `runtime-card-template.md` | Runtime fit, settings, compatibility, and limits |
 | `model-card-template.md` | Model identity, source confidence, fit, and limits |
-| `framework-card-template.md` | Interface or framework fit, requirements, and limits |
+| `framework-card-template.md` | Interface or application card fit, requirements, and limits |
 | `runbook-template.md` | Operation, health checks, maintenance, recovery, and escalation |
+
+Every component card carries a `_Layer:_` tag under its H1, linking the component to its layer on the architecture page (for example `_Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (runtime)._`). The role in the tag and the sidebar prefix use the approved set in `internal/naming-registry.md`.
 
 When a template and the editorial guide disagree, follow the editorial guide and update the template.
 
