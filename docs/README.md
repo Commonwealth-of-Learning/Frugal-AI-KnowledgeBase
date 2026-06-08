@@ -39,7 +39,7 @@ Different goals have different starting points.
 | --- | --- | --- |
 | Understand Frugal AI | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
 | Assess it for a ministry | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
-| Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md), [Cost and sustainability](concepts/cost-and-sustainability.md), and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
+| Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md) and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
 | Build with it | [The Frugal AI stack](concepts/how-the-stack-fits-together.md), then [Quickstart](getting-started/quickstart.md) and [Local AI chat service](getting-started/offline-chat-service.md) | [Example applications](concepts/example-applications.md) |
 
 ## The first build: Local AI chat service

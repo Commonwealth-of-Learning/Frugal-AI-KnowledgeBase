@@ -29,7 +29,7 @@ Some useful tools may not be fully open source. When that happens, the page shou
 
 ### Match the model to the machine
 
-A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window. See [Cost and sustainability](cost-and-sustainability.md) for the cost and energy case.
+A smaller model that runs reliably is better than a larger model that exhausts memory or needs constant tuning. Frugal AI starts with the memory budget, then chooses the runtime, model, and context window.
 
 ### Degrade to a minimal build
 

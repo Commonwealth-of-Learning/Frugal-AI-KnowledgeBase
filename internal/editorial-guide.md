@@ -145,7 +145,7 @@ Education stakeholders need to understand purpose, risk, cost, governance, insti
 
 Developers and maintainers need exact component names, model IDs, runtime tags, settings, commands, verification steps, and source links.
 
-The first screen of a landing or architecture page states the architecture and the build path. Stakeholder framing — purpose, risk, cost, governance — follows lower down or on a dedicated page such as Frugal AI principles, Cost and sustainability, or the reference architecture.
+The first screen of a landing or architecture page states the architecture and the build path. Stakeholder framing — purpose, risk, cost, governance — follows lower down or on a dedicated page such as Frugal AI principles or the reference architecture.
 
 ## Core Message
 
