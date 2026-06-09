@@ -9,6 +9,22 @@ Plain-language definitions for Frugal AI concepts, components, and governance te
 
 <details>
 
+<summary><strong>Agent (AI agent)</strong></summary>
+
+An application that takes actions rather than only answering: it reads, writes, and runs things through tools, under scoped permissions and human review. In this knowledge base an agent is an Application-layer subtype, not a separate layer; the coding agent is the worked example.
+
+</details>
+
+<details>
+
+<summary><strong>Audit log</strong></summary>
+
+A record of what the gateway did with each request: where it was routed, what was redacted, and when. It supports review and incident response, and is the record behind indicators such as token sovereignty and personal-data leakage.
+
+</details>
+
+<details>
+
 <summary><strong>Cloud burst</strong></summary>
 
 Temporary use of cloud computing resources for tasks that exceed local processing capacity. In a sovereign AI design, cloud burst needs governance controls for data minimisation, audit logging, jurisdiction, deletion, and fallback to local processing.
@@ -49,9 +65,41 @@ A computing device located at the point of use, such as a school, instead of in 
 
 <details>
 
+<summary><strong>Embedding model</strong></summary>
+
+A model that turns text into numeric vectors so passages with similar meaning can be found. Retrieval-augmented generation uses one to search an approved knowledge base.
+
+</details>
+
+<details>
+
 <summary><strong>Frugal AI</strong></summary>
 
 Frugal AI treats AI as durable institutional infrastructure rather than an externally sourced service. It optimises for local control, predictable cost, lower energy use, intermittent connectivity, open components, and long-term institutional capacity.
+
+</details>
+
+<details>
+
+<summary><strong>Frugal floor</strong></summary>
+
+The smallest complete build in this knowledge base: infrastructure, inference, and an application, with the gateway local-only and no orchestration. It is the architecture at its minimum, not a cut-down version.
+
+</details>
+
+<details>
+
+<summary><strong>Gateway</strong></summary>
+
+The single boundary every model request passes through, where routing, redaction, audit logging, and approved destinations are enforced. In this knowledge base it is the operational form of the sovereignty envelope and the privacy airlock.
+
+</details>
+
+<details>
+
+<summary><strong>Guardrail</strong></summary>
+
+A policy enforced on a request or response, such as masking personal data or blocking learner free text. In this knowledge base guardrails are enforced at the gateway.
 
 </details>
 
@@ -76,6 +124,22 @@ Large Language Model: an AI model with billions of parameters that can generate,
 <summary><strong>Local inference</strong></summary>
 
 Running an AI model on a local machine instead of sending prompts to a remote cloud API.
+
+</details>
+
+<details>
+
+<summary><strong>Minimum Government Baseline</strong></summary>
+
+The set of safeguards the reference architecture expects any public deployment to meet before adding optional modules: availability, privacy, security, auditability, and a scalability pathway. The development build does not meet it; the pilot and production environments establish it.
+
+</details>
+
+<details>
+
+<summary><strong>Mixture of Experts (MoE)</strong></summary>
+
+A model design where only a fraction of the parameters — the active parameters — run for any given token, so total size is large but compute per token stays smaller. Contrast with a dense model, where every parameter is used.
 
 </details>
 
@@ -113,17 +177,17 @@ The browser chat interface used in this path. It connects to Ollama and stores i
 
 <details>
 
-<summary><strong>Privacy airlock</strong></summary>
+<summary><strong>Orchestration</strong></summary>
 
-A control layer that detects, redacts, or masks personal data before it is processed by a model or sent to an external service. It is the enforcement point of the sovereignty envelope, sometimes called simply the airlock.
+The layer that coordinates more than a single model reply: tools, retrieval, and multi-step workflows. It is optional; the first chat build runs without it.
 
 </details>
 
 <details>
 
-<summary><strong>Quasi-identifier</strong></summary>
+<summary><strong>Privacy airlock</strong></summary>
 
-A combination of attributes that may re-identify a person in a small population. Examples include school, grade, and a rare characteristic when used together.
+A control layer that detects, redacts, or masks personal data before it is processed by a model or sent to an external service. It is the enforcement point of the sovereignty envelope, sometimes called simply the airlock.
 
 </details>
 
@@ -137,9 +201,33 @@ A way to reduce model size and memory use by storing weights with fewer bits. Sm
 
 <details>
 
+<summary><strong>Quasi-identifier</strong></summary>
+
+A combination of attributes that may re-identify a person in a small population. Examples include school, grade, and a rare characteristic when used together.
+
+</details>
+
+<details>
+
 <summary><strong>RAG</strong></summary>
 
 Retrieval-Augmented Generation: a technique that grounds AI outputs in retrieved documents from a knowledge base. RAG can improve accuracy and support citation of sources.
+
+</details>
+
+<details>
+
+<summary><strong>Redaction</strong></summary>
+
+Detecting and masking personal data in a prompt before a model sees it, keeping the original only in protected logs. It is the core action of the privacy airlock.
+
+</details>
+
+<details>
+
+<summary><strong>Risk tier</strong></summary>
+
+The level of human oversight a task needs, from the reference architecture's risk-tiered teacher-in-the-loop: Tier 1 (high; learner-facing; approval before release), Tier 2 (medium; teacher-only drafts), and Tier 3 (low; automated with logging). When classification is uncertain, use the higher tier.
 
 </details>
 
@@ -169,6 +257,14 @@ Content areas defined nationally or institutionally as requiring heightened care
 
 <details>
 
+<summary><strong>Serving engine</strong></summary>
+
+Inference software built for many simultaneous users on GPU hardware, such as vLLM, used at pilot and production scale. Contrast with a local runtime, which suits a single developer.
+
+</details>
+
+<details>
+
 <summary><strong>SLM</strong></summary>
 
 Small Language Model: an AI model with fewer parameters than larger frontier models. SLMs are more suitable for modest hardware and edge deployment, but usually have reduced capability compared with larger models.
@@ -193,6 +289,14 @@ Operation of AI systems under national jurisdiction and policy control. This inc
 
 <details>
 
+<summary><strong>Sovereignty envelope</strong></summary>
+
+The boundary that defines what data may be processed externally, what must stay in-country, and what controls apply. In this knowledge base it is drawn at the gateway, and kept closed in a fully local build.
+
+</details>
+
+<details>
+
 <summary><strong>Stack</strong></summary>
 
 A tested combination of hardware, environment, runtime, model, framework, and operations practices.
@@ -212,5 +316,13 @@ A synchronisation method where data is stored locally when connectivity is unava
 <summary><strong>Teacher-in-the-Loop</strong></summary>
 
 A workflow design that requires teacher oversight of AI-generated content. The level of oversight is calibrated to the risk level of the task.
+
+</details>
+
+<details>
+
+<summary><strong>Token sovereignty</strong></summary>
+
+The share of inference processed locally rather than sent to an external provider. The reference architecture suggests it as a monitoring indicator; the gateway audit log is the record behind it.
 
 </details>
