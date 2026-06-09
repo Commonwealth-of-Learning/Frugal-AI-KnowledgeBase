@@ -57,6 +57,8 @@ Use that sentence to keep the page focused. Remove sections that do not support 
 
 ### 3. Gather Source Material
 
+Once per increment, confirm that the Source Inputs in `internal/editorial-guide.md` still match the Key Resources on the live [COL Frugal page](https://www.col.org/frugal/). When they have diverged, update the editorial guide before drafting, so public pages cite current COL sources.
+
 Use source material in this order:
 
 1. Existing public pages in `docs/`

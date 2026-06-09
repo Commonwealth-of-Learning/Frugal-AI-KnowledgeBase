@@ -13,6 +13,8 @@ This page adapts COL's Technical Annex for a sovereign education-AI reference ar
 This is a Markdown adaptation. The [original COL technical annex](https://www.col.org/wp-content/uploads/2026/02/Technical-Annex-for-Sovereign-Education.pdf) is the authoritative source for the full tables, the pilot blueprint, and the ministry self-assessment checklist.
 {% endhint %}
 
+The annex is the technical companion to the [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf), the Commonwealth commitment to teacher-led, localised AI presented for endorsement at the India AI Impact Summit 2026. It supports a growing alliance of Commonwealth partners — with particular attention to Small Island Developing States and low- and middle-income countries — that prioritises digital public goods over proprietary dependency and builds local capability over time.
+
 
 | Purpose | Reference architecture and options menu for sovereign, Frugal AI in education; countries may adopt, adapt, or set aside as appropriate |
 | --- | --- |

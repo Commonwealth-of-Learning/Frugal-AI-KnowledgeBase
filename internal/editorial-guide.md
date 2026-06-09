@@ -10,10 +10,19 @@ For approved public names, sidebar labels, hardware names, service names, and re
 
 ## Source Inputs
 
+COL sources (checked against the Key Resources list on the live COL Frugal page, 2026-06-09; re-check each increment):
+
 - [COL Frugal page](https://www.col.org/frugal/)
-- [Frugal AI: A Blueprint for Digital Sovereignty in Commonwealth Education](https://www.col.org/news/frugal-ai-a-blueprint-for-digital-sovereignty-in-commonwealth-education/), 28 November 2025
+- [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) and the [Gaborone Statement](https://oasis.col.org/server/api/core/bitstreams/88f65f00-742b-44f3-b96c-3c44327dec8b/content) — the teacher-led, localised-AI commitment behind the programme
+- [Technical Annex: Sovereign Education-AI Reference Architecture](https://www.col.org/wp-content/uploads/2026/02/Technical-Annex-for-Sovereign-Education.pdf)
 - [Frugal AI: A Roadmap to Sovereign GenAI for Education](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/), 13 February 2026
+- [Beyond the Classroom: Frugal AI in TVET as a roadmap in skills training](https://www.col.org/news/beyond-the-classroom-frugal-ai-in-tvet-as-a-roadmap-in-skills-training/)
+- [Teacher in the Loop AI (TiL-AI)](https://jl4d.org/index.php/ejl4d/article/view/1934), JL4D — the canonical teacher-in-the-loop citation
 - [COL Connections, April 2026, Vol. 31 No. 1](https://oasis.col.org/server/api/core/bitstreams/51a0562e-d4d1-4cd6-9011-18963b498475/content), especially the Frugal AI focus and tech trends sections
+- [Frugal AI: A Blueprint for Digital Sovereignty in Commonwealth Education](https://www.col.org/news/frugal-ai-a-blueprint-for-digital-sovereignty-in-commonwealth-education/), 28 November 2025 — no longer listed among COL's Key Resources; retained here for its tone analysis only, not as a citation source
+
+External structure references (for page patterns only):
+
 - [NVIDIA DGX Spark build page](https://build.nvidia.com/spark)
 - [Dify Docs introduction](https://docs.dify.ai/en/use-dify/getting-started/introduction)
 - [Claude Platform docs home](https://platform.claude.com/docs/en/home)
@@ -32,6 +41,8 @@ Use this for: framing pages, principles pages, and introductions that need to co
 Avoid carrying over: broad institutional language without a concrete next step.
 
 ### Blueprint Article
+
+Status note: no longer among COL's Key Resources; the tone guidance below remains useful, but cite the Roadmap article or the Compact instead.
 
 Tone: strategic and persuasive, aimed at education leaders who need to understand why cloud-first AI creates cost, privacy, sustainability, and capacity risks.
 
