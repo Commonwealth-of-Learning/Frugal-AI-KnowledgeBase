@@ -90,4 +90,4 @@ The [Local AI chat service](../../getting-started/offline-chat-service.md) uses 
 
 - [Ollama](../runtimes/ollama.md)
 - [Qwen3.5-9B](../models/qwen-3.5-9b.md)
-- [Open WebUI](../frameworks/open-webui.md)
+- [Open WebUI](../applications/open-webui.md)

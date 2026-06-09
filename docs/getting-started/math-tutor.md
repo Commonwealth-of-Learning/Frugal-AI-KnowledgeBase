@@ -30,7 +30,7 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 
 | Layer | This build uses |
 | --- | --- |
-| Application | [Open WebUI](../components/frameworks/open-webui.md) |
+| Application | [Open WebUI](../components/applications/open-webui.md) |
 | Orchestration | An Open WebUI tool that computes with SymPy |
 | Inference | [Ollama](../components/runtimes/ollama.md) with [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) |

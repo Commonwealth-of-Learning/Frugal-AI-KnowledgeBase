@@ -27,6 +27,22 @@ The annex is the technical companion to the [Gaborone to New Delhi Compact](http
 | Document conventions | This annex presents options, and also defines a Minimum Government Baseline of safeguards for any public deployment that (i) processes education data or (ii) produces content intended for learners. Components beyond the baseline are presented as optional modules. |
 
 
+## How the annex maps to the knowledge base stack
+
+The annex uses eight policy and implementation layers. The Frugal AI knowledge base uses a smaller five-layer build model so developers can assemble and operate one service at a time. The models are compatible:
+
+| Annex layer | Knowledge base home |
+| --- | --- |
+| Access & Identity | Environment profiles and application access rules |
+| Teacher-in-the-Loop Workflow | Application and Orchestration layers, with human review points |
+| Application Services | Application layer |
+| Knowledge Layer (RAG) | Orchestration layer |
+| Privacy Airlock | Gateway layer |
+| Model Layer | Inference layer |
+| Infrastructure | Infrastructure layer |
+| Operations | Operations pages and environment profiles |
+
+
 ## 1. Executive Summary for Ministers and Officials
 
 This technical annex provides a reference architecture — a structured set of options and guidelines for deploying artificial intelligence in education. It is designed for developing countries, especially for small island developing states (SIDS) and low- and middle-income countries (LMICs) that wish to explore AI while maintaining national control over education data and policy.

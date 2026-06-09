@@ -1,7 +1,7 @@
 # GitBook configuration.
 # The published knowledge base lives under docs/. Without this file GitBook
-# defaults to the repository root, where /README.md and /SUMMARY.md are only
-# stubs, which breaks navigation and every in-page link into docs/.
+# defaults to the repository root, where /README.md and /SUMMARY.md are
+# maintainer entry points rather than the public knowledge base navigation.
 root: ./docs/
 
 structure:
@@ -11,3 +11,14 @@ structure:
 # Preserve old URLs after page renames (paths are relative to root, docs/).
 redirects:
   getting-started/curriculum-assistant: getting-started/curriculum-advisor.md
+  core-concepts/core-concepts: concepts/how-the-stack-fits-together.md
+  core-concepts/workspaces-and-projects: concepts/how-the-stack-fits-together.md
+  core-concepts/permissions: getting-started/quickstart.md
+  guides/guides: getting-started/offline-chat-service.md
+  guides/automations: getting-started/offline-chat-service.md
+  guides/custom-domains: getting-started/offline-chat-service.md
+  getting-started/getting-started: getting-started/quickstart.md
+  getting-started/your-first-project: getting-started/offline-chat-service.md
+  reference/configuration: concepts/how-the-stack-fits-together.md
+  reference/reference: reference/glossary.md
+  components/frameworks/open-webui: components/applications/open-webui.md

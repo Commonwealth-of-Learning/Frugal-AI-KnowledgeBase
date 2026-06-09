@@ -103,7 +103,7 @@ Retrieval-Augmented Generation: a technique that grounds AI outputs in retrieved
 
 <summary><strong>Stack</strong></summary>
 
-A tested combination of hardware, environment, runtime, model, framework, and operations practices.
+A tested combination of hardware, environment, runtime, model, application interface, and operations practices.
 
 </details>
 

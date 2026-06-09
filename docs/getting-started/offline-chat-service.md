@@ -19,7 +19,7 @@ Level: beginner. Expected time: about 30 minutes if Docker and Ollama are alread
 | Environment | [Development environment](../components/environments/development.md) | Sets expectations for a single-user local setup. |
 | Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model and provides the local API. |
 | Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Provides the chat capability. |
-| Interface | [Open WebUI](../components/frameworks/open-webui.md) | Provides the browser chat interface. |
+| Interface | [Open WebUI](../components/applications/open-webui.md) | Provides the browser chat interface. |
 | Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | Keeps the service healthy after setup. |
 
 ## Prerequisites

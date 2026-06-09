@@ -72,7 +72,7 @@ NVIDIA states that DGX Spark supports AI models up to 200 billion parameters, or
 | Runtime or framework | Status | Notes |
 | --- | --- | --- |
 | [Ollama](../runtimes/ollama.md) | Candidate | Requires DGX Spark software validation before documenting a runnable guide. |
-| [Open WebUI](../frameworks/open-webui.md) | Candidate | Useful for [pilot environment](../environments/pilot.md) chat interfaces after account, access, backup, and monitoring decisions are made. |
+| [Open WebUI](../applications/open-webui.md) | Candidate | Useful for [pilot environment](../environments/pilot.md) chat interfaces after account, access, backup, and monitoring decisions are made. |
 
 ## Limits
 

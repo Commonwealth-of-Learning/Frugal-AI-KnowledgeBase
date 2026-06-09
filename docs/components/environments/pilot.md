@@ -32,7 +32,7 @@ Use this environment when:
 | --- | --- | --- |
 | Hardware | [NVIDIA DGX Spark](../hardware/nvidia-dgx-spark.md) or measured equivalent | Provides more memory headroom than the first Mac mini path. |
 | Runtime | [Ollama](../runtimes/ollama.md) or another measured local runtime | Keeps inference local while allowing pilot measurement. |
-| Interface | [Open WebUI](../frameworks/open-webui.md) or a governed pilot interface | Provides account-based access and a familiar chat surface. |
+| Interface | [Open WebUI](../applications/open-webui.md) or a governed pilot interface | Provides account-based access and a familiar chat surface. |
 | Users | Small named group | Keeps support and risk manageable. |
 | Data | Approved pilot data only | Prevents uncontrolled learner or institutional data exposure. |
 | Updates | Scheduled window | Avoids surprising pilot users. |
@@ -66,5 +66,5 @@ Before [production](production.md), add:
 - [Development environment](development.md)
 - [Production environment](production.md)
 - [NVIDIA DGX Spark](../hardware/nvidia-dgx-spark.md)
-- [Open WebUI](../frameworks/open-webui.md)
+- [Open WebUI](../applications/open-webui.md)
 - [Local AI chat service operations](../../operations/open-webui-ops.md)

@@ -24,7 +24,7 @@ Refer to the published reader experience as **Frugal AI knowledge base** (lower-
 
 ## Page Types
 
-Common page jobs: route readers (landing), complete one practical task (guide), explain a decision or trade-off (concept), describe one component's fit and limits (component card, including model, hardware, runtime, framework, and environment variants), operate and recover a service (runbook), and define terms or collect source links (reference). Each page should do one of these jobs.
+Common page jobs: route readers (landing), complete one practical task (guide), explain a decision or trade-off (concept), describe one component's fit and limits (component card, including model, hardware, runtime, application/interface, and environment variants), operate and recover a service (runbook), and define terms or collect source links (reference). Each page should do one of these jobs.
 
 ## Architecture Layers
 

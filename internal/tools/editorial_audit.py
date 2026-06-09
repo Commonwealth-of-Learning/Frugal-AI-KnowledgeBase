@@ -51,20 +51,20 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)",
     "* [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)",
     "* [Model: Gemma 4 12B](components/models/gemma-4-12b.md)",
-    "* [Interface: Open WebUI](components/frameworks/open-webui.md)",
+    "* [Interface: Open WebUI](components/applications/open-webui.md)",
     "* [Gateway: LiteLLM](components/gateways/litellm.md)",
     "* [Platform: Dify](components/orchestration/dify.md)",
     "* [Coding Agent: OpenCode](components/applications/opencode.md)",
 )
 
-COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications", "orchestration"}
+COMPONENT_PARTS = {"hardware", "runtimes", "models", "environments", "gateways", "applications", "orchestration"}
 
 TEMPLATES_REQUIRING_AT_A_GLANCE = (
     "model-card-template.md",
     "hardware-profile-template.md",
     "environment-profile-template.md",
     "runtime-card-template.md",
-    "framework-card-template.md",
+    "application-card-template.md",
 )
 
 PLACEHOLDER_CUE_WORDS = (

@@ -295,7 +295,7 @@ Use this decision rule:
 
 The templates in `internal/templates/` are thin scaffolds: each names its live exemplar page, shows the heading pattern, and lists the reminders that are not obvious from the exemplar (confidence labels, layer tags, hint-box format, transition gates). The pattern itself is owned by the editorial guide; the exemplar page is the copy source.
 
-Active scaffolds: `guide-template.md`, `model-card-template.md`, `runtime-card-template.md`, `framework-card-template.md` (interfaces and agents), `hardware-profile-template.md`, `environment-profile-template.md`, `runbook-template.md`. Retired as separate scaffolds (the file points at the pattern and exemplar instead): `landing-page-template.md`, `concept-page-template.md`, `layer-overview-template.md`, `stack-template.md`.
+Active scaffolds: `guide-template.md`, `model-card-template.md`, `runtime-card-template.md`, `application-card-template.md` (interfaces and agents), `hardware-profile-template.md`, `environment-profile-template.md`, `runbook-template.md`. Retired as separate scaffolds (the file points at the pattern and exemplar instead): `landing-page-template.md`, `concept-page-template.md`, `layer-overview-template.md`, `stack-template.md`.
 
 Every component card carries a `_Layer:_` tag under its H1, linking the component to its layer on the architecture page (for example `_Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (runtime)._`). The role in the tag and the sidebar prefix use the approved set in `internal/naming-registry.md`.
 

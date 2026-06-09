@@ -1,6 +1,6 @@
 # Interface / Application Card Template
 
-Thin scaffold for Application-layer component cards (interfaces, agents, and other applications). The canonical structure is the live exemplars: `docs/components/frameworks/open-webui.md` (Interface) and `docs/components/applications/opencode.md` (Agent). Heading patterns are owned by `internal/editorial-guide.md` (Component Pages); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+Thin scaffold for Application-layer component cards (interfaces, agents, and other applications). The canonical structure is the live exemplars: `docs/components/applications/open-webui.md` (Interface) and `docs/components/applications/opencode.md` (Agent). Heading patterns are owned by `internal/editorial-guide.md` (Component Pages); when this file and the editorial guide disagree, follow the editorial guide and update this file.
 
 ## Heading pattern
 

@@ -1,5 +1,5 @@
 ---
-description: Assumptions for a production deployment. Further work.
+description: Readiness checklist for moving a Frugal AI service from pilot to production.
 icon: building
 ---
 
@@ -10,7 +10,7 @@ _Scope: a deployment environment, not a [stack layer](../../concepts/how-the-sta
 A production environment runs a Frugal AI service as a dependable, governed service for real users. It is the stage after a successful [pilot](pilot.md). Production is where the annex's Minimum Government Baseline must be fully met and sustained; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md).
 
 {% hint style="info" %}
-This environment is not yet documented in full. This page records the shape of the work; the detailed guidance is further work.
+Use this page as a production-readiness checklist. Do not treat the development guides as production deployment instructions.
 {% endhint %}
 
 ## At a glance
@@ -20,19 +20,20 @@ This environment is not yet documented in full. This page records the shape of t
 - **Hardware fit** — Sized and measured for the production workload, beyond the pilot's single node where concurrency requires it.
 - **Main caution** — Production needs security, monitoring, and recovery commitments a pilot does not.
 
-## What production adds beyond a pilot
+## Production readiness checklist
 
-- security review;
-- service monitoring and alerting;
-- incident response;
-- lifecycle and model-update policy;
-- capacity and concurrency testing;
-- accessibility and language review;
-- formal data-protection approval.
+- **Ownership** — A named service owner, support route, escalation path, and change-approval process.
+- **Security** — Security review, role-based access control, key rotation, patching, encryption, and incident response.
+- **Data protection** — Approved data classification, retention, deletion, audit-log access, and privacy-airlock controls.
+- **Human review** — Documented risk tiers, approval gates, and sampling or audit processes for teacher-only outputs.
+- **Reliability** — Monitoring, alerting, backup, restore, rollback, and availability targets tested under expected load.
+- **Capacity** — Measured concurrency, latency, memory, storage, and cloud-burst limits for the production workload.
+- **Accessibility and localisation** — Review of language coverage, accessibility, curriculum fit, and support materials.
+- **Lifecycle** — Model, runtime, gateway, and application update policy, including regression checks before release.
 
-## Further work
+## What stays out of scope
 
-Detailed production guidance — serving topology, high availability, monitoring, and a production operations runbook — is not yet written. Add it only after a pilot has run and the supporting components and operations pages exist.
+This page does not prescribe a serving topology, high-availability design, or national deployment model. Those choices should follow a measured pilot, local procurement and data-protection requirements, and component-specific runbooks.
 
 ## Related pages
 
