@@ -1,107 +1,33 @@
+# Guide Template
+
+Thin scaffold. The canonical structure is the live exemplar: `docs/getting-started/offline-chat-service.md` (with `docs/getting-started/math-tutor.md` showing the localisation section). Heading patterns are owned by `internal/editorial-guide.md` (Page Patterns); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+
+## Heading pattern
+
+```text
 ---
-description: [One-sentence outcome for the guide.]
-icon: [gitbook-icon-name]
+description: One-sentence outcome.
+icon: gitbook-icon-name
 ---
-
-# [Guide Title]
-
-[State the practical outcome in one short paragraph. Name the service, local environment, and main components.]
-
-Choose the guide title from `internal/naming-registry.md` when the guide belongs to an approved public path.
-
-{% hint style="info" %}
-Estimated time: [time]. This is a [development/pilot/production] path.
-{% endhint %}
-
-## Fit and limits
-
-Use this guide when:
-
-- [Suitable scenario 1]
-- [Suitable scenario 2]
-- [Suitable scenario 3]
-
-This guide is not for:
-
-- [Out-of-scope scenario 1]
-- [Out-of-scope scenario 2]
-
+# Guide title                     (service-level name from the naming registry)
+Intro: the practical outcome in one short paragraph.
+{% hint style="info" %} Level: beginner|intermediate|advanced. Expected time: estimate. Scope note. {% endhint %}
+## Fit and limits                  (bold-label list: Good for / Not for / Governance / Caution)
 ## Prerequisites
-
-| Requirement | Notes |
-| --- | --- |
-| [Requirement 1] | [Why it is needed] |
-| [Requirement 2] | [Why it is needed] |
-| [Requirement 3] | [Why it is needed] |
-
-## Component map
-
-| Component | Page | Role |
-| --- | --- | --- |
-| Service | [Local AI chat service](offline-chat-service.md) | [Service outcome] |
-| Hardware | [Hardware profile](../components/hardware/[file].md) | [Role in the path] |
-| Environment | [Environment](../components/environments/[file].md) | [Operating assumptions] |
-| Runtime | [Runtime](../components/runtimes/[file].md) | [How the model runs] |
-| Model | [Model](../components/models/[file].md) | [Capability layer] |
-| Interface | [Interface](../components/frameworks/[file].md) | [User-facing layer] |
-| Operations | [Runbook](../operations/[file].md) | [Maintenance and recovery] |
-
-## Deployment pattern
-
-| Decision | Value |
-| --- | --- |
-| Runtime location | [Host runtime / container runtime / remote runtime] |
-| Interface location | [Host / Docker / remote service] |
-| Provider URL | [Runtime API URL, if relevant] |
-| Persistent data | [Volume, folder, or database] |
-
-Keep one deployment pattern per guide. Put alternative hardware or pilot patterns in a component card or runbook unless they are fully tested as their own guide.
-
-## 1. [Step name]
-
-[Explain the action and why it is needed.]
-
-```bash
-[one command]
-```
-
-Expected result: [what should be visible after the command].
-
-## 2. [Step name]
-
-[Explain the action and why it is needed.]
-
-```bash
-[one command]
-```
-
-Expected result: [what should be visible after the command].
-
-## 3. [Step name]
-
-[Explain the action and why it is needed.]
-
-```bash
-[one command]
-```
-
-Expected result: [what should be visible after the command].
-
-## Verify
-
-| Check | Command or action | Expected result |
-| --- | --- | --- |
-| [Check 1] | `[command]` | [Expected result] |
-| [Check 2] | [Action] | [Expected result] |
-| Provider connection | [Action] | [Runtime URL or model list is visible] |
-
-## Troubleshooting
-
-| Symptom | Check | Fix |
-| --- | --- | --- |
-| [Common issue 1] | [How to confirm] | [Smallest safe fix] |
-| [Common issue 2] | [How to confirm] | [Smallest safe fix] |
-
+## Component map                   (layer -> component table)
+## 1. Step name … ## n. Step name  (explain, one command, expected result)
+## Verify                          (Check | Expected result table)
+## Governance and review
+## Troubleshooting                 (Problem | Check | Fix table)
 ## Next step
+```
 
-[Link to the runbook, concept page, or next guide.]
+## Reminders
+
+- The hint box carries both level and expected time; label the time as an estimate unless measured.
+- One command per shell block, each followed by its expected result or a verification command.
+- "Fit and limits" is a bold-label list (`- **Label** — value`), not a table.
+- "Governance and review" names the human review point and where model egress is governed.
+- Add a "Localise it" section when the guide's content should be adapted to curriculum, names, or language.
+- A new runnable component must appear in `docs/operations/operations-overview.md` (runbook or further work) before the guide is linked.
+- Register any new host port in the Port Allocations table in `internal/naming-registry.md`.

@@ -1,43 +1,5 @@
----
-description: [One-sentence description of the layer.]
-icon: [gitbook-icon-name]
----
+# Layer Overview Template (retired as a separate scaffold)
 
-# [Layer name] layer
+The section order for layer overview pages (what the layer is and where it sits → what it provides → frugal trade-offs and where governance applies → components in this knowledge base → first build → related pages) is owned by `internal/editorial-guide.md` (Page Patterns — Layer overviews).
 
-[One sentence: this page describes the [Layer name] layer of The Frugal AI stack, and what it does in a line. Note whether the layer is optional.]
-
-## What the layer provides
-
-- [Capability 1]
-- [Capability 2]
-- [Capability 3]
-
-## Where it sits
-
-[Where the layer sits in the request path and the build order, and when it is needed versus optional.]
-
-## Why it matters, and what it costs
-
-[The capability the layer adds and the cost or risk it brings. Name where human oversight and the gateway apply.]
-
-## Frugal practice
-
-[How to use the layer frugally: start minimal, add capability only when a task needs it.]
-
-## [Components or options in this knowledge base]
-
-| [Kind] | Role |
-| --- | --- |
-| [Component A] | [Role] |
-| [Component B] | [Role] |
-
-## First build
-
-[The first worked build that uses this layer, with a link to its guide.]
-
-## Related pages
-
-- [The Frugal AI stack]
-- [A component in this layer]
-- [An adjacent layer]
+Live exemplars: `docs/concepts/inference-layer.md` and `docs/concepts/orchestration-layer.md`. Each layer page states whether the layer is optional and names where human oversight and the gateway apply.

@@ -1,85 +1,32 @@
+# Interface / Application Card Template
+
+Thin scaffold for Application-layer component cards (interfaces, agents, and other applications). The canonical structure is the live exemplars: `docs/components/frameworks/open-webui.md` (Interface) and `docs/components/applications/opencode.md` (Agent). Heading patterns are owned by `internal/editorial-guide.md` (Component Pages); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+
+## Heading pattern
+
+```text
 ---
-description: [Framework role in the Frugal AI knowledge base.]
-icon: [gitbook-icon-name]
+description: Component role in the Frugal AI knowledge base.
+icon: gitbook-icon-name
 ---
-
-# [Framework Name]
-
-[Describe what the framework provides and which user experience it enables.]
-
+# Component name
+_Layer:_ tag linking to the stack page, directly under the H1.
+Intro: what it provides and which user experience it enables.
 ## At a glance
-
-- **Current role** — [How this interface or framework is used]
-- **Best fit** — [Plain-language user workflow]
-- **Requires** — [Main dependency]
-- **Provider connection** — [Runtime API, provider URL, or service dependency]
-- **Data location** — [Where application state is stored]
-- **Main caution** — [Most important interface or framework limit]
-
+                                  (bold-label list: Current role / Best fit / Requires / Provider connection / Data location / Main caution)
 ## When to use it
-
-Use this framework when:
-
-- [Suitable scenario 1]
-- [Suitable scenario 2]
-- [Suitable scenario 3]
-
 ## Requirements
-
-| Requirement | Notes |
-| --- | --- |
-| [Dependency 1] | [Why it is needed] |
-| [Dependency 2] | [Why it is needed] |
-| Memory overhead | [measured/source-listed/estimated value] |
-
 ## What it provides
-
-| Capability | Why it matters |
-| --- | --- |
-| [Capability 1] | [Practical value] |
-| [Capability 2] | [Practical value] |
-| [Capability 3] | [Practical value] |
-
-## Deployment patterns
-
-| Pattern | Best fit | Runtime connection | Persistence |
-| --- | --- | --- | --- |
-| [Pattern 1] | [Use case] | [How it connects to the runtime] | [Volume, database, or folder] |
-| [Pattern 2] | [Use case] | [How it connects to the runtime] | [Volume, database, or folder] |
-
-Label untested hardware or pilot patterns as candidate patterns until measured locally.
-
 ## Frugal fit
-
-| Factor | Fit |
-| --- | --- |
-| Local operation | [How it runs locally] |
-| Data control | [Where data is stored] |
-| Replaceability | [What can be swapped later] |
-| Operational load | [Maintenance responsibility] |
-
 ## Compatibility
-
-| Runtime | Status | Notes |
-| --- | --- | --- |
-| [Runtime](../runtimes/[file].md) | [Tested/Untested/Expected] | [Integration notes] |
-
 ## Limits
-
-- [Limit 1]
-- [Limit 2]
-- [Limit 3]
-
-## Setup
-
-Full setup belongs in the relevant guide. Include only a one-command quick reference if it is stable and necessary.
-
 ## Used by
-
-- [Guide](../../getting-started/[file].md)
-
 ## Links
+```
 
-- [Official site](URL)
-- [Repository](URL)
-- [Documentation](URL)
+## Reminders
+
+- Use the approved role prefix in the sidebar title (`Interface:`, `Agent:`) from the naming registry.
+- For agents, state both governance surfaces: the agent's local actions (review, scoped permissions) and its model egress through the gateway.
+- Full setup belongs in the relevant guide; label untested deployment patterns as candidate until measured locally.
+- State where application data is stored and what stays local.

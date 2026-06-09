@@ -1,100 +1,31 @@
+# Runbook Template
+
+Thin scaffold. The canonical structure is the live exemplar: `docs/operations/open-webui-ops.md`. Heading patterns are owned by `internal/editorial-guide.md` (Runbooks); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+
+## Heading pattern
+
+```text
 ---
-description: [Operations scope for the service.]
-icon: [gitbook-icon-name]
+description: Operations scope for the service.
+icon: gitbook-icon-name
 ---
-
-# [Service name] operations
-
-[State what this runbook operates and when it should be used.]
-
-Use the service name from `internal/naming-registry.md`; do not use an implementation tool as the public runbook title when the page operates a broader service.
-
-This is a [development/pilot/production] runbook. It is not [out-of-scope operating model].
-
-## Scope
-
-| Area | Covered |
-| --- | --- |
-| Service | [Service name] |
-| Environment | [Environment profile] |
-| Data | [What data is handled] |
-| Owner | [Role or team responsible] |
-
+# Service name operations         (service-level name from the naming registry)
+Intro: what this runbook operates; development/pilot/production scope; what it is not.
+## Scope                          (service, environment, data, owner)
 ## Deployment profiles
-
-| Profile | Hardware | Runtime location | Interface location | Status |
-| --- | --- | --- | --- | --- |
-| [Profile name] | [Hardware profile] | [Host/container/remote] | [Host/container/remote] | [Current/candidate/deprecated] |
-
 ## Start, stop, and restart
-
-| Task | Command or action |
-| --- | --- |
-| Start [service] | `[one command]` |
-| Stop [service] | `[one command]` |
-| Restart [service] | `[one command]` |
-| Check status | `[one command]` |
-
-## Health checks
-
-| Check | Command or action | Expected result |
-| --- | --- | --- |
-| [Check 1] | `[one command]` | [Expected result] |
-| [Check 2] | [Action] | [Expected result] |
-
-## Maintenance
-
-### Updates
-
-[Explain update responsibility and cadence. For shared or pilot deployments, pin versions, review release notes, and back up before recreating containers.]
-
-```bash
-[one command]
+## Health checks                  (Check | Command or action | Expected result)
+## Maintenance                    (updates, cleanup, backup)
+## Recovery                       (numbered scenario steps, each verified)
+## Troubleshooting                (Symptom | Cause | Fix)
+## Escalation notes
+## When to move beyond            (transition gate to pilot decisions)
 ```
 
-Expected result: [expected output or state].
+## Reminders
 
-### Cleanup
-
-[Explain what can be safely removed and what must be retained.]
-
-### Backup
-
-| Item | Location | Frequency | Sensitivity |
-| --- | --- | --- | --- |
-| [Data item] | [Location] | [Frequency] | [Sensitivity] |
-
-State whether the backup covers the full service volume or only one database file.
-
-## Recovery
-
-### [Recovery scenario]
-
-1. [Action]
-2. [Action]
-3. Verify with `[one command]`.
-
-Expected result: [expected state].
-
-## Troubleshooting
-
-| Symptom | Cause | Fix |
-| --- | --- | --- |
-| [Common problem 1] | [Likely cause] | [Smallest safe fix] |
-| [Common problem 2] | [Likely cause] | [Smallest safe fix] |
-
-## Escalation notes
-
-Escalate when:
-
-- [Condition 1]
-- [Condition 2]
-- [Condition 3]
-
-Record:
-
-- what changed;
-- command output or error message;
-- data affected;
-- recovery attempt;
-- owner for follow-up.
+- Use the service-level public name, not the implementation tool, as the runbook title.
+- One command per table row or block; every procedure ends in a verification with an expected result.
+- Backup rows state what is covered (full volume vs one database file), location, frequency, and sensitivity.
+- Recovery scenarios name an owner; escalation notes record what changed, output, data affected, and follow-up owner.
+- End with the transition gate: what a pilot must decide (accounts, backups, update windows) before scaling past this runbook.

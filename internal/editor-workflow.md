@@ -10,31 +10,21 @@ Keep this workflow as a separate document from `internal/editorial-guide.md`.
 
 The editorial guide defines voice, tone, terminology, and page patterns. The editor workflow defines the repeatable review process. Keeping them separate prevents the style guide from becoming a project-management checklist, while still allowing both documents to reference each other.
 
-## Template Review Findings
+## Exemplar Pages
 
-The templates in `internal/templates/` are useful scaffolds, but the developed public docs are now more restrained than several templates.
-
-Use the current docs as the stronger examples:
+The live public pages are the canonical structure for each page type. Section orders are owned by `internal/editorial-guide.md` (Page Patterns); the templates in `internal/templates/` are thin scaffolds that point at these exemplars and carry only the reminders that are not obvious from them.
 
 - Landing page: `docs/README.md`
 - Guide: `docs/getting-started/offline-chat-service.md`
 - Concept: `docs/concepts/frugal-ai-principles.md`
 - Stack explanation: `docs/concepts/how-the-stack-fits-together.md`
+- Layer overview: `docs/concepts/inference-layer.md`
 - Component card: `docs/components/runtimes/ollama.md`
 - Environment profile: `docs/components/environments/development.md`
 - Model card: `docs/components/models/qwen-3.5-9b.md`
 - Runbook: `docs/operations/open-webui-ops.md`
 
-Template risks to watch:
-
-- `guide-template.md` is too thin. It misses fit and limits, component map, next step, and source confidence.
-- `stack-template.md` is command-heavy and can encourage setup scripts before the reader understands the stack.
-- `runtime-card-template.md` and `framework-card-template.md` include quick install commands that may duplicate guides.
-- `model-card-template.md` includes performance tables that can invite unverified benchmark claims.
-- `runbook-template.md` encourages exact commands, but the developed runbooks need shorter command blocks, verification, and recovery ownership.
-- Several templates use second-person phrasing or placeholders that should be rewritten before publication.
-
-The templates should be treated as outlines, not copy-ready page drafts.
+For a new page, copy the headings from the closest exemplar, not from a template file.
 
 ## Editorial Workflow
 
@@ -301,21 +291,9 @@ Use this decision rule:
 
 ## Template Set
 
-The templates in `internal/templates/` now reflect this workflow:
+The templates in `internal/templates/` are thin scaffolds: each names its live exemplar page, shows the heading pattern, and lists the reminders that are not obvious from the exemplar (confidence labels, layer tags, hint-box format, transition gates). The pattern itself is owned by the editorial guide; the exemplar page is the copy source.
 
-| Template | Use |
-| --- | --- |
-| `landing-page-template.md` | Public entry page for the Frugal AI knowledge base |
-| `concept-page-template.md` | Principles, definitions, and decision framing |
-| `layer-overview-template.md` | Explain one layer of the stack and its components |
-| `guide-template.md` | One practical build or setup task |
-| `stack-template.md` | Layer map and operating assumptions for a path |
-| `hardware-profile-template.md` | Hardware fit, memory budget, and limits |
-| `environment-profile-template.md` | Development, pilot, or production assumptions and governance |
-| `runtime-card-template.md` | Runtime fit, settings, compatibility, and limits |
-| `model-card-template.md` | Model identity, source confidence, fit, and limits |
-| `framework-card-template.md` | Interface or application card fit, requirements, and limits |
-| `runbook-template.md` | Operation, health checks, maintenance, recovery, and escalation |
+Active scaffolds: `guide-template.md`, `model-card-template.md`, `runtime-card-template.md`, `framework-card-template.md` (interfaces and agents), `hardware-profile-template.md`, `environment-profile-template.md`, `runbook-template.md`. Retired as separate scaffolds (the file points at the pattern and exemplar instead): `landing-page-template.md`, `concept-page-template.md`, `layer-overview-template.md`, `stack-template.md`.
 
 Every component card carries a `_Layer:_` tag under its H1, linking the component to its layer on the architecture page (for example `_Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (runtime)._`). The role in the tag and the sidebar prefix use the approved set in `internal/naming-registry.md`.
 

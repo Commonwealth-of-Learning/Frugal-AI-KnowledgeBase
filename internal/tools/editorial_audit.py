@@ -194,6 +194,7 @@ def main() -> int:
         warnings.extend(scan_public_placeholders(path, text))
         warnings.extend(check_first_screen_abbreviations(path, text))
         warnings.extend(check_frontmatter(path, text))
+        warnings.extend(check_internal_links(path, text))
         if is_linked_component_page(path):
             warnings.extend(require_at_a_glance(path, text, "linked component page"))
 
@@ -396,6 +397,38 @@ def discover_linked_docs(summary_text: str) -> tuple[list[LinkedDoc], list[Warni
                 warnings.append(Warning(SUMMARY_PATH, line_number, f"linked public doc does not exist: {target}"))
 
     return linked_docs, warnings
+
+
+def check_internal_links(path: Path, text: str) -> list[Warning]:
+    """Verify that every relative link in a public doc resolves to an existing file.
+
+    Restructures (renames, moves, stub retirement) silently break relative
+    links; this check makes the breakage visible before publication. External
+    URLs, mailto links, and pure anchors are skipped, as are fenced code
+    blocks.
+    """
+    warnings: list[Warning] = []
+    link_pattern = re.compile(r"\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+    in_code_block = False
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
+        for match in link_pattern.finditer(line):
+            target = match.group(1).strip()
+            if not target or is_external_or_anchor(target):
+                continue
+            cleaned = clean_target(target)
+            if not cleaned:
+                continue  # in-page anchor
+            resolved = (path.parent / cleaned).resolve()
+            if not resolved.exists():
+                warnings.append(Warning(path, line_number, f"relative link target does not exist: {target}"))
+
+    return warnings
 
 
 def is_external_or_anchor(target: str) -> bool:
