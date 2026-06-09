@@ -54,15 +54,6 @@ The first complete build stops at the frugal floor: infrastructure, inference, a
 
 The first build proves a useful service can run locally, with prompts and chat history on the machine, components that remain inspectable, and operations documented from the start. [Example applications](concepts/example-applications.md) shows how the same floor supports a math tutor, curriculum advisor, coding agent, and future administrative workflows.
 
-## Frugal AI principles
-
-1. Keep data local by default.
-2. Prefer open, inspectable components.
-3. Match model size to available hardware.
-4. Concentrate governance at the gateway.
-5. Build local skills before scaling.
-
-
 ## From the Commonwealth of Learning
 
 This knowledge base is the technical companion to COL's Frugal AI programme. For the strategy, policy, and latest news, go to COL directly:
