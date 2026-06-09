@@ -35,14 +35,12 @@ The gateway is the boundary every model request passes through, so it is where s
 
 Different goals have different starting points.
 
-| Goal | Start with | Go deeper |
+| Frugal AI | Start with | Go deeper |
 | --- | --- | --- |
 | Understand Frugal AI | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
 | Assess it for a ministry | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
 | Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md) and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
 | Build with it | [Quickstart](getting-started/quickstart.md), then the learning path below | [Example applications](concepts/example-applications.md) |
-| Operate it | [Operations overview](operations/operations-overview.md) and [Local AI chat service operations](operations/open-webui-ops.md) | [Pilot environment](components/environments/pilot.md) |
-| Use it with an AI agent | [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md) | [Coding agent](getting-started/coding-agent.md) |
 
 ## The first build: Local AI chat service
 

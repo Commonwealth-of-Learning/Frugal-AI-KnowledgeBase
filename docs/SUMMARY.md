@@ -54,7 +54,7 @@
 
 * [Application layer](concepts/application-layer.md)
   * [Interface: Open WebUI](components/frameworks/open-webui.md)
-  * [Agent: OpenCode](components/applications/opencode.md)
+  * [Coding Agent: OpenCode](components/applications/opencode.md)
 
 ## Environments
 
