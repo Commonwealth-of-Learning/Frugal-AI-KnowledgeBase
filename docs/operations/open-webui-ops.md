@@ -120,7 +120,7 @@ Tools and functions add the [Orchestration layer](../concepts/orchestration-laye
 
 A tool is Python that runs inside the Open WebUI process. Import or run only tools the institution has written or reviewed, and treat tool code as code to review rather than configuration. Keep tools dependency-free where possible, because saving a tool with requirements pauses the interface while packages install.
 
-The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review assistant outputs and tool usage periodically. Stronger audit logging and control over external requests belong to the gateway layer, in a later increment.
+The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review AI outputs and tool usage periodically. Stronger audit logging and control over external requests belong to the gateway layer, in a later increment.
 
 ## Gateway (LiteLLM)
 

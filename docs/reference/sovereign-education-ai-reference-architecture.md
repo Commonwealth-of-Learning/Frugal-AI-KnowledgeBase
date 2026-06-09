@@ -33,8 +33,8 @@ The annex and this knowledge base describe the same kind of system through diffe
 | --- | --- | --- |
 | A. Access and identity | Single-user, localhost-bound | Minimal; role-based access, MFA, and SSO are pilot-scale further work |
 | B. Teacher-in-the-loop workflow | Cross-cutting; named human review in every learner-facing guide | Present, governed by the risk tiers below |
-| C. Application services | [Application layer](../concepts/application-layer.md) — chat, math tutor, curriculum assistant, coding agent, animator | Covered |
-| D. Knowledge layer (RAG) | [Orchestration layer](../concepts/orchestration-layer.md) — Dify, the curriculum knowledge assistant | Covered |
+| C. Application services | [Application layer](../concepts/application-layer.md) — chat, math tutor, curriculum advisor, coding agent, animator | Covered |
+| D. Knowledge layer (RAG) | [Orchestration layer](../concepts/orchestration-layer.md) — Dify, the curriculum advisor | Covered |
 | E. Privacy airlock | [Gateway layer](../concepts/gateway-layer.md) — LiteLLM with personal-data redaction | Covered |
 | F. Model layer | [Inference layer](../concepts/inference-layer.md) for local models, plus the gateway for cloud-burst control | Covered; split across two knowledge base layers |
 | G. Infrastructure | [Infrastructure layer](../concepts/infrastructure-layer.md) — Mac mini, DGX Spark | Covered |
@@ -52,7 +52,7 @@ The annex's central mechanism calibrates human oversight to the risk of the task
 | Tier 2: medium | Teacher-only drafts not intended for learners; planning and scaffolding. | Immediate release to the teacher, with publish controls and periodic audit. |
 | Tier 3: low | Non-instructional automation that does not reach learners. | Automated release with logging. |
 
-When classification is uncertain, the higher tier applies. Every learner-facing build in this knowledge base — the [math tutor](../getting-started/math-tutor.md) and the [curriculum knowledge assistant](../getting-started/curriculum-assistant.md) — sits in **Tier 1**: a teacher approves output before any learner sees it.
+When classification is uncertain, the higher tier applies. Every learner-facing build in this knowledge base — the [math tutor](../getting-started/math-tutor.md) and the [curriculum advisor](../getting-started/curriculum-advisor.md) — sits in **Tier 1**: a teacher approves output before any learner sees it.
 
 ## The sovereignty envelope and privacy airlock
 

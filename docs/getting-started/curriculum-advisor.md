@@ -1,13 +1,13 @@
 ---
-description: Build a curriculum knowledge assistant that answers from approved documents using RAG on Dify, with teacher review.
+description: Build a curriculum advisor that answers from approved documents using RAG on Dify, with teacher review.
 icon: book-open-reader
 ---
 
-# Curriculum knowledge assistant
+# Curriculum advisor
 
-This guide builds a knowledge assistant that answers from approved curriculum documents — syllabi, textbooks, and teacher guides — using retrieval-augmented generation (RAG) on [Dify](https://dify.ai/), with local models. It grounds answers in vetted sources, so the assistant draws on the curriculum instead of guessing and says when something is not covered.
+This guide builds a curriculum advisor that answers from approved curriculum documents — syllabi, textbooks, and teacher guides — using retrieval-augmented generation (RAG) on [Dify](https://dify.ai/), with local models. It grounds answers in vetted sources, so the advisor draws on the curriculum instead of guessing and says when something is not covered.
 
-It is the curriculum knowledge assistant from the [example applications](../concepts/example-applications.md) matrix, and the knowledge-layer counterpart to the [math tutor](math-tutor.md): the tutor's orchestration is a tool; this assistant's orchestration is retrieval.
+It is the curriculum advisor from the [example applications](../concepts/example-applications.md) matrix, and the knowledge-layer counterpart to the [math tutor](math-tutor.md): the tutor's orchestration is a tool; this advisor's orchestration is retrieval.
 
 {% hint style="info" %}
 Level: intermediate. This is the heaviest example in the knowledge base: Dify runs several containers and needs an embedding model as well as an LLM, so it wants more memory than the chat service. It is a development path; a teacher reviews answers before learner use.
@@ -15,7 +15,7 @@ Level: intermediate. This is the heaviest example in the knowledge base: Dify ru
 
 ## Why Dify here
 
-The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI tool. RAG over a document collection is heavier: it needs ingestion, an embedding model, a vector index, and retrieval settings. Dify is an orchestration platform that provides these together. For a single light assistant, Open WebUI's built-in knowledge feature is a lighter option; this guide uses Dify because it suits richer retrieval and multi-step workflows, and it shows that the Orchestration layer is substitutable.
+The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI tool. RAG over a document collection is heavier: it needs ingestion, an embedding model, a vector index, and retrieval settings. Dify is an orchestration platform that provides these together. For a single light advisor, Open WebUI's built-in knowledge feature is a lighter option; this guide uses Dify because it suits richer retrieval and multi-step workflows, and it shows that the Orchestration layer is substitutable.
 
 ## Fit and limits
 
@@ -66,7 +66,7 @@ Configure indexing:
 
 Save and process; the knowledge base is ready when processing completes.
 
-## 4. Create the assistant
+## 4. Create the advisor
 
 Create an application, select the LLM from step 2, and set instructions that keep it grounded:
 
@@ -89,7 +89,7 @@ Attach the knowledge base, then publish and run the app.
 
 ## Governance and review
 
-This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher approves answers before learners see them; and the assistant runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
+This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher approves answers before learners see them; and the advisor runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
 
 ## Troubleshooting
 

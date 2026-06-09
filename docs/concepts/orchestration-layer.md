@@ -35,7 +35,7 @@ So orchestration is the layer where human oversight and the gateway matter most:
 
 ## Frugal practice
 
-Add orchestration one capability at a time. Start with read-only tools that have no side effects, keep a human in the loop, and prefer a few well-understood tools over a large toolkit. Reach for a heavier orchestration platform only when simple tools are no longer enough. The [curriculum knowledge assistant](../getting-started/curriculum-assistant.md) shows that step: RAG on [Dify](../components/orchestration/dify.md), a heavier platform, when retrieval over a document collection outgrows a single tool.
+Add orchestration one capability at a time. Start with read-only tools that have no side effects, keep a human in the loop, and prefer a few well-understood tools over a large toolkit. Reach for a heavier orchestration platform only when simple tools are no longer enough. The [curriculum advisor](../getting-started/curriculum-advisor.md) shows that step: RAG on [Dify](../components/orchestration/dify.md), a heavier platform, when retrieval over a document collection outgrows a single tool.
 
 ## First build: the math tutor
 
