@@ -21,6 +21,14 @@ An application that takes actions rather than only answering: it reads, writes, 
 
 <details>
 
+<summary><strong>Agent loop (harness)</strong></summary>
+
+The orchestration that runs an agent: it assembles context, calls tools, and keeps memory between steps. Whoever operates the loop sees what the agent sees while it works, so Frugal AI keeps the loop under institutional control. See the "Own the loop" principle in Frugal AI principles.
+
+</details>
+
+<details>
+
 <summary><strong>Edge device</strong></summary>
 
 A computing device located at the point of use, such as a school, instead of in a central data centre. Edge devices can support local processing and offline operation.
