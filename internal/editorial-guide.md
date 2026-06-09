@@ -243,14 +243,13 @@ Use this order:
 1. Grounded definition
 2. The layered stack
 3. Governance home: the gateway
-4. Time-boxed entry cards
+4. Reader-path table
 5. The first build, the frugal floor
-6. Reader-path table
+6. Tiered learning path
 7. Proof points
 8. Guardrails
 9. Principles and source grounding
-10. Scope boundaries
-11. Coming next, by increment
+10. Scope boundaries and coming next, merged in one closing section
 
 Landing pages should not include shell commands, custom code, or long setup instructions. Link to the relevant quickstart or guide instead.
 

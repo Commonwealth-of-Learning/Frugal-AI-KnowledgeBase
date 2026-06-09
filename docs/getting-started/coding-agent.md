@@ -8,7 +8,7 @@ icon: robot
 This guide runs OpenCode, an open-source coding agent, on the local stack. It is the first [Application layer](../concepts/application-layer.md) agent: it reads, edits, and runs code, with its actions gated by review and its model calls routed through the [AI gateway](ai-gateway.md). It is developer and maintainer facing.
 
 {% hint style="info" %}
-Level: advanced. This is a development path. The agent can change files and run commands, so it runs under review and scoped permissions. It is not a learner-facing application.
+Level: advanced. Expected time: about 25 minutes once the [AI gateway](ai-gateway.md) is running. This is a development path. The agent can change files and run commands, so it runs under review and scoped permissions. It is not a learner-facing application.
 {% endhint %}
 
 ## Two roles

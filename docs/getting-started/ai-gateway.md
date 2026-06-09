@@ -8,7 +8,7 @@ icon: shield-halved
 This guide puts a local AI gateway in front of the [Local AI chat service](offline-chat-service.md). The gateway gives every application one endpoint, redacts personal data before a model sees it, logs requests for audit, and — only if enabled — routes narrowly scoped tasks to an approved external provider. It is the first [Gateway layer](../concepts/gateway-layer.md) build: the point where the sovereignty envelope becomes enforceable in software.
 
 {% hint style="info" %}
-Level: intermediate. This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
+Level: intermediate. Expected time: about 30 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
 {% endhint %}
 
 ## Fit and limits

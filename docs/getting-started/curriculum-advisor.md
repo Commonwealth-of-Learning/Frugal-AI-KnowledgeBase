@@ -10,7 +10,7 @@ This guide builds a curriculum advisor that answers from approved curriculum doc
 It is the curriculum advisor from the [example applications](../concepts/example-applications.md) matrix, and the knowledge-layer counterpart to the [math tutor](math-tutor.md): the tutor's orchestration is a tool; this advisor's orchestration is retrieval.
 
 {% hint style="info" %}
-Level: intermediate. This is the heaviest example in the knowledge base: Dify runs several containers and needs an embedding model as well as an LLM, so it wants more memory than the chat service. It is a development path; a teacher reviews answers before learner use.
+Level: intermediate. Expected time: about 45 minutes, plus model downloads. This is the heaviest example in the knowledge base: Dify runs several containers and needs an embedding model as well as an LLM, so it wants more memory than the chat service. It is a development path; a teacher reviews answers before learner use.
 {% endhint %}
 
 ## Why Dify here

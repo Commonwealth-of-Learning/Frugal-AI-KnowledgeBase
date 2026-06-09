@@ -197,6 +197,9 @@ def main() -> int:
         warnings.extend(check_internal_links(path, text))
         if is_linked_component_page(path):
             warnings.extend(require_at_a_glance(path, text, "linked component page"))
+            warnings.extend(check_layer_tag(path, text))
+        if is_linked_guide_page(path):
+            warnings.extend(check_guide_hint(path, text))
 
     warnings.extend(check_templates())
     warnings.extend(check_internal_plans())
@@ -562,6 +565,38 @@ def is_linked_component_page(path: Path) -> bool:
         return False
     parts = relative.parts
     return len(parts) >= 3 and parts[0] == "components" and parts[1] in COMPONENT_PARTS
+
+
+def check_layer_tag(path: Path, text: str) -> list[Warning]:
+    """Every component card carries a _Layer:_ tag under its H1.
+
+    Environment profiles are exempt: development/pilot/production are
+    cross-cutting operating assumptions, not stack-layer components.
+    """
+    if path.parent.name == "environments":
+        return []
+    if re.search(r"^_Layer:", text, re.MULTILINE):
+        return []
+    return [Warning(path, 1, "component card must carry a _Layer:_ tag under its H1")]
+
+
+def is_linked_guide_page(path: Path) -> bool:
+    try:
+        relative = path.resolve().relative_to(DOCS_DIR.resolve())
+    except ValueError:
+        return False
+    parts = relative.parts
+    return len(parts) == 2 and parts[0] == "getting-started"
+
+
+def check_guide_hint(path: Path, text: str) -> list[Warning]:
+    """Guides signpost effort: an Expected time estimate, and a Level except on the quickstart."""
+    warnings: list[Warning] = []
+    if "Expected time:" not in text:
+        warnings.append(Warning(path, 1, 'guide hint must state "Expected time:" (label estimates as such)'))
+    if path.name != "quickstart.md" and "Level:" not in text:
+        warnings.append(Warning(path, 1, 'guide hint must state "Level:" (beginner, intermediate, or advanced)'))
+    return warnings
 
 
 def require_at_a_glance(path: Path, text: str, label: str) -> list[Warning]:

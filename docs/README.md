@@ -40,19 +40,11 @@ Different goals have different starting points.
 | Understand Frugal AI | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
 | Assess it for a ministry | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
 | Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md) and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
-| Build with it | [The Frugal AI stack](concepts/how-the-stack-fits-together.md), then [Quickstart](getting-started/quickstart.md) and [Local AI chat service](getting-started/offline-chat-service.md) | [Example applications](concepts/example-applications.md) |
+| Build with it | [Quickstart](getting-started/quickstart.md), then the learning path below | [Example applications](concepts/example-applications.md) |
 
 ## The first build: Local AI chat service
 
 The first complete build stops at the frugal floor: infrastructure, inference, and an application, with the gateway local-only and no orchestration.
-
-```text
-Mac mini 24 GB       (Infrastructure)
-  -> Ollama           (Inference: runtime)
-  -> Qwen3.5-9B       (Inference: model)
-  -> Open WebUI       (Application)
-  = Local AI chat service
-```
 
 | Layer | Component |
 | --- | --- |
@@ -62,15 +54,15 @@ Mac mini 24 GB       (Infrastructure)
 
 ## Learning path
 
-The guides are tiered by level, and one education example — a mathematics use case — runs through them.
+The guides are tiered by level. One education example — a mathematics use case — runs through them, with the [curriculum advisor](getting-started/curriculum-advisor.md) showing the same layers carrying a second application.
 
 | Level | Start with | What it adds |
 | --- | --- | --- |
 | Beginner | [Local AI chat service](getting-started/offline-chat-service.md), after the [Quickstart](getting-started/quickstart.md) | A private local chat on one machine: the frugal floor. |
-| Intermediate | [Math tutor](getting-started/math-tutor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, and a governed boundary with controlled cloud burst. |
+| Intermediate | [Math tutor](getting-started/math-tutor.md), the [Curriculum advisor](getting-started/curriculum-advisor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, retrieval over approved documents, and a governed boundary with controlled cloud burst. |
 | Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. |
 
-These levels match the Start here, Build further, and Advanced sections in the sidebar, and the guides in them build the sample applications mapped in [Example applications](concepts/example-applications.md) — which shows how each guide relates to an application, a tier, and the layers. To evaluate the approach rather than build, read [Frugal AI principles](concepts/frugal-ai-principles.md).
+These levels match the Start here, Build further, and Advanced sections in the sidebar; [Example applications](concepts/example-applications.md) maps each guide to an application, a tier, and the layers.
 
 ## What this path proves
 
@@ -106,27 +98,10 @@ Read [Frugal AI principles](concepts/frugal-ai-principles.md) for the full frami
 This knowledge base is the technical companion to COL's Frugal AI programme. For the strategy, policy, and latest news, go to COL directly:
 
 - [Frugal AI programme](https://www.col.org/frugal) — COL's overview, approach, and key resources.
+- [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) — the teacher-led, localised-AI commitment, presented at the India AI Impact Summit 2026.
 - [Frugal AI: A Roadmap to Sovereign GenAI for Education](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/).
-- [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) — the teacher-led, localised-AI commitment.
 - [COL news](https://www.col.org/news/) — ongoing Frugal AI updates.
 
-## Not in the first build
+## Scope, and what comes next
 
-The first build is the local chat service; it stops at the frugal floor. Later tiers add the rest:
-
-- Orchestration, tools, and retrieval: the [math tutor](getting-started/math-tutor.md).
-- A running gateway with controlled cloud burst: the [AI gateway](getting-started/ai-gateway.md).
-- Coding and agent applications: the [coding agent](getting-started/coding-agent.md) and [Manim animator](getting-started/manim-animator.md).
-
-Still out of scope across the knowledge base: a production or shared-campus deployment, and a full ministry or national reference architecture.
-
-## Coming next
-
-The layered model is now built end to end across the learning path above. Still ahead:
-
-| Ahead | What it adds |
-| --- | --- |
-| Pilot and production | Shared multi-user serving, security review, incident response, and lifecycle management. |
-| Reference-architecture refresh | Raising the sovereign education-AI reference architecture to high-level abstraction, now that the layer pages hold the detail. |
-
-Future paths are added only when their supporting components, safeguards, and operations pages exist.
+The learning path above builds the layered model end to end, but it remains a development path. Out of scope across the knowledge base: a production or shared-campus deployment, and a full ministry or national reference architecture. Still ahead, added only when their supporting components, safeguards, and operations pages exist: pilot and production serving (shared multi-user access, security review, incident response, lifecycle management) and further example applications from the [example applications](concepts/example-applications.md) matrix.

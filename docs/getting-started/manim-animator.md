@@ -8,7 +8,7 @@ icon: film
 This guide uses the [coding agent](coding-agent.md) to generate and render [Manim](https://www.manim.community/) animations that illustrate a mathematics concept — the animated companion to the [math tutor](math-tutor.md). It is the most advanced build in the knowledge base: an agent that writes code and runs a renderer, using a stronger model through the gateway for the hard code generation.
 
 {% hint style="warning" %}
-Level: advanced. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this build uses a stronger model through controlled cloud burst.
+Level: advanced. Expected time: about 45 minutes, plus the Manim install. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this build uses a stronger model through controlled cloud burst.
 {% endhint %}
 
 ## Why this is the hard case
