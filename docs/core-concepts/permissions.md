@@ -7,4 +7,4 @@ icon: lock
 
 The Frugal AI knowledge base does not use the old access-control template.
 
-For the current Frugal AI path, start with [Quickstart](../getting-started/quickstart.md) or read [Frugal AI principles](../concepts/frugal-ai-principles.md).
+For the current Frugal AI path, start with [Quickstart](../getting-started/quickstart.md).

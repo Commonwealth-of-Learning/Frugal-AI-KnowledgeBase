@@ -97,7 +97,7 @@ This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher
 
 ## Localise it
 
-A math tutor is most useful when it fits its context. Align the examples to the national curriculum's topics and sequence, write word problems with local names, places, and currency, and prompt in the local language — the model supports many. Adapting the examples locally is part of the Frugal AI approach; see [Frugal AI principles](../concepts/frugal-ai-principles.md).
+A math tutor is most useful when it fits its context. Align the examples to the national curriculum's topics and sequence, write word problems with local names, places, and currency, and prompt in the local language — the model supports many. Adapting the examples locally is part of the Frugal AI approach.
 
 ## Next step
 

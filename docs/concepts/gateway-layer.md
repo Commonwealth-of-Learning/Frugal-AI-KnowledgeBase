@@ -40,4 +40,3 @@ The [AI gateway](../getting-started/ai-gateway.md) guide puts a local gateway in
 - [The Frugal AI stack](how-the-stack-fits-together.md)
 - [AI gateway](../getting-started/ai-gateway.md)
 - [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)
-- [Frugal AI principles](frugal-ai-principles.md)

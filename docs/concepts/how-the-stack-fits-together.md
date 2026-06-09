@@ -75,7 +75,6 @@ Each of these is a separate path with its own components, safeguards, and operat
 
 ## Related pages
 
-- [Frugal AI principles](frugal-ai-principles.md)
 - [Local AI chat service](../getting-started/offline-chat-service.md)
 - [Local AI chat service operations](../operations/open-webui-ops.md)
 - [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

@@ -11,7 +11,6 @@
 
 * [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
 * [Example applications](concepts/example-applications.md)
-* [Frugal AI principles](concepts/frugal-ai-principles.md)
 
 ## Build further
 

@@ -46,5 +46,4 @@ The [Math tutor](../getting-started/math-tutor.md) is the first orchestration bu
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)
 - [Math tutor](../getting-started/math-tutor.md)
-- [Frugal AI principles](frugal-ai-principles.md)
 - [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)
