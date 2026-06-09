@@ -31,10 +31,13 @@ Use this profile for:
 | Field | Value |
 | --- | --- |
 | Environment fit | Development. |
-| CPU or chip | Apple M4 or newer; current Apple source lists M4 and M4 Pro Mac mini configurations. |
+| Architecture | Apple Silicon (M-series) with integrated CPU and GPU. |
+| CPU | Apple M4 or newer; current Apple source lists M4 (10-core) and M4 Pro (14-core) Mac mini configurations. |
+| GPU | Integrated Apple GPU; M4 has a 10-core GPU, M4 Pro has a 20-core GPU. |
 | Memory | 24 GB unified memory. |
-| Storage | 512 GB SSD or larger is recommended for local models and container data. |
-| Network assumption | Local operation; internet access is useful for initial downloads and updates. |
+| Storage | 256 GB to 2 TB SSD; 512 GB or larger recommended for local models and container data. |
+| Network | Gigabit Ethernet (standard) or optional 10 Gigabit Ethernet; Wi-Fi 6E; Bluetooth 5.3. |
+| Form factor | 127 mm × 127 mm × 50 mm; approximately 0.67 kg. |
 | Source | [Apple Mac mini technical specifications](https://www.apple.com/ca/mac-mini/specs/) |
 
 ## Memory budget
