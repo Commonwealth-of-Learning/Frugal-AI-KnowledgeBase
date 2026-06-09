@@ -9,7 +9,9 @@ A Frugal AI system is not a single product. It is a small set of layers an insti
 
 The Frugal AI knowledge base treats every build as a path through this stack. The layers are substitutable: an institution can swap a runtime, change models, or add orchestration without replacing the whole system. They are also optional, which is what makes the approach frugal. The smallest useful system uses only the lower layers.
 
-## The layers
+## The stack layers
+
+The table lists the layers top to bottom, in the order a request travels; the next section explains the two ways to read that order.
 
 | Layer | Role | Examples |
 | --- | --- | --- |
@@ -19,11 +21,11 @@ The Frugal AI knowledge base treats every build as a path through this stack. Th
 | [Inference](inference-layer.md) | What runs the model and serves predictions. | Local runtimes for development; serving engines for shared or higher-throughput use. |
 | [Infrastructure](infrastructure-layer.md) | What everything runs on. | Compute, operating system, containers, storage, and networking. |
 
-An agent is not a separate layer. An agent is an Application that uses the Orchestration layer to call tools and take steps, under stricter human oversight.
+An agent is not a separate layer. It is an [Application](application-layer.md) that acts through the Orchestration layer's loop, under stricter human oversight; the [Application layer](application-layer.md) page covers how that loop is governed.
 
 ## Two ways to read the stack
 
-Read top to bottom, the stack is the request path: a person's input enters at the Application layer, passes the Gateway, and reaches a model through Orchestration and Inference. Read bottom to top, it is the build order, which is how the knowledge base teaches it: secure the infrastructure first, then inference, then add orchestration and applications.
+Read top to bottom, the stack is the request path: a person's input enters at the Application layer, passes the Gateway, and reaches a model through Orchestration and Inference. The diagram below shows this reading. Read bottom to top, it is the build order, which is how the knowledge base teaches it: secure the infrastructure first, then inference, then add orchestration and applications. The sidebar's layer sections follow the build order.
 
 ```mermaid
 flowchart TD
@@ -64,17 +66,18 @@ This build deliberately stops at the frugal floor. It does not add orchestration
 
 ## What each layer adds as the system grows
 
-| Layer | What it adds later |
-| --- | --- |
-| Orchestration | Retrieval over approved course materials, tools, and memory for assistants and agents. |
-| Gateway | A running router that enforces redaction, logging, and controlled cloud burst once external models are used. |
-| Inference | Serving engines for shared pilot use and higher throughput beyond a single machine. |
-| Application | Coding assistance, agents, and other education applications on the same lower layers. |
+| Layer | What it adds | Built example |
+| --- | --- | --- |
+| Orchestration | Tools, retrieval, and memory for assistants and agents. | The [math tutor](../getting-started/math-tutor.md) (a tool) and the [curriculum advisor](../getting-started/curriculum-advisor.md) (retrieval on Dify). |
+| Gateway | A running router that enforces redaction, logging, and controlled cloud burst. | The [AI gateway](../getting-started/ai-gateway.md). |
+| Inference | Serving engines for shared pilot use beyond a single machine. | The [vLLM](../components/runtimes/vllm.md) card; a pilot guide is further work. |
+| Application | Coding and agent applications on the same lower layers. | The [coding agent](../getting-started/coding-agent.md) and the [Manim animator](../getting-started/manim-animator.md). |
 
-Each of these is a separate path with its own components, safeguards, and operations pages, added only when those supporting pages exist.
+Each is a separate path with its own guide, components, and safeguards; new paths are added only when their supporting pages exist.
 
 ## Related pages
 
+- [Application layer](application-layer.md)
 - [Local AI chat service](../getting-started/offline-chat-service.md)
 - [Local AI chat service operations](../operations/open-webui-ops.md)
 - [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

@@ -23,7 +23,7 @@ An application that takes actions rather than only answering: it reads, writes, 
 
 <summary><strong>Agent loop (harness)</strong></summary>
 
-The orchestration that runs an agent: it assembles context, calls tools, and keeps memory between steps. Whoever operates the loop sees what the agent sees while it works, so Frugal AI keeps the loop under institutional control. See the "Own the loop" principle in Frugal AI principles.
+The orchestration that runs an agent: it assembles context, calls tools, and keeps memory between steps. Whoever operates the loop sees what the agent sees while it works, so Frugal AI keeps the loop under institutional control, governed as the Application layer's governance surfaces describe.
 
 </details>
 

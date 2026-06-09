@@ -27,6 +27,7 @@ ALLOWED_ROLE_PREFIXES = (
     "Gateway",
     "Interface",
     "Agent",
+    "Coding Agent",
     "Platform",
 )
 
@@ -53,7 +54,7 @@ REQUIRED_SUMMARY_ENTRIES = (
     "* [Interface: Open WebUI](components/frameworks/open-webui.md)",
     "* [Gateway: LiteLLM](components/gateways/litellm.md)",
     "* [Platform: Dify](components/orchestration/dify.md)",
-    "* [Agent: OpenCode](components/applications/opencode.md)",
+    "* [Coding Agent: OpenCode](components/applications/opencode.md)",
 )
 
 COMPONENT_PARTS = {"hardware", "runtimes", "frameworks", "models", "environments", "gateways", "applications", "orchestration"}
