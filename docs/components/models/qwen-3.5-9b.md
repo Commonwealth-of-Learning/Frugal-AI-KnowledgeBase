@@ -17,6 +17,7 @@ Qwen3.5-9B is the model used in the first local AI chat service path. It gives t
 - **Model type** — Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain.
 - **Inputs** — Text and image in Ollama; upstream sources also describe video-style visual inputs.
 - **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
+- **Agentic readiness** — Native function calling supports single read-only tools, as in the [math tutor](../../getting-started/math-tutor.md); small models can miss tool calls, so that guide sets Function Calling to Native.
 - **Main caution** — The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency.
 
 ## Good for

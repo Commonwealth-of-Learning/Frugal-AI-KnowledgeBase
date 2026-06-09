@@ -64,7 +64,7 @@ The audit also requires a specific set of linked summary entries with exact read
 
 ## Reader-Friendly Explanations
 
-Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, and Mixture of Experts. Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.
+Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, Mixture of Experts, and Model Context Protocol ("MCP, a standard way to supply tools to agents"). Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.
 
 ## Port Allocations
 

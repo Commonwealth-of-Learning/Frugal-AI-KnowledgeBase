@@ -27,6 +27,6 @@ Intro: what it provides and which user experience it enables.
 ## Reminders
 
 - Use the approved role prefix in the sidebar title (`Interface:`, `Agent:`) from the naming registry.
-- For agents, state both governance surfaces: the agent's local actions (review, scoped permissions) and its model egress through the gateway.
+- For agents, state the three governance surfaces: local actions (review, scoped permissions), model egress through the gateway, and tool egress (tools and MCP servers allowlisted, no network access by default).
 - Full setup belongs in the relevant guide; label untested deployment patterns as candidate until measured locally.
 - State where application data is stored and what stays local.

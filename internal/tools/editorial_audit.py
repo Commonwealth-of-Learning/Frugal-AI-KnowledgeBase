@@ -471,7 +471,10 @@ def check_public_site_names(path: Path, text: str) -> list[Warning]:
     for line_number, line in enumerate(text.splitlines(), start=1):
         if is_allowed_landing_title(path, line):
             continue
-        if any(pattern.search(line) for pattern in patterns):
+        # Link targets are exempt: linking to the publishing platform's own
+        # documentation is allowed; naming the site after it in prose is not.
+        prose = re.sub(r"\]\(https?://[^)]+\)", "]()", line)
+        if any(pattern.search(prose) for pattern in patterns):
             warnings.append(Warning(path, line_number, 'use "Frugal AI knowledge base" for the public site name'))
 
     return warnings

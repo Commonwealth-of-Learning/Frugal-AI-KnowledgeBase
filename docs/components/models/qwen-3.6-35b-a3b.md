@@ -17,6 +17,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 - **Model type** — MoE model: 35B total parameters with about 3B active per token (Ollama labels the same model 36B). The full package still affects memory use.
 - **Inputs** — Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels.
 - **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
+- **Agentic readiness** — Source-listed strengths in agentic coding and tool use; the application layer still controls tool permissions, state, and audit.
 - **Main caution** — Ollama lists the Q4_K_M package at 24 GB, before context, runtime, interface, and visual-input overhead.
 
 ## Good for

@@ -17,6 +17,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 - **Model type** — Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts.
 - **Inputs** — Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs.
 - **Languages** — Google lists 35+ languages out of the box and pre-training across 140+.
+- **Agentic readiness** — Source-listed native function calling, system-role support, and configurable thinking mode; needs backend-specific testing before agentic use.
 - **Main caution** — Runtime support differs. Audio, video, thinking mode, and function calling need backend-specific testing.
 
 ## Good for

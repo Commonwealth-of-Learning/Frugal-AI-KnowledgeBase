@@ -80,7 +80,7 @@ Open the rendered file, check the animation against the concept, and correct or 
 
 ## Governance and review
 
-This build carries both Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation. The animation is reviewed before it reaches learners.
+This build carries the Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation; and no network-reaching tools are added beyond the renderer it runs locally. The animation is reviewed before it reaches learners.
 
 ## Troubleshooting
 

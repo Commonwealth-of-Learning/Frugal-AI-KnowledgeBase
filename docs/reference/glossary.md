@@ -53,6 +53,14 @@ The single boundary every model request passes through, where routing, redaction
 
 <details>
 
+<summary><strong>Model Context Protocol (MCP)</strong></summary>
+
+An open standard for packaging tools and data sources so agents can use them. An MCP server offers tools an agent can call; in the Frugal AI stack it is an Orchestration-layer component, substitutable like any other. An MCP server can make its own network calls outside the gateway, so it is governed at the application layer: allowlisted, reviewed, and given no network access by default.
+
+</details>
+
+<details>
+
 <summary><strong>Ollama</strong></summary>
 
 The local runtime used in this path to download, run, and serve the model.

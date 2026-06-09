@@ -29,5 +29,6 @@ Intro: one short paragraph; state whether the model is used by a guide or is a c
 - Keep "At a glance" as a compact bold-label list, not a table; collapse reference settings and source-confidence tables into `<details>` so readable content leads.
 - Label every figure as measured, source-listed, expected, or estimated; no benchmark values unless measured in the documented environment or clearly source-listed.
 - Expand "Mixture of Experts" before using "MoE" on the first screen.
+- Include an "Agentic readiness" line in At a glance: tool-calling support, its reliability caveat, and which guide exercises it (label claims as source-listed until measured).
 - Use exact model IDs and runtime tags from the naming registry; note where a runtime tag differs from the model name.
 - Leave out any section that would hold only placeholders or unverified claims.

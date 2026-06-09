@@ -204,7 +204,11 @@ Prefer service-level names over tool-level names when naming guides and runbooks
 
 Use exact product names where precision matters: `Ollama`, `Open WebUI`, `Qwen3.5-9B`, `Qwen3.6-35B-A3B`, and `Gemma 4 12B`.
 
-Explain unfamiliar technical terms on first use. Expand `Mixture of Experts` before using `MoE`, and explain `runtime`, `interface`, `context window`, and `open-weight model` when they first appear on a page for general readers.
+Explain unfamiliar technical terms on first use. Expand `Mixture of Experts` before using `MoE`, expand `Model Context Protocol` before using `MCP`, and explain `runtime`, `interface`, `context window`, and `open-weight model` when they first appear on a page for general readers.
+
+Write each page's `description:` frontmatter as a self-contained one-sentence summary. The published site generates its machine-readable index (`llms.txt`) from the published pages, so a clear description serves the sidebar, search, and agent retrieval at once.
+
+Name all three agent governance surfaces when writing about agents: local actions (review, scoped permissions), model egress (the gateway), and tool egress (tools and MCP servers allowlisted, no network access by default). Tool and MCP traffic does not pass the gateway; do not imply that it does.
 
 Use `Mac mini 24 GB` for the current hardware card and `Mac mini with 24 GB unified memory` on first mention. Use `GB`, not `Gb`, for memory.
 
@@ -331,6 +335,10 @@ Use this order:
 | operational resilience | always-on claims |
 | predictable costs | cost-free |
 | governance guardrails | compliance checkbox |
+| agent (an application that acts) | AI that "does everything autonomously" |
+| Model Context Protocol (MCP) server | vague "plugins" or "integrations" |
+| scoped permissions and human review | "safe by default" |
+| tool egress (governed at the application layer) | assuming tool traffic passes the gateway |
 
 ## Style Examples
 

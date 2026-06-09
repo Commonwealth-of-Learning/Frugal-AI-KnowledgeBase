@@ -15,6 +15,7 @@ OpenCode is an open-source, terminal-first coding agent. In the Frugal AI knowle
 - **Best fit** — Developer and maintainer coding tasks on the local stack, under review.
 - **Local fit** — Runs on the development machine; coding quality depends on the model and its memory.
 - **Interface** — Routes model calls to any OpenAI-compatible endpoint, such as the gateway.
+- **Tools** — Reads project instructions from `AGENTS.md` and supports Model Context Protocol (MCP) servers; each added server is an Orchestration-layer component to allowlist and review.
 - **Main caution** — An agent with file and shell access; gate its actions and route egress through the gateway.
 
 ## When to use it
@@ -44,6 +45,7 @@ Use OpenCode for developer coding tasks where an agent that can read, edit, and 
 ## Limits
 
 - File edits and shell commands are real side effects; run with review and scoped permissions.
+- Added tools and MCP servers can reach the network without passing the gateway; allowlist and review them, with no network access by default.
 - Coding quality on small local models is limited.
 - Developer facing; not for learner-facing use without separate safeguards.
 

@@ -71,3 +71,4 @@
 
 * [Glossary](reference/glossary.md)
 * [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md)
+* [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md)

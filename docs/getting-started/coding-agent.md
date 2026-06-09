@@ -19,7 +19,7 @@ A coding agent plays two parts in the knowledge base. It is an **example applica
 
 - **Good for** — Developer coding tasks where an agent that reads, edits, and runs code saves time, under human review.
 - **Not for** — Learner-facing use, or running with unrestricted file and command access.
-- **Governance** — Two surfaces: the agent's local actions, and its model calls through the gateway.
+- **Governance** — Three surfaces: the agent's local actions, its model calls through the gateway, and the network reach of any tools it is given.
 - **Caution** — Coding quality on a small local model is limited; stronger models need more memory or controlled cloud burst.
 
 ## Prerequisites
@@ -81,7 +81,21 @@ Routing model calls through the gateway keeps redaction, approved destinations, 
 
 The model id must match a model the gateway serves; list them with `curl http://localhost:4000/v1/models`. A local coding-capable model is the frugal default; a stronger model through controlled cloud burst can be added behind the gateway for harder tasks.
 
-## 3. Run in review-first mode
+## 3. Describe the project in AGENTS.md
+
+OpenCode reads an `AGENTS.md` file in the project directory for project instructions, so the agent works to the project's rules instead of guessing them. Create one with the facts the agent needs:
+
+```markdown
+# Project notes for the agent
+
+- What this project is, in one line.
+- Conventions to follow: naming, spelling, tests, review steps.
+- Commands that are safe to run, and any that are off limits.
+```
+
+Keep it short and factual, and review it like any other file. The same convention keeps an institution's repositories agent-readable as the local team grows — part of the capacity-building role above.
+
+## 4. Run in review-first mode
 
 The permission block above asks for approval before any file edit or command, and denies access to files outside the project directory. Launch OpenCode in that directory:
 
@@ -102,10 +116,11 @@ Start in the built-in Plan agent, which analyses the task and proposes changes w
 
 ## Governance and review
 
-This build shows the two governance surfaces of the [Application layer](../concepts/application-layer.md):
+This build shows the three governance surfaces of the [Application layer](../concepts/application-layer.md):
 
 - Local actions: Plan mode for review, `edit` and `bash` set to ask, and `external_directory` denied to scope the agent to the project. A person approves each change.
 - Model egress: routed through the gateway, so redaction, approved destinations, and audit logging apply, and cloud burst stays inside the envelope.
+- Tool egress: this build adds no tools beyond the agent's built-in file and shell actions. Any tool or Model Context Protocol (MCP) server added later can reach the network without passing the gateway, so it is allowlisted and reviewed first — see the [Application layer](../concepts/application-layer.md).
 
 ## Troubleshooting
 
