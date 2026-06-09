@@ -149,7 +149,7 @@ This build operationalises the sovereignty envelope in the [sovereign education-
 - only configured providers can be reached, and the local model is the default;
 - cloud burst is limited to de-identified, narrowly scoped tasks, with learner free text and identifiers blocked;
 - requests, routes, and redactions are logged for review;
-- learner-facing output still follows risk-tiered teacher review.
+- learner-facing output still follows the risk tiers, with Tier 1 approval before any learner release.
 
 ## Troubleshooting
 

@@ -7,7 +7,7 @@ icon: users
 
 _Scope: a deployment environment, not a [stack layer](../../concepts/how-the-stack-fits-together.md); it applies across all layers._
 
-A pilot environment is a controlled shared setup for testing Frugal AI with a small group before production. It validates governance, support, data handling, quality, and operations under real use.
+A pilot environment is a controlled shared setup for testing Frugal AI with a small group before production. It validates governance, support, data handling, quality, and operations under real use. It is also where the annex's Minimum Government Baseline — availability, privacy, security, auditability, and a scalability pathway — is first established before scale; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md).
 
 ## At a glance
 

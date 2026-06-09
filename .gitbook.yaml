@@ -1,0 +1,9 @@
+# GitBook configuration.
+# The published knowledge base lives under docs/. Without this file GitBook
+# defaults to the repository root, where /README.md and /SUMMARY.md are only
+# stubs, which breaks navigation and every in-page link into docs/.
+root: ./docs/
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md

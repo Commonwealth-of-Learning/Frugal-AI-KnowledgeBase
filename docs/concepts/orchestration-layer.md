@@ -30,7 +30,7 @@ Orchestration is where capability grows and where risk grows with it. Tools let 
 So orchestration is the layer where human oversight and the gateway matter most:
 
 - side-effecting tools need permissions, audit, rollback, and human approval;
-- learner-facing output needs review before release, following the risk tiers in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md);
+- learner-facing output needs approval before release — Tier 1 of the risk tiers in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md);
 - the gateway still decides what may leave the institution; in a local build the envelope stays closed.
 
 ## Frugal practice

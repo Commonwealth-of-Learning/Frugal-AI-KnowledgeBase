@@ -16,7 +16,7 @@ In the first chat build the gateway is only a policy: nothing leaves because not
 - One endpoint: applications use a single API, and the model or provider behind it can change without changing the application.
 - Redaction: personal data is detected and masked before a prompt reaches a model, with the original kept only in protected logs.
 - Routing: requests go to a local model by default, and to an approved external provider only when policy allows.
-- Audit: requests, routes, and redactions are logged for review.
+- Audit: requests, routes, and redactions are logged for review — the record behind the reference architecture's token-sovereignty and personal-data-leakage indicators.
 - Approved destinations: only the providers configured in the gateway can be reached.
 
 ## The sovereignty envelope

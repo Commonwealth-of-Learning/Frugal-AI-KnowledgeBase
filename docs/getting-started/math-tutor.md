@@ -5,7 +5,7 @@ icon: square-root-variable
 
 # Math tutor
 
-This guide turns the local AI chat service into a math tutor that gives exact answers by calling a computation tool, instead of relying on the model's own arithmetic. It is the first [Orchestration layer](../concepts/orchestration-layer.md) build: the same hardware, runtime, and model as the chat service, with one local tool added and a teacher reviewing the output.
+This guide turns the local AI chat service into a math tutor that gives exact answers by calling a computation tool, instead of relying on the model's own arithmetic. It is the first [Orchestration layer](../concepts/orchestration-layer.md) build: the same hardware, runtime, and model as the chat service, with one local tool added and a teacher reviewing the output. It is also the knowledge base's working answer to the annex's Frugal AI Challenge framing — a maths tutor that computes locally and offline (see the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md)).
 
 {% hint style="info" %}
 Level: intermediate. Expected time: about 20 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path; a teacher reviews explanations before they reach learners.
@@ -19,7 +19,7 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 
 - **Good for** — Exact arithmetic, algebra, and calculus in a tutoring chat, with the model explaining each step.
 - **Not for** — Learner-facing use without review, or trusting the model's own mental arithmetic.
-- **Governance** — Teacher-only tier: a teacher reviews explanations before any learner use.
+- **Governance** — Tier 1 (learner-facing): a teacher approves explanations before any learner use.
 - **Caution** — The tool fixes the calculation, not the teaching; a correct result can still be explained poorly.
 
 ## Prerequisites
@@ -85,7 +85,7 @@ Start a chat, select the tool with the plus icon, and ask a question that needs 
 
 ## Governance and review
 
-This build operates at the teacher-only tier described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): a teacher reviews explanations before learners see them, the tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
+This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because explanations reach learners, a teacher approves each one before release. The tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
 
 ## Troubleshooting
 

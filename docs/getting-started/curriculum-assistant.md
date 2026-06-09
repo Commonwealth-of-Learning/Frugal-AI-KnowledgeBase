@@ -21,7 +21,7 @@ The [math tutor](math-tutor.md) shows orchestration with a single Open WebUI too
 
 - **Good for** — Grounded answers from approved curriculum documents, with an "it is not covered" fallback.
 - **Not for** — Learner-facing release without review, or ingestion of unvetted web content.
-- **Governance** — Approved documents only; teacher-only tier; a teacher reviews answers before learner use.
+- **Governance** — Approved documents only; Tier 1 (learner-facing): a teacher approves answers before learner use.
 - **Caution** — Dify is a multi-container platform; retrieval quality depends on the documents, chunking, and the embedding model.
 
 ## Prerequisites
@@ -89,7 +89,7 @@ Attach the knowledge base, then publish and run the app.
 
 ## Governance and review
 
-This build operates at the teacher-only tier in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher reviews answers before learners see them; and the assistant runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
+This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher approves answers before learners see them; and the assistant runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
 
 ## Troubleshooting
 

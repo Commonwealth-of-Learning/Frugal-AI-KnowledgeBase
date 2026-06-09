@@ -1,347 +1,84 @@
 ---
-description: Markdown adaptation of COL's sovereign education-AI reference architecture.
+description: How COL's sovereign education-AI reference architecture maps onto the Frugal AI knowledge base stack.
 icon: landmark
 ---
 
-# Technical Annex: Sovereign Education-AI Reference Architecture
+# Sovereign education-AI reference architecture
 
-**Teacher-led, localised, and Frugal AI for equitable education**
+**Teacher-led, localised, Frugal AI for equitable education**
 
-This reference is based on COL's Technical Annex for a sovereign education-AI reference architecture. It is written for ministries and public education partners, especially in Small Island Developing States and low- and middle-income countries.
-
-The annex is not a single product, procurement specification, or deployment guide. It is a reference architecture and options menu for education AI services that keep data, policy, and governance under national or institutional control.
+This page connects COL's Technical Annex for a sovereign education-AI reference architecture to the builds in this knowledge base. The annex is not a product, a procurement specification, or a deployment guide: it is a reference architecture and an options menu for education-AI services that keep data, policy, and governance under national or institutional control, written especially for Small Island Developing States and low- and middle-income countries.
 
 {% hint style="info" %}
-This page is a Markdown adaptation for the Frugal AI knowledge base, not a full reproduction of the source PDF. Use the [original COL technical annex](https://www.col.org/wp-content/uploads/2026/02/Technical-Annex-for-Sovereign-Education.pdf) as the authoritative source.
+This page abstracts the annex rather than reproducing it. The [original COL technical annex](https://www.col.org/wp-content/uploads/2026/02/Technical-Annex-for-Sovereign-Education.pdf) is the authoritative source for the full tables, the pilot blueprint, and the ministry self-assessment checklist.
 {% endhint %}
 
-## Annex profile
+## How to read this page
 
-| Field | Detail |
-| --- | --- |
-| Developed by | Commonwealth of Learning as a reference resource. |
-| Purpose | Reference architecture and options menu for sovereign Frugal AI in education. |
-| Intended audience | Senior officials, EMIS and ICT units, curriculum authorities, teacher education institutions, public universities, and regulators. |
-| Status | For discussion and adaptation. |
-| Version and date | v1, February 2026. |
-| Scope note | Teacher-support and system enablement. High-stakes automated decision-making, such as student progression or certification, is out of scope. |
+The annex is written for ministries and public-education partners; this knowledge base is developer-first. This page is the bridge between them. A developer reads it to see which governance requirement each build satisfies. An official reads it to see how the annex's architecture maps onto a real, running build.
 
-## Document conventions
+## The annex in brief
 
-The annex defines a Minimum Government Baseline for public deployments that process education data or produce content intended for learners. Components beyond that baseline are optional modules.
+- **Developed by** — Commonwealth of Learning, as a reference resource.
+- **Purpose** — A reference architecture and options menu for sovereign, Frugal AI in education; countries may adopt, adapt, or set aside as appropriate.
+- **Audience** — Senior officials, EMIS and ICT units, curriculum authorities, teacher-education institutions, public universities, and regulators.
+- **Status** — v1, February 2026; for discussion and adaptation.
+- **Scope** — Teacher support and system enablement. High-stakes automated decisions, such as student progression or certification, are out of scope.
 
-## Contents
+## Two views of one system
 
-1. [Executive Summary for Ministers and Officials](#1-executive-summary-for-ministers-and-officials)
-2. [Design Principles and Options](#2-design-principles-and-options)
-3. [Reference Architecture](#3-reference-architecture-layered-model)
-4. [Hosting Topologies and Hybrid Options](#4-hosting-topologies-and-hybrid-options)
-5. [Governance Guardrails](#5-governance-guardrails-risk-tiered-teacher-in-the-loop)
-6. [Implementation Challenges and Mitigations](#6-implementation-challenges-and-mitigations)
-7. [Policy Alignment](#7-policy-alignment)
-8. [Monitoring and Evaluation](#8-monitoring-and-evaluation)
-9. [Pilot Blueprint Template](#9-pilot-blueprint-template)
-10. [Glossary of Key Terms](#10-glossary-of-key-terms)
-11. [Appendix A: Self-Assessment Checklist for Ministries](#appendix-a-self-assessment-checklist-for-ministries)
+The annex and this knowledge base describe the same kind of system through different lenses. The annex organises by **governance concern** into eight layers (A–H). The knowledge base organises by the **request and build path** into four layers plus a gateway. They are not in conflict; the crosswalk below maps one onto the other.
 
-## 1. Executive Summary for Ministers and Officials
-
-The annex provides a structured set of options and guidelines for deploying AI in education while maintaining national control over education data and policy.
-
-### What problem does this address?
-
-Education systems need ways to benefit from AI without surrendering control over education data, policy, availability, cost, or jurisdiction. Commercial AI subscriptions can be procured quickly, but they introduce dependency risks. Fully sovereign systems are feasible, but require deliberate capacity-building.
-
-This architecture sets out a sovereignty-by-design baseline: national control where it matters most, with pragmatic options for capability and scale.
-
-### What choices do countries have?
-
-The annex can be used in several ways:
-
-- adopt the full architecture as a starting point for national implementation;
-- adapt selected components to fit existing systems and capacity;
-- combine local processing with controlled cloud access for complex tasks;
-- evaluate vendor proposals and procurement decisions;
-- set the architecture aside where another approach better fits national circumstances.
-
-### What about the quality gap?
-
-Quality is managed through task specialisation, approved knowledge sources, and hybrid options. Local models can support routine education workflows with predictable latency, predictable costs, offline continuity, and data residency. Where additional capability is needed, controlled cloud burst can be used within a defined sovereignty envelope.
-
-### How does this scale?
-
-Scale depends on risk-tiered teacher oversight. Low-risk tasks can be automated with logging. Teacher-only drafts can use post-hoc audit and publish controls. Learner-facing outputs default to strict approval before release.
-
-## 2. Design Principles and Options
-
-### 2.1 Guiding principles
-
-| Principle | Meaning |
-| --- | --- |
-| Teacher-led accountability | AI assists professional tasks; teachers maintain oversight through a risk-tiered workflow. |
-| Sovereign operation | Education data and audit logs remain under national jurisdiction and policy control. |
-| Frugal resilience | Systems operate offline-first and use store-and-forward synchronisation where connectivity is intermittent. |
-| Local relevance | Workflows align with national curricula, languages, and pedagogies. |
-| Safety-by-design | Learner safeguards include incident reporting, traceability, correction mechanisms, and human oversight. |
-
-### 2.2 Minimum Government Baseline
-
-| Baseline area | Minimum expectation |
-| --- | --- |
-| Availability | Defined service levels for intermittent connectivity and offline use. |
-| Privacy | Data minimisation, personal-data redaction, and controlled log retention. |
-| Security | Role-based access control, encryption, patch management, and incident response readiness. |
-| Auditability | Tamper-evident logs and versioned knowledge-base, model, and configuration records. |
-| Scalability | A clear path from controlled pilot to wider deployment. |
-
-Optional modules such as cloud burst, advanced tuning, and DPI integration should be added only after the baseline safeguards are demonstrably in place.
-
-## 3. Reference Architecture (Layered Model)
-
-| Layer | Objective | Core components |
+| Annex layer (governance view) | Knowledge base realisation (build view) | State in the first build |
 | --- | --- | --- |
-| A. Access and identity | Controlled access and accountability. | Role-based access, least privilege, administrator MFA, and school or district tenancy where needed. |
-| B. Teacher-in-the-loop workflow | Pedagogy leads technology. | Risk-tiered approval, feedback capture, and audit trail. |
-| C. Application services | Deliver education value safely. | Lesson planning, assessment drafting, OER adaptation, and ministry drafting support. |
-| D. Knowledge layer | Ground outputs in approved sources. | Vetted knowledge base, ingestion and versioning, retrieval policies, and citation display. |
-| E. Privacy airlock | Minimise and protect personal data. | Personal-data detection and redaction, context minimisation, policy filters, and retention control. |
-| F. Model layer | Provide localised intelligence and cost control. | Locally hostable models for routine tasks and controlled cloud burst for complex tasks. |
-| G. Infrastructure | Support resilience and continuity. | Edge or hub nodes, offline caching, store-and-forward sync, and DPI-compatible registries where available. |
-| H. Operations | Provide continuous assurance. | Model registry, evaluation pipelines, monitoring, incident response, and audit reporting. |
+| A. Access and identity | Single-user, localhost-bound | Minimal; role-based access, MFA, and SSO are pilot-scale further work |
+| B. Teacher-in-the-loop workflow | Cross-cutting; named human review in every learner-facing guide | Present, governed by the risk tiers below |
+| C. Application services | [Application layer](../concepts/application-layer.md) — chat, math tutor, curriculum assistant, coding agent, animator | Covered |
+| D. Knowledge layer (RAG) | [Orchestration layer](../concepts/orchestration-layer.md) — Dify, the curriculum knowledge assistant | Covered |
+| E. Privacy airlock | [Gateway layer](../concepts/gateway-layer.md) — LiteLLM with personal-data redaction | Covered |
+| F. Model layer | [Inference layer](../concepts/inference-layer.md) for local models, plus the gateway for cloud-burst control | Covered; split across two knowledge base layers |
+| G. Infrastructure | [Infrastructure layer](../concepts/infrastructure-layer.md) — Mac mini, DGX Spark | Covered |
+| H. Operations | [Operations](../operations/operations-overview.md) — overview and the chat-service runbook | Partial; model registry and evaluation pipelines are further work |
 
-### 3.1 Interface expectations
+The knowledge base makes one main interpretive choice: it concentrates governance at a single **Gateway layer**. The annex's Layer E (privacy airlock), its §4.4 sovereignty envelope, and the cloud-burst control inside Layer F are all realised in one place — the gateway — rather than spread across the stack. This is the operational meaning of the phrase "the gateway is the sovereignty envelope" used throughout the knowledge base.
 
-Procurement and implementation should account for:
+## Governance: risk-tiered teacher-in-the-loop
 
-- versioning and provenance for knowledge ingestion and retrieval;
-- consistent audit logging across applications, models, and knowledge services;
-- offline-first synchronisation with retention and minimisation rules;
-- integration with EMIS, LMS, and DPI systems using national data exchange standards where available;
-- import and export of approved education artefacts, such as lesson plans, rubrics, and assessment items;
-- audit log export in a machine-readable format for oversight.
+The annex's central mechanism calibrates human oversight to the risk of the task, so safety is strict where it matters without making every output wait for approval.
 
-### 3.2 DPI compatibility
-
-Where national Digital Public Infrastructure already exists, the architecture should integrate rather than rebuild. Identity, credentialing, registries, and data exchange can align with national DPI frameworks and legal requirements.
-
-## 4. Hosting Topologies and Hybrid Options
-
-### 4.1 Reference hosting topologies
-
-| Topology | Contexts where it may fit | Considerations |
+| Risk tier | Use cases | Approval requirement |
 | --- | --- | --- |
-| A. Ministry hub with district nodes | National or multi-district scale. | Central governance, district inference and caching, and support for offline schools through periodic sync. |
-| B. Public university shared service | Countries where public universities can host public digital services. | Builds national capacity while the ministry retains governance and audit control. |
-| C. School edge devices | Remote areas and high-outage contexts. | Local inference and content access with strong resilience, but device management is required. |
-| D. Hybrid local and cloud burst | Countries balancing sovereignty with additional capability. | Local processing for routine tasks; controlled cloud access for complex reasoning; defined data-governance controls. |
+| Tier 1: high | Any output intended for learners; assessment and marking; sensitive topics. | Mandatory teacher approval before learner release. |
+| Tier 2: medium | Teacher-only drafts not intended for learners; planning and scaffolding. | Immediate release to the teacher, with publish controls and periodic audit. |
+| Tier 3: low | Non-instructional automation that does not reach learners. | Automated release with logging. |
 
-### 4.2 The hybrid model
+When classification is uncertain, the higher tier applies. Every learner-facing build in this knowledge base — the [math tutor](../getting-started/math-tutor.md) and the [curriculum knowledge assistant](../getting-started/curriculum-assistant.md) — sits in **Tier 1**: a teacher approves output before any learner sees it.
 
-Local processing is the default for routine tasks:
+## The sovereignty envelope and privacy airlock
 
-- formatting and document preparation;
-- basic quiz and question generation;
-- translation and localisation;
-- fact retrieval from approved knowledge bases;
-- administrative task support.
+When a workflow needs an external model, the annex requires a sovereignty envelope: data classification, redaction and minimisation before anything leaves, permitted and prohibited payloads, and contractual controls. In this knowledge base that is enforced at the [gateway](../concepts/gateway-layer.md): redaction first, approved destinations only, learner free text and identifiers blocked by default, and a local fallback when connectivity fails. The [AI gateway](../getting-started/ai-gateway.md) guide is the running build.
 
-Controlled cloud burst can be considered for narrowly defined complex tasks:
+## Minimum Government Baseline
 
-- complex mathematical reasoning and problem-solving;
-- computationally intensive drafting support;
-- tasks requiring frontier model capability.
+The annex defines a Minimum Government Baseline — availability under intermittent connectivity, privacy controls, a security baseline, auditability, and a scalability pathway — that any public deployment is expected to meet before adding optional modules such as cloud burst or DPI integration. The first build in this knowledge base is a development path and does not meet this baseline; the [pilot](../components/environments/pilot.md) and [production](../components/environments/production.md) environments are where the baseline is established before scale.
 
-Cloud burst requires data minimisation before transmission, approved providers, audit logging, jurisdictional controls, deletion rules, and local fallback when connectivity fails.
+## Hosting and hybrid options
 
-### 4.3 Open-source options
+The annex offers four reference topologies — a ministry hub with district nodes, a public-university shared service, school edge devices, and a hybrid of local processing with controlled cloud burst — chosen by connectivity, institutional capacity, and data rules. This knowledge base documents the single-machine development path and points to the [pilot environment](../components/environments/pilot.md) for shared use. The annex holds the full topology table.
 
-Open-source components can reduce dependency and support sovereign operation. Selection still requires procurement review, licence checks, security due diligence, and evaluation against local language and curriculum needs.
+## The quality gap and the Frugal AI Challenge
 
-Categories to assess include:
+The annex treats the local-model quality gap as a programme problem, managed by task-model fit, curriculum-grounded retrieval, and controlled cloud burst for narrowly defined hard tasks. It also proposes a Frugal AI Challenge: "the best Mathematics Tutor that runs on an Aptus Pi or equivalent edge device, without internet."
 
-- open-weight models suitable for local inference;
-- model servers for CPU, GPU, and offline packaging;
-- document ingestion, vector search, and retrieval services;
-- safety and moderation filters;
-- observability, logging, and dashboard tools.
+The knowledge base's through-line is a working answer to that framing: a [math tutor](../getting-started/math-tutor.md) that computes exactly and offline, a [gateway](../getting-started/ai-gateway.md) for controlled cloud burst on genuinely hard problems, and a [Manim animator](../getting-started/manim-animator.md) for the visual case. The COL [Aptus](https://www.col.org/projects/aptus/) tradition — open-source hardware that brings learning to communities without grid power or the internet — is the heritage this continues.
 
-### 4.4 Sovereignty envelope
+## Monitoring and evaluation
 
-A sovereignty envelope defines what data may be processed externally, what must remain in-country, and what controls apply.
+The annex suggests 12-month indicators for pilot review and scale decisions, to be adapted to national frameworks. Two map directly onto what the stack already produces: **token sovereignty** — the share of inference processed locally — and **personal-data leakage through external endpoints** are both measured by the [gateway](../concepts/gateway-layer.md) audit log, which records every route and redaction. The annex holds the full indicator set; telemetry should stay privacy-preserving, aggregated, and free of learner free text unless explicitly authorised.
 
-| Area | Minimum decision |
-| --- | --- |
-| Data classification | Define learner, sensitive, internal, and public content categories. |
-| Transformation | Specify redaction, minimisation, and aggregation before external processing. |
-| Permitted payloads | Limit cloud burst to de-identified or curriculum-only prompts by default. |
-| Prohibited payloads | Block learner free text, identifiers, quasi-identifiers, and special-category data by default. |
-| Contractual controls | Require deletion commitments, sub-processor disclosure, breach notification, audit rights, and exit rights. |
+## Glossary
 
-## 5. Governance Guardrails: Risk-Tiered Teacher-in-the-Loop
-
-The annex avoids a one-size-fits-all approval model. Human oversight is calibrated to the risk of the task.
-
-### 5.1 Risk-tiered approval framework
-
-| Risk tier | Use cases | Approval requirement | Rationale |
-| --- | --- | --- | --- |
-| Tier 1: High risk | Learner-facing content, assessment items, marking guidance, sensitive topics, or high-consequence communications. | Mandatory teacher or authorised human approval before learner release. | Direct learner impact requires strict gating. |
-| Tier 2: Medium risk | Teacher-only planning drafts, internal notes, resource scaffolding, and OER adaptation drafts. | Immediate release to the teacher with publish controls and periodic quality audit. | Supports teacher efficiency without direct learner release. |
-| Tier 3: Low risk | Non-instructional automation, formatting, and administrative templates that do not reach learners. | Automated release with logging. | Low consequence tasks can be handled efficiently. |
-
-When classification is uncertain, use the higher tier. Any output shown to learners belongs in Tier 1.
-
-### 5.2 Privacy airlock and data sovereignty envelope
-
-When a workflow requires cloud burst, the privacy airlock and sovereignty envelope should apply before data leaves the local system.
-
-Minimum controls include:
-
-- data minimisation to remove unnecessary context;
-- personal-data redaction before model processing;
-- special protection for small-population quasi-identifiers;
-- approved providers or sovereign cloud endpoints where external processing is used;
-- non-retention, deletion, and audit commitments for education data logs.
-
-## 6. Implementation Challenges and Mitigations
-
-Sovereign education-AI deployments are programmes, not single procurements. Predictable challenges should be managed in the pilot design.
-
-| Challenge | Operational impact | Mitigation pattern |
-| --- | --- | --- |
-| Infrastructure and power volatility | Cloud-dependent systems can fail during network outages or power disruption. | Offline-first local inference and store-and-forward synchronisation. |
-| Quality gap of smaller models | Small local models may not match frontier systems on open-ended tasks. | Curriculum-grounded retrieval, task-model fit, evaluation, and controlled cloud burst for specific needs. |
-| Teacher literacy and workload | Complex prompt-based interfaces can increase workload and reduce adoption. | Structured, task-specific interfaces and teacher professional development. |
-| Data residency compliance | External infrastructure may conflict with national data protection rules. | In-country hosting, public university services, district hubs, or sovereign cloud controls. |
-| Pilot-to-scale gap | Successful pilots may stall without support, governance, and training plans. | Scale criteria, helpdesk planning, cascade training, and governance review from the start. |
-
-## 7. Policy Alignment
-
-The architecture is intended to align technical design with national policy, education governance, and international AI principles.
-
-### 7.1 Curriculum standards
-
-Retrieval-Augmented Generation helps align outputs with approved national syllabi, teacher guides, textbooks, and locally vetted source material.
-
-### 7.2 Open Educational Resources
-
-Publicly funded content can be structured for open licensing where national policy allows. This supports reuse, adaptation, and reduced vendor lock-in.
-
-### 7.3 Data protection and privacy laws
-
-The architecture supports data minimisation, local governance, audit trails, and redress. Raw model output and teacher-edited output can be tracked separately to support provenance and quality review.
-
-### 7.4 International alignment
-
-The annex maps to policy themes in UNESCO guidance, OECD AI principles, NIST AI risk management, and DPI approaches. The main alignment areas are human-centred governance, transparency, security, evaluation, and public-interest infrastructure.
-
-## 8. Monitoring and Evaluation
-
-The annex suggests 12-month indicators for pilot review and scale decisions. Countries should adapt indicators to national monitoring frameworks.
-
-| Evaluation area | Core metric | Example target | Verification method |
-| --- | --- | --- | --- |
-| Pedagogical oversight | Teacher approval for high-risk learner-facing content. | 100 percent before release. | Workflow and audit logs. |
-| Content quality | Share of AI output modified by teachers during review. | Locally defined threshold. | Version comparison between model output and final asset. |
-| Technical resilience | Local service availability during outages. | Locally defined uptime target. | Edge node and client logs. |
-| Retrieval quality | Outputs with valid citations from approved knowledge sources. | High citation validity for RAG tasks. | Evaluation pipeline and sample review. |
-| Privacy and safety | Personal-data leakage through external endpoints. | Zero incidents. | Privacy airlock tests and audit review. |
-| Incident response | Time to log, triage, and remediate reported issues. | Locally defined service level. | Helpdesk and incident registers. |
-| Cost predictability | Variance from budgeted monthly operating cost. | Low variance. | Infrastructure and cloud-burst cost reports. |
-| Token sovereignty | Share of inference processed locally. | Majority local processing. | Model layer usage analytics. |
-
-Telemetry should be privacy-preserving: collect only what is necessary, aggregate results, restrict access, and avoid learner free text unless explicitly authorised and protected.
-
-## 9. Pilot Blueprint Template
-
-This template can guide a 3-to-6 month proof-of-concept deployment.
-
-### 9.1 Project identification and governance
-
-Define:
-
-- target jurisdiction, district, or region;
-- participating schools, institutions, or hubs;
-- lead implementing agency;
-- technical integration partner;
-- steering committee and reporting schedule.
-
-### 9.2 Hosting architecture selection
-
-Select the topology based on local connectivity, power reliability, technical capacity, and data rules:
-
-- ministry hub with district nodes;
-- public university shared service;
-- school edge devices;
-- hybrid local and cloud burst.
-
-### 9.3 Knowledge layer ingestion scope
-
-List the approved, version-controlled documents that populate the initial knowledge base. Examples include national syllabi, approved textbook chapters, teacher guides, and ministry training manuals. Unvetted web scraping should not be used under the baseline.
-
-### 9.4 Risk-tiering workflow configuration
-
-Define how the system classifies each task and enforces the required review route:
-
-```text
-User draft request
-  -> system assigns risk tier
-  -> Tier 1: high-risk learner-facing content requires approval
-  -> Tier 2: teacher-only draft stays in workspace with publish controls
-  -> Tier 3: low-risk administrative task is logged and saved
-```
-
-### 9.5 Phased implementation milestones
-
-| Phase | Duration | Core activities | Success criteria |
-| --- | --- | --- | --- |
-| Setup | Weeks 1-4 | Hardware provisioning, local model installation, knowledge layer compilation, and vectorisation. | The system operates offline in a controlled test environment. |
-| Alpha test | Weeks 5-8 | Closed testing with master teachers, interface validation, and synthetic privacy-airlock tests. | Personal-data redaction and usability checks meet pilot thresholds. |
-| Field pilot | Weeks 9-16 | Live deployment in pilot schools, store-and-forward synchronisation, and observation of oversight workflows. | Monitoring indicators are logged and major incidents are escalated. |
-| Review | Weeks 17-20 | Audit log review, cost analysis, token distribution review, and adaptation roadmap. | Evaluation report is ready for ministry scale-up decision. |
-
-## 10. Glossary of Key Terms
-
-The terms used in this annex — Sovereign AI, Frugal AI, Teacher-in-the-Loop, Retrieval-Augmented Generation, privacy airlock, cloud burst, edge device, and store-and-forward synchronisation — are defined in the knowledge base's canonical [Glossary](glossary.md), which is the single source for these definitions.
-
-## Appendix A: Self-Assessment Checklist for Ministries
-
-This diagnostic checklist helps technical teams assess readiness before a localised, sovereign education-AI pilot.
-
-### A.1 Data sovereignty and infrastructure lifecycle
-
-- [ ] **Data jurisdiction:** Student and teacher interaction logs are legally bound to remain within national geographic boundaries or contractually protected sovereign cloud instances.
-- [ ] **Connectivity profile:** Power and network reliability in the target region have been mapped to determine whether school edge nodes, district hubs, or both are required.
-- [ ] **Hardware assessment:** Consumer-grade or existing institutional hardware can run small, optimised open-source models locally.
-
-### A.2 Knowledge layer and content integrity
-
-- [ ] **Vetted source access:** National syllabi, textbooks, and teacher guides are available in clean digital text formats for a retrieval knowledge base.
-- [ ] **Version control:** A designated authority updates, patches, and approves source knowledge repositories when the national curriculum changes.
-- [ ] **Open licensing default:** Procurement and generation guidelines define how publicly funded outputs use open licences where appropriate.
-
-### A.3 Pedagogical oversight and risk management
-
-- [ ] **Workflow enforcement:** The software architecture prevents high-risk learner-facing generated content from being distributed until an authorised teacher approves it.
-- [ ] **User interface design:** Teacher interfaces use structured, task-specific forms where possible instead of relying only on open-ended prompt fields.
-- [ ] **Auditability:** The system saves distinct versions of raw AI output and final teacher-edited output so model accuracy and human modification rates can be reviewed.
-
-### A.4 Operational capacity and policy
-
-- [ ] **Technical partnership:** A public university, research centre, or internal agency can support local model configuration and deployment.
-- [ ] **Data privacy alignment:** The pilot structure complies with national data protection rules for data minimisation and log management.
-- [ ] **Budget predictability:** The compute architecture keeps monthly operational costs predictable and reduces exposure to commercial subscription volatility.
-
-## How this connects to the Frugal AI knowledge base
-
-The current Frugal AI knowledge base starts with a small development path: a local AI chat service on documented hardware. The COL annex describes a broader ministry-level reference architecture.
-
-| Knowledge base page | How it relates |
-| --- | --- |
-| [Frugal AI principles](../concepts/frugal-ai-principles.md) | Gives the local-control, open-technology, and capacity-building frame. |
-| [Pilot environment](../components/environments/pilot.md) | Introduces the controlled shared-use stage before production. |
-| [NVIDIA DGX Spark](../components/hardware/nvidia-dgx-spark.md) | Candidate hardware profile for development and pilot workloads needing more memory headroom. |
-| [Local AI chat service operations](../operations/open-webui-ops.md) | Shows how operations, backup, update, and recovery are documented even in the first path. |
+The annex's key terms — sovereign operation, Frugal AI, teacher-in-the-loop, retrieval-augmented generation, privacy airlock, cloud burst, edge device, quasi-identifier, and store-and-forward synchronisation — are defined in the knowledge base's canonical [Glossary](glossary.md), the single source for these definitions.
 
 ## Source
 

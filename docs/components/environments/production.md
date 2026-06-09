@@ -7,7 +7,7 @@ icon: building
 
 _Scope: a deployment environment, not a [stack layer](../../concepts/how-the-stack-fits-together.md); it applies across all layers._
 
-A production environment runs a Frugal AI service as a dependable, governed service for real users. It is the stage after a successful [pilot](pilot.md).
+A production environment runs a Frugal AI service as a dependable, governed service for real users. It is the stage after a successful [pilot](pilot.md). Production is where the annex's Minimum Government Baseline must be fully met and sustained; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md).
 
 {% hint style="info" %}
 This environment is not yet documented in full. This page records the shape of the work; the detailed guidance is further work.
