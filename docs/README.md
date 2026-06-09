@@ -35,12 +35,14 @@ The gateway is the boundary every model request passes through, so it is where s
 
 Different goals have different starting points.
 
-| Goal | Start with | Wider programme |
+| Goal | Start with | Go deeper |
 | --- | --- | --- |
 | Understand Frugal AI | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) and [Frugal AI principles](concepts/frugal-ai-principles.md) | [Commonwealth of Learning: Frugal AI](https://www.col.org/frugal) |
 | Assess it for a ministry | [Frugal AI principles](concepts/frugal-ai-principles.md), the [Gateway layer](concepts/gateway-layer.md), and the [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md) | [COL Frugal AI](https://www.col.org/frugal); the [Roadmap to Sovereign GenAI](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) |
 | Assess it for an institution | [Frugal AI principles](concepts/frugal-ai-principles.md) and the [Pilot environment](components/environments/pilot.md) | [COL Frugal AI](https://www.col.org/frugal) |
 | Build with it | [Quickstart](getting-started/quickstart.md), then the learning path below | [Example applications](concepts/example-applications.md) |
+| Operate it | [Operations overview](operations/operations-overview.md) and [Local AI chat service operations](operations/open-webui-ops.md) | [Pilot environment](components/environments/pilot.md) |
+| Use it with an AI agent | [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md) | [Coding agent](getting-started/coding-agent.md) |
 
 ## The first build: Local AI chat service
 
@@ -56,11 +58,11 @@ The first complete build stops at the frugal floor: infrastructure, inference, a
 
 The guides are tiered by level. One education example — a mathematics use case — runs through them, with the [curriculum advisor](getting-started/curriculum-advisor.md) showing the same layers carrying a second application.
 
-| Level | Start with | What it adds |
-| --- | --- | --- |
-| Beginner | [Local AI chat service](getting-started/offline-chat-service.md), after the [Quickstart](getting-started/quickstart.md) | A private local chat on one machine: the frugal floor. |
-| Intermediate | [Math tutor](getting-started/math-tutor.md), the [Curriculum advisor](getting-started/curriculum-advisor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, retrieval over approved documents, and a governed boundary with controlled cloud burst. |
-| Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. |
+| Level | Start with | What it adds | Estimated time |
+| --- | --- | --- | --- |
+| Beginner | [Local AI chat service](getting-started/offline-chat-service.md), after the [Quickstart](getting-started/quickstart.md) | A private local chat on one machine: the frugal floor. | About 75 minutes across both guides. |
+| Intermediate | [Math tutor](getting-started/math-tutor.md), the [Curriculum advisor](getting-started/curriculum-advisor.md), then the [AI gateway](getting-started/ai-gateway.md) | Tools for exact computation, retrieval over approved documents, and a governed boundary with controlled cloud burst. | About 95 minutes across the three guides, plus model downloads. |
+| Advanced | [Coding agent](getting-started/coding-agent.md), then the [Manim animator](getting-started/manim-animator.md) | An agent that writes and runs code, animating the mathematics through the gateway. | About 70 minutes across both guides, plus the Manim install. |
 
 These levels match the Start here, Build further, and Advanced sections in the sidebar; [Example applications](concepts/example-applications.md) maps each guide to an application, a tier, and the layers.
 

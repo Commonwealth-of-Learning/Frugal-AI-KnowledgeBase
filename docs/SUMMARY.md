@@ -2,16 +2,16 @@
 
 * [Welcome](README.md)
 
+## Start here
+
+* [Quickstart](getting-started/quickstart.md)
+* [Local AI chat service](getting-started/offline-chat-service.md)
+
 ## Concepts
 
 * [The Frugal AI stack](concepts/how-the-stack-fits-together.md)
 * [Example applications](concepts/example-applications.md)
 * [Frugal AI principles](concepts/frugal-ai-principles.md)
-
-## Start here
-
-* [Quickstart](getting-started/quickstart.md)
-* [Local AI chat service](getting-started/offline-chat-service.md)
 
 ## Build further
 
@@ -67,7 +67,7 @@
 * [Operations overview](operations/operations-overview.md)
 * [Local AI chat service operations](operations/open-webui-ops.md)
 
-## Reference
+## Reference and policy
 
 * [Glossary](reference/glossary.md)
 * [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md)
