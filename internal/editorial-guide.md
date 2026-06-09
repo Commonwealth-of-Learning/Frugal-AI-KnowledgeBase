@@ -178,6 +178,8 @@ Start with the reader's decision or task. Explain the problem before the princip
 
 Use short paragraphs. One idea per paragraph is usually enough.
 
+Use fewer hyphens and dashes. Prefer plain sentences or a comma over an em dash; when a dash-joined clause appears, consider splitting it into two sentences. Keep hyphens only where grammar or an established term requires them (local-first, open-weight, teacher-in-the-loop, learner-facing); do not coin new hyphenated compounds when plain words work.
+
 Prefer concrete nouns and verbs. Say "run the model locally", "check the service", or "keep data on the institution's server" instead of abstract phrases such as "enable transformational capability".
 
 Avoid direct second person in public docs. Prefer "the institution", "the local team", "the operator", "the guide", or imperative steps with no subject. Use direct second person only when removing it would make a safety warning or procedural instruction unclear.
