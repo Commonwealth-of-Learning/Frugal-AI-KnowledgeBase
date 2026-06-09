@@ -183,7 +183,7 @@ Leave out empty or unverifiable sections. If a template section has no verified 
 
 Keep people in the loop. When AI affects learners, assessment, content, or institutional decisions, name the human review point.
 
-Use examples from education. Prefer scenarios such as local chat, course search, teacher support, OER adaptation, administrative helpdesk, and Moodle support.
+Use examples from education. Prefer scenarios such as local chat, course search, teacher support, OER adaptation, administrative tasks, and Moodle support.
 
 Use the site name consistently. In public-facing copy, call the site the "Frugal AI knowledge base". Avoid substituting "GitBook", "docs", "documentation site", or "this knowledge base" when referring to the published reader experience. Use "GitBook" only when discussing the publishing platform or GitBook-specific syntax.
 

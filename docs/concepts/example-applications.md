@@ -15,9 +15,9 @@ Every example starts from the same beginner floor — the [local AI chat service
 | --- | --- | --- | --- |
 | Math tutor | Local chat | [Math tutor](../getting-started/math-tutor.md): a tool computes exactly | [Manim animator](../getting-started/manim-animator.md): an agent animates the result |
 | Curriculum advisor | Local chat | [Curriculum advisor](../getting-started/curriculum-advisor.md): RAG over approved documents on Dify | Dify multi-step workflows at pilot scale *(further work)* |
-| Administrative helpdesk | Local chat | A tool-using assistant for routine staff tasks *(further work)* | Agent workflows with human approval *(further work)* |
+| Administrative agent | Local chat | Tool-using actions for routine staff tasks *(further work)* | Multi-step workflows with human approval *(further work)* |
 
-The math-tutor row is built end to end, and the curriculum advisor's intermediate cell is now built (RAG on Dify); its advanced cell and the helpdesk row remain planned. Cells stay marked *further work* until their guides exist.
+The math-tutor row is built end to end, and the curriculum advisor's intermediate cell is now built (RAG on Dify); its advanced cell and the administrative agent row remain planned. Cells stay marked *further work* until their guides exist.
 
 ## What the matrix shows
 
