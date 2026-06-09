@@ -14,6 +14,7 @@ Operating a Frugal AI service means keeping each layer healthy: starting and sto
 | Local AI chat service (Open WebUI and Ollama) | Start and stop, update, back up, restore, troubleshoot | [Local AI chat service operations](open-webui-ops.md) |
 | Gateway (LiteLLM) | Run, keys, redaction services, audit log | The gateway section of the [chat service runbook](open-webui-ops.md) |
 | Coding agent (OpenCode) | Update the agent, manage gateway keys, review actions and the audit log, keep the workspace scoped | Notes below; full runbook is further work |
+| Curriculum advisor (Dify) | Containers, document ingestion, embedding model, backups | The guide's troubleshooting covers development use; full runbook is further work |
 | Serving engines (vLLM, SGLang) | Capacity, concurrency, monitoring, and recovery at pilot scale | Further work |
 
 ## Coding agent operations
@@ -22,4 +23,4 @@ Until a full runbook exists, operate the [coding agent](../getting-started/codin
 
 ## Further work
 
-Full runbooks for the coding agent and for pilot-scale serving engines are not yet written. Add them when those paths are operated in a pilot, alongside the [production environment](../components/environments/production.md).
+Full runbooks for the coding agent, for the curriculum advisor's Dify deployment, and for pilot-scale serving engines are not yet written. Add them when those paths are operated in a pilot, alongside the [production environment](../components/environments/production.md).

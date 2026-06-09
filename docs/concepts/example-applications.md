@@ -11,6 +11,14 @@ The layered stack is general: the same frugal floor supports many education appl
 
 Every example starts from the same beginner floor — the [local AI chat service](../getting-started/offline-chat-service.md) — and diverges above it.
 
+```mermaid
+flowchart TD
+  F[Local AI chat service - the shared floor] --> M[Math tutor - a tool computes exactly]
+  F --> C[Curriculum advisor - RAG on Dify]
+  F --> A[Administrative agent - further work]
+  M --> N[Manim animator - an agent animates the result]
+```
+
 | Application | Beginner (shared floor) | Intermediate | Advanced |
 | --- | --- | --- | --- |
 | Math tutor | Local chat | [Math tutor](../getting-started/math-tutor.md): a tool computes exactly | [Manim animator](../getting-started/manim-animator.md): an agent animates the result |

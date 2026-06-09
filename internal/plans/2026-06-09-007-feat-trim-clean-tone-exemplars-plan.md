@@ -20,6 +20,10 @@ Implements the five-iteration roadmap in `internal/editorial-review-and-roadmap-
 4. **Agentic framing** — third egress surface (tool/MCP traffic) in application layer and coding-agent guide; MCP in orchestration layer, glossary, OpenCode card; AGENTS.md step; "Use the knowledge base with an AI agent" reference page; model-card agentic-readiness rows; agentic preferred terms in the editorial guide.
 5. **Sweep and visuals** — consistency sweep of worked guides; mermaid diagrams (gateway, coding agent, example matrix); reference page reader's guide. The administrative-agent guide remains further work (next build increment).
 
+## Progress
+
+All five iterations implemented and committed on 2026-06-09 (one commit per iteration). Remaining from the reviews: legacy-stub retirement and the open-webui folder move (blocked by the deletion decision above), confirmation of `llms.txt` on the published domain, and the administrative-agent guide (next build increment).
+
 ## Out of scope
 
 New build guides requiring local verification (administrative agent, pilot/production runbooks).

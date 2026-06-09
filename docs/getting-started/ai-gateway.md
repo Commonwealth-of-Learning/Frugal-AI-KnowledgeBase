@@ -11,6 +11,14 @@ This guide puts a local AI gateway in front of the [Local AI chat service](offli
 Level: intermediate. Expected time: about 30 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path. It runs on the same machine as the chat service and keeps the local model as the default. External routing is optional and stays off until configured.
 {% endhint %}
 
+```mermaid
+flowchart LR
+  A[Open WebUI] --> G[Gateway LiteLLM]
+  G -- redacted prompt --> L[Ollama with Qwen3.5-9B]
+  G -. controlled cloud burst, redacted .-> X[Approved external model]
+  G --> Log[(Audit log)]
+```
+
 ## Fit and limits
 
 - **Good for** — A single governed endpoint, personal-data redaction, audit logging, and optional controlled cloud burst.

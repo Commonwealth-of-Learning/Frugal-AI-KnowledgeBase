@@ -15,6 +15,8 @@ This is a Markdown adaptation. The [original COL technical annex](https://www.co
 
 The annex is the technical companion to the [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf), the Commonwealth commitment to teacher-led, localised AI presented for endorsement at the India AI Impact Summit 2026. It supports a growing alliance of Commonwealth partners — with particular attention to Small Island Developing States and low- and middle-income countries — that prioritises digital public goods over proprietary dependency and builds local capability over time.
 
+**How to read this page.** Sections 1–2 frame the problem, the choices, and the design principles for ministers and senior officials. Sections 3–5 describe the layered architecture, hosting topologies, and governance guardrails for policy and ICT leads. Sections 6–10 and Appendix A carry the implementation and operational detail for technical teams. Builders can see the operational form of these controls in the [Gateway layer](../concepts/gateway-layer.md) and the [AI gateway](../getting-started/ai-gateway.md) guide.
+
 
 | Purpose | Reference architecture and options menu for sovereign, Frugal AI in education; countries may adopt, adapt, or set aside as appropriate |
 | --- | --- |
