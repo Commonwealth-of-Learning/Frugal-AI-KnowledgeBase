@@ -28,7 +28,7 @@ Expected time: about 45 minutes on a Mac mini or Apple Silicon Mac with 24 GB me
 
 Needed:
 
-- Apple Silicon Mac with 24 GB memory or more.
+- Apple Silicon Mac with 24 GB memory or more. For other hardware, the [Infrastructure layer](../concepts/infrastructure-layer.md) maps what is available to the closest documented path.
 - macOS 15 or later.
 - 20 GB free disk space.
 - Terminal access.

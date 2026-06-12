@@ -13,6 +13,7 @@ Qwen3.5-9B is the model used in the first local AI chat service path. It gives t
 
 - **Current role** — Used by the first local AI chat service.
 - **Best fit** — A first private local chat service for development, orientation, and testing.
+- **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md) lists when a candidate model is the better fit.
 - **Local fit** — Fits the documented 24 GB Mac mini path with the guide's 8K context setting.
 - **Model type** — Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain.
 - **Inputs** — Text and image in Ollama; upstream sources also describe video-style visual inputs.

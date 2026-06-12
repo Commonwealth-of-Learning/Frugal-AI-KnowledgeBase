@@ -25,6 +25,18 @@ Start with modest, available hardware and add capacity only when a measured need
 | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | The documented development machine for the first path. |
 | [NVIDIA DGX Spark](../components/hardware/nvidia-dgx-spark.md) | A higher-capability candidate for development and pilot workloads. |
 
+## Start from the machine
+
+The documented first path assumes one machine, but readers arrive with different hardware. This table maps what is available to the closest documented path; rows without a path are honest gaps, and the guide pattern transfers to them only with local measurement.
+
+| The machine available | Closest documented path | Notes |
+| --- | --- | --- |
+| Apple Silicon Mac with 24 GB memory or more | [Quickstart](../getting-started/quickstart.md), then [Local AI chat service](../getting-started/offline-chat-service.md) | The documented first path. 7B-9B class models at the guide's 8K context fit comfortably; see the [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) memory budget. |
+| Apple Silicon Mac with 16 GB | No documented path yet *(further work)* | The guide pattern transfers with a smaller model tag and a short context, but fits are unmeasured; check the [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) memory budget before relying on it. |
+| Windows or Linux machine, 16-32 GB | No documented path yet *(further work)* | [Ollama](../components/runtimes/ollama.md) runs on macOS, Linux, and Windows, and [LM Studio](../components/runtimes/lm-studio.md) on Mac and Windows, so the components transfer; the guides' macOS-specific steps (Homebrew, Docker Desktop) need local substitution. |
+| GPU workstation or server | No documented path yet; pilot serving is planned | [NVIDIA DGX Spark](../components/hardware/nvidia-dgx-spark.md) is the candidate hardware profile, and serving engines such as [vLLM](../components/runtimes/vllm.md) belong to the [pilot environment](../components/environments/pilot.md); a pilot serving guide is further work. |
+| Less than 16 GB, or low-power devices | Not covered | Below the measured comfort of the documented path. Smaller-model paths need their own guide and measurement before being documented. |
+
 ## How this connects
 
 The infrastructure sets the memory budget that decides which models and engines fit; see the [Inference layer](inference-layer.md). The [development](../components/environments/development.md) and [pilot](../components/environments/pilot.md) environments describe the assumptions for each stage.

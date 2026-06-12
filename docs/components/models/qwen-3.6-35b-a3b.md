@@ -13,6 +13,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 
 - **Current role** — Candidate model for future Frugal AI paths.
 - **Best fit** — Agentic coding, tool use, repository-level reasoning, and multimodal evaluation.
+- **Prefer it when** — Agentic coding, repository-level reasoning, or long-context work justifies a higher-memory machine; the 24 GB download places it beyond the current first path.
 - **Local fit** — Better suited to a measured higher-memory path than the current 24 GB Mac mini first path.
 - **Model type** — MoE model: 35B total parameters with about 3B active per token (Ollama labels the same model 36B). The full package still affects memory use.
 - **Inputs** — Text, image, and video-style visual inputs upstream; Ollama lists vision, tools, and thinking labels.

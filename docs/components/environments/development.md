@@ -13,7 +13,7 @@ The development environment is a local, single-user setup for learning, testing,
 
 - **Current role** — Defines the assumptions for the local development path.
 - **Best fit** — Learning, testing, and small demonstrations before pilot decisions.
-- **Hardware fit** — [Mac mini 24 GB](../hardware/mac-mini-24gb.md), or an Apple Silicon Mac with 24 GB.
+- **Hardware fit** — [Mac mini 24 GB](../hardware/mac-mini-24gb.md), or an Apple Silicon Mac with 24 GB; [NVIDIA DGX Spark](../hardware/nvidia-dgx-spark.md) is the higher-capability candidate for larger development work.
 - **Next environment** — [Pilot environment](pilot.md) for controlled shared use.
 - **Main caution** — Development defaults should not be treated as production settings.
 
