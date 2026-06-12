@@ -62,6 +62,8 @@ In `docs/SUMMARY.md`, give component pages a role prefix that names the kind wit
 
 The audit also requires a specific set of linked summary entries with exact reader-facing labels. Run `internal/tools/editorial_audit.py` after navigation changes rather than hand-verifying them.
 
+`MCP server:` is not a sidebar role (decision 2026-06-12). MCP servers are described in prose as substitutable Orchestration-layer components (see the orchestration layer page, the glossary, and the OpenCode card); none has its own component card. If an MCP-server card is ever added, register a role label here first, in keeping with the naming gate.
+
 ## Reader-Friendly Explanations
 
 Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, Mixture of Experts, and Model Context Protocol ("MCP, a standard way to supply tools to agents"). Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.

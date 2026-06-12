@@ -1,3 +1,4 @@
 # Repo-root scratch folder only; must not hide the published docs/reference/ pages.
 /reference/
 CLAUDE.md
+__pycache__/

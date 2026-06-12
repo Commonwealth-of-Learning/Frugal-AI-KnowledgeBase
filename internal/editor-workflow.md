@@ -16,7 +16,7 @@ The live public pages are the canonical structure for each page type. Section or
 
 - Landing page: `docs/README.md`
 - Guide: `docs/getting-started/offline-chat-service.md`
-- Concept: `docs/concepts/frugal-ai-principles.md`
+- Concept: `docs/concepts/example-applications.md`
 - Stack explanation: `docs/concepts/how-the-stack-fits-together.md`
 - Layer overview: `docs/concepts/inference-layer.md`
 - Component card: `docs/components/runtimes/ollama.md`
@@ -41,7 +41,8 @@ Decide the page type before drafting:
 | Component card | Explain fit, limits, and links for one component | component pattern |
 | Model card | Explain model identity, fit, and limits | model pattern |
 | Runbook | Operate and recover a service | runbook pattern |
-| Legacy stub | Preserve an old link while redirecting readers | short moved/retired page |
+
+When a page is renamed, moved, or retired, preserve its old URL with a redirect entry in `.gitbook.yaml` rather than a stub page (the ten legacy stubs were retired this way on 2026-06-09).
 
 Do not add a public page only because source material exists. Add a page when it supports a guide, reader path, or operational need.
 
@@ -220,7 +221,7 @@ Before linking a page from `docs/SUMMARY.md`, confirm:
 - the page supports the current local AI chat service path or a direct reader need;
 - the title is short enough for the GitBook sidebar;
 - the section does not create one-child nesting;
-- legacy stubs remain unlinked unless they preserve existing URLs;
+- renamed, moved, or retired pages have a `.gitbook.yaml` redirect for the old URL;
 - internal files are not linked from public pages.
 
 Use role labels in sidebar component titles when the page name alone is ambiguous:
@@ -231,10 +232,13 @@ Environment: Development
 Runtime: Ollama
 Serving engine: vLLM
 Model: Qwen3.5-9B
+Platform: Dify
 Gateway: LiteLLM
 Interface: Open WebUI
-Agent: OpenCode
+Coding Agent: OpenCode
 ```
+
+The approved prefix set is owned by `internal/naming-registry.md` (Navigation And Titles) and enforced by the audit; when this block and the registry disagree, follow the registry and update this block.
 
 ### 11. Final Editorial Pass
 
