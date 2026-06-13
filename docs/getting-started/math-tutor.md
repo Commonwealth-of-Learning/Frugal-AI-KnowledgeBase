@@ -24,7 +24,7 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 
 ## Prerequisites
 
-- The [Local AI chat service](offline-chat-service.md) is built and running, with Ollama, Qwen3.5-9B, and Open WebUI.
+- The [Local AI chat service](offline-chat-service.md) is built and running, with Ollama, Gemma 4 12B, and Open WebUI.
 
 ## Component map
 
@@ -32,7 +32,7 @@ Small local models are unreliable at arithmetic and algebra; they often produce 
 | --- | --- |
 | Application | [Open WebUI](../components/applications/open-webui.md) |
 | Orchestration | An Open WebUI tool that computes with SymPy |
-| Inference | [Ollama](../components/runtimes/ollama.md) with [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) |
+| Inference | [Ollama](../components/runtimes/ollama.md) with [Gemma 4 12B](../components/models/gemma-4-12b.md) |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) |
 
 The gateway stays local-only: nothing leaves the machine.

@@ -14,7 +14,7 @@ Level: intermediate. Expected time: about 30 minutes once the [Local AI chat ser
 ```mermaid
 flowchart LR
   A[Open WebUI] --> G[Gateway LiteLLM]
-  G -- redacted prompt --> L[Ollama with Qwen3.5-9B]
+  G -- redacted prompt --> L[Ollama with Gemma 4 12B]
   G -. controlled cloud burst, redacted .-> X[Approved external model]
   G --> Log[(Audit log)]
 ```
@@ -28,7 +28,7 @@ flowchart LR
 
 ## Prerequisites
 
-- The [Local AI chat service](offline-chat-service.md) is built and running, with Ollama, Qwen3.5-9B, and Open WebUI.
+- The [Local AI chat service](offline-chat-service.md) is built and running, with Ollama, Gemma 4 12B, and Open WebUI.
 - Python is available on the host for the gateway, and Docker for the redaction services.
 
 ## Component map
@@ -37,7 +37,7 @@ flowchart LR
 | --- | --- |
 | Application | [Open WebUI](../components/applications/open-webui.md), pointed at the gateway |
 | Gateway | [LiteLLM](../components/gateways/litellm.md) with a personal-data redaction guardrail |
-| Inference | [Ollama](../components/runtimes/ollama.md) with [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) |
+| Inference | [Ollama](../components/runtimes/ollama.md) with [Gemma 4 12B](../components/models/gemma-4-12b.md) |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) |
 
 ## 1. Create the gateway configuration
@@ -46,9 +46,9 @@ Create `litellm-config.yaml` with one local model behind a single name:
 
 ```yaml
 model_list:
-  - model_name: qwen3.5-dev
+  - model_name: gemma4-dev
     litellm_params:
-      model: ollama_chat/qwen3.5-dev
+      model: ollama_chat/gemma4-dev
       api_base: http://localhost:11434
 ```
 
@@ -80,7 +80,7 @@ curl http://localhost:4000/health/readiness
 
 In Open WebUI, open Admin Settings, then Connections, then add an OpenAI API connection with base URL `http://host.docker.internal:4000/v1` and the master key set above.
 
-Save, select `qwen3.5-dev` in the model list, and send a test message. Chat now runs through the gateway. The direct Ollama connection can then be removed so that every request passes the boundary.
+Save, select `gemma4-dev` in the model list, and send a test message. Chat now runs through the gateway. The direct Ollama connection can then be removed so that every request passes the boundary.
 
 ## 4. Redact personal data
 
@@ -144,7 +144,7 @@ Keep the local model as the fallback so requests use it when the external provid
 | Check | Expected result |
 | --- | --- |
 | Gateway responds | `http://localhost:4000/health/readiness` returns a ready status. |
-| Chat works through the gateway | Open WebUI returns a reply using `qwen3.5-dev` through the gateway. |
+| Chat works through the gateway | Open WebUI returns a reply using `gemma4-dev` through the gateway. |
 | Redaction works | A prompt with a sample name or email reaches the model masked; the gateway log shows the masked form. |
 | Local default | With no external provider enabled, no request leaves the machine. |
 | Fallback | With cloud burst configured but offline, requests fall back to the local model. |

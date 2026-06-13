@@ -54,7 +54,7 @@ Applications — name a named AI application by its capability and role, and rev
 
 Hardware — include memory only when it is central to whether a path works, and write it as `GB`, not `Gb` (current example: `Mac mini 24 GB`; the "Mac mini" capitalisation and "24 GB" spacing are **audited**). Do not add a spec to a title unless pages need to distinguish configurations.
 
-Components — name each component once and give it a short first-use explanation (current examples: `Ollama`, the local model runtime; `Open WebUI`, the browser chat interface; `Development environment`; `Pilot environment`; and models by their published tag, such as `Qwen3.5-9B`).
+Components — name each component once and give it a short first-use explanation (current examples: `Ollama`, the local model runtime; `Open WebUI`, the browser chat interface; `Development environment`; `Pilot environment`; and models by their published tag, such as `Gemma 4 12B`, the first-path default since 2026-06-12, or `Qwen3.5-9B`, the alternative it replaced). The first-path Ollama model profile is `gemma4-dev` (8K context); the retired `qwen3.5-dev` profile name stays only on the Qwen3.5-9B card as the alternative pattern.
 
 ## Navigation And Titles
 

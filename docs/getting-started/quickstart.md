@@ -20,7 +20,7 @@ Expected time: about 45 minutes on a Mac mini or Apple Silicon Mac with 24 GB me
 | Hardware | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | Local machine with enough memory for a light model and chat interface. |
 | Environment | [Development environment](../components/environments/development.md) | Single-user setup for learning and testing. |
 | Runtime | [Ollama](../components/runtimes/ollama.md) | Runs the model locally and exposes an API. |
-| Model | [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | Light multimodal model for local chat and document-style tasks. |
+| Model | [Gemma 4 12B](../components/models/gemma-4-12b.md) | Dense multimodal model for local chat and document-style tasks. |
 | Interface | [Open WebUI](../components/applications/open-webui.md) | Browser-based chat interface. |
 | Operations | [Local AI chat service operations](../operations/open-webui-ops.md) | Start, stop, update, back up, and troubleshoot the service. |
 

@@ -55,9 +55,9 @@ brew install ollama
 
 ## Used by this guide
 
-The [Local AI chat service](../../getting-started/offline-chat-service.md) uses Ollama with [Qwen3.5-9B](../models/qwen-3.5-9b.md).
+The [Local AI chat service](../../getting-started/offline-chat-service.md) uses Ollama with [Gemma 4 12B](../models/gemma-4-12b.md).
 
 ## Links
 
 - [Ollama](https://ollama.com)
-- [Ollama qwen3.5 library](https://registry.ollama.com/library/qwen3.5)
+- [Ollama gemma4 library](https://registry.ollama.com/library/gemma4)

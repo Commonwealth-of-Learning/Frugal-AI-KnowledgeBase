@@ -38,7 +38,7 @@ On macOS, Ollama may already run as a background app.
 | Check | Command | Expected result |
 | --- | --- | --- |
 | Ollama API responds | `curl http://localhost:11434/api/tags` | JSON response with model data. |
-| Model is available | `ollama list` | `qwen3.5` or `qwen3.5-dev` appears. |
+| Model is available | `ollama list` | `gemma4` or `gemma4-dev` appears. |
 | Model is loaded | `ollama ps` | Running model appears after first use. |
 | Open WebUI container is running | `docker ps --filter name=open-webui` | Container status is `Up`. |
 | Web interface responds | `curl -s -o /dev/null -w '%{http_code}' http://localhost:3000` | `200` or a redirect response. |
@@ -175,7 +175,7 @@ docker rmi ghcr.io/open-webui/open-webui:main
 | --- | --- | --- |
 | Browser cannot open `localhost:3000` | Container is stopped or port changed. | Run `docker ps --filter name=open-webui` and restart the container. |
 | Open WebUI cannot see models | Ollama is stopped or the connection URL is wrong. | Start Ollama and check the Open WebUI connection points to `http://host.docker.internal:11434`. |
-| Model responses are slow | Memory pressure or too-large context. | Close memory-heavy apps and use the `qwen3.5-dev` 8K profile. |
+| Model responses are slow | Memory pressure or too-large context. | Close memory-heavy apps and use the `gemma4-dev` 8K profile. |
 | Docker says the container name exists | Old container remains after a failed recreate. | Run `docker rm open-webui`, then create it again. |
 | Port 3000 is already in use | Another app is using the port. | Run Open WebUI with another free host port by changing the host side of the `-p` flag. |
 | DGX Spark container cannot see the GPU | GPU flag or container runtime is missing. | Recreate the integrated container with `--gpus=all` after Docker GPU access is confirmed. |

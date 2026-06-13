@@ -1,5 +1,5 @@
 ---
-description: Dense multimodal model for local coding, reasoning, and agentic workflows.
+description: Dense multimodal model used by the first local AI chat service path.
 icon: brain
 ---
 
@@ -7,14 +7,14 @@ icon: brain
 
 _Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (model)._
 
-Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a candidate model for future Frugal AI paths that need stronger coding, reasoning, agentic, and multimodal capability than the first local AI chat service path.
+Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is the model used in the first local AI chat service path: capable of general chat, coding support, reasoning, and multimodal work, while still fitting the documented 24 GB Mac mini path at the guide's 8K context setting.
 
 ## At a glance
 
-- **Current role** — Candidate model for future Frugal AI paths.
-- **Best fit** — Local coding support, multimodal course-material review, and teacher-in-the-loop agentic workflows.
-- **Prefer it when** — A task needs out-of-the-box coverage of 35+ languages, upstream audio-style inputs, or a dense alternative to [Qwen3.5-9B](qwen-3.5-9b.md), and local measurement before adoption is acceptable.
-- **Local fit** — Promising 12B-class candidate, but a Frugal AI guide still needs measured memory, speed, and quality results.
+- **Current role** — Used by the first local AI chat service and the guides built on it.
+- **Best fit** — Local chat, coding support, multimodal course-material review, and teacher-in-the-loop workflows.
+- **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md) lists when [Qwen3.5-9B](qwen-3.5-9b.md) or a candidate model is the better fit.
+- **Local fit** — Expected to fit the documented 24 GB Mac mini path with the guide's 8K context setting; the guide's memory values are expected development values, to be checked on the machine.
 - **Model type** — Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts.
 - **Inputs** — Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs.
 - **Languages** — Google lists 35+ languages out of the box and pre-training across 140+.
@@ -23,6 +23,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 
 ## Good for
 
+- First-path local chat: the model the local AI chat service runs, for general assistance, explanation, and document-style tasks.
 - Coding assistance: code generation, completion, correction, and local developer workflows.
 - Agentic workflows: native function calling, system-role support, and configurable thinking mode support structured tool use.
 - Multimodal understanding: image understanding, document or screen interpretation, OCR-style tasks, audio input, and video analysis through frame sequences.
@@ -31,7 +32,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is a c
 
 ## Not suitable for
 
-- The current local AI chat service guide without a separate measured setup path.
+- Contexts well beyond the guide's 8K setting on the 24 GB path without separate measurement; the source-listed 256K maximum is not a guide default.
 - Low-memory deployments that cannot absorb context growth or multimodal input overhead.
 
 The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, and tasks needing guaranteed correctness.
@@ -42,17 +43,19 @@ The [Inference layer](../../concepts/inference-layer.md) lists the cautions shar
 | --- | --- |
 | Local operation | Designed for local execution and listed in Ollama as `gemma4:12b`. |
 | Resource use | Ollama lists the model at 7.6 GB, but context and multimodal inputs can add memory pressure. |
-| Replaceability | Can be evaluated as an alternative to the current local chat model when a guide needs coding or multimodal tasks. |
+| Hardware | Expected to fit the 24 GB Mac mini development path with the guide's 8K context. |
+| Replaceability | Can be swapped if a guide needs a different model profile; [Qwen3.5-9B](qwen-3.5-9b.md) is the smaller documented alternative. |
 | Governance | Apache 2.0 licence is permissive, but institutional data rules and model-use policy still apply. |
 
 <details>
 
 <summary><strong>Reference settings</strong></summary>
 
-These source-listed settings are starting points for evaluation, not Frugal AI guide defaults.
+The first row is the Frugal AI guide setting; the source-listed rows are starting points for evaluation, not guide defaults.
 
 | Profile | Context | Temperature | Top-p | Top-k | Thinking mode | Source |
 | --- | --- | --- | --- | --- | --- | --- |
+| Frugal AI guide setting | 8K | Runtime default | Runtime default | Runtime default | Not configured by the guide | Current guide |
 | Gemma 4 family default | Start at 32K locally; source maximum is 256K for this card | 1.0 | 0.95 | 64 | Optional through Gemma 4 thinking control | Unsloth and Hugging Face |
 
 Reference notes:
@@ -105,6 +108,10 @@ Do not treat source benchmark tables as local performance claims. Measure speed,
 - Thinking mode and function calling need application-layer support and testing before use in agentic workflows.
 - Unsloth's Gemma 4 reference settings are source-listed defaults, not measured Frugal AI guide settings for the 12B Unified checkpoint.
 - Coding output still requires review, testing, and security checks before use in production systems.
+
+## Used by
+
+Follow [Local AI chat service](../../getting-started/offline-chat-service.md) to create the local `gemma4-dev` profile.
 
 ## Links
 

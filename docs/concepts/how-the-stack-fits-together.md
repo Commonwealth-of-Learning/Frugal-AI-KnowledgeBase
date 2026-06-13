@@ -59,7 +59,7 @@ The [Local AI chat service](../getting-started/offline-chat-service.md) is the f
 | Application | [Open WebUI](../components/applications/open-webui.md) | A browser chat interface. |
 | Gateway | Local-only, no external egress | No cloud burst in this build; the envelope is closed. |
 | Orchestration | None | Plain chat needs no tools, memory, or retrieval. |
-| Inference | [Ollama](../components/runtimes/ollama.md) running [Qwen3.5-9B](../components/models/qwen-3.5-9b.md) | A local runtime and an open-weight model. |
+| Inference | [Ollama](../components/runtimes/ollama.md) running [Gemma 4 12B](../components/models/gemma-4-12b.md) | A local runtime and an open-weight model. |
 | Infrastructure | [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) | A single development machine. |
 
 This build deliberately stops at the frugal floor. It does not add orchestration or external routing, because plain local chat does not need them.

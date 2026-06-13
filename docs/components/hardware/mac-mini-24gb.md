@@ -24,7 +24,7 @@ Use this profile for:
 - A single-user development machine.
 - Offline-capable local inference.
 - A practical first build before pilot or production planning.
-- A machine that can run Ollama, Docker, and a 7B-9B class model at the same time.
+- A machine that can run Ollama, Docker, and a 7B-12B class model at the same time.
 
 ## Specifications
 
@@ -56,6 +56,7 @@ These are expected planning values. Check the machine with Activity Monitor and 
 | --- | --- | --- | --- |
 | 7B-9B | Q4 | 8K | Comfortable |
 | 7B-9B | Q4 | 32K | Usually fine |
+| 12B | Q4 | 8K | Usually fine |
 | 14B | Q4 | 8K | Usually fine |
 | 14B | Q4 | 32K | Tight |
 | 70B+ | Any | Any | Not suitable |
@@ -89,5 +90,5 @@ These are expected planning values. Check the machine with Activity Monitor and 
 The [Local AI chat service](../../getting-started/offline-chat-service.md) uses this hardware with:
 
 - [Ollama](../runtimes/ollama.md)
-- [Qwen3.5-9B](../models/qwen-3.5-9b.md)
+- [Gemma 4 12B](../models/gemma-4-12b.md)
 - [Open WebUI](../applications/open-webui.md)

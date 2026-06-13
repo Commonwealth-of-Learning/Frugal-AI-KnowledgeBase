@@ -1,5 +1,5 @@
 ---
-description: Dense multimodal model used by the first local AI chat service.
+description: Dense multimodal alternative model for the local AI chat service path.
 icon: brain
 ---
 
@@ -7,23 +7,23 @@ icon: brain
 
 _Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (model)._
 
-Qwen3.5-9B is the model used in the first local AI chat service path. It gives the Frugal AI knowledge base a practical local baseline: small enough for the documented 24 GB Mac mini path, but capable enough for general chat, explanation, light coding help, and simple visual tasks.
+Qwen3.5-9B is the smaller alternative model for the local AI chat service path; it was the documented default until [Gemma 4 12B](gemma-4-12b.md) replaced it (2026-06-12). It remains a practical local option: small enough to leave extra headroom on the documented 24 GB Mac mini path, and capable enough for general chat, explanation, light coding help, and simple visual tasks.
 
 ## At a glance
 
-- **Current role** — Used by the first local AI chat service.
-- **Best fit** — A first private local chat service for development, orientation, and testing.
-- **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md) lists when a candidate model is the better fit.
+- **Current role** — Alternative model for the local AI chat service path; the documented default until 2026-06-12.
+- **Best fit** — A private local chat service where a smaller download and more memory headroom matter.
+- **Prefer it when** — Memory is tight, the download must stay small, or a task needs the family's source-listed coverage of up to 201 languages; the [model comparison](../../concepts/inference-layer.md) sets out the trade-offs against [Gemma 4 12B](gemma-4-12b.md).
 - **Local fit** — Fits the documented 24 GB Mac mini path with the guide's 8K context setting.
 - **Model type** — Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain.
 - **Inputs** — Text and image in Ollama; upstream sources also describe video-style visual inputs.
 - **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
-- **Agentic readiness** — Native function calling supports single read-only tools, as in the [math tutor](../../getting-started/math-tutor.md); small models can miss tool calls, so that guide sets Function Calling to Native.
+- **Agentic readiness** — Native function calling supports single read-only tools of the kind the [math tutor](../../getting-started/math-tutor.md) uses; small models can miss tool calls, so set Function Calling to Native when tools are not called reliably.
 - **Main caution** — The source-listed 256K and 1M context figures are not the guide default. Larger contexts can sharply increase memory use and latency.
 
 ## Good for
 
-- First-path local chat: a compact baseline for running the local AI chat service.
+- Local chat: a compact alternative for running the local AI chat service pattern with extra memory headroom.
 - General assistance: explanation, summarisation, drafting, and local knowledge-base support.
 - Light coding assistance: code explanation, small edits, debugging support, and test-writing prompts, with human review.
 - Basic multimodal work: image-based questions, document screenshots, and visual reasoning where the runtime supports them.
@@ -65,7 +65,7 @@ Reference notes:
 - Unsloth lists 32,768 tokens as an adequate output length for most Qwen3.5 queries. The first path does not set this as a generation limit.
 - Unsloth lists `presence_penalty = 0.0 to 2.0` as an option for reducing repetitions, while noting that higher values may reduce performance.
 - Unsloth states that Qwen3.5 Small models, including 9B, have reasoning disabled by default in its GGUF flow.
-- Unsloth currently states that its Qwen3.5 GGUFs do not work in Ollama because of separate vision projection files. This does not remove the Ollama `qwen3.5:9b` registry tag used by the first path, but it does mean Unsloth GGUF settings need a llama.cpp-compatible backend until separately tested.
+- Unsloth currently states that its Qwen3.5 GGUFs do not work in Ollama because of separate vision projection files. This does not remove the Ollama `qwen3.5:9b` registry tag this card documents, but it does mean Unsloth GGUF settings need a llama.cpp-compatible backend until separately tested.
 
 </details>
 
@@ -110,7 +110,7 @@ Do not treat source benchmark tables as local performance claims. Measure speed,
 
 ## Used by
 
-Follow [Local AI chat service](../../getting-started/offline-chat-service.md) to create the local `qwen3.5-dev` profile.
+An alternative model for the [Local AI chat service](../../getting-started/offline-chat-service.md) pattern: the guide's model-profile step transfers directly (`FROM qwen3.5:9b`, 8K context, profile name `qwen3.5-dev`). The documented path uses [Gemma 4 12B](gemma-4-12b.md).
 
 ## Links
 

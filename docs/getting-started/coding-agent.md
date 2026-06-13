@@ -76,11 +76,11 @@ Routing model calls through the gateway keeps redaction, approved destinations, 
         "apiKey": "sk-local-gateway"
       },
       "models": {
-        "qwen3.5-dev": { "name": "Qwen3.5-9B via gateway" }
+        "gemma4-dev": { "name": "Gemma 4 12B via gateway" }
       }
     }
   },
-  "model": "frugal-gateway/qwen3.5-dev",
+  "model": "frugal-gateway/gemma4-dev",
   "permission": {
     "edit": "ask",
     "bash": "ask",

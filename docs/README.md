@@ -50,7 +50,7 @@ The first complete build stops at the frugal floor: infrastructure, inference, a
 | Layer | Component |
 | --- | --- |
 | Application | [Open WebUI](components/applications/open-webui.md) |
-| Inference | [Ollama](components/runtimes/ollama.md) with [Qwen3.5-9B](components/models/qwen-3.5-9b.md) |
+| Inference | [Ollama](components/runtimes/ollama.md) with [Gemma 4 12B](components/models/gemma-4-12b.md) |
 | Infrastructure | [Mac mini 24 GB](components/hardware/mac-mini-24gb.md) |
 
 The first build proves a useful service can run locally, with prompts and chat history on the machine, components that remain inspectable, and operations documented from the start. [Example applications](concepts/example-applications.md) shows how the same floor supports a math tutor, curriculum advisor, coding agent, and future administrative workflows.
