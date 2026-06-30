@@ -19,7 +19,7 @@ A math tutor explains; an animator shows. Producing a correct Manim scene means 
 
 - **Good for** — Generating and rendering short Manim animations for a mathematics concept, reviewed before use.
 - **Not for** — Unattended generation, learner-facing release without review, or reliable output from a small local model.
-- **Governance** — Two surfaces: the agent's local actions (write and render) and its model calls through the gateway.
+- **Governance** — Tier 1 (high-risk, learner-facing): a teacher reviews the animation before learner use. Two surfaces: the agent's local actions (write and render) and its model calls through the gateway.
 - **Caution** — Manim's render stack (LaTeX, ffmpeg) is heavy, and animation code often needs human correction.
 
 ## Prerequisites
@@ -80,7 +80,7 @@ Open the rendered file, check the animation against the concept, and correct or 
 
 ## Governance and review
 
-This build carries the Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation; and no network-reaching tools are added beyond the renderer it runs locally. The animation is reviewed before it reaches learners.
+This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because the animation reaches learners, a teacher approves it before release. It also carries the Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation; and no network-reaching tools are added beyond the renderer it runs locally.
 
 ## Troubleshooting
 

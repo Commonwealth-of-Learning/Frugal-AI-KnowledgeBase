@@ -19,8 +19,8 @@ Intro: one short paragraph; state whether this is a development, pilot, or produ
 ## Memory budget                  (allocation table with a Confidence column)
 ## What fits                      (model class / quantisation / context / fit, with confidence)
 ## Frugal fit
-## Compatibility
 ## Limits
+<details> Source confidence </details>
 ## Used by
 ```
 

@@ -1,6 +1,6 @@
 # Model Card Template
 
-Thin scaffold. The canonical structure is the live exemplar: `docs/components/models/qwen-3.5-9b.md`. Heading patterns are owned by `internal/editorial-guide.md` (Component Pages); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+Thin scaffold. The canonical structure is the live exemplar: `docs/components/models/gemma-4-12b.md`. Heading patterns are owned by `internal/editorial-guide.md` (Component Pages); when this file and the editorial guide disagree, follow the editorial guide and update this file.
 
 ## Heading pattern
 

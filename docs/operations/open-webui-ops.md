@@ -120,7 +120,7 @@ Tools and functions add the [Orchestration layer](../concepts/orchestration-laye
 
 A tool is Python that runs inside the Open WebUI process. Import or run only tools the institution has written or reviewed, and treat tool code as code to review rather than configuration. Keep tools dependency-free where possible, because saving a tool with requirements pauses the interface while packages install.
 
-The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review AI outputs and tool usage periodically. Stronger audit logging and control over external requests belong to the gateway layer, in a later increment.
+The data-volume backup already captures tool definitions and settings, so back up before changing tools. For teacher-in-the-loop use, review AI outputs and tool usage periodically. See Gateway (LiteLLM) below for audit logging and control over external requests.
 
 ## Gateway (LiteLLM)
 
@@ -134,7 +134,7 @@ The [AI gateway](../getting-started/ai-gateway.md) runs as a local process on th
 
 ## DGX Spark candidate pattern
 
-The DGX Spark pattern uses the Open WebUI image with integrated Ollama, GPU access, and two persistent volumes: one for Open WebUI data and one for Ollama models. Use this as a development or pilot starting point after DGX Spark access, Docker permissions, and monitoring are ready.
+The DGX Spark pattern uses the Open WebUI image with integrated Ollama, GPU access, and two persistent volumes: one for Open WebUI data and one for Ollama models. Use this as a development or pilot starting point after DGX Spark access, Docker permissions, and monitoring are ready. This pattern is illustrative and not yet validated on DGX Spark hardware — see the [NVIDIA DGX Spark](../components/hardware/nvidia-dgx-spark.md) compatibility table, which lists Ollama on DGX Spark as a candidate pending software validation — so treat it as a starting point to adapt and measure, not a tested guide.
 
 Pull the integrated image:
 
@@ -153,7 +153,7 @@ docker run -d -p 8080:8080 --gpus=all \
   ghcr.io/open-webui/open-webui:ollama
 ```
 
-Open [http://localhost:8080](http://localhost:8080) for manual setup. For NVIDIA Sync, expose the service through a custom port such as `12000` and monitor GPU and memory use through the DGX Dashboard before pilot use.
+Open [http://localhost:8080](http://localhost:8080) for manual setup. For NVIDIA Sync, expose the service through a custom port such as `12000` and monitor GPU and memory use through the DGX Dashboard before pilot use. Exposing this beyond the local network needs authentication and TLS in front of it; neither is configured by this command.
 
 ## Cleanup and rollback
 

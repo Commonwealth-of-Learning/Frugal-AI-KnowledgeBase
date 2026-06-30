@@ -104,7 +104,6 @@ class Warning:
 class LinkedDoc:
     path: Path
     summary_line: int
-    target: str
 
 
 @dataclass(frozen=True)
@@ -128,14 +127,28 @@ PUBLIC_CHECKS = (
         re.compile(r"\bOpen WebUI operations\b", re.IGNORECASE),
         'use "Local AI chat service operations" as the public service title',
     ),
-    PatternCheck(re.compile(r"\bMac Mini\b"), 'use "Mac mini"'),
-    PatternCheck(re.compile(r"\b24(?:Gb|GB)\b"), 'use "24 GB" for memory spelling'),
+    PatternCheck(
+        # Case-insensitive so "MAC MINI"/"mac Mini" are caught, but the
+        # canonical "Mac mini" casing is excluded so it never self-flags.
+        re.compile(r"\b(?!(?-i:Mac mini)\b)Mac Mini\b", re.IGNORECASE),
+        'use "Mac mini"',
+    ),
+    PatternCheck(
+        # Allows an optional space and any casing of "gb"/"GB", but excludes
+        # the canonical "24 GB" (single space, exact case) via the
+        # case-sensitive negative lookahead.
+        re.compile(r"\b24(?!(?-i: GB)\b)\s*(?:Gb|gb|GB)\b", re.IGNORECASE),
+        'use "24 GB" for memory spelling',
+    ),
     PatternCheck(
         re.compile(r"\b(?:you|your|yours)\b", re.IGNORECASE),
         "avoid direct second person in public docs",
     ),
     PatternCheck(
-        re.compile(r"\b(?:not found|cannot be found|could not be found|not available)\b", re.IGNORECASE),
+        # Anchored to the bracketed placeholder-leftover shape (e.g. "[citation
+        # not found]") so ordinary technical prose about availability/fallback
+        # behaviour (e.g. "GPU offload is not available") doesn't match.
+        re.compile(r"\[[^\]]*\b(?:not found|cannot be found|could not be found|not available)\b[^\]]*\]", re.IGNORECASE),
         "omit empty or unverifiable filler instead of publishing it",
     ),
     PatternCheck(re.compile(r"\b(?:TODO|TBD)\b", re.IGNORECASE), "replace TODO/TBD placeholder before publication"),
@@ -150,8 +163,19 @@ TEMPLATE_CHECKS = (
         re.compile(r"\bOpen WebUI operations\b", re.IGNORECASE),
         'use "Local AI chat service operations" as the public service title',
     ),
-    PatternCheck(re.compile(r"\bMac Mini\b"), 'use "Mac mini"'),
-    PatternCheck(re.compile(r"\b24(?:Gb|GB)\b"), 'use "24 GB" for memory spelling'),
+    PatternCheck(
+        # Case-insensitive so "MAC MINI"/"mac Mini" are caught, but the
+        # canonical "Mac mini" casing is excluded so it never self-flags.
+        re.compile(r"\b(?!(?-i:Mac mini)\b)Mac Mini\b", re.IGNORECASE),
+        'use "Mac mini"',
+    ),
+    PatternCheck(
+        # Allows an optional space and any casing of "gb"/"GB", but excludes
+        # the canonical "24 GB" (single space, exact case) via the
+        # case-sensitive negative lookahead.
+        re.compile(r"\b24(?!(?-i: GB)\b)\s*(?:Gb|gb|GB)\b", re.IGNORECASE),
+        'use "24 GB" for memory spelling',
+    ),
     PatternCheck(re.compile(r"\bFrugal AI Knowledge Base\b"), 'use "Frugal AI knowledge base" for the site name'),
     PatternCheck(
         re.compile(r"\b(?:GitBook(?!-icon-name)|documentation site|docs site|these docs|this docs)\b", re.IGNORECASE),
@@ -178,29 +202,40 @@ def main() -> int:
     linked_docs, link_warnings = discover_linked_docs(summary_text)
     warnings.extend(link_warnings)
 
-    public_paths = [SUMMARY_PATH]
+    # (path, originating SUMMARY.md line number or None for SUMMARY.md itself)
+    public_pages: list[tuple[Path, int | None]] = [(SUMMARY_PATH, None)]
     seen = {SUMMARY_PATH.resolve()}
     for linked_doc in linked_docs:
         resolved = linked_doc.path.resolve()
         if resolved not in seen:
             seen.add(resolved)
-            public_paths.append(linked_doc.path)
+            public_pages.append((linked_doc.path, linked_doc.summary_line))
 
-    for path in public_paths:
+    for path, summary_line in public_pages:
         text = read_text(path)
         if text is None:
             continue
-        warnings.extend(scan_patterns(path, text, PUBLIC_CHECKS))
-        warnings.extend(check_public_site_names(path, text))
-        warnings.extend(scan_public_placeholders(path, text))
-        warnings.extend(check_first_screen_abbreviations(path, text))
-        warnings.extend(check_frontmatter(path, text))
-        warnings.extend(check_internal_links(path, text))
+        page_warnings: list[Warning] = []
+        page_warnings.extend(scan_patterns(path, text, PUBLIC_CHECKS))
+        page_warnings.extend(check_public_site_names(path, text))
+        page_warnings.extend(scan_public_placeholders(path, text))
+        page_warnings.extend(check_first_screen_abbreviations(path, text))
+        page_warnings.extend(check_frontmatter(path, text))
+        page_warnings.extend(check_internal_links(path, text))
         if is_linked_component_page(path):
-            warnings.extend(require_at_a_glance(path, text, "linked component page"))
-            warnings.extend(check_layer_tag(path, text))
+            page_warnings.extend(require_at_a_glance(path, text, "linked component page"))
+            page_warnings.extend(check_layer_tag(path, text))
         if is_linked_guide_page(path):
-            warnings.extend(check_guide_hint(path, text))
+            page_warnings.extend(check_guide_hint(path, text))
+        if summary_line is not None:
+            # The page is reached only via SUMMARY.md; point warnings about
+            # it back to where it's linked from, since that's usually where
+            # a fix (e.g. repointing a stale link) actually lands.
+            page_warnings = [
+                Warning(w.path, w.line, f"{w.message} (linked from SUMMARY.md:{summary_line})")
+                for w in page_warnings
+            ]
+        warnings.extend(page_warnings)
 
     warnings.extend(check_templates())
     warnings.extend(check_internal_plans())
@@ -323,13 +358,27 @@ def check_port_allocations() -> list[Warning]:
                 else:
                     registered[port] = service
 
-    binding = re.compile(r"-p\s+(?:\d{1,3}(?:\.\d{1,3}){3}:)?(\d{2,5}):\d{2,5}")
+    # Docker's short -p flag and its long --publish form.
+    flag_binding = re.compile(
+        r"(?:-p|--publish)[\s=]+(?:\d{1,3}(?:\.\d{1,3}){3}:)?(\d{2,5}):\d{2,5}"
+    )
+    # A docker-compose-style `ports:` list item, e.g. `- "9999:9999"` or
+    # `- 9999:9999`. Anchored to the whole line (after stripping a leading
+    # `-`/whitespace/optional quote) so unrelated H:C-shaped text isn't
+    # mistaken for a port binding.
+    compose_binding = re.compile(
+        r'^\s*-\s*["\']?(?:\d{1,3}(?:\.\d{1,3}){3}:)?(\d{2,5}):\d{2,5}["\']?\s*$'
+    )
     for path in sorted(DOCS_DIR.rglob("*.md")):
         text = read_text(path)
         if text is None:
             continue
         for line_number, line in enumerate(text.splitlines(), start=1):
-            for match in binding.finditer(line):
+            matches = list(flag_binding.finditer(line))
+            compose_match = compose_binding.match(line)
+            if compose_match:
+                matches.append(compose_match)
+            for match in matches:
                 host_port = match.group(1)
                 if host_port not in registered:
                     warnings.append(
@@ -340,6 +389,10 @@ def check_port_allocations() -> list[Warning]:
                         )
                     )
     return warnings
+
+
+def normalize_whitespace(text: str) -> str:
+    return re.sub(r"\s+", " ", text.strip())
 
 
 def read_text(path: Path) -> str | None:
@@ -358,11 +411,14 @@ def relative_path(path: Path) -> str:
 
 def check_required_summary_entries(summary_text: str) -> list[Warning]:
     warnings: list[Warning] = []
-    stripped_lines = {line.strip() for line in summary_text.splitlines()}
+    # Normalize internal whitespace (not just outer) before comparing, so
+    # harmless variation like an extra space after "*" doesn't produce a
+    # false "missing" warning.
+    normalized_lines = {normalize_whitespace(line) for line in summary_text.splitlines()}
     lines = summary_text.splitlines()
 
     for required_entry in REQUIRED_SUMMARY_ENTRIES:
-        if required_entry in stripped_lines:
+        if normalize_whitespace(required_entry) in normalized_lines:
             continue
 
         target = required_entry.rsplit("(", 1)[1].rstrip(")")
@@ -390,15 +446,17 @@ def discover_linked_docs(summary_text: str) -> tuple[list[LinkedDoc], list[Warni
             if not target_path.endswith(".md"):
                 continue
 
-            path = (DOCS_DIR / target_path).resolve()
+            path = resolve_doc_target(DOCS_DIR, target_path)
             if not is_under(path, DOCS_DIR.resolve()):
                 warnings.append(Warning(SUMMARY_PATH, line_number, f"linked path escapes docs/: {target}"))
                 continue
 
             linked_path = Path(path)
-            linked_docs.append(LinkedDoc(linked_path, line_number, target))
+            linked_docs.append(LinkedDoc(linked_path, line_number))
             if not linked_path.exists():
                 warnings.append(Warning(SUMMARY_PATH, line_number, f"linked public doc does not exist: {target}"))
+            else:
+                warnings.extend(check_anchor_fragment(SUMMARY_PATH, line_number, target, linked_path))
 
     return linked_docs, warnings
 
@@ -413,14 +471,9 @@ def check_internal_links(path: Path, text: str) -> list[Warning]:
     """
     warnings: list[Warning] = []
     link_pattern = re.compile(r"\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
-    in_code_block = False
 
-    for line_number, line in enumerate(text.splitlines(), start=1):
-        if line.strip().startswith("```"):
-            in_code_block = not in_code_block
-            continue
-        if in_code_block:
-            continue
+    for source_line in non_fenced_lines(text):
+        line_number, line = source_line.number, source_line.text
         for match in link_pattern.finditer(line):
             target = match.group(1).strip()
             if not target or is_external_or_anchor(target):
@@ -428,9 +481,11 @@ def check_internal_links(path: Path, text: str) -> list[Warning]:
             cleaned = clean_target(target)
             if not cleaned:
                 continue  # in-page anchor
-            resolved = (path.parent / cleaned).resolve()
+            resolved = resolve_doc_target(path.parent, cleaned)
             if not resolved.exists():
                 warnings.append(Warning(path, line_number, f"relative link target does not exist: {target}"))
+                continue
+            warnings.extend(check_anchor_fragment(path, line_number, target, resolved))
 
     return warnings
 
@@ -445,6 +500,86 @@ def clean_target(target: str) -> str:
     return unquote(target)
 
 
+def resolve_doc_target(base: Path, cleaned: str) -> Path:
+    """Resolve a cleaned link target against base.
+
+    pathlib's ``/`` operator silently discards the left operand when the
+    right side is an absolute (leading-``/``) path, so a GitBook-style
+    root-relative link such as ``/getting-started/math-tutor.md`` would
+    otherwise resolve against the filesystem root instead of ``docs/``. A
+    leading ``/`` means "root-relative to docs/" here, never "filesystem
+    root", so it is stripped and joined against DOCS_DIR explicitly.
+    """
+    if cleaned.startswith("/"):
+        return (DOCS_DIR / cleaned.lstrip("/")).resolve()
+    return (base / cleaned).resolve()
+
+
+def check_anchor_fragment(path: Path, line_number: int, target: str, resolved: Path) -> list[Warning]:
+    """Warn when a link's #fragment doesn't match a heading in the target file.
+
+    Conservative by design: only runs when a fragment is present, and only
+    after the caller has confirmed the target file exists.
+    """
+    if "#" not in target:
+        return []
+    fragment = unquote(target.split("#", 1)[1].strip())
+    if not fragment or not resolved.is_file():
+        return []
+    target_text = read_text(resolved)
+    if target_text is None:
+        return []
+    if fragment.lower() not in collect_heading_slugs(target_text):
+        return [Warning(path, line_number, f"link anchor does not match a heading in target: #{fragment}")]
+    return []
+
+
+def collect_heading_slugs(text: str) -> set[str]:
+    """Slugify a document's Markdown headings using standard GitHub/GitBook-style rules."""
+    slugs: set[str] = set()
+    seen_counts: dict[str, int] = {}
+    for line in text.splitlines():
+        match = re.match(r"^#{1,6}\s+(.*?)\s*#*\s*$", line)
+        if not match:
+            continue
+        slug = slugify_heading(match.group(1))
+        if not slug:
+            continue
+        if slug in seen_counts:
+            seen_counts[slug] += 1
+            slug = f"{slug}-{seen_counts[slug]}"
+        else:
+            seen_counts[slug] = 0
+        slugs.add(slug)
+    return slugs
+
+
+def slugify_heading(heading: str) -> str:
+    text = re.sub(r"[`*_]", "", heading.strip()).lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text)
+    text = re.sub(r"-{2,}", "-", text)
+    return text.strip("-")
+
+
+def non_fenced_lines(text: str) -> list[SourceLine]:
+    """Yield each line outside fenced ``` code blocks, with its original line number.
+
+    Shared by every scanner that should not treat code-fence contents (e.g.
+    Mermaid node labels) as prose to check.
+    """
+    lines: list[SourceLine] = []
+    in_code_block = False
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
+        lines.append(SourceLine(line_number, line))
+    return lines
+
+
 def is_under(path: Path, parent: Path) -> bool:
     try:
         path.relative_to(parent)
@@ -455,21 +590,40 @@ def is_under(path: Path, parent: Path) -> bool:
 
 def scan_patterns(path: Path, text: str, checks: tuple[PatternCheck, ...]) -> list[Warning]:
     warnings: list[Warning] = []
-    for line_number, line in enumerate(text.splitlines(), start=1):
+    for source_line in non_fenced_lines(text):
+        # Link targets and inline code spans (e.g. a relative path like
+        # components/hardware/mac-mini-24gb.md, or `mac-mini-24gb.md`) are
+        # exempt: they're file paths/identifiers, not prose, so a kebab-case
+        # slug shouldn't trip a prose style check (case-insensitive checks
+        # would otherwise match the "24gb" inside that filename).
+        prose = strip_inline_code(strip_link_targets(source_line.text))
         for check in checks:
-            if check.regex.search(line):
-                warnings.append(Warning(path, line_number, check.message))
+            if check.regex.search(prose):
+                warnings.append(Warning(path, source_line.number, check.message))
     return warnings
+
+
+def strip_link_targets(line: str) -> str:
+    return re.sub(r"(?<=\])\([^)]*\)", "()", line)
+
+
+def strip_inline_code(line: str) -> str:
+    return re.sub(r"`[^`\n]*`", "``", line)
 
 
 def check_public_site_names(path: Path, text: str) -> list[Warning]:
     warnings: list[Warning] = []
     patterns = (
-        re.compile(r"\bFrugal AI Knowledge Base\b"),
+        # Case-insensitive so miscapitalised forms (e.g. "FRUGAL AI KNOWLEDGE
+        # BASE") are caught too, but the canonical "Frugal AI knowledge base"
+        # casing is excluded via the case-sensitive negative lookahead so it
+        # never flags itself.
+        re.compile(r"\b(?!(?-i:Frugal AI knowledge base)\b)Frugal AI Knowledge Base\b", re.IGNORECASE),
         re.compile(r"\b(?:GitBook(?!-icon-name)|documentation site|docs site|these docs|this docs)\b", re.IGNORECASE),
     )
 
-    for line_number, line in enumerate(text.splitlines(), start=1):
+    for source_line in non_fenced_lines(text):
+        line_number, line = source_line.number, source_line.text
         if is_allowed_landing_title(path, line):
             continue
         # Link targets are exempt: linking to the publishing platform's own
@@ -489,10 +643,10 @@ def scan_public_placeholders(path: Path, text: str) -> list[Warning]:
     warnings: list[Warning] = []
     reference_labels = collect_reference_labels(text)
 
-    for line_number, line in enumerate(text.splitlines(), start=1):
-        for placeholder in bracketed_placeholder_candidates(line, reference_labels):
+    for source_line in non_fenced_lines(text):
+        for placeholder in bracketed_placeholder_candidates(source_line.text, reference_labels):
             warnings.append(
-                Warning(path, line_number, f"replace bracketed placeholder before publication: [{placeholder}]")
+                Warning(path, source_line.number, f"replace bracketed placeholder before publication: [{placeholder}]")
             )
 
     return warnings
@@ -579,7 +733,7 @@ def check_layer_tag(path: Path, text: str) -> list[Warning]:
     """
     if path.parent.name == "environments":
         return []
-    if re.search(r"^_Layer:", text, re.MULTILINE):
+    if any(source_line.text.startswith("_Layer:") for source_line in first_screen_lines(text)):
         return []
     return [Warning(path, 1, "component card must carry a _Layer:_ tag under its H1")]
 
@@ -596,9 +750,10 @@ def is_linked_guide_page(path: Path) -> bool:
 def check_guide_hint(path: Path, text: str) -> list[Warning]:
     """Guides signpost effort: an Expected time estimate, and a Level except on the quickstart."""
     warnings: list[Warning] = []
-    if "Expected time:" not in text:
+    first_screen_text = "\n".join(source_line.text for source_line in first_screen_lines(text))
+    if "Expected time:" not in first_screen_text:
         warnings.append(Warning(path, 1, 'guide hint must state "Expected time:" (label estimates as such)'))
-    if path.name != "quickstart.md" and "Level:" not in text:
+    if path.name != "quickstart.md" and "Level:" not in first_screen_text:
         warnings.append(Warning(path, 1, 'guide hint must state "Level:" (beginner, intermediate, or advanced)'))
     return warnings
 
@@ -643,10 +798,16 @@ def first_screen_lines(text: str) -> list[SourceLine]:
                 body_start = index + 1
                 break
 
+    in_code_block = False
     for index in range(body_start, len(lines)):
         line = lines[index]
         if line.startswith("## "):
             break
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
         first_screen.append(SourceLine(index + 1, line))
 
     return first_screen

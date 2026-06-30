@@ -11,7 +11,7 @@ LiteLLM is a self-hosted, open-source AI gateway. In the Frugal AI knowledge bas
 
 ## At a glance
 
-- **Current role** — Candidate gateway for the Gateway layer.
+- **Current role** — Gateway for the AI gateway build.
 - **Best fit** — One governed endpoint over local Ollama, with personal-data redaction and audit logging.
 - **Local fit** — Runs locally alongside Ollama and Open WebUI as a lightweight proxy.
 - **Inputs** — OpenAI-compatible requests from any application.
@@ -38,7 +38,7 @@ Use LiteLLM when there is more than one model or application, or any external ro
 
 ## Compatibility
 
-- Local models through Ollama, and other local runtimes such as vLLM.
+- Local models through Ollama, and serving engines such as vLLM for pilot-scale use.
 - External providers, when controlled cloud burst is enabled and approved.
 - Personal-data redaction through Presidio, configurable per language.
 

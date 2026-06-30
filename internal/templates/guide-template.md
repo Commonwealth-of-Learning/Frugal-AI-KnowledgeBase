@@ -1,6 +1,6 @@
 # Guide Template
 
-Thin scaffold. The canonical structure is the live exemplar: `docs/getting-started/offline-chat-service.md` (with `docs/getting-started/math-tutor.md` showing the localisation section). Heading patterns are owned by `internal/editorial-guide.md` (Page Patterns); when this file and the editorial guide disagree, follow the editorial guide and update this file.
+Thin scaffold. The canonical structure is the live exemplar: `docs/getting-started/math-tutor.md`, including its localisation section. Heading patterns are owned by `internal/editorial-guide.md` (Page Patterns); when this file and the editorial guide disagree, follow the editorial guide and update this file.
 
 ## Heading pattern
 

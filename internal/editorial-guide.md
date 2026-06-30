@@ -269,8 +269,9 @@ Use this order:
 4. Component map
 5. Steps
 6. Verification
-7. Troubleshooting
-8. Next step
+7. Governance and review
+8. Troubleshooting
+9. Next step
 
 ### Concepts
 

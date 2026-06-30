@@ -26,7 +26,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is the
 - First-path local chat: the model the local AI chat service runs, for general assistance, explanation, and document-style tasks.
 - Coding assistance: code generation, completion, correction, and local developer workflows.
 - Agentic workflows: native function calling, system-role support, and configurable thinking mode support structured tool use.
-- Multimodal understanding: image understanding, document or screen interpretation, OCR-style tasks, audio input, and video analysis through frame sequences.
+- Multimodal understanding: image understanding, document or screen interpretation, and OCR-style tasks now, with audio input and video analysis through frame sequences where the runtime supports them.
 - Long-context work: source-listed 256K context support for the 12B model class.
 - Multilingual tasks: Google lists 35+ languages for out-of-the-box use and pre-training across 140+ languages.
 

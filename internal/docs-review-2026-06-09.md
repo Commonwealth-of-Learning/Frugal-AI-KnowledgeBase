@@ -1,5 +1,7 @@
 # Docs review — readability, UX, architecture, agentic-era framing
 
+> **Implemented.** Nearly all recommendations in this review have shipped; see `internal/gap-review-2026-06-12.md` for the verification. The only items still genuinely open are the administrative-agent guide (tracked there as B1) and the audit's confidence-label heuristic (tracked there as C1). Kept as a dated record of the original findings.
+
 Date: 2026-06-09. Scope: all of `docs/` (46 pages), nav (`docs/SUMMARY.md`), `.gitbook.yaml`, `.gitignore`. Method: full read of landing, concepts, and agent-facing pages; systematic review of all guides, component cards, operations, and reference pages; repo-wide checks for MCP/llms.txt/AGENTS.md coverage. Recommendations only — no public pages were edited.
 
 ## What already works

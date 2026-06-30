@@ -7,7 +7,7 @@ icon: desktop
 
 _Layer: [Inference](../../concepts/how-the-stack-fits-together.md) (runtime)._
 
-LM Studio is a graphical local runtime for open-weight models on Mac and Windows. In the Frugal AI knowledge base it is an alternative to Ollama for the Inference layer on the development machine, with a built-in model browser and a local OpenAI-compatible server.
+LM Studio is a graphical local runtime for open-weight models on Mac and Windows. In the Frugal AI knowledge base it is an alternative to Ollama for the Inference layer on the development machine, with a built-in model browser and a local OpenAI-compatible server that listens on port 1234 by default.
 
 ## At a glance
 

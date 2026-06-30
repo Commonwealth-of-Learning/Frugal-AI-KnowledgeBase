@@ -1,5 +1,7 @@
 # Editorial machinery review and iterative roadmap
 
+> **Implemented.** All five roadmap iterations in this file shipped; see `internal/gap-review-2026-06-12.md` for the verification. Kept as a dated record of the original findings and roadmap.
+
 Date: 2026-06-09. Companion to `internal/docs-review-2026-06-09.md` (public-docs findings, cited below as A1–C4). Scope here: `internal/editorial-guide.md`, `internal/editor-workflow.md`, `internal/naming-registry.md`, `internal/templates/` (11 files), `internal/tools/editorial_audit.py`, plus a fresh fetch of [col.org/frugal](https://www.col.org/frugal) for tone grounding. The roadmap follows the agreed sequencing: trim and clean first, ground tone in COL sources, then landing page and a minimum demonstration set, agentic framing gradually, sample applications last.
 
 ## 1. Editorial machinery findings

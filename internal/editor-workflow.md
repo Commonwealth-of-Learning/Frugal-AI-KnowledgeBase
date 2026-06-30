@@ -15,13 +15,13 @@ The editorial guide defines voice, tone, terminology, and page patterns. The edi
 The live public pages are the canonical structure for each page type. Section orders are owned by `internal/editorial-guide.md` (Page Patterns); the templates in `internal/templates/` are thin scaffolds that point at these exemplars and carry only the reminders that are not obvious from them.
 
 - Landing page: `docs/README.md`
-- Guide: `docs/getting-started/offline-chat-service.md`
+- Guide: `docs/getting-started/math-tutor.md`
 - Concept: `docs/concepts/example-applications.md`
 - Stack explanation: `docs/concepts/how-the-stack-fits-together.md`
 - Layer overview: `docs/concepts/inference-layer.md`
 - Component card: `docs/components/runtimes/ollama.md`
 - Environment profile: `docs/components/environments/development.md`
-- Model card: `docs/components/models/qwen-3.5-9b.md`
+- Model card: `docs/components/models/gemma-4-12b.md`
 - Runbook: `docs/operations/open-webui-ops.md`
 
 For a new page, copy the headings from the closest exemplar, not from a template file.
@@ -180,6 +180,7 @@ Guides:
 - component map;
 - steps;
 - verification;
+- governance and review;
 - troubleshooting;
 - next step.
 
@@ -231,7 +232,7 @@ Hardware: Mac mini 24 GB
 Environment: Development
 Runtime: Ollama
 Serving engine: vLLM
-Model: Qwen3.5-9B
+Model: Gemma 4 12B
 Platform: Dify
 Gateway: LiteLLM
 Interface: Open WebUI

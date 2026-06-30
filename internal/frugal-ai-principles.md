@@ -85,7 +85,7 @@ The [Local AI chat service](../getting-started/offline-chat-service.md) demonstr
 
 - A local machine provides the infrastructure.
 - Ollama runs the model.
-- Qwen3.5-9B provides the intelligence layer.
+- Gemma 4 12B provides the intelligence layer.
 - Open WebUI provides the chat interface.
 - The operations page explains how to keep it running.
 

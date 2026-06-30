@@ -35,9 +35,9 @@
   * [Runtime: Ollama](components/runtimes/ollama.md)
   * [Runtime: LM Studio](components/runtimes/lm-studio.md)
   * [Serving engine: vLLM](components/runtimes/vllm.md)
+  * [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
   * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
   * [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)
-  * [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
 
 ## Orchestration
 

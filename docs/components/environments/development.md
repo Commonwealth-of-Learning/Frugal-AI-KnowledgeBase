@@ -32,7 +32,7 @@ Use this environment when:
 | --- | --- | --- |
 | Hardware | [Mac mini 24 GB](../hardware/mac-mini-24gb.md) | A small, low-cost machine that runs a light model and a chat interface. |
 | Runtime | Ollama | Simple local setup with a local API. |
-| Model size | 9B-12B class | Expected fit for a 24 GB Mac at the guide's 8K context. |
+| Model size | 7B-12B class | Expected fit for a 24 GB Mac at the guide's 8K context. |
 | Context | 8K for the first path | Keeps memory use predictable. |
 | Users | One local user | Simplifies access control and operations. |
 | Data | Local only | Supports the Frugal AI sovereignty goal. |
