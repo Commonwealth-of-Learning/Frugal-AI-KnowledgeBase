@@ -13,7 +13,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is the
 
 - **Current role** — Used by the first local AI chat service and the guides built on it.
 - **Best fit** — Local chat, coding support, multimodal course-material review, and teacher-in-the-loop workflows.
-- **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md) lists when [Qwen3.5-9B](qwen-3.5-9b.md) or a candidate model is the better fit.
+- **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md#choose-a-model) lists when [Qwen3.5-9B](qwen-3.5-9b.md) or a candidate model is the better fit.
 - **Local fit** — Expected to fit the documented 24 GB Mac mini path with the guide's 8K context setting; the guide's memory values are expected development values, to be checked on the machine.
 - **Model type** — Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts.
 - **Inputs** — Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs.
@@ -35,7 +35,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is the
 - Contexts well beyond the guide's 8K setting on the 24 GB path without separate measurement; the source-listed 256K maximum is not a guide default.
 - Low-memory deployments that cannot absorb context growth or multimodal input overhead.
 
-The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, and tasks needing guaranteed correctness.
+The [Inference layer](../../concepts/inference-layer.md#shared-model-cautions) lists the cautions shared by every model.
 
 ## Frugal fit
 
@@ -85,6 +85,8 @@ Reference notes:
 
 <summary><strong>Source confidence</strong></summary>
 
+_Sources checked: 2026-06-13._
+
 | Claim | Value | Confidence |
 | --- | --- | --- |
 | Parameter count | 11.95B | Source-listed by Hugging Face |
@@ -119,6 +121,6 @@ Follow [Local AI chat service](../../getting-started/offline-chat-service.md) to
 - [Hugging Face: google/gemma-4-12B-it](https://huggingface.co/google/gemma-4-12B-it)
 - [Google Developers Blog: Gemma 4 12B developer guide](https://developers.googleblog.com/gemma-4-12b-the-developer-guide/)
 - [Google launch post: Introducing Gemma 4 12B](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/)
-- [Ollama: gemma4](https://registry.ollama.com/library/gemma4)
+- [Ollama: gemma4](https://ollama.com/library/gemma4)
 - [Unsloth Hugging Face: gemma-4-12b](https://huggingface.co/unsloth/gemma-4-12b)
 - [Unsloth: Gemma 4 local guide](https://unsloth.ai/docs/models/gemma-4)

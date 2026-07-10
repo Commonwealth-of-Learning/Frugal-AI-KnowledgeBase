@@ -13,9 +13,9 @@ Qwen3.5-9B is the smaller alternative model for the local AI chat service path; 
 
 - **Current role** — Alternative model for the local AI chat service path; the documented default until 2026-06-12.
 - **Best fit** — A private local chat service where a smaller download and more memory headroom matter.
-- **Prefer it when** — Memory is tight, the download must stay small, or a task needs the family's source-listed coverage of up to 201 languages; the [model comparison](../../concepts/inference-layer.md) sets out the trade-offs against [Gemma 4 12B](gemma-4-12b.md).
+- **Prefer it when** — Memory is tight, the download must stay small, or a task needs the family's source-listed coverage of up to 201 languages; the [model comparison](../../concepts/inference-layer.md#choose-a-model) sets out the trade-offs against [Gemma 4 12B](gemma-4-12b.md).
 - **Local fit** — Fits the documented 24 GB Mac mini path with the guide's 8K context setting.
-- **Model type** — Dense 9B multimodal model. Dense means there is no separate total-versus-active parameter count to explain.
+- **Model type** — Dense 9B multimodal model. Dense means each request uses the same model weights rather than routed experts.
 - **Inputs** — Text and image in Ollama; upstream sources also describe video-style visual inputs.
 - **Languages** — Source-listed multilingual support across many languages; Qwen lists up to 201.
 - **Agentic readiness** — Native function calling supports single read-only tools of the kind the [math tutor](../../getting-started/math-tutor.md) uses; small models can miss tool calls, so set Function Calling to Native when tools are not called reliably.
@@ -34,7 +34,7 @@ Qwen3.5-9B is the smaller alternative model for the local AI chat service path; 
 - Full 256K or 1M-token local contexts on the 24 GB path without separate measurement.
 - Audio or speech workflows; this card covers the text and visual model path.
 
-The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, and autonomous actions.
+The [Inference layer](../../concepts/inference-layer.md#shared-model-cautions) lists the cautions shared by every model.
 
 ## Frugal fit
 
@@ -85,6 +85,8 @@ Reference notes:
 
 <summary><strong>Source confidence</strong></summary>
 
+_Sources checked: 2026-06-13._
+
 | Claim | Value | Confidence |
 | --- | --- | --- |
 | Parameter count | 9B | Source-listed by Hugging Face |
@@ -116,5 +118,5 @@ An alternative model for the [Local AI chat service](../../getting-started/offli
 
 - [Hugging Face: Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)
 - [Hugging Face config: Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B/blob/main/config.json)
-- [Ollama: qwen3.5](https://registry.ollama.com/library/qwen3.5)
+- [Ollama: qwen3.5](https://ollama.com/library/qwen3.5)
 - [Unsloth: Qwen3.5 local guide](https://unsloth.ai/docs/models/qwen3.5)

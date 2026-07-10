@@ -42,6 +42,8 @@ The three models in this knowledge base are all open-weight, Apache 2.0 licensed
 
 Each model card carries the full picture: reference settings, source confidence, and model-specific limits.
 
+An interactive comparison tool for choosing between open-weight models is further work; until it exists, this table and the model cards are the comparison.
+
 ## Shared model cautions
 
 Every model in this knowledge base shares the same cautions, whatever its card says:

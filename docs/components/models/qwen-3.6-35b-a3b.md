@@ -34,7 +34,7 @@ Qwen3.6-35B-A3B is a multimodal Mixture of Experts model from Qwen. It is a cand
 - The current local AI chat service guide without a separate measured setup path.
 - Low-memory deployments where the 24 GB Ollama package leaves little room for context, runtime, and interface overhead.
 
-The [Inference layer](../../concepts/inference-layer.md) lists the cautions shared by every model, including production serving, sensitive data, autonomous actions, and tasks needing guaranteed correctness.
+The [Inference layer](../../concepts/inference-layer.md#shared-model-cautions) lists the cautions shared by every model.
 
 ## Frugal fit
 
@@ -84,6 +84,8 @@ Reference notes:
 
 <summary><strong>Source confidence</strong></summary>
 
+_Sources checked: 2026-06-12._
+
 | Claim | Value | Confidence |
 | --- | --- | --- |
 | Total and active parameters | 35B total, 3B activated | Source-listed by Hugging Face |
@@ -107,6 +109,10 @@ Do not treat source benchmark tables as local performance claims. Measure speed,
 - Video support and frame sampling are runtime-specific.
 - Thinking mode can increase token use and latency. Preserve-thinking behaviour should be evaluated before use in agentic workflows.
 - Coding output still requires review, testing, and security checks before use in production systems.
+
+## Used by
+
+No documented guide uses this model yet. It is a candidate for a future measured higher-memory path, such as pilot serving on the [NVIDIA DGX Spark](../hardware/nvidia-dgx-spark.md).
 
 ## Links
 
