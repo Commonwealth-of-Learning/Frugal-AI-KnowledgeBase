@@ -41,6 +41,12 @@ The documented first path assumes one machine, but readers arrive with different
 
 The infrastructure sets the memory budget that decides which models and engines fit; see the [Inference layer](inference-layer.md). The [development](../components/environments/development.md) and [pilot](../components/environments/pilot.md) environments describe the assumptions for each stage.
 
+## Where this fits
+
+The infrastructure layer is where the **Frugality** goal is decided: capable AI on modest, already-owned hardware, at a predictable cost. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Frugality highlighted](../.gitbook/assets/frugal-ai-hexagon-frugality.svg)
+
 ## Related pages
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)

@@ -626,9 +626,10 @@ def check_public_site_names(path: Path, text: str) -> list[Warning]:
         line_number, line = source_line.number, source_line.text
         if is_allowed_landing_title(path, line):
             continue
-        # Link targets are exempt: linking to the publishing platform's own
-        # documentation is allowed; naming the site after it in prose is not.
-        prose = re.sub(r"\]\(https?://[^)]+\)", "]()", line)
+        # Link targets are exempt, external and relative alike: linking to the
+        # publishing platform's documentation or to an asset under
+        # .gitbook/assets/ is allowed; naming the site after it in prose is not.
+        prose = strip_link_targets(line)
         if any(pattern.search(prose) for pattern in patterns):
             warnings.append(Warning(path, line_number, 'use "Frugal AI knowledge base" for the public site name'))
 

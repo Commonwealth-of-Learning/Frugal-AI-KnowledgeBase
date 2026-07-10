@@ -7,11 +7,29 @@ icon: hand-wave
 
 The Frugal AI knowledge base is a build reference for sovereign, local-first AI in education. It shows how to assemble AI services from open, inspectable layers that an institution can run, govern, and own — starting on a single machine and growing only as far as a task needs.
 
-Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service, prioritising efficiency, sovereignty, and local ownership. In practice it is local-first, open, and capacity-building infrastructure: predictable cost, data kept under local control, resilience without constant connectivity, and skills that stay with the institution. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to [teacher-in-the-loop AI](https://jl4d.org/index.php/ejl4d/article/view/1934).
+Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to [teacher-in-the-loop AI](https://jl4d.org/index.php/ejl4d/article/view/1934).
 
 {% hint style="info" %}
 The first build is intentionally small: one local chat service on a single machine. It is a development path and does not imply pilot or production readiness.
 {% endhint %}
+
+## Three goals, three practices
+
+Six commitments recur across every layer, guide, and component choice, at two levels: three **goals** the approach optimises for, and three **practices** that make them real — in the hexagon, each practice sits opposite the goal it serves. Each commitment links to the page where it is put into practice.
+
+![The Frugal AI hexagon: three goals and three practices](.gitbook/assets/frugal-ai-hexagon.svg)
+
+The goals:
+
+- [**Frugality**](concepts/infrastructure-layer.md) — capable AI on modest, already-owned hardware, at a predictable cost.
+- [**Sovereignty**](concepts/gateway-layer.md) — data, governance, and the agent loop stay under institutional control; the gateway governs what leaves as a model request.
+- [**Openness**](concepts/how-the-stack-fits-together.md) — open-weight models where appropriate, and open, inspectable components throughout, so every part of the stack — including the model — can be swapped without losing the loop.
+
+The practices:
+
+- [**Local first**](getting-started/offline-chat-service.md) — the service runs on machines the institution owns and keeps working offline; external capability is reached only through controlled cloud burst. Makes frugality real.
+- [**Teacher-in-the-loop**](reference/sovereign-education-ai-reference-architecture.md) — AI drafts, teachers decide: risk-tiered professional review of outputs and, as agents act, of actions. Makes sovereignty real.
+- [**Capacity building**](getting-started/coding-agent.md) — the local team gains the skills to run, recover, and extend the stack, using agents the institution governs. Makes openness real.
 
 ## The Frugal AI stack
 
@@ -27,9 +45,11 @@ Infrastructure   compute, OS, containers, storage
 
 Read top to bottom it is the request path; read bottom to top it is the build order. See [The Frugal AI stack](concepts/how-the-stack-fits-together.md) for the full model.
 
-## Governance has one home: the gateway
+## Governance has two homes: the gateway and the loop
 
-The gateway is the boundary every model request passes through, so it is where sovereignty is enforced: what may leave the institution, what stays local, what is logged, and what is redacted. Concentrating governance at one layer — the sovereignty envelope — keeps compliance, observability, and guardrails in a single inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
+Every model request that could leave the institution passes through one governed boundary: the gateway, the sovereignty envelope. It decides what may leave, what stays local, what is logged, and what is redacted, keeping compliance, observability, and guardrails in one inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
+
+Agents add the second home. An agent's loop — the orchestration that assembles its context, calls its tools, and keeps its memory — is governed where it runs, and a tool or MCP connection can reach the network without passing the gateway. The [Application layer](concepts/application-layer.md) describes the three governance surfaces: local actions, model egress, and tool egress. Owning the loop is what keeps sovereignty intact as AI moves from answering questions to taking actions.
 
 ## Start from the task
 

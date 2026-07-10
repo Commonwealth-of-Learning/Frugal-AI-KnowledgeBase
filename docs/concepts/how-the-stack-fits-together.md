@@ -75,6 +75,12 @@ This build deliberately stops at the frugal floor. It does not add orchestration
 
 Each is a separate path with its own guide, components, and safeguards; new paths are added only when their supporting pages exist.
 
+## Where this fits
+
+Substitutable layers are the **Openness** goal made structural: every part of the stack, including the model, can be swapped without starting over. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Openness highlighted](../.gitbook/assets/frugal-ai-hexagon-openness.svg)
+
 ## Related pages
 
 - [Application layer](application-layer.md)

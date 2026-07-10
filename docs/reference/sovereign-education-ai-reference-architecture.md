@@ -410,6 +410,12 @@ The following indicators may assist ministries in assessing alignment with this 
 - Cloud burst frequency is monitored (if applicable)
 - Early warning thresholds are defined and monitored
 
+## Where this fits
+
+The annex's risk-tiered oversight is the **Teacher-in-the-loop** practice: AI drafts, teachers decide, which is what makes sovereignty real. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Teacher-in-the-loop highlighted](../.gitbook/assets/frugal-ai-hexagon-teacher-in-the-loop.svg)
+
 ## Source
 
 - [Technical Annex: Sovereign Education-AI Reference Architecture](https://www.col.org/wp-content/uploads/2026/02/Technical-Annex-for-Sovereign-Education.pdf), Commonwealth of Learning, February 2026.

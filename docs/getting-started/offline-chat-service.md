@@ -170,6 +170,12 @@ To unload the model from memory:
 ollama stop gemma4-dev
 ```
 
+## Where this fits
+
+This build is the **Local first** practice made concrete — a service on a machine the institution owns that keeps working offline — and it is what makes frugality real. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Local first highlighted](../.gitbook/assets/frugal-ai-hexagon-local-first.svg)
+
 ## Next step
 
 Use [Local AI chat service operations](../operations/open-webui-ops.md) for updates, backup, restore, and routine health checks.

@@ -35,6 +35,12 @@ Run the gateway locally alongside the rest of the stack. Start with one endpoint
 
 The [AI gateway](../getting-started/ai-gateway.md) guide puts a local gateway in front of the chat service: a single endpoint, personal-data redaction, audit logging, and optional controlled cloud burst to one approved provider.
 
+## Where this fits
+
+The gateway enforces the **Sovereignty** goal for everything that leaves as a model request; owning the agent loop, governed at the [application layer](application-layer.md), completes it. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Sovereignty highlighted](../.gitbook/assets/frugal-ai-hexagon-sovereignty.svg)
+
 ## Related pages
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)

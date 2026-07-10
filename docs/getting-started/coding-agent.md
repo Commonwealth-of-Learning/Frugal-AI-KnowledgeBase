@@ -141,6 +141,12 @@ This build shows the three governance surfaces of the [Application layer](../con
 | The agent edits without asking | Permissions | Set `edit` and `bash` to `ask`, or work in the Plan agent. |
 | Coding results are weak | Model and memory | Small local models are limited; use a stronger model through controlled cloud burst behind the gateway. |
 
+## Where this fits
+
+The coding agent is the **Capacity building** practice at work: the local team gains the skills to run, recover, and extend the stack, which is what makes openness real. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+
+![The Frugal AI hexagon with Capacity building highlighted](../.gitbook/assets/frugal-ai-hexagon-capacity-building.svg)
+
 ## Next step
 
 Use [Local AI chat service operations](../operations/open-webui-ops.md) to run the gateway and review the audit log, and see the [Application layer](../concepts/application-layer.md) for how agents fit the stack. For a worked advanced example, see the [Manim animator](manim-animator.md).
