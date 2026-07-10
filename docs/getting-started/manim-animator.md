@@ -1,5 +1,5 @@
 ---
-description: Use the coding agent to generate and render Manim animations that illustrate a mathematics concept, under review.
+description: Use the coding agent to storyboard, generate, and render Manim animations that illustrate a mathematics concept, under review.
 icon: film
 ---
 
@@ -8,12 +8,14 @@ icon: film
 This guide uses the [coding agent](coding-agent.md) to generate and render [Manim](https://www.manim.community/) animations that illustrate a mathematics concept — the animated companion to the [math tutor](math-tutor.md). It is the most advanced build in the knowledge base: an agent that writes code and runs a renderer, using a stronger model through the gateway for the hard code generation.
 
 {% hint style="warning" %}
-Level: advanced. Expected time: about 45 minutes, plus the Manim install. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this build uses a stronger model through controlled cloud burst.
+Level: advanced. Expected time: about 60 minutes, plus the Manim install. This is a development path. The agent writes files and runs a renderer, so it works under review and scoped permissions. Generating correct animation code is demanding, and a small local model will often fail, which is why this build uses a stronger model through controlled cloud burst.
 {% endhint %}
 
 ## Why this is the hard case
 
 A math tutor explains; an animator shows. Producing a correct Manim scene means writing real Python against a specific API and rendering it — the work a coding agent is built for, and the work where a small local model is weakest. This build is honest about that: it pairs the [coding agent](coding-agent.md) with a stronger model reached through the [gateway](ai-gateway.md), and keeps a person in the loop.
+
+The workflow adapts the pattern documented in [Math-To-Manim](https://github.com/HarleyCoops/Math-To-Manim)'s [HERMES workflow](https://github.com/HarleyCoops/Math-To-Manim/blob/main/docs/HERMES_LEARNS_MANIM.md) (MIT licence): the agent works as a tool-using collaborator in a repository, loading a written skill, staging the work from storyboard to scene code, rendering, and inspecting the rendered result against explicit quality gates rather than trusting that a file exists. Math-To-Manim's own pipelines run on hosted proprietary models; the pattern is model-independent, and this guide applies it with open components — OpenCode, with models governed through the gateway. Its fuller pipeline stages typed artifacts from intent to storyboard to scene code to render manifest, a structure a team can grow into.
 
 ## Fit and limits
 
@@ -55,11 +57,27 @@ manim --version
 
 Generating Manim code reliably needs a stronger model than the first local path. In OpenCode, select the gateway's cloud-burst model for this work, so the hard generation is governed by the gateway through redaction, an approved destination, and audit logging, while routine edits can stay on the local model. Keep code-generation prompts free of personal data.
 
-## 3. Generate a scene in review-first mode
+## 3. Teach the agent Manim in AGENTS.md
 
-Launch OpenCode in a project directory and start in the Plan agent. Ask for a short animation of a concept, for example animating the area under the curve of x squared from 0 to 2. Review the proposed scene, then switch to the Build agent to write the file; with `edit` and `bash` set to ask, each write and render waits for approval.
+The [coding agent](coding-agent.md) guide introduced `AGENTS.md` as the project's instructions to the agent. For animation work, extend it into a small Manim skill: the facts and procedure the agent should follow instead of guessing them. Keep it short, and review it like any other file.
 
-## 4. Render and review
+```markdown
+# Manim notes for the agent
+
+- One scene class per file; name the class after the concept.
+- Propose a plain-language storyboard and wait for approval before writing code.
+- Render at low quality first: manim -ql <file> <SceneClass>.
+- After rendering, report what the animation shows, step by step, for review.
+- Text must stay readable, and elements must not overlap or leave the frame.
+```
+
+A written skill compounds: each correction a reviewer makes can be folded back into the notes, so the next animation starts from what the team already learned.
+
+## 4. Storyboard, then build
+
+Launch OpenCode in the project directory and start in the Plan agent. Ask for a short animation of a concept, for example animating the area under the curve of x squared from 0 to 2. The skill above has the agent propose a storyboard first: the scenes, the on-screen text, and what moves, in plain language. The storyboard is the cheapest review point in the workflow — a teacher can correct a wrong emphasis or a misleading visual before any code exists. Approve the storyboard, then switch to the Build agent to write the scene; with `edit` and `bash` set to ask, each write and render waits for approval.
+
+## 5. Render and inspect
 
 Let the agent render the scene at low quality first:
 
@@ -67,20 +85,30 @@ Let the agent render the scene at low quality first:
 manim -ql scene.py SquareArea
 ```
 
-Open the rendered file, check the animation against the concept, and correct or re-prompt as needed. A teacher reviews the animation before any use with learners.
+Open the rendered file and inspect it against explicit gates, adapted from the HERMES workflow's review checklist:
+
+- the animation shows the concept correctly, in the storyboard's order;
+- on-screen text is readable at the size learners will watch;
+- elements do not overlap, drift, or leave the frame;
+- the pacing leaves time to follow each step.
+
+Correct or re-prompt on the specific defect, and fold recurring corrections back into the Manim notes. A teacher reviews the animation before any use with learners.
 
 ## Verify
 
 | Check | Expected result |
 | --- | --- |
+| Storyboard comes first | The agent proposes a plain-language storyboard and waits for approval before writing code. |
 | Model is capable | The agent produces a Manim scene that imports and runs. |
 | Render works | `manim -ql` produces a video file without errors. |
 | Actions are gated | Writing the scene and running the render wait for approval. |
-| Reviewed | The animation is treated as a draft for teacher review. |
+| Reviewed | The animation passes the inspection gates and is treated as a draft for teacher review. |
 
 ## Governance and review
 
 This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because the animation reaches learners, a teacher approves it before release. It also carries the Application-layer governance surfaces, described in the [Application layer](../concepts/application-layer.md): the agent's local actions are gated by Plan mode, scoped permissions, and human approval; its model calls are governed by the gateway, including the controlled cloud burst used for generation; and no network-reaching tools are added beyond the renderer it runs locally.
+
+The staged workflow adds an early review point: the storyboard is approved before code is written, so teacher judgement enters at the cheapest stage. The `AGENTS.md` skill the agent follows is itself a reviewed file, and corrections folded back into it keep review effort from repeating.
 
 ## Troubleshooting
 
@@ -89,6 +117,7 @@ This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher
 | The render fails on text or LaTeX | System dependencies | Install the LaTeX and ffmpeg dependencies Manim needs; see the Manim documentation. |
 | The generated scene does not run | Model strength | Use the stronger cloud-burst model for generation; small local models often produce broken scenes. |
 | The agent renders without asking | Permissions | Set `bash` to ask in OpenCode, or work in the Plan agent first. |
+| Text overlaps or is unreadable | Inspection gates | Re-prompt naming the specific defect; low-quality renders make defects cheap to find and fix. |
 
 ## Next step
 
