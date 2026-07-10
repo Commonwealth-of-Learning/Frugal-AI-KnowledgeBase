@@ -23,6 +23,10 @@ In the first chat build the gateway is only a policy: nothing leaves because not
 
 The gateway is where the envelope is drawn. A fully local build keeps the envelope closed: every request stays on the machine. When a task genuinely needs a larger external model, controlled cloud burst sends only de-identified, narrowly scoped content to an approved provider, with redaction applied first and a local fallback when connectivity fails. Learner free text and identifiers are blocked by default.
 
+## What the gateway does not govern
+
+The gateway governs model egress only. An agent, an application that acts rather than only answers, also takes local actions and uses tools, and a tool or Model Context Protocol (MCP) server can reach the network without passing the gateway. Those surfaces are governed at the [application layer](application-layer.md); an assessment that includes agents should cover all three.
+
 ## When the gateway is worth running
 
 For a single local model used by one application, the gateway is optional: governance is simple because nothing leaves. The gateway earns its place as soon as there is more than one model or application, or any external routing. That is the point where governance needs one home rather than many.
@@ -37,7 +41,7 @@ The [AI gateway](../getting-started/ai-gateway.md) guide puts a local gateway in
 
 ## Where this fits
 
-The gateway enforces the **Sovereignty** goal for everything that leaves as a model request; owning the agent loop, governed at the [application layer](application-layer.md), completes it. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+The gateway enforces the **Sovereignty** goal for model requests that leave the institution; the agent loop and tool egress, governed at the [application layer](application-layer.md), complete it. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
 
 ![The Frugal AI hexagon with Sovereignty highlighted](../.gitbook/assets/frugal-ai-hexagon-sovereignty.svg)
 

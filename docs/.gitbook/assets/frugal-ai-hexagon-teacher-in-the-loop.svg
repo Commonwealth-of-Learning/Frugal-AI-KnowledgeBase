@@ -1,5 +1,5 @@
 <svg width="760" height="466" viewBox="0 64 760 466" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hex-title">
-  <title id="hex-title">The Frugal AI hexagon with Teacher-in-the-loop highlighted (practice): AI drafts, teachers decide: risk-tiered review of outputs and actions.</title>
+  <title id="hex-title">The Frugal AI hexagon with Teacher-in-the-loop highlighted (practice): Teachers review, adapt, and approve AI output before it reaches learners.</title>
   <rect x="1.5" y="65.5" width="757" height="463" rx="16" fill="#f8fafc" stroke="#d3d9e1" stroke-width="1.5"/>
   <line x1="380" y1="135" x2="380" y2="435" stroke="#e2e8f0" stroke-width="2" opacity="0.9"/>
   <line x1="509.9" y1="210" x2="250.1" y2="360" stroke="#4f46e5" stroke-width="2.5" opacity="0.45"/>
@@ -21,5 +21,5 @@
   <text x="380" y="470" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="600" fill="#94a3b8">Local first</text>
   <text x="226" y="366" text-anchor="end" font-family="system-ui, sans-serif" font-size="19" font-weight="750" fill="#3730a3">Teacher-in-the-loop</text>
   <text x="534" y="366" text-anchor="start" font-family="system-ui, sans-serif" font-size="17" font-weight="600" fill="#94a3b8">Capacity building</text>
-  <text x="380" y="513" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14.5" fill="#475569"><tspan font-weight="700" fill="#3730a3">Teacher-in-the-loop</tspan><tspan> — AI drafts, teachers decide: risk-tiered review of outputs and actions.</tspan></text>
+  <text x="380" y="513" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14.5" fill="#475569"><tspan font-weight="700" fill="#3730a3">Teacher-in-the-loop</tspan><tspan> — Teachers review, adapt, and approve AI output before it reaches learners.</tspan></text>
 </svg>

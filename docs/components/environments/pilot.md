@@ -9,6 +9,8 @@ _Scope: a deployment environment, not a [stack layer](../../concepts/how-the-sta
 
 A pilot environment is a controlled shared setup for testing Frugal AI with a small group before production. It validates governance, support, data handling, quality, and operations under real use. It is also where the annex's Minimum Government Baseline — availability, privacy, security, auditability, and a scalability pathway — is first established before scale; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md).
 
+The pilot scope is the shared chat service. Agents such as the [coding agent](../../getting-started/coding-agent.md) stay single-operator development tools, out of scope for shared use until their runbook and review workflow exist.
+
 ## At a glance
 
 - **Current role** — Defines assumptions for controlled shared use before production.

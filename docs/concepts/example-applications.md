@@ -25,7 +25,7 @@ flowchart TD
 | Curriculum advisor | Local chat | [Curriculum advisor](../getting-started/curriculum-advisor.md): RAG over approved documents on Dify | Dify multi-step workflows at pilot scale *(further work)* |
 | Administrative agent | Local chat | Tool-using actions for routine staff tasks *(further work)* | Multi-step workflows with human approval *(further work)* |
 
-The math-tutor row is built end to end, and the curriculum advisor's intermediate cell is now built (RAG on Dify); its advanced cell and the administrative agent row remain planned. Cells stay marked *further work* until their guides exist.
+The math-tutor row is built end to end, and the curriculum advisor's intermediate cell is now built (RAG on Dify); its advanced cell and the administrative agent row remain planned. Cells stay marked *further work* until their guides exist. Where a cell names an agent — an application that acts rather than only answers — the [Application layer](application-layer.md)'s governance surfaces apply.
 
 ## What the matrix shows
 
@@ -38,4 +38,5 @@ A Frugal AI application becomes locally owned when it is adapted to its context:
 ## Related pages
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)
+- [Application layer](application-layer.md)
 - [Math tutor](../getting-started/math-tutor.md)

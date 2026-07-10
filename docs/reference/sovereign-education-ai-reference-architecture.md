@@ -412,7 +412,7 @@ The following indicators may assist ministries in assessing alignment with this 
 
 ## Where this fits
 
-The annex's risk-tiered oversight is the **Teacher-in-the-loop** practice: AI drafts, teachers decide, which is what makes sovereignty real. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+The annex's risk-tiered oversight is the **Teacher-in-the-loop** practice: teachers review, adapt, and approve AI output before it reaches learners. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
 
 ![The Frugal AI hexagon with Teacher-in-the-loop highlighted](../.gitbook/assets/frugal-ai-hexagon-teacher-in-the-loop.svg)
 

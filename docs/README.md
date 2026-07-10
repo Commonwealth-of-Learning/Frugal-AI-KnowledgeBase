@@ -13,24 +13,6 @@ Frugal AI reframes AI as durable institutional infrastructure rather than an ext
 The first build is intentionally small: one local chat service on a single machine. It is a development path and does not imply pilot or production readiness.
 {% endhint %}
 
-## Three goals, three practices
-
-Six commitments recur across every layer, guide, and component choice, at two levels: three **goals** the approach optimises for, and three **practices** that make them real — in the hexagon, each practice sits opposite the goal it serves. Each commitment links to the page where it is put into practice.
-
-![The Frugal AI hexagon: three goals and three practices](.gitbook/assets/frugal-ai-hexagon.svg)
-
-The goals:
-
-- [**Frugality**](concepts/infrastructure-layer.md) — capable AI on modest, already-owned hardware, at a predictable cost.
-- [**Sovereignty**](concepts/gateway-layer.md) — data, governance, and the agent loop stay under institutional control; the gateway governs what leaves as a model request.
-- [**Openness**](concepts/how-the-stack-fits-together.md) — open-weight models where appropriate, and open, inspectable components throughout, so every part of the stack — including the model — can be swapped without losing the loop.
-
-The practices:
-
-- [**Local first**](getting-started/offline-chat-service.md) — the service runs on machines the institution owns and keeps working offline; external capability is reached only through controlled cloud burst. Makes frugality real.
-- [**Teacher-in-the-loop**](reference/sovereign-education-ai-reference-architecture.md) — AI drafts, teachers decide: risk-tiered professional review of outputs and, as agents act, of actions. Makes sovereignty real.
-- [**Capacity building**](getting-started/coding-agent.md) — the local team gains the skills to run, recover, and extend the stack, using agents the institution governs. Makes openness real.
-
 ## The Frugal AI stack
 
 Every build in the knowledge base is a path through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers.
@@ -49,7 +31,7 @@ Read top to bottom it is the request path; read bottom to top it is the build or
 
 Every model request that could leave the institution passes through one governed boundary: the gateway, the sovereignty envelope. It decides what may leave, what stays local, what is logged, and what is redacted, keeping compliance, observability, and guardrails in one inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
 
-Agents add the second home. An agent's loop — the orchestration that assembles its context, calls its tools, and keeps its memory — is governed where it runs, and a tool or MCP connection can reach the network without passing the gateway. The [Application layer](concepts/application-layer.md) describes the three governance surfaces: local actions, model egress, and tool egress. Owning the loop is what keeps sovereignty intact as AI moves from answering questions to taking actions.
+Agents add the second home. An agent is an application that acts: it plans, calls tools, and runs commands rather than only answering. The loop that runs an agent — assembling its context, calling its tools, keeping its memory — is governed where it runs, and a tool or Model Context Protocol (MCP) connection can reach the network without passing the gateway. The [Application layer](concepts/application-layer.md) describes the three governance surfaces: local actions, model egress, and tool egress. For agents, sovereignty therefore covers the loop as well as the data.
 
 ## Start from the task
 
@@ -61,7 +43,8 @@ Agents add the second home. An agent's loop — the orchestration that assembles
 | Match the build to the machine available | [Infrastructure layer](concepts/infrastructure-layer.md) | The closest documented path for the hardware at hand, and what is not covered yet. |
 | Build the first service | [Quickstart](getting-started/quickstart.md), then [Local AI chat service](getting-started/offline-chat-service.md) | A private local chat service in about 75 minutes across both guides. |
 | Add education workflows | [Math tutor](getting-started/math-tutor.md), [Curriculum advisor](getting-started/curriculum-advisor.md), then [AI gateway](getting-started/ai-gateway.md) | Exact computation, retrieval over approved documents, and controlled cloud burst. |
-| Try agentic work | [Coding agent](getting-started/coding-agent.md), then [Manim animator](getting-started/manim-animator.md) | A reviewed coding agent that writes and runs code through the governed stack. |
+| Try an agent | [Coding agent](getting-started/coding-agent.md), then [Manim animator](getting-started/manim-animator.md) | A reviewed coding agent that writes and runs code through the governed stack. |
+| Point an agent at the knowledge base | [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md) | The machine-readable endpoints and the offline-clone pattern. |
 
 ## The first build: Local AI chat service
 
@@ -74,6 +57,24 @@ The first complete build stops at the frugal floor: infrastructure, inference, a
 | Infrastructure | [Mac mini 24 GB](components/hardware/mac-mini-24gb.md) |
 
 The first build proves a useful service can run locally, with prompts and chat history on the machine, components that remain inspectable, and operations documented from the start. [Example applications](concepts/example-applications.md) shows how the same floor supports a math tutor, curriculum advisor, coding agent, and future administrative workflows.
+
+## Three goals, three practices
+
+Six commitments recur across every layer, guide, and component choice, at two levels: three **goals** the approach optimises for, and three **practices** that carry them out. In the hexagon, each practice sits opposite the goal it serves. Each commitment links to the page where it is put into practice.
+
+![The Frugal AI hexagon: three goals and three practices](.gitbook/assets/frugal-ai-hexagon.svg)
+
+The goals:
+
+- [**Frugality**](concepts/infrastructure-layer.md) — capable AI on modest, already-owned hardware, at a predictable cost.
+- [**Sovereignty**](concepts/gateway-layer.md) — data, governance, and the agent loop stay under institutional control; the gateway governs what leaves as a model request.
+- [**Openness**](concepts/how-the-stack-fits-together.md) — open-weight models where appropriate, and open, inspectable components throughout, so any part of the stack, including the model, can be replaced.
+
+The practices:
+
+- [**Local first**](getting-started/offline-chat-service.md) — the service runs on machines the institution owns and keeps working offline; external capability is reached only through controlled cloud burst. This practice delivers frugality and offline resilience.
+- [**Teacher-in-the-loop**](reference/sovereign-education-ai-reference-architecture.md) — AI can draft materials, but teachers review, adapt, and approve them before they reach learners; as agents act, the same review extends to actions. This practice delivers sovereignty.
+- [**Capacity building**](getting-started/coding-agent.md) — the local team gains the skills to run, recover, and extend the stack, using agents the institution governs. This practice delivers openness.
 
 ## From the Commonwealth of Learning
 

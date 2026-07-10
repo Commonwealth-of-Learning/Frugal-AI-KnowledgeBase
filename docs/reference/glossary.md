@@ -29,6 +29,14 @@ The orchestration that runs an agent: it assembles context, calls tools, and kee
 
 <details>
 
+<summary><strong>Agentic</strong></summary>
+
+Describes work done by agents: workflows where a model plans, calls tools, and takes steps in a loop rather than returning a single answer. Model cards use "agentic readiness" for the features this needs, such as reliable function calling.
+
+</details>
+
+<details>
+
 <summary><strong>Edge device</strong></summary>
 
 A computing device located at the point of use, such as a school, instead of in a central data centre. Edge devices can support local processing and offline operation.

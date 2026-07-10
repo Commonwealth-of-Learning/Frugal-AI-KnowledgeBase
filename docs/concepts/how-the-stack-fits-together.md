@@ -77,7 +77,7 @@ Each is a separate path with its own guide, components, and safeguards; new path
 
 ## Where this fits
 
-Substitutable layers are the **Openness** goal made structural: every part of the stack, including the model, can be swapped without starting over. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+Substitutable layers put the **Openness** goal into the architecture: any part of the stack, including the model, can be replaced without rebuilding the rest. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
 
 ![The Frugal AI hexagon with Openness highlighted](../.gitbook/assets/frugal-ai-hexagon-openness.svg)
 

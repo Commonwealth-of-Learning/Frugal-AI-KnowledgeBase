@@ -45,7 +45,7 @@ NODES = [
     dict(key="teacher-in-the-loop", label="Teacher-in-the-loop", kind="practice",
          pos=(250.1, 360), lab=(226, 366, "end"),
          hue="#4f46e5", dark="#3730a3",
-         one_liner="AI drafts, teachers decide: risk-tiered review of outputs and actions."),
+         one_liner="Teachers review, adapt, and approve AI output before it reaches learners."),
     dict(key="capacity-building", label="Capacity building", kind="practice",
          pos=(509.9, 360), lab=(534, 366, "start"),
          hue="#d97706", dark="#92400e",
@@ -149,7 +149,7 @@ def render_main():
         '    <circle cx="182" cy="508" r="6" fill="#475569"/>\n'
         '    <text x="194" y="512.5" text-anchor="start">Goals — what the system optimises for</text>\n'
         '    <circle cx="450" cy="508" r="6" fill="#ffffff" stroke="#475569" stroke-width="2.5"/>\n'
-        '    <text x="462" y="512.5" text-anchor="start">Practices — what makes them real</text>\n'
+        '    <text x="462" y="512.5" text-anchor="start">Practices — how the goals are applied</text>\n'
         '  </g>\n')
     parts.append("</svg>\n")
     return "".join(parts)

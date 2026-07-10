@@ -43,7 +43,7 @@ The infrastructure sets the memory budget that decides which models and engines 
 
 ## Where this fits
 
-The infrastructure layer is where the **Frugality** goal is decided: capable AI on modest, already-owned hardware, at a predictable cost. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+The infrastructure layer determines whether the **Frugality** goal holds: capable AI on modest, already-owned hardware, at a predictable cost. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
 
 ![The Frugal AI hexagon with Frugality highlighted](../.gitbook/assets/frugal-ai-hexagon-frugality.svg)
 

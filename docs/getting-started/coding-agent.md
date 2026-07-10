@@ -143,7 +143,7 @@ This build shows the three governance surfaces of the [Application layer](../con
 
 ## Where this fits
 
-The coding agent is the **Capacity building** practice at work: the local team gains the skills to run, recover, and extend the stack, which is what makes openness real. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
+The coding agent applies the **Capacity building** practice: the local team gains the skills to run, recover, and extend the stack, so open components stay locally maintainable. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).
 
 ![The Frugal AI hexagon with Capacity building highlighted](../.gitbook/assets/frugal-ai-hexagon-capacity-building.svg)
 

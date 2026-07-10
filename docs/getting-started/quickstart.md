@@ -52,4 +52,4 @@ Open Docker Desktop once after installing it so it can finish its first-run setu
 
 ## What is not covered yet
 
-This first path does not cover RAG, Dify, multi-agent workflows, DGX Spark, or production serving. Those need their own guide paths because they add new components, risks, and operations work.
+This first path does not cover RAG, Dify, agent workflows, DGX Spark, or production serving. Those need their own guide paths because they add new components, risks, and operations work.
