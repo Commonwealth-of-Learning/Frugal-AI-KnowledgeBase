@@ -1,0 +1,9 @@
+# GitBook configuration for the Frugal AI Network site section.
+# This directory syncs as its own GitBook space and appears as a horizontal
+# tab (site section) on the published site once attached in the docs site
+# dashboard; see internal/gitbook-site-sections.md for the setup steps.
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md

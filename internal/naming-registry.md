@@ -64,6 +64,8 @@ The audit also requires a specific set of linked summary entries with exact read
 
 `MCP server:` is not a sidebar role (decision 2026-06-12). MCP servers are described in prose as substitutable Orchestration-layer components (see the orchestration layer page, the glossary, and the OpenCode card); none has its own component card. If an MCP-server card is ever added, register a role label here first, in keeping with the naming gate.
 
+Site sections (the published site's horizontal tabs) are separate GitBook spaces, each synced from its own repo directory. Reserved section names: **Training materials** (`/training/`) and **Frugal AI Network** (`/network/`), both placeholders as of 2026-07-10; the knowledge base space keeps the "Frugal AI knowledge base" site name. See `internal/gitbook-site-sections.md` for the setup, and register any new section name here first.
+
 ## Reader-Friendly Explanations
 
 Expand technical terms in plain language on first use — for example: runtime ("the software that runs the model"), interface, open-weight model, context window, multimodal, Mixture of Experts, and Model Context Protocol ("MCP, a standard way to supply tools to agents"). Expand "Mixture of Experts" before using "MoE" on the first screen **(audited)**.
