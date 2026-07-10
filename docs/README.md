@@ -7,7 +7,7 @@ icon: hand-wave
 
 The Frugal AI knowledge base is a build reference for sovereign, local-first AI in education. It shows how to assemble AI services from open, inspectable layers that an institution can run, govern, and own — starting on a single machine and growing only as far as a task needs.
 
-Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to [teacher-in-the-loop AI](https://jl4d.org/index.php/ejl4d/article/view/1934).
+AI capability is reaching education unevenly: subscription costs, connectivity requirements, and data-governance questions put cloud services beyond many Commonwealth institutions, a gap the [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) and [Frugal AI: A Roadmap to Sovereign GenAI for Education](https://www.col.org/news/frugal-ai-a-roadmap-to-sovereign-genai-for-education/) commit to closing. Frugal AI reframes AI as durable institutional infrastructure rather than an externally sourced service. It continues a long Commonwealth of Learning technology tradition, from [Aptus](https://www.col.org/projects/aptus/) — open-source hardware that brings learning to communities without grid power or the internet — to [teacher-in-the-loop AI](https://jl4d.org/index.php/ejl4d/article/view/1934).
 
 {% hint style="info" %}
 The first build is intentionally small: one local chat service on a single machine. It is a development path and does not imply pilot or production readiness.

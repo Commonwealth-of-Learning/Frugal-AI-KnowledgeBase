@@ -91,6 +91,8 @@ Attach the knowledge base, then publish and run the app.
 
 This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): the knowledge base holds only approved, version-controlled documents; answers are grounded in the curriculum; a teacher approves answers before learners see them; and the advisor runs locally with no external egress. Align the documents to the local curriculum and language, as in [example applications](../concepts/example-applications.md).
 
+Approval assumes [AI literacy](../reference/glossary.md): the reviewing teacher knows the model can misread or overstate a source, and checks answers against the cited documents before learners see them.
+
 ## Troubleshooting
 
 | Problem | Check | Fix |

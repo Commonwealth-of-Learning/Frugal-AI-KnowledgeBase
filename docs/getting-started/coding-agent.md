@@ -32,6 +32,15 @@ A coding agent plays two parts in the knowledge base. It is an **example applica
 - **Governance** — Three surfaces: the agent's local actions, its model calls through the gateway, and the network reach of any tools it is given.
 - **Caution** — Coding quality on a small local model is limited; stronger models need more memory or controlled cloud burst.
 
+## Alternative coding agents
+
+The Application layer is substitutable like every other layer, and OpenCode is the documented path rather than the only choice; it is used here for its review-first permission model and its simple gateway configuration. Two open-source alternatives are worth knowing, though neither is a documented path yet:
+
+- **[Tau](https://github.com/huggingface/tau)** — a small, readable terminal coding agent from Hugging Face (MIT licence, Python), written to show how coding agents are built. It connects to custom OpenAI-compatible endpoints, including local models, so it can be pointed at the same gateway endpoint this guide configures. The readable codebase suits the capacity-building role: a local team can study the agent loop it is expected to govern.
+- **[Pi](https://pi.dev/)** — a minimal coding agent (MIT licence, TypeScript) built on an open agent toolkit: a unified model API, the agent loop, and a terminal interface. It lists Ollama among its providers, takes custom providers and models through configuration, and is designed to be extended in place, including by the agent itself. As an inspectable, extensible [harness](../reference/glossary.md), it is one route to owning the agent loop outright.
+
+Whichever agent an institution chooses, the governance pattern in this guide is unchanged: review-first permissions, model calls through the gateway, and allowlisted tools with no network access by default.
+
 ## Prerequisites
 
 - The [AI gateway](ai-gateway.md) is running, with a local model available through it.

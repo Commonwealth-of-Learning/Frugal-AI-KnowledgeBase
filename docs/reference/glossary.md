@@ -201,6 +201,14 @@ Small Language Model: an AI model with fewer parameters than larger frontier mod
 
 <details>
 
+<summary><strong>AI literacy</strong></summary>
+
+The understanding needed to use AI well and judge its output: what models can and cannot do, how to recognise fabricated or mistaken answers, and what an agent did before its actions are approved. Teacher-in-the-loop review depends on it, and building it is part of the capacity that stays with the institution.
+
+</details>
+
+<details>
+
 <summary><strong>Audit log</strong></summary>
 
 A record of what the gateway did with each request: where it was routed, what was redacted, and when. It supports review and incident response, and is the record behind indicators such as token sovereignty and personal-data leakage.

@@ -87,6 +87,8 @@ Start a chat, select the tool with the plus icon, and ask a question that needs 
 
 This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because explanations reach learners, a teacher approves each one before release. The tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
 
+Approval assumes [AI literacy](../reference/glossary.md): the reviewing teacher knows the model can guess arithmetic and fabricate steps, and checks the explanation against the tool's exact result before release.
+
 ## Troubleshooting
 
 | Problem | Check | Fix |

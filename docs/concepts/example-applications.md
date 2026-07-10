@@ -35,6 +35,8 @@ Two lessons. First, the **Orchestration layer is substitutable**: the math tutor
 
 A Frugal AI application becomes locally owned when it is adapted to its context: aligned to the national curriculum's topics and sequence, written with local names, places, and examples, and used in the local language, which the models support across many. The [math tutor](../getting-started/math-tutor.md) shows this in practice. Localisation applies to every row of the matrix.
 
+Localisation is also where inclusion becomes verifiable: model cards state each model's language coverage, the [pilot environment](../components/environments/pilot.md) requires accessibility and language review before production, and the local-first build keeps the service available where connectivity is unreliable.
+
 ## Related pages
 
 - [The Frugal AI stack](how-the-stack-fits-together.md)

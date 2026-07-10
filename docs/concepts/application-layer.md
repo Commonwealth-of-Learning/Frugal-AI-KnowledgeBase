@@ -15,6 +15,10 @@ Applications turn the lower layers into something a person uses for a task: a ch
 
 An agent is an application that can take steps on its own: it plans, calls tools, edits files, or runs commands, rather than only answering. Agents are the most capable application type and the most demanding to govern, because their actions have real effects. Chat services and assistants are applications; an agent is an application that acts. A coding agent has a second role: a local team uses it to build and maintain the rest of the stack — writing tools, configurations, and components — which is how the institution grows its own capacity.
 
+## Why agent ownership matters
+
+As AI moves from answering questions to taking actions, the divide that matters becomes delegation capacity: whether an institution has agents working for it, or only works inside someone else's. An agent loop run by an external provider sees the institution's prompts, documents, and accumulated working knowledge while it works; a loop run locally keeps that knowledge in the institution. The model behind an agent can be swapped, so the loop, its logs, and its memory are where control sits.
+
 ## Three governance surfaces
 
 An agent has to be controlled in three different places, and they are easy to confuse.
