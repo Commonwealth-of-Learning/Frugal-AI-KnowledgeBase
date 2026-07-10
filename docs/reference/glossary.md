@@ -109,9 +109,25 @@ Retrieval-Augmented Generation: a technique that grounds AI outputs in retrieved
 
 <details>
 
+<summary><strong>Skill (written skill)</strong></summary>
+
+A short written procedure an agent loads into context, such as a section of a project's `AGENTS.md`: the conventions, commands, and checks to follow instead of guessing them. A skill is reviewed and version-controlled like any other file, and corrections are folded back into it, so what the team learns compounds. The coding agent and Manim animator guides show the pattern.
+
+</details>
+
+<details>
+
 <summary><strong>Stack</strong></summary>
 
 A tested combination of hardware, environment, runtime, model, application interface, and operations practices.
+
+</details>
+
+<details>
+
+<summary><strong>Tool</strong></summary>
+
+A function a model can call to act or to fetch information it does not hold: computing a result, reading a file, searching approved documents, or fetching a web page. Tools are supplied by the application, written locally, or packaged by MCP servers, and each class carries its own governance: read-only local tools are the lowest risk, side-effecting tools need approval, and network-reaching tools are tool egress, governed at the application layer.
 
 </details>
 

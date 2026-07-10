@@ -31,7 +31,7 @@ The gateway governs model egress; the application governs its own actions and it
 
 ## Frugal practice
 
-Start with the least autonomous application that does the job. Use a review-first mode, scope the agent to a working directory, and require approval for actions with side effects. Route model calls through the gateway so model-egress governance stays in one place, and keep the tool list short, allowlisted, and reviewed.
+Start with the least autonomous application that does the job. Use a review-first mode, scope the agent to a working directory, and require approval for actions with side effects. Route model calls through the gateway so model-egress governance stays in one place, and keep the tool list short, allowlisted, and reviewed. Treat written skills the same way: a skill steers what an agent does, so it is a reviewed, version-controlled file like any other.
 
 ## First agent: the coding agent
 

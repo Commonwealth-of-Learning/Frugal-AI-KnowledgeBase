@@ -112,7 +112,7 @@ OpenCode reads an `AGENTS.md` file in the project directory for project instruct
 - Commands that are safe to run, and any that are off limits.
 ```
 
-Keep it short and factual, and review it like any other file. The same convention keeps an institution's repositories agent-readable as the local team grows — part of the capacity-building role above.
+Keep it short and factual, and review it like any other file. The same convention keeps an institution's repositories agent-readable as the local team grows — part of the capacity-building role above. As written [skills](../reference/glossary.md) like these accumulate across projects, they belong in one reviewed, version-controlled place; that skill registry is further work.
 
 ## 4. Run in review-first mode
 

@@ -59,7 +59,7 @@ Generating Manim code reliably needs a stronger model than the first local path.
 
 ## 3. Teach the agent Manim in AGENTS.md
 
-The [coding agent](coding-agent.md) guide introduced `AGENTS.md` as the project's instructions to the agent. For animation work, extend it into a small Manim skill: the facts and procedure the agent should follow instead of guessing them. Keep it short, and review it like any other file.
+The [coding agent](coding-agent.md) guide introduced `AGENTS.md` as the project's instructions to the agent. For animation work, extend it into a small Manim [skill](../reference/glossary.md): the facts and procedure the agent should follow instead of guessing them. Keep it short, and review it like any other file.
 
 ```markdown
 # Manim notes for the agent

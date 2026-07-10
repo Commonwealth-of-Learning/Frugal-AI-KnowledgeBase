@@ -50,6 +50,19 @@ So orchestration is the layer where human oversight and the gateway matter most:
 - the gateway still decides what may leave the institution as model calls; in a local build the envelope stays closed;
 - a tool or MCP server can reach the network on its own, outside the gateway — tool egress is governed at the application layer, as described in the [Application layer](application-layer.md) governance surfaces.
 
+## Tools by governance profile
+
+Each class of tool carries its own governance, and the knowledge base has a worked example for each:
+
+| Tool class | Worked example | Governance profile |
+| --- | --- | --- |
+| Read-only local computation | The [math tutor](../getting-started/math-tutor.md)'s exact-compute tool | Lowest risk: no side effects, no egress. |
+| Retrieval over approved documents | The [curriculum advisor](../getting-started/curriculum-advisor.md)'s RAG on Dify | Local; sources are approved and version-controlled. |
+| File access and shell | The [coding agent](../getting-started/coding-agent.md)'s built-in actions | Real side effects: scoped directory, approval per action. |
+| Web search and fetch | Reading the published site, in [Use the knowledge base with an AI agent](../reference/use-with-an-ai-agent.md) | Network egress that does not pass the gateway: allowlist domains, prefer local sources such as an offline clone. |
+
+Adding a tool means choosing a row and accepting its profile; the [Application layer](application-layer.md) governance surfaces say where each is enforced.
+
 ## Frugal practice
 
 Add orchestration one capability at a time. Start with read-only tools that have no side effects, keep a human in the loop, and prefer a few well-understood tools over a large toolkit; give tools no network access by default, whether local or from an MCP server. Reach for a heavier orchestration platform only when simple tools are no longer enough. The [curriculum advisor](../getting-started/curriculum-advisor.md) shows that step: RAG on [Dify](../components/orchestration/dify.md), a heavier platform, when retrieval over a document collection outgrows a single tool.
