@@ -17,6 +17,11 @@ TEMPLATES_DIR = ROOT / "internal" / "templates"
 PLANS_DIR = ROOT / "internal" / "plans"
 NAMING_REGISTRY_PATH = ROOT / "internal" / "naming-registry.md"
 
+# GitBook site-section placeholder spaces (see internal/gitbook-site-sections.md).
+# Each is a separate space synced from its own directory, outside docs/.
+SECTION_DIRS = (ROOT / "training", ROOT / "network")
+MODELS_DIR = DOCS_DIR / "components" / "models"
+
 LAYER_SECTIONS = ("Infrastructure", "Inference", "Orchestration", "Gateway", "Application")
 ALLOWED_ROLE_PREFIXES = (
     "Hardware",
@@ -225,6 +230,8 @@ def main() -> int:
         if is_linked_component_page(path):
             page_warnings.extend(require_at_a_glance(path, text, "linked component page"))
             page_warnings.extend(check_layer_tag(path, text))
+            if is_under(path, MODELS_DIR):
+                page_warnings.extend(check_model_card_sources_checked(path, text))
         if is_linked_guide_page(path):
             page_warnings.extend(check_guide_hint(path, text))
         if summary_line is not None:
@@ -240,6 +247,7 @@ def main() -> int:
     warnings.extend(check_templates())
     warnings.extend(check_internal_plans())
     warnings.extend(check_port_allocations())
+    warnings.extend(check_site_sections())
 
     return print_result(warnings)
 
@@ -459,6 +467,76 @@ def discover_linked_docs(summary_text: str) -> tuple[list[LinkedDoc], list[Warni
                 warnings.extend(check_anchor_fragment(SUMMARY_PATH, line_number, target, linked_path))
 
     return linked_docs, warnings
+
+
+def check_model_card_sources_checked(path: Path, text: str) -> list[Warning]:
+    """Model cards carry many source-listed values; require a dated freshness
+    marker so staleness stays visible. The 2026-07-10 model-card review added
+    the line to every card; this check keeps it there and dated.
+    """
+    if re.search(r"^_Sources checked: \d{4}-\d{2}-\d{2}\._$", text, re.MULTILINE):
+        return []
+    return [Warning(path, 1, 'model card needs a "_Sources checked: YYYY-MM-DD._" line in its Source confidence block')]
+
+
+def check_site_sections() -> list[Warning]:
+    """Audit the site-section placeholder spaces (training/, network/).
+
+    Each site section is a separate GitBook space synced from its own repo
+    directory (see internal/gitbook-site-sections.md), so it sits outside the
+    docs/ tree the rest of this audit walks. Sections publish under the same
+    site, so their pages get the same public-page checks: a SUMMARY.md whose
+    links resolve inside the section, frontmatter that parses, site-name
+    usage, second person, placeholders, and internal links.
+    """
+    warnings: list[Warning] = []
+    link_pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+
+    for section_dir in SECTION_DIRS:
+        if not section_dir.exists():
+            continue
+        if not (section_dir / ".gitbook.yaml").exists():
+            warnings.append(Warning(section_dir / ".gitbook.yaml", 1, "site section needs its own .gitbook.yaml"))
+        summary_path = section_dir / "SUMMARY.md"
+        summary_text = read_text(summary_path)
+        if summary_text is None:
+            warnings.append(Warning(summary_path, 1, "site section needs a SUMMARY.md"))
+            continue
+
+        section_pages: list[tuple[Path, int]] = []
+        for line_number, line in enumerate(summary_text.splitlines(), start=1):
+            for match in link_pattern.finditer(line):
+                target = match.group(1).strip()
+                if not target or is_external_or_anchor(target):
+                    continue
+                cleaned = clean_target(target)
+                if not cleaned.endswith(".md"):
+                    continue
+                page_path = (section_dir / cleaned).resolve()
+                if not is_under(page_path, section_dir.resolve()):
+                    warnings.append(Warning(summary_path, line_number, f"linked path escapes the section: {target}"))
+                    continue
+                if not page_path.exists():
+                    warnings.append(Warning(summary_path, line_number, f"linked section page does not exist: {target}"))
+                    continue
+                section_pages.append((Path(page_path), line_number))
+
+        for page_path, summary_line in section_pages:
+            text = read_text(page_path)
+            if text is None:
+                continue
+            page_warnings: list[Warning] = []
+            page_warnings.extend(scan_patterns(page_path, text, PUBLIC_CHECKS))
+            page_warnings.extend(check_public_site_names(page_path, text))
+            page_warnings.extend(scan_public_placeholders(page_path, text))
+            page_warnings.extend(check_frontmatter(page_path, text))
+            page_warnings.extend(check_internal_links(page_path, text))
+            warnings.extend(
+                Warning(w.path, w.line, f"{w.message} (linked from {relative_path(summary_path)}:{summary_line})")
+                for w in page_warnings
+            )
+
+    return warnings
 
 
 def check_internal_links(path: Path, text: str) -> list[Warning]:
