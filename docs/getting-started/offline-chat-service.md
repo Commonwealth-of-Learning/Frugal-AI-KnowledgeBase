@@ -53,7 +53,7 @@ Pull the 12B model:
 ollama pull gemma4:12b
 ```
 
-Ollama currently lists `gemma4:12b` at about 7.6 GB with a 256K context window. This guide uses a smaller 8K context for a comfortable development setup on a 24 GB Mac.
+Ollama currently lists `gemma4:12b` at about 7.6 GB with a 256K context window. Pull the `:12b` tag explicitly — a bare `gemma4` or `gemma4:latest` resolves to a different, smaller model. This guide uses a smaller 8K context, which the [Mac mini 24 GB](../components/hardware/mac-mini-24gb.md) card rates as usually fine for the 12B model.
 
 ## 3. Create a development model profile
 
@@ -94,7 +94,7 @@ docker run -d -p 127.0.0.1:3000:8080 \
   ghcr.io/open-webui/open-webui:main
 ```
 
-The `127.0.0.1` prefix binds the interface to localhost, so it is reachable only from this machine. Exposing it on a network is a pilot decision that needs authentication and TLS.
+The `127.0.0.1` prefix binds the interface to localhost, so it is reachable only from this machine. Exposing it on a network is a pilot decision that needs authentication and TLS. This build has no redaction layer, so test with synthetic or de-identified content and keep personal data out of prompts; the [AI gateway](ai-gateway.md) adds the redaction airlock.
 
 Open [http://localhost:3000](http://localhost:3000).
 
@@ -128,10 +128,10 @@ Open WebUI should show the host Ollama connection at `http://host.docker.interna
 | Chat works | A short prompt returns a response. |
 | Multi-turn chat works | The model can answer a follow-up in the same conversation. |
 | Works offline | After the model is pulled, disconnecting networking and sending a prompt still returns a response. |
-| Memory remains comfortable | Expected total stack use is about 9 GB, depending on Docker and context use. |
+| Memory remains workable | Measured total stack use is about 9.3 GB (Ollama about 8.4 GB plus Open WebUI about 0.9 GB), depending on Docker and context use. |
 
 {% hint style="warning" %}
-The memory and speed values in this guide are expected development values, not a formal benchmark. Check the machine with `ollama ps` and Activity Monitor.
+The memory figure was measured on a reference Apple Silicon Mac on 2026-07-15; the speed values are expected development values, not a formal benchmark. Check the machine with `ollama ps` and Activity Monitor.
 {% endhint %}
 
 ## Troubleshooting

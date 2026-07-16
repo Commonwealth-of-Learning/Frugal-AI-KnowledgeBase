@@ -88,7 +88,7 @@ Start a chat, select the tool with the plus icon, and ask a question that needs 
 
 ## Governance and review
 
-This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because explanations reach learners, a teacher approves each one before release. The tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here.
+This build sits in Tier 1 (high-risk, learner-facing) of the risk-tiered teacher-in-the-loop in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): because explanations reach learners, a teacher approves each one before release. The tool is read-only with no side effects, and the gateway stays local-only. Tools with side effects, automatic learner-facing output, and external routing are out of scope here. In this development path the Tier 1 approval gate is procedural: the teacher operates the single-user interface and learners have no direct access. The reference architecture expects a technically enforced approval gate for learner-facing deployment, which is further work before any learner-facing pilot.
 
 Approval assumes [AI literacy](../reference/glossary.md): the reviewing teacher knows the model can guess arithmetic and fabricate steps, and checks the explanation against the tool's exact result before release.
 

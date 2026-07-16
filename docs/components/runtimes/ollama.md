@@ -60,4 +60,4 @@ The [Local AI chat service](../../getting-started/offline-chat-service.md) uses 
 ## Links
 
 - [Ollama](https://ollama.com)
-- [Ollama gemma4 library](https://registry.ollama.com/library/gemma4)
+- [Ollama gemma4 library](https://ollama.com/library/gemma4)

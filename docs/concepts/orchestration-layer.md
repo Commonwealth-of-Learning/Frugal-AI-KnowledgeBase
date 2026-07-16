@@ -14,7 +14,7 @@ The model on its own takes text in and returns text out. Orchestration is the la
 - a loop that lets the model take more than one step;
 - tools, which are functions the model can call to act or to fetch information it does not hold — built into the application, written locally like the math tutor's, or supplied by Model Context Protocol (MCP) servers, a standard way to package tools for agents;
 - memory, which carries state across turns;
-- retrieval, which grounds answers in approved sources, shown by the [curriculum advisor](../getting-started/curriculum-advisor.md)'s RAG on Dify;
+- retrieval, which grounds answers in approved sources and can cite them so a reviewer can check each answer, shown by the [curriculum advisor](../getting-started/curriculum-advisor.md)'s RAG on Dify;
 - context assembly, which decides what the model sees on each step. Written skills, such as the `AGENTS.md` notes in the [coding agent](../getting-started/coding-agent.md) and [Manim animator](../getting-started/manim-animator.md) guides, are context assembly in practice: reviewed procedure enters the context instead of guesswork.
 
 ## Where it sits

@@ -14,7 +14,7 @@ Gemma 4 12B is a dense, unified multimodal model from Google DeepMind. It is the
 - **Current role** — Used by the first local AI chat service and the guides built on it.
 - **Best fit** — Local chat, coding support, multimodal course-material review, and teacher-in-the-loop workflows.
 - **Prefer it when** — Following the documented guides; it is the baseline the first path assumes. The [model comparison](../../concepts/inference-layer.md#choose-a-model) lists when [Qwen3.5-9B](qwen-3.5-9b.md) or a candidate model is the better fit.
-- **Local fit** — Expected to fit the documented 24 GB Mac mini path with the guide's 8K context setting; the guide's memory values are expected development values, to be checked on the machine.
+- **Local fit** — Fits the documented 24 GB Mac mini path with the guide's 8K context setting; the stack was measured at about 9.3 GB total (Ollama about 8.4 GB plus Open WebUI about 0.9 GB) on a reference Apple Silicon Mac on 2026-07-15, leaving headroom on 24 GB.
 - **Model type** — Dense 12B multimodal model. Dense means each request uses the same model weights rather than routed experts.
 - **Inputs** — Ollama lists text and image. Upstream sources describe text, image, audio, and video-style frame inputs.
 - **Languages** — Google lists 35+ languages out of the box and pre-training across 140+.
