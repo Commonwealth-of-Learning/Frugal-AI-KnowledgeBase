@@ -38,6 +38,7 @@
   * [Model: Gemma 4 12B](components/models/gemma-4-12b.md)
   * [Model: Qwen3.5-9B](components/models/qwen-3.5-9b.md)
   * [Model: Qwen3.6-35B-A3B](components/models/qwen-3.6-35b-a3b.md)
+* [Model evaluation and benchmarking](concepts/model-evaluation.md)
 
 ## Orchestration
 
@@ -71,3 +72,4 @@
 * [Glossary](reference/glossary.md)
 * [Sovereign education-AI reference architecture](reference/sovereign-education-ai-reference-architecture.md)
 * [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md)
+* [Knowledge base updates](reference/whats-new.md)

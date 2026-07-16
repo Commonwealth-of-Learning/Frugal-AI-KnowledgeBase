@@ -44,7 +44,7 @@ Each model card carries the full picture: reference settings, source confidence,
 
 For public deployments, the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md) adds selection criteria beyond machine fit: licensing checks, security due diligence, and evaluation against local language and curriculum requirements.
 
-An interactive comparison tool for choosing between open-weight models is further work; until it exists, this table and the model cards are the comparison.
+Model evaluation and benchmarking, including an interactive comparison tool for choosing between open-weight models, is further work gathered on the [model evaluation and benchmarking](model-evaluation.md) page; until it fills in, this table and the model cards are the comparison.
 
 ## Shared model cautions
 
