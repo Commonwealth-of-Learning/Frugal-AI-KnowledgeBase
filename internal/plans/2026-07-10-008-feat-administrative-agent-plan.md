@@ -28,13 +28,14 @@ Scope discipline: one agent, one routine task class, Tier 2 only. The advanced m
 ## Governance (the point of the build)
 
 - **Tier 2**: output reaches staff, not learners — post-hoc audit and publish controls rather than pre-release approval. State plainly that anything forwarded to learners re-enters Tier 1.
+- Cross-reference the reference architecture's Appendix A Tier 2 self-assessment indicators (post-hoc audit sampling, publish controls) per plan-009 decision D6 — the knowledge base has no Tier 2 worked example yet, so this build is where those indicators gain one.
 - The three governance surfaces, mapped as in the coding-agent guide: local actions gated (review-first, scoped to a working folder of copies, never the system of record), model egress through the gateway (envelope closed for this build), no network tools at all.
 - Memory and retention: apply the orchestration layer's memory bullet — say what the agent's working folder and any session history retain, and who clears them.
 - Data rule stated up front: the working folder contains no learner personal data; staff records used in examples are synthetic.
 
 ## Pages to create or modify
 
-- Create `docs/getting-started/administrative-agent.md` — the guide (Advanced group, after Manim animator): outcome, fit and limits, skill file, task run under review, verification, Tier 2 governance section, troubleshooting.
+- Create `docs/getting-started/administrative-agent.md` — the guide (Advanced group, **before** Manim animator, per plan-009 decision D6, so the fully-local Advanced path completes before the credential-dependent Manim build): outcome, fit and limits, skill file, task run under review, verification, Tier 2 governance section, troubleshooting.
 - Create `docs/operations/coding-agent-ops.md` — runbook covering the coding agent and this build (start/stop, health, audit-log review, working-folder hygiene, recovery).
 - Modify `docs/concepts/example-applications.md` — fill the administrative agent intermediate cell; keep the advanced cell *further work*.
 - Modify `docs/operations/operations-overview.md` — runbook rows for both agents.

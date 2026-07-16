@@ -15,8 +15,8 @@
 ## Build further
 
 * [Math tutor](getting-started/math-tutor.md)
-* [Curriculum advisor](getting-started/curriculum-advisor.md)
 * [AI gateway](getting-started/ai-gateway.md)
+* [Curriculum advisor](getting-started/curriculum-advisor.md)
 
 ## Advanced
 

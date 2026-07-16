@@ -16,6 +16,8 @@ Two audits run on 2026-07-15 converge on a single remediation increment. The **e
 
 Each decision below gates one or more workstreams; resolve them before the gated iteration begins. Recorded declines are restated so adjacent work is not misread as reopening them.
 
+**Resolved 2026-07-15.** D1 — keep the educator routing row declined; add only the math-tutor browser-only note. D2 — adopt the reorder (Math tutor → AI gateway → Curriculum advisor). D3 — extend the institution routing row to the operations overview. D4 — fix the README time figure to about 45 minutes. D5 — add "Level: beginner." to the Quickstart. D6 — adopt both plan-008 amendments (admin agent before Manim; Appendix A Tier 2 cross-reference). D7 — add an "Owner: TBC" line to the annex collections. The reorder, routing, time, Level-label, and browser-only edits are applied; C1's structural close (Dify connecting through the gateway) stays with the curriculum-advisor rewrite in WS10, which needs a live Dify build to verify the Dify-through-LiteLLM route.
+
 - **D2 — Reorder the Build-further tier so AI gateway precedes Curriculum advisor.**
   - *Why:* gateway-first lets the Dify curriculum advisor connect through the sovereignty boundary from birth, closing finding **C1** (Dify's direct-to-Ollama bypass against the "every model request passes through it" claim) structurally rather than with a two-sentence textual patch. Touches only `README.md` wording and intra-tier `SUMMARY.md` order; the math tutor's Next step already points at the gateway. Not itself a recorded decision, but the user's call.
   - *Recommendation:* adopt the reorder — low risk, and the clean fix for C1; otherwise WS3 falls back to the textual reconciliation.

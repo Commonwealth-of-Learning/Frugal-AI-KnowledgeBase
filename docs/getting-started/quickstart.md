@@ -10,7 +10,7 @@ The first path builds a local AI chat service that runs on the documented develo
 The path runs an open-weight model with Ollama, connects Open WebUI, and verifies that chat works without a cloud API key.
 
 {% hint style="success" %}
-Expected time: about 45 minutes on a Mac mini or Apple Silicon Mac with 24 GB memory.
+Level: beginner. Expected time: about 45 minutes on a Mac mini or Apple Silicon Mac with 24 GB memory.
 {% endhint %}
 
 ## Build outcome

@@ -8,7 +8,7 @@ icon: square-root-variable
 This guide turns the local AI chat service into a math tutor that gives exact answers by calling a computation tool, instead of relying on the model's own arithmetic. It is the first [Orchestration layer](../concepts/orchestration-layer.md) build: the same hardware, runtime, and model as the chat service, with one local tool added and a teacher reviewing the output. It is also the knowledge base's working answer to the annex's Frugal AI Challenge framing — a maths tutor that computes locally and offline (see the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md)).
 
 {% hint style="info" %}
-Level: intermediate. Expected time: about 20 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path; a teacher reviews explanations before they reach learners.
+Level: intermediate. Expected time: about 20 minutes once the [Local AI chat service](offline-chat-service.md) is running. This is a development path; a teacher reviews explanations before they reach learners. Once the chat service is running, every step here happens in the browser.
 {% endhint %}
 
 ## Why a tool

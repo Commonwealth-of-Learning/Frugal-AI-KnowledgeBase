@@ -1,5 +1,7 @@
 # Annex v2 draft — proposed changes (highlighted in yellow)
 
+_Owner: TBC — assign a COL focal point to receive these proposals for review (plan-009 decision D7; gap-review-2026-06-12 C3). The same owner covers the agentic annex-v3 collection when it is created (plan-009 WS15)._
+
 Extracted from the COL annex working draft (`Annex_Full_Draft.docx`). Unhighlighted draft text is unchanged from v1; everything below was highlighted yellow as a proposed v2 change. `〖+ … +〗` marks the highlighted span in its surrounding context. These changes are **not** applied to the knowledge base page; they are collected here for COL review.
 
 

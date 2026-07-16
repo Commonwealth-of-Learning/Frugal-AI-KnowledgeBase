@@ -39,10 +39,10 @@ Agents add the second home. An agent is an application that acts: it plans, call
 | --- | --- | --- |
 | Understand the model | [The Frugal AI stack](concepts/how-the-stack-fits-together.md) | The layer map, the gateway boundary, and the frugal floor. |
 | Assess it for a ministry | [Gateway layer](concepts/gateway-layer.md), then the [reference architecture](reference/sovereign-education-ai-reference-architecture.md) | The governance pattern, the policy baseline, and a ministry self-assessment checklist (Appendix A of the reference architecture). |
-| Assess it for an institution | [Pilot environment](components/environments/pilot.md) | The questions to settle before shared use. |
+| Assess it for an institution | [Pilot environment](components/environments/pilot.md), then the [operations overview](operations/operations-overview.md) | The questions to settle before shared use, and how to run, measure, and recover the service. |
 | Match the build to the machine available | [Infrastructure layer](concepts/infrastructure-layer.md) | The closest documented path for the hardware at hand, and what is not covered yet. |
-| Build the first service | [Quickstart](getting-started/quickstart.md), then [Local AI chat service](getting-started/offline-chat-service.md) | A private local chat service in about 75 minutes across both guides. |
-| Add education workflows | [Math tutor](getting-started/math-tutor.md), [Curriculum advisor](getting-started/curriculum-advisor.md), then [AI gateway](getting-started/ai-gateway.md) | Exact computation, retrieval over approved documents, and controlled cloud burst. |
+| Build the first service | [Quickstart](getting-started/quickstart.md), then [Local AI chat service](getting-started/offline-chat-service.md) | A private local chat service in about 45 minutes. |
+| Add education workflows | [Math tutor](getting-started/math-tutor.md), [AI gateway](getting-started/ai-gateway.md), then [Curriculum advisor](getting-started/curriculum-advisor.md) | Exact computation, controlled cloud burst, and retrieval over approved documents. |
 | Try an agent | [Coding agent](getting-started/coding-agent.md), then [Manim animator](getting-started/manim-animator.md) | A reviewed coding agent that writes and runs code through the governed stack. |
 | Point an agent at the knowledge base | [Use the knowledge base with an AI agent](reference/use-with-an-ai-agent.md) | The machine-readable endpoints and the offline-clone pattern. |
 
