@@ -41,9 +41,11 @@ The workflow adapts the pattern documented in [Math-To-Manim](https://github.com
 
 ## 1. Install Manim
 
-Install Manim and its system dependencies for the platform; see the [Manim installation guide](https://docs.manim.community/en/stable/installation.html). For example, with pip:
+Install Manim and its system dependencies for the platform; see the [Manim installation guide](https://docs.manim.community/en/stable/installation.html). For example, with pip in a virtual environment so the install does not touch the system Python:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install manim
 ```
 

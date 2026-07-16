@@ -16,7 +16,7 @@ In the first chat build the gateway is only a policy: nothing leaves because not
 - One endpoint: applications use a single API, and the model or provider behind it can change without changing the application.
 - Redaction: personal data is detected and masked before a prompt reaches a model, with the original kept only in protected logs.
 - Routing: requests go to a local model by default, and to an approved external provider only when policy allows.
-- Audit: requests, routes, and redactions are logged for review — the record behind the reference architecture's token-sovereignty and personal-data-leakage indicators.
+- Audit: requests, routes, and redactions are logged for review — the tamper-evident record the reference architecture relies on for regulatory review and individual redress, and the source of its cloud-burst frequency indicator.
 - Approved destinations: only the providers configured in the gateway can be reached.
 
 ## The sovereignty envelope
@@ -46,7 +46,7 @@ The gateway configuration is where an assessment finds its answers. The question
 | What can leave the institution? | Approved destinations: only the providers configured in the gateway are reachable, and anything else is blocked. |
 | Where does it go? | The jurisdiction of each configured provider is a configuration choice, reviewable in one place. |
 | What is removed before anything leaves? | Redaction masks personal data before a prompt reaches a model, with originals kept only in protected logs. |
-| What is recorded, and who reviews it? | The audit log records requests, routes, and redactions — the record behind the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md)'s token-sovereignty and personal-data-leakage indicators. |
+| What is recorded, and who reviews it? | The audit log records requests, routes, and redactions — the tamper-evident record the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md) relies on for regulatory review and individual redress, and the source of its cloud-burst frequency indicator. |
 | What happens when connectivity fails? | The local model is the default and the fallback, so the service degrades to fully local rather than stopping. |
 | What does the gateway not cover? | Agent loops and tool egress, governed at the [application layer](application-layer.md); an assessment that includes agents covers all three surfaces. |
 

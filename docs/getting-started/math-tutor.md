@@ -60,9 +60,12 @@ class Tools:
         :param expression: A SymPy expression, for example "integrate(x**2, x)" or "solve(x**2 - 4, x)".
         """
         try:
-            return str(sympy.sympify(expression))
+            result = sympy.sympify(expression)
         except Exception as error:
             return f"Could not evaluate the expression: {error}"
+        if isinstance(result, bool):
+            return "Could not evaluate the expression: use SymPy syntax, for example solve(x**2 - 4, x), rather than prose."
+        return str(result)
 ```
 
 Save the tool. Import or run only tool code the institution has written or reviewed, because a tool runs as code on the host.
@@ -80,7 +83,7 @@ Start a chat, select the tool with the plus icon, and ask a question that needs 
 | Check | Expected result |
 | --- | --- |
 | Tool is enabled | The computation tool is selectable in chat through the plus icon. |
-| Tool computes | A question such as "solve x squared minus 4 equals 0" returns the exact result from the tool, not a guess. |
+| Tool computes | The model turns a question such as "solve x squared minus 4 equals 0" into SymPy form (`solve(x**2 - 4, x)`), and the tool returns the exact result, not a guess. |
 | Explanation is reviewed | Output is treated as a draft for teacher review before any learner use. |
 
 ## Governance and review

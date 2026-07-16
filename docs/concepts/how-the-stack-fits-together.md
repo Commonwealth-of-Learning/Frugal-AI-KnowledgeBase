@@ -40,7 +40,7 @@ flowchart TD
 
 The Gateway is the most important layer for education sovereignty. Because every model request passes through it, it is the natural place to enforce what may leave the institution and what must stay local.
 
-This is the operational form of the controls described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): personal-data redaction, context minimisation, approved destinations, audit logging, and controlled cloud burst within a defined envelope. Governance is not spread across the system. It has one architectural home, at the boundary where a prompt could cross from local to external processing.
+This is the operational form of the controls described in the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md): personal-data redaction, context minimisation, approved destinations, audit logging, and controlled cloud burst within a defined envelope. For model requests, governance has one architectural home, at the boundary where a prompt could cross from local to external processing. Agents add a second home: the loop that runs an agent is governed where it runs, and a tool or Model Context Protocol (MCP) connection can reach the network without passing the gateway. The [application layer](application-layer.md) describes the three governance surfaces — local actions, model egress, and tool egress.
 
 A fully local system still has a Gateway, in its simplest form: a local-only policy with no external egress. The [Gateway layer](gateway-layer.md) page covers how this becomes a running component that redacts, routes, and logs.
 

@@ -227,7 +227,7 @@ The understanding needed to use AI well and judge its output: what models can an
 
 <summary><strong>Audit log</strong></summary>
 
-A record of what the gateway did with each request: where it was routed, what was redacted, and when. It supports review and incident response, and is the record behind indicators such as token sovereignty and personal-data leakage.
+A record of what the gateway did with each request: where it was routed, what was redacted, and when. It supports review and incident response, provides the tamper-evident record the reference architecture relies on for regulatory review and individual redress, and is the source of its cloud-burst frequency indicator.
 
 </details>
 
@@ -355,7 +355,7 @@ A workflow design that requires teacher oversight of AI-generated content. The l
 
 <summary><strong>Token sovereignty</strong></summary>
 
-The share of inference processed locally rather than sent to an external provider. The reference architecture suggests it as a monitoring indicator; the gateway audit log is the record behind it.
+The share of inference processed locally rather than sent to an external provider. The gateway audit log records it; the reference architecture's cloud-burst frequency indicator tracks the complementary share sent externally.
 
 </details>
 

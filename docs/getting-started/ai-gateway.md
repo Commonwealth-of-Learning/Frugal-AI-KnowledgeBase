@@ -54,11 +54,15 @@ model_list:
 
 ## 2. Start the gateway
 
-Install the gateway on the host:
+Install the gateway on the host, in a virtual environment so the install does not touch the system Python:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install 'litellm[proxy]'
 ```
+
+Use a Python version LiteLLM supports: some of its dependencies do not yet build on the newest Python releases, so a recent stable version such as 3.12 or 3.13 is the safest choice. Without a virtual environment, `pip` on a Homebrew-managed Python refuses to install system-wide.
 
 Set a master key and start it:
 
@@ -123,6 +127,8 @@ guardrails:
 
 Restart the gateway. Personal data is now masked before the model, and the original is kept only in the gateway log. Redaction language is set with `presidio_language` for non-English content, which matters in multilingual education settings.
 
+By default the gateway prints only request status lines. Started with `--detailed_debug`, it logs each request's routing and the redacted prompt — the masked form an assessment reviews. This console output is not retained; a durable audit log for later review is configured with a LiteLLM logging callback (see the LiteLLM logging documentation), which is further work in this development build.
+
 ## 5. Controlled cloud burst (optional)
 
 Cloud burst sends a narrowly scoped task to an approved external provider, and only after redaction. Keep the local model as the default and the fallback. For example, the [math tutor](math-tutor.md) answers routine questions on the local model and bursts a genuinely hard problem to a stronger model, with the prompt redacted first.
@@ -145,7 +151,7 @@ Keep the local model as the fallback so requests use it when the external provid
 | --- | --- |
 | Gateway responds | `http://localhost:4000/health/readiness` returns a ready status. |
 | Chat works through the gateway | Open WebUI returns a reply using `gemma4-dev` through the gateway. |
-| Redaction works | A prompt with a sample name or email reaches the model masked; the gateway log shows the masked form. |
+| Redaction works | A prompt with a sample name or email reaches the model masked; started with `--detailed_debug`, the gateway log shows the masked form. |
 | Local default | With no external provider enabled, no request leaves the machine. |
 | Fallback | With cloud burst configured but offline, requests fall back to the local model. |
 
@@ -156,7 +162,7 @@ This build operationalises the sovereignty envelope in the [sovereign education-
 - redaction runs before any model sees a prompt;
 - only configured providers can be reached, and the local model is the default;
 - cloud burst is limited to de-identified, narrowly scoped tasks, with learner free text and identifiers blocked;
-- requests, routes, and redactions are logged for review;
+- requests, routes, and redactions are logged for review (in detail with `--detailed_debug`, and to a durable sink through a logging callback);
 - learner-facing output still follows the risk tiers, with Tier 1 approval before any learner release.
 
 ## Troubleshooting
