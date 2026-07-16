@@ -19,7 +19,7 @@ LiteLLM is a self-hosted, open-source AI gateway. In the Frugal AI knowledge bas
 
 ## When to use it
 
-Use LiteLLM when there is more than one model or application, or any external routing, so that governance has one home. For a single local model used by one application, the gateway is optional.
+Use LiteLLM when there is more than one model or application, or any external routing, so that model-egress governance has one home. For a single local model used by one application, the gateway is optional.
 
 ## Requirements
 

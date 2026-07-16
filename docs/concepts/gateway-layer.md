@@ -54,7 +54,7 @@ The [reference architecture](../reference/sovereign-education-ai-reference-archi
 
 ## When the gateway is worth running
 
-For a single local model used by one application, the gateway is optional: governance is simple because nothing leaves. The gateway earns its place as soon as there is more than one model or application, or any external routing. That is the point where governance needs one home rather than many.
+For a single local model used by one application, the gateway is optional: governance is simple because nothing leaves. The gateway earns its place as soon as there is more than one model or application, or any external routing. That is the point where model-egress governance needs one home rather than many.
 
 ## Trade-offs and limits
 

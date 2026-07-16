@@ -75,6 +75,10 @@ This build deliberately stops at the frugal floor. It does not add orchestration
 
 Each is a separate path with its own guide, components, and safeguards; new paths are added only when their supporting pages exist.
 
+## How a component is swapped
+
+Growing the stack adds layers; keeping it current means replacing components within a layer as models, runtimes, and tools evolve. The stack is built so a swap is cheap. Every runtime and serving engine exposes an OpenAI-compatible endpoint, and applications reach models only through the gateway, so replacing Ollama with a serving engine such as [vLLM](../components/runtimes/vllm.md), or Gemma 4 12B with another open-weight model, is an endpoint or model-tag change behind the gateway rather than a rebuild of the application. Each component has a card that states what it needs and what can replace it, and the [inference layer](inference-layer.md) shows the choice in practice. Newer models enter the same way: a candidate such as Qwen3.6-35B-A3B is documented on its card and adopted when a machine and a measured fit exist (further work).
+
 ## Where this fits
 
 Substitutable layers put the **Openness** goal into the architecture: any part of the stack, including the model, can be replaced without rebuilding the rest. All six commitments are introduced in [Three goals, three practices](../README.md#three-goals-three-practices).

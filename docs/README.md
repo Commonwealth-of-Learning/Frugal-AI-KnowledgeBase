@@ -15,7 +15,7 @@ The first build is intentionally small: one local chat service on a single machi
 
 ## The Frugal AI stack
 
-Every build in the knowledge base is a path through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers.
+Every build in the knowledge base is a path through one layered model. The layers are substitutable and optional; the smallest useful system uses only the lower layers, and a build stays current by [swapping a component](concepts/how-the-stack-fits-together.md#how-a-component-is-swapped) as models and tools evolve.
 
 ```text
 Application      chat, coding, agents, search
@@ -27,11 +27,11 @@ Infrastructure   compute, OS, containers, storage
 
 Read top to bottom it is the request path; read bottom to top it is the build order. See [The Frugal AI stack](concepts/how-the-stack-fits-together.md) for the full model.
 
-## Governance has two homes: the gateway and the loop
+## Where governance lives: the gateway and the loop
 
 Every model request that could leave the institution passes through one governed boundary: the gateway, the sovereignty envelope. It decides what may leave, what stays local, what is logged, and what is redacted, keeping compliance, observability, and guardrails in one inspectable place rather than scattered across the system. In the first build the envelope is closed: the service runs fully local with no external traffic.
 
-Agents add the second home. An agent is an application that acts: it plans, calls tools, and runs commands rather than only answering. The loop that runs an agent — assembling its context, calling its tools, keeping its memory — is governed where it runs, and a tool or Model Context Protocol (MCP) connection can reach the network without passing the gateway. The [Application layer](concepts/application-layer.md) describes the three governance surfaces: local actions, model egress, and tool egress. For agents, sovereignty therefore covers the loop as well as the data.
+Agents add a second governed place: the loop they run in. An agent is an application that acts — it plans, calls tools, and runs commands rather than only answering — and the loop that runs it, its [harness](concepts/orchestration-layer.md#the-agent-loop), assembles its context, calls its tools, and keeps its memory. A tool or Model Context Protocol (MCP) connection can reach the network without passing the gateway, so a safe build governs three surfaces in total: model egress at the gateway, and local actions and tool egress at the loop. The [Application layer](concepts/application-layer.md) describes all three.
 
 ## Start from the task
 
@@ -58,6 +58,8 @@ The first complete build stops at the frugal floor: infrastructure, inference, a
 
 The first build proves a useful service can run locally, with prompts and chat history on the machine, components that remain inspectable, and operations documented from the start. [Example applications](concepts/example-applications.md) shows how the same floor supports a math tutor, curriculum advisor, coding agent, and future administrative workflows.
 
+The first build is a [development](components/environments/development.md) path. Shared use is a later stage: the [pilot environment](components/environments/pilot.md) settles the governance, support, and operations decisions for a small group, and the [production environment](components/environments/production.md) sets the readiness bar for a dependable service. Pilot serving and production operations are further work in the public guides.
+
 ## Three goals, three practices
 
 Six commitments recur across every layer, guide, and component choice, at two levels: three **goals** the approach optimises for, and three **practices** that carry them out. In the hexagon, each practice sits opposite the goal it serves. Each commitment links to the page where it is put into practice.
@@ -78,7 +80,7 @@ The practices:
 
 ## From the Commonwealth of Learning
 
-This knowledge base is the technical companion to COL's Frugal AI programme. For the strategy, policy, and latest news, go to COL directly:
+This knowledge base is the technical companion to COL's Frugal AI programme. Its governance and policy baseline in technical form is the [reference architecture](reference/sovereign-education-ai-reference-architecture.md) in these pages; for strategy, positioning, and the latest news, go to COL directly:
 
 - [Frugal AI programme](https://www.col.org/frugal) — COL's overview, approach, and key resources.
 - [Gaborone to New Delhi Compact](https://www.col.org/wp-content/uploads/2026/02/Gaborone-to-New-Delhi-Compact.pdf) — the teacher-led, localised-AI commitment, presented at the India AI Impact Summit 2026.
@@ -87,4 +89,4 @@ This knowledge base is the technical companion to COL's Frugal AI programme. For
 
 ## Scope and next work
 
-The build path remains a development path. Out of scope for the current public guides: production or shared-campus deployment, high-stakes automated decisions, and national-scale implementation. Pilot serving, production operations, and further example applications will be added only when their supporting components, safeguards, and operations pages exist.
+The knowledge base grows by the discipline it documents: a new path becomes a guide only when its supporting components, safeguards, and operations pages exist. The build path remains a development path. Out of scope for the current public guides: production or shared-campus deployment, high-stakes automated decisions, and national-scale implementation. Pilot serving, production operations, and further example applications are further work, added as those foundations land.
