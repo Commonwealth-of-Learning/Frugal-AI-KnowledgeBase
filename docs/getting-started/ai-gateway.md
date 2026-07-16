@@ -163,6 +163,7 @@ This build operationalises the sovereignty envelope in the [sovereign education-
 - only configured providers can be reached, and the local model is the default;
 - cloud burst is limited to de-identified, narrowly scoped tasks, with learner free text and identifiers blocked;
 - requests, routes, and redactions are logged for review (in detail with `--detailed_debug`, and to a durable sink through a logging callback);
+- the gateway log holds the un-redacted originals, so it has a defined retention period, is deleted on schedule, and is read only by authorised reviewers;
 - learner-facing output still follows the risk tiers, with Tier 1 approval before any learner release.
 
 ## Troubleshooting

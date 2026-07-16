@@ -21,7 +21,7 @@ In the first chat build the gateway is only a policy: nothing leaves because not
 
 ## The sovereignty envelope
 
-The gateway is where the envelope is drawn. A fully local build keeps the envelope closed: every request stays on the machine. When a task genuinely needs a larger external model, controlled cloud burst sends only de-identified, narrowly scoped content to an approved provider, with redaction applied first and a local fallback when connectivity fails. Learner free text and identifiers are blocked by default.
+The gateway is where the envelope is drawn. A fully local build keeps the envelope closed: every request stays on the machine. When a task genuinely needs a larger external model, controlled cloud burst sends only de-identified, narrowly scoped content to an approved provider, with redaction applied first and a local fallback when connectivity fails. Learner free text and identifiers are blocked by default. Cloud burst changes where a task is processed, not the oversight its output needs: output intended for learners remains Tier 1, requiring teacher approval before release, whichever route produced it. The gateway enforces the technical half of the envelope; for any approved external provider the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md) also expects contractual controls — retention and deletion commitments, breach notification, audit rights, and sub-processor disclosure — which sit in the provider agreement rather than the gateway configuration.
 
 ```mermaid
 flowchart TD
@@ -50,6 +50,8 @@ The gateway configuration is where an assessment finds its answers. The question
 | What happens when connectivity fails? | The local model is the default and the fallback, so the service degrades to fully local rather than stopping. |
 | What does the gateway not cover? | Agent loops and tool egress, governed at the [application layer](application-layer.md); an assessment that includes agents covers all three surfaces. |
 
+The [reference architecture](../reference/sovereign-education-ai-reference-architecture.md)'s Appendix A sets these questions out in full as a ministry self-assessment checklist, alongside knowledge, infrastructure, security, and scale-readiness checks.
+
 ## When the gateway is worth running
 
 For a single local model used by one application, the gateway is optional: governance is simple because nothing leaves. The gateway earns its place as soon as there is more than one model or application, or any external routing. That is the point where governance needs one home rather than many.
@@ -59,6 +61,7 @@ For a single local model used by one application, the gateway is optional: gover
 - The gateway is a single point of failure by design: concentrating governance in one place means the service depends on it, so it is run and monitored like any other component — see the [operations overview](../operations/operations-overview.md).
 - The envelope governs only what is routed through it. Applications are configured to reach models only via the gateway, and services are bound to localhost so nothing else can reach them; the [Local AI chat service](../getting-started/offline-chat-service.md) documents that binding.
 - Redaction is pattern-based. It catches identifiers, but combinations of ordinary details — [quasi-identifiers](../reference/glossary.md) — can still identify a person, which is why learner free text is blocked from cloud burst by default rather than trusted to redaction.
+- The audit log holds the un-redacted originals, so it needs a defined retention period, secure deletion on schedule, and restricted access; kept tamper-evident, it is the basis for the [reference architecture](../reference/sovereign-education-ai-reference-architecture.md)'s regulatory review and individual redress.
 - Every governed hop adds a little latency and configuration; the gateway earns that cost once more than one model, application, or external route exists.
 
 ## The gateway in this knowledge base
@@ -67,7 +70,7 @@ For a single local model used by one application, the gateway is optional: gover
 
 ## Frugal practice
 
-Run the gateway locally alongside the rest of the stack. Start with one endpoint, redaction, and logging, all local. Add an external destination only when a task needs it, and keep the local model as the default and the fallback.
+Run the gateway locally alongside the rest of the stack. Start with one endpoint, redaction, and logging, all local. Add an external destination only when a task needs it — and, in any deployment beyond development, only once the [Minimum Government Baseline](../reference/glossary.md) safeguards are in place — and keep the local model as the default and the fallback.
 
 ## First build: the AI gateway
 

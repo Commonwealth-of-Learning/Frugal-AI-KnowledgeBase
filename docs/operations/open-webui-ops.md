@@ -130,6 +130,7 @@ The [AI gateway](../getting-started/ai-gateway.md) runs as a local process on th
 - Keys: keep the gateway master key and any approved-provider keys in the host environment, not in a configuration file under version control.
 - Redaction services: the Presidio analyser and anonymiser run as local containers; confirm both are running before relying on redaction.
 - Audit log: review the gateway log for requests, routes, and masked entities as part of teacher-in-the-loop review.
+- Retention: the log holds the un-redacted originals, so set a retention period, delete on schedule, and restrict who can read it.
 - Cloud burst: keep external routing off unless a task needs it, and confirm the redaction guardrail applies to every model before enabling it.
 
 ## DGX Spark candidate pattern

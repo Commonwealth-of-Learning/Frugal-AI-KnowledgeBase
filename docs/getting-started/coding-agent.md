@@ -45,6 +45,7 @@ Whichever agent an institution chooses, the governance pattern in this guide is 
 
 - The [AI gateway](ai-gateway.md) is running, with a local model available through it.
 - A project directory to scope the agent to.
+- Node.js and npm, if installing OpenCode with npm (step 1).
 
 ## Component map
 
@@ -82,7 +83,7 @@ Routing model calls through the gateway keeps redaction, approved destinations, 
       "name": "Frugal AI gateway",
       "options": {
         "baseURL": "http://localhost:4000/v1",
-        "apiKey": "sk-local-gateway"
+        "apiKey": "{env:LITELLM_MASTER_KEY}"
       },
       "models": {
         "gemma4-dev": { "name": "Gemma 4 12B via gateway" }
@@ -97,6 +98,8 @@ Routing model calls through the gateway keeps redaction, approved destinations, 
   }
 }
 ```
+
+The gateway key is read from the environment through `{env:LITELLM_MASTER_KEY}` (exported when the gateway was started), so it is not written into `opencode.json` — keys stay out of version-controlled configuration, as the [operations guidance](../operations/open-webui-ops.md) requires.
 
 The model id must match a model the gateway serves; list them with `curl http://localhost:4000/v1/models`. A local coding-capable model is the frugal default; a stronger model through controlled cloud burst can be added behind the gateway for harder tasks.
 
@@ -139,7 +142,7 @@ This build shows the three governance surfaces of the [Application layer](../con
 
 - Local actions: Plan mode for review, `edit` and `bash` set to ask, and `external_directory` denied to scope the agent to the project. A person approves each change.
 - Model egress: routed through the gateway, so redaction, approved destinations, and audit logging apply, and cloud burst stays inside the envelope.
-- Tool egress: this build adds no tools beyond the agent's built-in file and shell actions. Any tool or Model Context Protocol (MCP) server added later can reach the network without passing the gateway, so it is allowlisted and reviewed first — see the [Application layer](../concepts/application-layer.md).
+- Tool egress: this build adds no tools beyond the agent's built-in file and shell actions. Any tool or Model Context Protocol (MCP) server added later can reach the network without passing the gateway, so it is allowlisted and reviewed first — see the [Application layer](../concepts/application-layer.md). Tool configuration outside the project — a global OpenCode config — applies to every run, so confirm the effective tool set, not only the project `opencode.json`.
 
 ## Troubleshooting
 

@@ -27,7 +27,7 @@ The workflow adapts the pattern documented in [Math-To-Manim](https://github.com
 ## Prerequisites
 
 - The [coding agent](coding-agent.md) is set up, with OpenCode pointed at the gateway.
-- The [gateway](ai-gateway.md) has a controlled cloud-burst model configured, for the code generation.
+- The [gateway](ai-gateway.md) has a controlled cloud-burst model configured for the code generation — an approved external provider and key the institution supplies, since the gateway's cloud-burst step is a template. This is the one build in the series that does not run fully locally.
 - Manim and its system dependencies are installed; see the Manim documentation.
 
 ## Component map
@@ -84,7 +84,7 @@ Launch OpenCode in the project directory and start in the Plan agent. Ask for a 
 Let the agent render the scene at low quality first:
 
 ```bash
-manim -ql scene.py SquareArea
+manim -ql scene.py AreaUnderCurve
 ```
 
 Open the rendered file and inspect it against explicit gates, adapted from the HERMES workflow's review checklist:

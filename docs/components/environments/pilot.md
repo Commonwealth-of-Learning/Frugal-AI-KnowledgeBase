@@ -7,7 +7,7 @@ icon: users
 
 _Scope: a deployment environment, not a [stack layer](../../concepts/how-the-stack-fits-together.md); it applies across all layers._
 
-A pilot environment is a controlled shared setup for testing Frugal AI with a small group before production. It validates governance, support, data handling, quality, and operations under real use. It is also where the annex's Minimum Government Baseline — availability, privacy, security, auditability, and a scalability pathway — is first established before scale; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md).
+A pilot environment is a controlled shared setup for testing Frugal AI with a small group before production. It validates governance, support, data handling, quality, and operations under real use. It is also where the annex's Minimum Government Baseline — availability, privacy, security, auditability, and a scalability pathway — is first established before scale; see the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md). A pilot design should also record which of the reference architecture's hosting topologies it approximates: the documented single-node shared pilot is closest to a single institution hosting a shared service, while the frugal-floor local build has the shape of a school edge device.
 
 The pilot scope is the shared chat service. Agents such as the [coding agent](../../getting-started/coding-agent.md) stay single-operator development tools, out of scope for shared use until their runbook and review workflow exist.
 
@@ -26,7 +26,7 @@ Use this environment when:
 - The service has a named owner and support path.
 - Data rules, acceptable use, and human review are agreed.
 - Backup and restore have been tested.
-- Pilot success criteria are written before launch.
+- Pilot success criteria are written before launch, using the [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md)'s suggested indicators as a starting set.
 
 ## Defaults
 
@@ -50,14 +50,15 @@ Use this environment when:
 | Review | When human review is required before reuse of outputs. |
 | Logs | What is kept, who can see it, and retention period. |
 | Support | Who responds to incidents, quality issues, and access requests. |
+| Security | Account access control, with multi-factor authentication for administrator accounts where the interface supports it; encryption in transit beyond localhost; an operating-system and container patching cadence; and documented incident-response procedures. |
 
 ## What changes before production
 
 Before [production](production.md), add:
 
-- security review;
+- formal security review and hardening beyond the pilot baseline;
 - service monitoring;
-- incident response;
+- a formalised incident-response process;
 - lifecycle and model update policy;
 - capacity and concurrency testing;
 - accessibility and language review;
