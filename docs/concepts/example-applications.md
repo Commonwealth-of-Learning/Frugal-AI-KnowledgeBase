@@ -27,6 +27,8 @@ flowchart TD
 
 The math-tutor row is built end to end, and the curriculum advisor's intermediate cell is now built (RAG on Dify); its advanced cell and the administrative agent row remain planned. Cells stay marked *further work* until their guides exist. Where a cell names an agent — an application that acts rather than only answers — the [Application layer](application-layer.md)'s governance surfaces apply.
 
+The rows also differ by the reference architecture's [risk tiers](../reference/sovereign-education-ai-reference-architecture.md): the learner-facing cells sit in Tier 1, with teacher approval before anything reaches learners, while the administrative agent row is where the lower tiers apply — Tier 2 for staff-only drafts, released with post-hoc audit and publish controls, and Tier 3 only for purely administrative output that reaches no learner, automated with logging. An Advanced cell also carries the prerequisites of the builds beneath it: the Manim animator assumes the coding agent and the AI gateway are already built, so it is more than the single step the matrix cell suggests.
+
 ## What the matrix shows
 
 Two lessons. First, the **Orchestration layer is substitutable**: the math tutor uses a simple Open WebUI tool, while the curriculum advisor uses Dify, a heavier workflow platform with built-in retrieval. Different substrates, the same layer, each chosen to fit the task. Second, **flexibility is frugal**: every example reuses the lower layers, so a new application is mostly new work at the top, not a new stack.
@@ -42,3 +44,4 @@ Localisation is also where inclusion becomes verifiable: model cards state each 
 - [The Frugal AI stack](how-the-stack-fits-together.md)
 - [Application layer](application-layer.md)
 - [Math tutor](../getting-started/math-tutor.md)
+- [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

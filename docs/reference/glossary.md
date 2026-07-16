@@ -183,6 +183,14 @@ A short reference page that explains what a model is, what it fits, what it need
 
 <details>
 
+<summary><strong>Open-weight model</strong></summary>
+
+A model whose trained weights are published for download and local hosting, so it can run on an institution's own hardware. Licence terms still vary and need checking; open weights do not always mean an open-source licence.
+
+</details>
+
+<details>
+
 <summary><strong>Quantisation</strong></summary>
 
 A way to reduce model size and memory use by storing weights with fewer bits. Smaller quantised models fit on modest hardware, but quality can vary.
@@ -241,9 +249,17 @@ Temporary use of cloud computing resources for tasks that exceed local processin
 
 <details>
 
+<summary><strong>Data residency</strong></summary>
+
+Where data is physically stored and processed. It is distinct from data sovereignty, which is who controls that storage, processing, and access: a service can keep data resident in-country while its governance sits elsewhere, or the reverse.
+
+</details>
+
+<details>
+
 <summary><strong>Data sovereignty</strong></summary>
 
-The ability for an institution or country to control where its data is stored, processed, accessed, and governed.
+The ability for an institution or country to control where its data is stored, processed, accessed, and governed — distinct from data residency, which is where the data physically sits.
 
 </details>
 
@@ -252,6 +268,14 @@ The ability for an institution or country to control where its data is stored, p
 <summary><strong>DPI</strong></summary>
 
 Digital Public Infrastructure: shared digital systems such as identity, payments, and data exchange that enable public and private services at population scale. Examples include India's Aadhaar, Unified Payments Interface, and National Digital Education Architecture.
+
+</details>
+
+<details>
+
+<summary><strong>EMIS</strong></summary>
+
+Education Management Information System: the national system that holds school, staff, and learner records. The reference architecture expects a service to integrate with it without ingesting unnecessary learner records into prompts.
 
 </details>
 
@@ -276,6 +300,14 @@ Any content intended to be shown directly to learners or used for assessment, fe
 <summary><strong>Minimum Government Baseline</strong></summary>
 
 The set of safeguards the reference architecture expects any public deployment to meet before adding optional modules: availability, privacy, security, auditability, and a scalability pathway. The development build does not meet it; the pilot and production environments establish it.
+
+</details>
+
+<details>
+
+<summary><strong>OER</strong></summary>
+
+Open Educational Resources: openly licensed learning materials — syllabi, textbooks, and teacher guides — that an institution can adapt and redistribute. Vetted OER are among the approved sources a knowledge layer grounds its answers in, as in the curriculum advisor.
 
 </details>
 

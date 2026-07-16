@@ -30,6 +30,7 @@ Use this page as a production-readiness checklist. Do not treat the development 
 - **Capacity** — Measured concurrency, latency, memory, storage, and cloud-burst limits for the production workload.
 - **Accessibility and localisation** — Review of language coverage, accessibility, curriculum fit, and support materials.
 - **Lifecycle** — Model, runtime, gateway, and application update policy, including regression checks before release.
+- **Interoperability** — Single sign-on and role integration, export and import of approved content artefacts, machine-readable audit-log export for oversight, and LMS or EMIS integration that does not ingest unnecessary learner records. The [reference architecture](../../reference/sovereign-education-ai-reference-architecture.md) sets these out as procurement-relevant behaviours; none is a documented build path yet.
 
 ## What stays out of scope
 

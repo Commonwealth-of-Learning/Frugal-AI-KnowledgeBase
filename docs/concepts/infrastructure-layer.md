@@ -37,6 +37,10 @@ The documented first path assumes one machine, but readers arrive with different
 | GPU workstation or server | No documented path yet; pilot serving is planned | [NVIDIA DGX Spark](../components/hardware/nvidia-dgx-spark.md) is the candidate hardware profile, and serving engines such as [vLLM](../components/runtimes/vllm.md) belong to the [pilot environment](../components/environments/pilot.md); a pilot serving guide is further work. |
 | Less than 16 GB, or low-power devices | Not covered | Below the measured comfort of the documented path. Smaller-model paths need their own guide and measurement before being documented. |
 
+## Resilience and multiple sites
+
+The documented single-machine path is inherently offline: once the models are pulled, it runs without connectivity. The reference architecture expects more of a multi-site deployment — offline-first operation at defined service levels, [store-and-forward](../reference/glossary.md) synchronisation between sites, and edge or hub-and-node topologies. Those multi-node paths are not documented yet; the "Start from the machine" table above is the single-machine case of the reference architecture's hosting-topology choice.
+
 ## How this connects
 
 The infrastructure sets the memory budget that decides which models and engines fit; see the [Inference layer](inference-layer.md). The [development](../components/environments/development.md) and [pilot](../components/environments/pilot.md) environments describe the assumptions for each stage.
@@ -53,3 +57,4 @@ The infrastructure layer determines whether the **Frugality** goal holds: capabl
 - [Hardware: Mac mini 24 GB](../components/hardware/mac-mini-24gb.md)
 - [Inference layer](inference-layer.md)
 - [Development environment](../components/environments/development.md)
+- [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)

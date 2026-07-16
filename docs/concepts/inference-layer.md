@@ -42,6 +42,8 @@ The three models in this knowledge base are all open-weight, Apache 2.0 licensed
 
 Each model card carries the full picture: reference settings, source confidence, and model-specific limits.
 
+For public deployments, the [sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md) adds selection criteria beyond machine fit: licensing checks, security due diligence, and evaluation against local language and curriculum requirements.
+
 An interactive comparison tool for choosing between open-weight models is further work; until it exists, this table and the model cards are the comparison.
 
 ## Shared model cautions
@@ -52,6 +54,7 @@ Every model in this knowledge base shares the same cautions, whatever its card s
 - Not for sensitive learner or institutional data without local governance and human review.
 - Not for autonomous agentic actions with real side effects unless permissions, audit logging, rollback, and human approval are designed in.
 - Not for tasks needing guaranteed correctness, security, or formal assessment decisions without expert validation.
+- Not for a given language or curriculum on the strength of source-listed language counts alone — counts indicate coverage, not quality; evaluate a candidate on local-language and curriculum samples during piloting, before any learner-facing use.
 
 Each model card lists only its model-specific cautions in addition to these.
 
@@ -65,3 +68,4 @@ Because every engine here speaks the OpenAI API, moving a model from a local run
 - [Runtime: Ollama](../components/runtimes/ollama.md)
 - [Serving engine: vLLM](../components/runtimes/vllm.md)
 - [Gateway layer](gateway-layer.md)
+- [Sovereign education-AI reference architecture](../reference/sovereign-education-ai-reference-architecture.md)
