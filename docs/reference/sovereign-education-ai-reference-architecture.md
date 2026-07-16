@@ -35,7 +35,7 @@ The annex uses eight policy and implementation layers. The Frugal AI knowledge b
 | --- | --- |
 | Access & Identity | Environment profiles and application access rules |
 | Teacher-in-the-Loop Workflow | Application and Orchestration layers, with human review points |
-| Application Services | Application layer |
+| Application Services | Application layer, including agents as an Application-layer subtype |
 | Knowledge Layer (RAG) | Orchestration layer |
 | Privacy Airlock | Gateway layer |
 | Model Layer | Inference layer |
